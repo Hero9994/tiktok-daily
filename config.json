@@ -3,6 +3,8 @@
   "allow_paid_openai": false,
   "content_mode": "cinema",
   "fixed_caption": "",
+  "buffer_organization_id": "",
+  "buffer_channel_id": "",
   "theme": "ترشيح فيلم أو مسلسل مختلف كل يوم مع نبذة عربية قصيرة دون حرق الأحداث",
   "style": "paper_cut",
   "publish_time": "19:30",

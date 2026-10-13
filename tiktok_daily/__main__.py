@@ -29,6 +29,8 @@ def main():
     if args.mode == "doctor":
         report = {"config_valid": True, "enabled": c["enabled"], "allow_paid_openai": c["allow_paid_openai"],
                   "content_mode": c.get("content_mode", "art"), "fixed_caption_ready": bool(c.get("fixed_caption")),
+                  "channel_configured": bool((os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")) and
+                                             (os.environ.get("BUFFER_CHANNEL_ID") or c.get("buffer_channel_id"))),
                   "secrets_present": {k: bool(os.environ.get(k)) for k in
                     ["OPENAI_API_KEY", "BUFFER_API_KEY", "BUFFER_ORGANIZATION_ID", "BUFFER_CHANNEL_ID"]}}
         print(json.dumps(report, indent=2))
@@ -62,7 +64,11 @@ def main():
     if not c["enabled"]:
         print("Automation disabled in config.json; no remote request made")
         return
-    buffer_key, org, channel = secrets("BUFFER_API_KEY", "BUFFER_ORGANIZATION_ID", "BUFFER_CHANNEL_ID")
+    buffer_key, = secrets("BUFFER_API_KEY")
+    org = os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")
+    channel = os.environ.get("BUFFER_CHANNEL_ID") or c.get("buffer_channel_id")
+    if not org or not channel:
+        raise RuntimeError("Run discover and configure Buffer organization/channel IDs in config.json")
     openai_key = None
     if args.mode != "verify":
         if not c["allow_paid_openai"]:
