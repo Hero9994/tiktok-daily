@@ -48,9 +48,9 @@ class CinemaTests(unittest.TestCase):
         # The information panel is painted onto the actual output file.
         self.assertNotEqual(image.getpixel((20, 1800)), image.getpixel((20, 200)))
 
-    def test_missing_fixed_caption_blocks_live_cinema_config(self):
+    def test_signature_is_validated(self):
         import tempfile
-        c = self.cinema_config(); c["fixed_caption"] = ""
+        c = self.cinema_config(); c["caption_suffix"] = "#wrongplace"
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "config.json"; path.write_text(json.dumps(c))
             with self.assertRaises(ValueError): load_config(path)

@@ -3,7 +3,8 @@ name: Daily TikTok
 on:
   schedule:
     # Prepare early, then let Buffer publish at config.json's local time.
-    - cron: '17 3 * * *'
+    - cron: '7 17 * * *'
+      timezone: 'Europe/Berlin'
     # Check confirmed delivery every hour. No generation in verification runs.
     - cron: '43 * * * *'
   workflow_dispatch:
@@ -42,13 +43,14 @@ jobs:
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
           GITHUB_REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
         shell: bash
         run: |
           mode="${MODE_INPUT:-verify}"
-          if [ "$EVENT_SCHEDULE" = '17 3 * * *' ]; then mode=prepare; fi
+          if [ "$EVENT_SCHEDULE" = '7 17 * * *' ]; then mode=prepare; fi
           python -m tiktok_daily "$mode"
       - name: Alert on failure
         if: failure()

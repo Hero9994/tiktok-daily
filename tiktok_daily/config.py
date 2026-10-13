@@ -9,6 +9,7 @@ STYLES = {
     "pixel_art": "clearly fictional pixel art",
     "flat_vector": "clearly stylized flat vector illustration",
     "oil_painting": "clearly painted imaginative oil painting",
+    "cinematic_gold": "original cinematic illustration with black and gold lighting, dramatic atmosphere, no photorealistic people",
 }
 DISCLOSURE = "صورة فنية خيالية مولّدة بالذكاء الاصطناعي."
 
@@ -18,13 +19,25 @@ def load_config(path):
     for flag in ("enabled", "allow_paid_openai"):
         if type(c.get(flag)) is not bool:
             raise ValueError(f"{flag} must be a boolean")
-    if c.get("content_mode", "art") not in ("art", "cinema"):
-        raise ValueError("content_mode must be art or cinema")
+    if c.get("content_mode", "art") not in ("art", "cinema", "auto"):
+        raise ValueError("content_mode must be art, cinema or auto")
     caption = c.get("fixed_caption")
     if caption is not None and (not isinstance(caption, str) or len(caption) > 1500 or "#" in caption):
         raise ValueError("fixed_caption must be plain text under 1500 characters; configure hashtags separately")
-    if c.get("content_mode") == "cinema" and c["enabled"] and not (caption or "").strip():
-        raise ValueError("Set your fixed_caption before enabling cinema publishing")
+    suffix = c.get("caption_suffix", "")
+    if not isinstance(suffix, str) or len(suffix) > 500 or "#" in suffix:
+        raise ValueError("caption_suffix must be text under 500 characters without hashtags")
+    if c.get("card_style", "simple") not in ("simple", "black_gold"):
+        raise ValueError("Invalid card_style")
+    if not isinstance(c.get("brand_name", "TK SERVERS"), str) or len(c.get("brand_name", "")) > 60:
+        raise ValueError("Invalid brand_name")
+    if c.get("content_mode") == "auto":
+        supported = {"CL", "PL", "PD", "BL1", "SA", "FL1", "WC", "EC"}
+        competitions = c.get("football_competitions")
+        if not isinstance(competitions, list) or not competitions or any(x not in supported for x in competitions):
+            raise ValueError("Choose supported free football competitions")
+        if type(c.get("fixture_max_age_minutes")) is not int or not 1 <= c["fixture_max_age_minutes"] <= 180:
+            raise ValueError("Invalid fixture freshness limit")
     if c.get("style") not in STYLES:
         raise ValueError("Choose a supported illustration style; realistic impersonation is excluded")
     if not isinstance(c.get("theme"), str) or not 1 <= len(c["theme"].strip()) <= 500:

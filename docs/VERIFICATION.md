@@ -17,6 +17,10 @@
 | [OpenAI moderation](https://developers.openai.com/api/docs/guides/moderation) | `omni-moderation-latest` يدعم النص والصور، endpoint moderation مجاني |
 | [GitHub Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions) | تشغيل المشغّلات القياسية مجاني للمستودعات العامة؛ المستودعات الخاصة حصص وفوترة مختلفة |
 | [GitHub schedule](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) | احتمال التأخير/إسقاط التشغيلات، التنفيذ من الفرع الافتراضي، وتعطيل بعد 60 يومًا دون نشاط بالمستودعات العامة |
+| [football-data.org pricing](https://www.football-data.org/pricing) | خطة Free بقيمة €0 و12 بطولة و10 طلبات/دقيقة؛ النتائج والجداول موصوفة بأنها متأخرة. لا تحتاج الخطة الأعلى Free w/ Livescores بقيمة €12/شهر |
+| [football-data.org coverage](https://www.football-data.org/coverage) | دوري الأبطال والدوريات الأوروبية الخمس وكأس العالم وأوروبا ضمن التغطية المجانية |
+| [football-data.org v4 matches](https://docs.football-data.org/general/v4/match.html) | مصادقة X-Auth-Token، توقيت UTC، TIMED يعني تحديد اليوم والساعة؛ SCHEDULED موعد تقريبي لا يكفي لطباعة ساعة مؤكدة |
+| [football-data.org v4 changes](https://docs.football-data.org/general/v4/index.html) | dateTo في v4 حد نهائي مستبعد؛ تُجلب الأيام UTC المحيطة ثم يطبّق حد يوم ألمانيا محليًا |
 
 كذلك تم التحقق من SHAs المثبتة لـ`actions/checkout v4.2.2` و`actions/setup-python v5.6.0` و`actions/github-script v7.0.1` عبر API الرسمي لمستودعات GitHub التابعة لـactions.
 

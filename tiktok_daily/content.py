@@ -57,12 +57,14 @@ def finalize_content(raw, c, previous):
             tags.append(tag)
     body = c.get("fixed_caption") or raw['description'].strip()
     caption = f"{DISCLOSURE}\n\n{body}\n\n{' '.join(tags)}"
+    if c.get("caption_suffix"):
+        caption += "\n\n" + c["caption_suffix"]
     if len(caption.encode("utf-16-le")) // 2 > 2200:
         raise ValueError("Caption exceeds Buffer's TikTok limit")
     if not c.get("fixed_caption") and any(e.get("caption") == caption for e in previous):
         raise ValueError("Repeated caption detected")
     return {"idea": raw["idea"].strip(), "prompt": raw["prompt"].strip(), "title": title,
-            "caption": caption, "hashtags": tags}
+            "caption": caption, "hashtags": tags, "description": raw["description"].strip()}
 
 
 def prepare_image(data, title=None, summary=None):
@@ -133,7 +135,7 @@ class OpenAI:
             raise ValueError("Content blocked by moderation")
 
     def idea(self, day, previous, attempt):
-        if self.c.get("content_mode") == "cinema":
+        if self.c.get("content_mode") in ("cinema", "auto"):
             return self.cinema_idea(day, previous, attempt)
         schema = {"type": "object", "additionalProperties": False,
                   "properties": {**{k: {"type": "string"} for k in ("idea", "prompt", "title", "description")},
@@ -204,6 +206,7 @@ class OpenAI:
             "idea: distinct English concept for an original illustration inspired by the genre. prompt: English image prompt for original abstract cinematic art, "
             "without official poster copies, actor likenesses, people, logos, recognizable copyrighted characters, violence or text. "
             "hashtags: choose five from supplied pool. safe_fictional_art: true only if the illustration is safe fictional art. "
+            "Prefer cinema/series hashtags, not football hashtags. Do not include advertising or the configured brand signature in your description. "
             "Keep image focal elements within the upper 65% and central 80% for an Arabic information panel below.",
             {"source_title": source["title"], "extract": extract[:5000], "hashtag_pool": self.c["hashtag_pool"]},
             {**{k: {"type": "string"} for k in ("idea", "prompt", "title", "description")},

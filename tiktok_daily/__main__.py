@@ -28,31 +28,50 @@ def main():
     http = HTTP()
     if args.mode == "doctor":
         report = {"config_valid": True, "enabled": c["enabled"], "allow_paid_openai": c["allow_paid_openai"],
-                  "content_mode": c.get("content_mode", "art"), "fixed_caption_ready": bool(c.get("fixed_caption")),
+                  "content_mode": c.get("content_mode", "art"), "caption_suffix_ready": bool(c.get("caption_suffix")),
                   "channel_configured": bool((os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")) and
                                              (os.environ.get("BUFFER_CHANNEL_ID") or c.get("buffer_channel_id"))),
                   "secrets_present": {k: bool(os.environ.get(k)) for k in
-                    ["OPENAI_API_KEY", "BUFFER_API_KEY", "BUFFER_ORGANIZATION_ID", "BUFFER_CHANNEL_ID"]}}
+                    ["OPENAI_API_KEY", "BUFFER_API_KEY", "FOOTBALL_DATA_API_KEY", "BUFFER_ORGANIZATION_ID", "BUFFER_CHANNEL_ID"]}}
         print(json.dumps(report, indent=2))
         return
     if args.mode == "preview":
         # Entirely offline sample, never represented as an OpenAI-generated image.
         from PIL import Image, ImageDraw
-        image = Image.new("RGB", (1080, 1920), "#132e49")
+        image = Image.new("RGB", (1080, 1920), "#080d13")
         draw = ImageDraw.Draw(image)
-        draw.ellipse((500, 210, 810, 520), fill="#e7b57a")
-        for points, color in [([(0, 1100), (460, 500), (1080, 1300), (1080, 1920), (0, 1920)], "#397e87"),
-                              ([(0, 1500), (850, 840), (1080, 1500), (1080, 1920), (0, 1920)], "#58a69b")]:
+        draw.ellipse((500, 210, 810, 520), fill="#b58d44")
+        for points, color in [([(0, 1100), (460, 500), (1080, 1300), (1080, 1920), (0, 1920)], "#27271d"),
+                              ([(0, 1500), (850, 840), (1080, 1500), (1080, 1920), (0, 1920)], "#46412b")]:
             draw.polygon(points, fill=color)
         import io
         raw = io.BytesIO(); image.save(raw, format="PNG")
-        title = "The Shawshank Redemption" if c.get("content_mode") == "cinema" else None
+        title = "The Shawshank Redemption" if c.get("content_mode") in ("cinema", "auto") else None
         summary = "فيلم درامي عن الأمل والصداقة داخل السجن. نبذة تجريبية دون حرق الأحداث." if title else None
         data, digest, _ = prepare_image(raw.getvalue(), title, summary)
         args.output.mkdir(exist_ok=True, parents=True)
+        if c.get("card_style") == "black_gold":
+            from .cards import render
+            from .content import finalize_content
+            raw_content = {"idea": "Offline demo prison drama card", "title": title or "ترشيح اليوم", "description": summary or "معاينة محلية للتصميم.",
+                           "prompt": "Offline illustration", "hashtags": ["#أفلام", "#سينما", "#ترشيحات", "#ماذا_تشاهد", "#TK_Servers"], "safe_fictional_art": True}
+            entry = finalize_content(raw_content, c, [])
+            entry.update(summary=raw_content["description"], demo=True)
+            data = render(raw.getvalue(), entry, c)[0]
+            import hashlib
+            digest = hashlib.sha256(data).hexdigest()
+            (args.output / "cinema-preview.jpg").write_bytes(data)
+            from .football import football_content
+            demo_matches = [{"id": i, "competition_code": "CL", "competition": "دوري أبطال أوروبا",
+                "home": f"الفريق الأحمر {i}", "away": f"الفريق الأزرق {i}", "germany_time": time,
+                "germany_date": "2026-10-14", "makkah_time": makkah, "makkah_date": "2026-10-14"}
+                for i, (time, makkah) in enumerate([("18:00", "19:00"), ("20:00", "21:00"), ("21:00", "22:00")], 1)]
+            schedule = {"date": "2026-10-14", "matches": demo_matches, "checked_at": "2026-10-13T15:07:00+00:00", "source_url": "https://www.football-data.org/"}
+            football_entry = football_content(schedule, c); football_entry["demo"] = True
+            (args.output / "football-preview.jpg").write_bytes(render(raw.getvalue(), football_entry, c)[0])
         (args.output / "sample.jpg").write_bytes(data)
         (args.output / "sample.json").write_text(json.dumps({"offline_demo": True, "dimensions": [1080, 1920],
-            "caption": DISCLOSURE + "\n" + (c.get("fixed_caption") or "الوصف الثابت لم يحدَّد بعد. هذه معاينة محلية فقط.") + "\n" + " ".join(list(dict.fromkeys(c["fixed_hashtags"] + c["hashtag_pool"]))[:5]),
+            "caption": entry["caption"] if c.get("card_style") == "black_gold" else DISCLOSURE + "\nهذه معاينة محلية فقط.\n" + " ".join(list(dict.fromkeys(c["fixed_hashtags"] + c["hashtag_pool"]))[:5]),
             "title": title, "summary": summary,
             "sha256": digest}, ensure_ascii=False, indent=2), encoding="utf-8")
         print("Offline demonstration saved; no API request or publication occurred")
@@ -74,6 +93,8 @@ def main():
         if not c["allow_paid_openai"]:
             raise RuntimeError("Paid OpenAI calls are disabled in config.json")
         openai_key, = secrets("OPENAI_API_KEY")
+        if c.get("content_mode") == "auto":
+            secrets("FOOTBALL_DATA_API_KEY")
     if os.environ.get("GITHUB_REPOSITORY_VISIBILITY") != "public":
         raise RuntimeError("This media hosting mode requires a PUBLIC GitHub repository")
     store = GitStore(Path.cwd(), c["state_branch"], os.environ.get("GITHUB_REPOSITORY", ""))
@@ -98,7 +119,7 @@ if __name__ == "__main__":
         # Unknown library errors can embed remote bodies or credentials. Only emit controlled errors.
         if isinstance(exc, (RuntimeError, ValueError)):
             message = str(exc)
-            for name in ("OPENAI_API_KEY", "BUFFER_API_KEY", "GH_TOKEN", "GITHUB_TOKEN"):
+            for name in ("OPENAI_API_KEY", "BUFFER_API_KEY", "FOOTBALL_DATA_API_KEY", "GH_TOKEN", "GITHUB_TOKEN"):
                 value = os.environ.get(name)
                 if value:
                     message = message.replace(value, "[REDACTED]")

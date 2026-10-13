@@ -17,8 +17,10 @@ class HTTP:
     def __init__(self, sleep=time.sleep):
         self.sleep = sleep
 
-    def json(self, url, payload=None, token=None, safe_retry=False, timeout=60):
+    def json(self, url, payload=None, token=None, safe_retry=False, timeout=60, extra_headers=None):
         headers = {"Accept": "application/json", "User-Agent": "daily-image-publisher/1.0"}
+        if extra_headers:
+            headers.update(extra_headers)
         if token:
             headers["Authorization"] = f"Bearer {token}"
         data = None

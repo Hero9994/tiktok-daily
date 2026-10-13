@@ -2,7 +2,7 @@ Verification date: 2026-10-13
 Environment: Python 3.12.14, Pillow 12.0.0 (requirements.txt)
 
 Command: python -m unittest discover -s tests -v
-Result: Ran 33 tests in 1.734s; OK
+Result: Ran 42 tests in 2.409s; OK
 
 Integration: real local HTTP transport, simulated OpenAI/Buffer providers,
 image URL fetch and hash validation, generation -> scheduling -> restart -> sent.
@@ -10,9 +10,12 @@ Git integration: real local orphan branch, commit, push, reload, immutable SHA U
 Workflow YAML syntax and pinned-action SHA checks: passed.
 
 Doctor: configuration valid; enabled=false; allow_paid_openai=false.
-All four required runtime Secrets are absent.
+OpenAI, Buffer and football-data.org keys are absent from this execution environment.
 Offline preview: generated local JPEG 1080x1920 and sample JSON, with Arabic synopsis panel.
 Cinema tests: constant caption, sourced synopsis, canonical work-ID deduplication, Arabic rendering.
+Sports tests: official response validation, TIMED-only fixtures, DST and midnight date conversion,
+multiple pages without dropped games, safe empty-only fallback, last-minute fixture update without a second image call.
+Caption policy: dynamic caption and five tags, fixed TK suffix at the very end.
 
 LIVE TIKTOK TEST: NOT RUN (no user accounts, credentials or configured repository).
 External API spending: none.

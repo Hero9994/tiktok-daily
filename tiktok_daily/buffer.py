@@ -66,7 +66,7 @@ class Buffer:
         input_value = {
             "channelId": self.channel, "text": entry["caption"], "schedulingType": "automatic",
             "mode": "shareNow" if now else "customScheduled", "aiAssisted": True,
-            "assets": [{"image": {"url": entry["image_url"]}}],
+            "assets": [{"image": {"url": url}} for url in entry.get("image_urls", [entry["image_url"]])],
             # isAiGenerated is intentionally omitted: Buffer rejects it on TikTok photos.
             "metadata": {"tiktok": {"title": entry["title"]}},
         }

@@ -5,6 +5,8 @@ from zoneinfo import ZoneInfo
 from .config import next_slot
 from .content import prepare_image, image_is_duplicate
 from .http import APIError
+from .football import Football, football_content
+from .cards import render
 
 
 def utc_text(now):
@@ -12,11 +14,12 @@ def utc_text(now):
 
 
 class Publisher:
-    def __init__(self, c, store, generator, buffer, http, clock=None, sleep=time.sleep):
+    def __init__(self, c, store, generator, buffer, http, clock=None, sleep=time.sleep, football=None):
         self.c, self.store, self.generator, self.buffer, self.http = c, store, generator, buffer, http
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.sleep = sleep
         self.generator.reserve_text_request = self.reserve_text_request
+        self.football = football or Football(http, c, clock=self.clock)
 
     def reserve_text_request(self):
         self.consume("text_requests", self.active_day, self.c["max_text_requests_per_day"])
@@ -100,7 +103,14 @@ class Publisher:
         if entry["status"] == "planned":
             self.generator.moderate(self.c["theme"])
             generated = None
+            if self.c.get("content_mode") == "auto":
+                schedule = self.football.tomorrow(day)
+                # Only a successful empty response authorizes the cinema fallback.
+                if schedule["matches"]:
+                    generated = football_content(schedule, self.c)
             while self.store.state["text_requests"].get(day, 0) < self.c["max_text_requests_per_day"]:
+                if generated is not None:
+                    break
                 self.consume("text_requests", day, self.c["max_text_requests_per_day"])
                 try:
                     candidate = self.generator.idea(day, previous, self.store.state["text_requests"][day])
@@ -125,21 +135,60 @@ class Publisher:
                 except APIError:
                     self.sleep(2 ** entry["image_attempts"])
                     continue  # Each generation retry is separately budgeted and might incur cost.
-                image, digest, perceptual = prepare_image(image, entry.get("title") if entry.get("summary") else None, entry.get("summary"))
+                if self.c.get("card_style") == "black_gold":
+                    if entry.get("post_kind") == "football":
+                        entry.update(football_content(self.football.tomorrow(day), self.c))
+                    # Keep a local source image to re-render updated fixtures without another paid call.
+                    hero_name = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}-art.jpg"
+                    self.store.save_image(hero_name, image)
+                    entry["hero_file"] = hero_name
+                    images = render(image, entry, self.c)
+                    image, digest, perceptual = prepare_image(images[0])
+                else:
+                    image, digest, perceptual = prepare_image(image, entry.get("title") if entry.get("summary") else None, entry.get("summary"))
+                    images = [image]
                 self.generator.moderate(entry["caption"], image)
-                if image_is_duplicate(digest, perceptual, previous):
+                duplicate = any(e.get("image_sha256") == digest for e in previous) if self.c.get("card_style") == "black_gold" else image_is_duplicate(digest, perceptual, previous)
+                if duplicate:
                     continue
-                filename = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}.jpg"
-                self.store.save_image(filename, image)
-                entry.update(status="image_ready", image_file=filename, image_sha256=digest, image_dhash=perceptual)
+                assets = []
+                for index, picture in enumerate(images):
+                    data, checksum, dhash = prepare_image(picture)
+                    filename = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}-{index + 1}.jpg"
+                    self.store.save_image(filename, data)
+                    assets.append({"file": filename, "sha256": checksum})
+                entry.update(status="image_ready", image_file=assets[0]["file"], image_sha256=assets[0]["sha256"],
+                             image_dhash=perceptual, image_assets=assets)
                 self.store.checkpoint()
                 break
             if entry["status"] != "image_ready":
                 raise RuntimeError("Could not generate a unique image within the request cap")
         if entry["status"] == "image_ready":
+            if entry.get("post_kind") == "football":
+                latest = self.football.tomorrow(day)
+                if not latest["matches"]:
+                    raise RuntimeError("Fixtures were cancelled after preparation; review before publishing")
+                changed = latest["matches"] != entry["fixture_schedule"]["matches"]
+                entry.update(football_content(latest, self.c))
+                if changed:
+                    hero = (self.store.path / "images" / entry["hero_file"]).read_bytes()
+                    assets = []
+                    for index, picture in enumerate(render(hero, entry, self.c)):
+                        data, checksum, _ = prepare_image(picture)
+                        filename = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}-{index + 1}.jpg"
+                        self.store.save_image(filename, data)
+                        assets.append({"file": filename, "sha256": checksum})
+                    entry.update(image_assets=assets, image_file=assets[0]["file"], image_sha256=assets[0]["sha256"])
+                self.store.checkpoint()
             entry["image_url"] = self.store.image_url(entry["image_file"])
+            entry["image_urls"] = [self.store.image_url(a["file"]) for a in entry.get("image_assets", [{"file": entry["image_file"]}])]
             self.store.checkpoint()
-            self.http.image(entry["image_url"], entry["image_sha256"])
+            for url, asset in zip(entry["image_urls"], entry.get("image_assets", [{"sha256": entry["image_sha256"]}])):
+                self.http.image(url, asset["sha256"])
+            if entry.get("post_kind") == "football":
+                checked = datetime.fromisoformat(entry["fixture_schedule"]["checked_at"])
+                if self.clock() - checked > timedelta(minutes=self.c["fixture_max_age_minutes"]):
+                    raise RuntimeError("Fixture check is stale; rerun before submitting the post")
             if not publish_now and datetime.fromisoformat(entry["due_at"].replace("Z", "+00:00")) <= self.clock() + timedelta(minutes=5):
                 raise RuntimeError("Image preparation took too long; publishing slot is no longer safely in the future")
             # Include two minutes before the local attempt to tolerate provider clock differences.
