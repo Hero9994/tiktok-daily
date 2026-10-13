@@ -1,0 +1,20 @@
+{
+  "enabled": false,
+  "allow_paid_openai": false,
+  "content_mode": "cinema",
+  "fixed_caption": "",
+  "theme": "ترشيح فيلم أو مسلسل مختلف كل يوم مع نبذة عربية قصيرة دون حرق الأحداث",
+  "style": "paper_cut",
+  "publish_time": "19:30",
+  "timezone": "Asia/Riyadh",
+  "prepare_lead_minutes": 60,
+  "hashtag_pool": ["#أفلام", "#مسلسلات", "#سينما", "#ترشيحات", "#ماذا_تشاهد"],
+  "fixed_hashtags": ["#أفلام", "#مسلسلات", "#سينما", "#ترشيحات", "#ماذا_تشاهد"],
+  "text_model": "gpt-6-luna",
+  "image_model": "gpt-image-2",
+  "image_quality": "low",
+  "max_image_requests_per_month": 31,
+  "max_text_requests_per_day": 3,
+  "verification_grace_minutes": 90,
+  "state_branch": "bot-state"
+}

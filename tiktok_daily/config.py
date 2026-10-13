@@ -1,0 +1,70 @@
+import json
+import re
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
+
+STYLES = {
+    "paper_cut": "clearly stylized layered paper-cut illustration",
+    "watercolor": "clearly painted imaginative watercolor illustration",
+    "pixel_art": "clearly fictional pixel art",
+    "flat_vector": "clearly stylized flat vector illustration",
+    "oil_painting": "clearly painted imaginative oil painting",
+}
+DISCLOSURE = "صورة فنية خيالية مولّدة بالذكاء الاصطناعي."
+
+
+def load_config(path):
+    c = json.loads(path.read_text(encoding="utf-8"))
+    for flag in ("enabled", "allow_paid_openai"):
+        if type(c.get(flag)) is not bool:
+            raise ValueError(f"{flag} must be a boolean")
+    if c.get("content_mode", "art") not in ("art", "cinema"):
+        raise ValueError("content_mode must be art or cinema")
+    caption = c.get("fixed_caption")
+    if caption is not None and (not isinstance(caption, str) or len(caption) > 1500 or "#" in caption):
+        raise ValueError("fixed_caption must be plain text under 1500 characters; configure hashtags separately")
+    if c.get("content_mode") == "cinema" and c["enabled"] and not (caption or "").strip():
+        raise ValueError("Set your fixed_caption before enabling cinema publishing")
+    if c.get("style") not in STYLES:
+        raise ValueError("Choose a supported illustration style; realistic impersonation is excluded")
+    if not isinstance(c.get("theme"), str) or not 1 <= len(c["theme"].strip()) <= 500:
+        raise ValueError("theme must contain 1–500 characters")
+    if not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", c.get("publish_time", "")):
+        raise ValueError("publish_time must be HH:MM")
+    ZoneInfo(c["timezone"])
+    for name, low, high in [
+        ("prepare_lead_minutes", 15, 1440),
+        ("verification_grace_minutes", 15, 1440),
+        ("max_image_requests_per_month", 1, 62),
+        ("max_text_requests_per_day", 1, 5),
+    ]:
+        if type(c.get(name)) is not int or not low <= c[name] <= high:
+            raise ValueError(f"Invalid {name}")
+    if c.get("image_quality") not in ("low", "medium"):
+        raise ValueError("Only low or medium quality is permitted; review costs before changing")
+    if c.get("image_model") != "gpt-image-2" or c.get("text_model") != "gpt-6-luna":
+        raise ValueError("Model change requires updating documented pricing and code first")
+    if not re.fullmatch(r"[A-Za-z0-9_-]+", c.get("state_branch", "")):
+        raise ValueError("Invalid state branch")
+    pool, fixed = c.get("hashtag_pool"), c.get("fixed_hashtags")
+    if not isinstance(pool, list) or not isinstance(fixed, list):
+        raise ValueError("Hashtags must be lists")
+    if len(fixed) > 5 or len(set(fixed)) != len(fixed) or len(set(pool + fixed)) < 5:
+        raise ValueError("Provide at least five unique hashtags and at most five fixed hashtags")
+    if any(not isinstance(t, str) or not re.fullmatch(r"#[\w]+", t) or len(t) > 50 for t in pool + fixed):
+        raise ValueError("Use hashtags without spaces or punctuation")
+    return c
+
+
+def next_slot(c, now):
+    local = now.astimezone(ZoneInfo(c["timezone"]))
+    hour, minute = map(int, c["publish_time"].split(":"))
+    for offset in range(3):
+        day = local.date() + timedelta(days=offset)
+        slot = datetime(day.year, day.month, day.day, hour, minute, tzinfo=local.tzinfo)
+        # Reject nonexistent DST wall times instead of silently changing the time.
+        if slot.astimezone(timezone.utc).astimezone(local.tzinfo).replace(tzinfo=None) != slot.replace(tzinfo=None):
+            continue
+        if slot.astimezone(timezone.utc) >= now + timedelta(minutes=c["prepare_lead_minutes"]):
+            return slot
+    raise ValueError("No valid publishing slot")

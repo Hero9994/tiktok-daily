@@ -1,0 +1,64 @@
+name: Daily TikTok
+
+on:
+  schedule:
+    # Prepare early, then let Buffer publish at config.json's local time.
+    - cron: '17 3 * * *'
+    # Check confirmed delivery every hour. No generation in verification runs.
+    - cron: '43 * * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'doctor/discover are read-only; publish-test publishes ONE real post now and uses OpenAI credit'
+        type: choice
+        default: doctor
+        options: [doctor, discover, prepare, verify, publish-test]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: tiktok-publisher
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Install dependency
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run publisher
+        env:
+          MODE_INPUT: ${{ inputs.mode }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          GITHUB_REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+        shell: bash
+        run: |
+          mode="${MODE_INPUT:-verify}"
+          if [ "$EVENT_SCHEDULE" = '17 3 * * *' ]; then mode=prepare; fi
+          python -m tiktok_daily "$mode"
+      - name: Alert on failure
+        if: failure()
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const title = 'Daily TikTok: publication needs attention';
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `فشل تشغيل النشر أو التحقق. افحص [سجل التشغيل](${run}) وBuffer. لا تعد إرسال منشور ذي نتيجة غير مؤكدة. لا توجد مفاتيح أو محتويات ردود API في هذا التنبيه.`;
+            const issues = await github.paginate(github.rest.issues.listForRepo, { ...context.repo, state: 'open', creator: 'github-actions[bot]', per_page: 100 });
+            const issue = issues.find(x => !x.pull_request && x.title === title);
+            if (issue) await github.rest.issues.update({ ...context.repo, issue_number: issue.number, body });
+            else await github.rest.issues.create({ ...context.repo, title, body });
