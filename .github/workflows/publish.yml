@@ -10,10 +10,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'doctor/discover/check-football are read-only; publish-test publishes ONE real post now and uses OpenAI credit'
+        description: 'doctor/discover/check-openai/check-football are read-only; publish-test publishes ONE real post now and uses OpenAI credit'
         type: choice
         default: doctor
-        options: [doctor, discover, check-football, prepare, verify, publish-test]
+        options: [doctor, discover, check-openai, check-football, prepare, verify, publish-test]
 
 permissions:
   contents: write

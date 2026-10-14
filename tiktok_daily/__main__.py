@@ -20,7 +20,7 @@ def secrets(*names):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["doctor", "discover", "check-football", "preview", "prepare", "verify", "publish-test"])
+    parser.add_argument("mode", choices=["doctor", "discover", "check-openai", "check-football", "preview", "prepare", "verify", "publish-test"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
     args = parser.parse_args()
@@ -34,6 +34,18 @@ def main():
                   "secrets_present": {k: bool(os.environ.get(k)) for k in
                     ["OPENAI_API_KEY", "BUFFER_API_KEY", "FOOTBALL_DATA_API_KEY", "BUFFER_ORGANIZATION_ID", "BUFFER_CHANNEL_ID"]}}
         print(json.dumps(report, indent=2))
+        return
+    if args.mode == "check-openai":
+        token, = secrets("OPENAI_API_KEY")
+        response = http.json("https://api.openai.com/v1/models", token=token, safe_retry=True)
+        if not isinstance(response.get("data"), list):
+            raise RuntimeError("OpenAI model list is invalid; authentication is not confirmed")
+        available = {m.get("id") for m in response["data"] if isinstance(m, dict)}
+        ready = {name: c[name] in available for name in ("text_model", "image_model")}
+        print(json.dumps({"openai_auth_verified": True, "configured_models_available": ready,
+                          "billing_credit_verified": False, "publishing_enabled": c["enabled"]}, indent=2))
+        if not all(ready.values()):
+            raise RuntimeError("Configured OpenAI models are unavailable; review account access before generation")
         return
     if args.mode == "preview":
         # Entirely offline sample, never represented as an OpenAI-generated image.
