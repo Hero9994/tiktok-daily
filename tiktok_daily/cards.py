@@ -1,6 +1,7 @@
 """Deterministic TK layouts. Numbers/times are rendered from verified data."""
 import io
 import math
+import re
 from pathlib import Path
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont, ImageOps, features
@@ -17,20 +18,21 @@ def font(size):
 
 def text(draw, value, box, size=40, color=WHITE, max_lines=4):
     x, y, width, height = box
+    direction = 'rtl' if re.search(r'[\u0600-\u06ff]', str(value)) else 'ltr'
     for trial in range(size, 19, -2):
         face, lines, current = font(trial), [], ""
         for word in str(value).split():
             candidate = (current + " " + word).strip()
-            if draw.textlength(candidate, font=face, direction="rtl", language="ar") > width and current:
+            if draw.textlength(candidate, font=face, direction=direction, language="ar") > width and current:
                 lines.append(current); current = word
             else:
                 current = candidate
         if current:
             lines.append(current)
         step = int(trial * 1.8)
-        if len(lines) <= max_lines and len(lines) * step <= height and all(draw.textlength(line, font=face, direction="rtl", language="ar") <= width for line in lines):
+        if len(lines) <= max_lines and len(lines) * step <= height and all(draw.textlength(line, font=face, direction=direction, language="ar") <= width for line in lines):
             for i, line in enumerate(lines):
-                draw.text((x + width, y + i * step), line, font=face, fill=color, anchor="ra", direction="rtl", language="ar")
+                draw.text((x + width, y + i * step), line, font=face, fill=color, anchor="ra", direction=direction, language="ar")
             return
     raise ValueError("Card text does not fit; refusing to clip factual content")
 
@@ -115,8 +117,8 @@ def cinema(hero, entry, c):
                 except (OSError, ValueError):
                     pass  # Missing portraits never produce invented faces.
             if portrait is not None:
-                photo = ImageOps.fit(portrait, (width-26, 217), method=Image.Resampling.LANCZOS, centering=(.5,.25))
-                image.paste(photo, (left+7, 1337))
+                photo = ImageOps.contain(portrait, (width-26, 217), method=Image.Resampling.LANCZOS)
+                image.paste(photo, (left+7+(width-26-photo.width)//2, 1337+(217-photo.height)//2))
             else:
                 text(draw, actor['name'].split()[0], (left+12, 1400, width-36, 90), size=35, color=GOLD, max_lines=1)
             text(draw, actor['name'], (left+10, 1553, width-32, 78), size=26, max_lines=2)
