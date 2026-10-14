@@ -20,7 +20,7 @@ def secrets(*names):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["doctor", "discover", "preview", "prepare", "verify", "publish-test"])
+    parser.add_argument("mode", choices=["doctor", "discover", "check-football", "preview", "prepare", "verify", "publish-test"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
     args = parser.parse_args()
@@ -79,6 +79,18 @@ def main():
     if args.mode == "discover":
         token, = secrets("BUFFER_API_KEY")
         print(json.dumps(Buffer(http, token, "", "").discover(), ensure_ascii=False, indent=2))
+        return
+    if args.mode == "check-football":
+        from datetime import datetime, timezone
+        from zoneinfo import ZoneInfo
+        from .football import Football
+        football_key, = secrets("FOOTBALL_DATA_API_KEY")
+        day = datetime.now(timezone.utc).astimezone(ZoneInfo(c["timezone"])).date().isoformat()
+        schedule = Football(http, c, token=football_key).tomorrow(day)
+        print(json.dumps({"football_api_verified": True, "tomorrow_date": schedule["date"],
+            "confirmed_match_count": len(schedule["matches"]), "source": schedule["source_url"],
+            "openai_key_present": bool(os.environ.get("OPENAI_API_KEY")),
+            "publishing_enabled": c["enabled"]}, ensure_ascii=False, indent=2))
         return
     if not c["enabled"]:
         print("Automation disabled in config.json; no remote request made")
