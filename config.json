@@ -65,5 +65,12 @@
       "time": "18:00",
       "music_file": "assets/audio/cinema.m4a"
     }
-  ]
+  ],
+  "uefa_competitions": [
+    "CL",
+    "EL",
+    "ECL"
+  ],
+  "skip_empty_football": true,
+  "fixture_day": "tomorrow"
 }

@@ -4,6 +4,7 @@ import urllib.parse
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from .content import finalize_content
+from .uefa import fixtures, UEFA
 
 COMPETITIONS = {
     "CL": ("دوري أبطال أوروبا", "#دوري_أبطال_أوروبا"),
@@ -15,6 +16,7 @@ COMPETITIONS = {
     "WC": ("كأس العالم", "#كأس_العالم"),
     "EC": ("كأس أوروبا", "#كأس_أوروبا"),
 }
+COMPETITIONS.update({code:(value[1],value[2]) for code,value in UEFA.items()})
 
 
 class Football:
@@ -26,7 +28,8 @@ class Football:
     def tomorrow(self, post_day):
         if not self.token:
             raise RuntimeError("Add the FREE football-data.org key as FOOTBALL_DATA_API_KEY; football lookup cannot be skipped")
-        day = datetime.fromisoformat(post_day).date() + timedelta(days=1)
+        mode=self.c.get('fixture_day','tomorrow')
+        day = datetime.fromisoformat(post_day).date() + timedelta(days=0 if mode=='today' else 1)
         local_start = datetime(day.year, day.month, day.day, tzinfo=ZoneInfo("Europe/Berlin"))
         local_end = local_start + timedelta(days=1)
         start, end = local_start.astimezone(timezone.utc), local_end.astimezone(timezone.utc)
@@ -42,6 +45,7 @@ class Football:
         matches, seen = [], set()
         for source in data["matches"]:
             code = source.get("competition", {}).get("code")
+            if code in self.c.get('uefa_competitions',[]):continue
             if code not in allowed:
                 continue
             try:
@@ -70,25 +74,32 @@ class Football:
                 "kickoff_utc": kickoff.astimezone(timezone.utc).isoformat(),
                 "germany_time": germany.strftime("%H:%M"), "germany_date": germany.date().isoformat(),
                 "makkah_time": makkah.strftime("%H:%M"), "makkah_date": makkah.date().isoformat()})
-        matches.sort(key=lambda m: (allowed.index(m["competition_code"]), m["kickoff_utc"], m["id"]))
+        extra=self.c.get('uefa_competitions',[])
+        matches.extend(fixtures(self.http,day,extra))
+        order=list(dict.fromkeys(allowed+extra))
+        unique={str(m['id']):m for m in matches}
+        matches=sorted(unique.values(),key=lambda m:(order.index(m['competition_code']),m['kickoff_utc'],str(m['id'])))
         return {"date": day.isoformat(), "matches": matches,
-                "checked_at": self.clock().isoformat(), "source_url": "https://www.football-data.org/"}
+                "date_mode":mode,"checked_at": self.clock().isoformat(), "source_url": "https://www.football-data.org/",
+                "sources":['football-data.org']+(['UEFA.com'] if extra else [])}
 
 
 def football_content(schedule, c):
     """Copy every factual field from provider data. AI only draws the background."""
     matches = schedule["matches"]
     date = schedule["date"]
+    day_label='اليوم' if schedule.get('date_mode')=='today' else 'الغد'
+    sources=' و '.join(schedule.get('sources',['football-data.org']))
     codes = list(dict.fromkeys(m["competition_code"] for m in matches))
     leagues = "، ".join(COMPETITIONS[x][0] for x in codes)
-    description = (f"مباريات الغد {date}: {len(matches)} مواجهة ضمن {leagues}. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org وقابلة للتغيير."
+    description = (f"مباريات {day_label} {date}: {len(matches)} مواجهة ضمن {leagues}. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب {sources} وقابلة للتغيير."
                    if matches else f"تحديث رياضي لغد {date}: لا يعرض football-data.org مباريات مؤكدة ضمن البطولات الثماني المتابعة حاليًا. هذا لا يعني عدم وجود مباريات في بطولات أخرى. تابعنا لتحديث الغد.")
-    tags = ["#مباريات_الغد", "#كرة_القدم"] + [COMPETITIONS[x][1] for x in codes] + ["#TK_Servers"]
+    tags = ['#مباريات_'+day_label, "#كرة_القدم"] + [COMPETITIONS[x][1] for x in codes] + ["#TK_Servers"]
     sports_c = dict(c, hashtag_pool=list(dict.fromkeys(tags)), fixed_hashtags=[])
     # Ensure a sports-only pool of at least five relevant tags.
     sports_c["hashtag_pool"] = list(dict.fromkeys(tags + ["#مباريات", "#كرة_قدم", "#رياضة"]))
     raw = {"idea": f"Official tomorrow football fixtures {date}",
-        "title": f"مباريات الغد | {date}",
+        "title": f"مباريات {day_label} | {date}",
         "description": description,
         "prompt": "An original black and gold football stadium illustration, illuminated field, gold particles, dramatic night atmosphere, empty space for schedule cards. No people, team badges, trophies, text or logos.",
         "hashtags": tags, "safe_fictional_art": True}

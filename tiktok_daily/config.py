@@ -27,6 +27,13 @@ def load_config(path):
         raise ValueError("Invalid content_mode")
     if type(c.get('video_enabled',False)) is not bool:
         raise ValueError('video_enabled must be a boolean')
+    if type(c.get('skip_empty_football',True)) is not bool:
+        raise ValueError('skip_empty_football must be boolean')
+    if c.get('fixture_day','tomorrow') not in ('today','tomorrow'):
+        raise ValueError('fixture_day must be today or tomorrow')
+    extra=c.get('uefa_competitions',[])
+    if not isinstance(extra,list) or len(extra)!=len(set(extra)) or any(x not in ('CL','EL','ECL') for x in extra):
+        raise ValueError('Invalid UEFA competitions')
     posts = c.get('daily_posts')
     if posts is not None:
         if not isinstance(posts,list) or len(posts)!=2 or {p.get('kind') for p in posts}!={'football','cinema'}:

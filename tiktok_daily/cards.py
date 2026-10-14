@@ -82,13 +82,13 @@ def encode(image):
 @lru_cache(maxsize=128)
 def crest(url):
     parsed = urllib.parse.urlsplit(url or '')
-    if parsed.scheme != 'https' or parsed.hostname not in {'crests.football-data.org', 'upload.wikimedia.org'}:
+    if parsed.scheme != 'https' or parsed.hostname not in {'crests.football-data.org', 'upload.wikimedia.org','img.uefa.com'}:
         return None
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'TKDaily/1.0'})
         with urllib.request.urlopen(req, timeout=10) as response:
             final = urllib.parse.urlsplit(response.url)
-            if final.scheme != 'https' or final.hostname not in {'crests.football-data.org', 'upload.wikimedia.org'}:
+            if final.scheme != 'https' or final.hostname not in {'crests.football-data.org', 'upload.wikimedia.org','img.uefa.com'}:
                 return None
             data = response.read(2_000_001)
         if len(data) > 2_000_000:
@@ -186,7 +186,8 @@ def football(hero, entry, c):
         draw.text((466,64),'TK',font=font(67),fill=GOLD)
         if entry.get('demo'):
             text(draw, 'معاينة فقط • المباريات والمواعيد تجريبية', (85,222,910,65),size=30,color=WHITE,max_lines=1)
-        text(draw, 'مباريات الغد', (90,294,900,170),size=100,color=WHITE,max_lines=1,weight=850,stroke=3)
+        heading='مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
+        text(draw, heading, (90,294,900,170),size=100,color=WHITE,max_lines=1,weight=850,stroke=3)
         text(draw, 'بتوقيت ألمانيا ومكة المكرمة', (100,450,880,90),size=39,max_lines=1)
         day = datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
         panel_draw.rounded_rectangle((185,550,895,634),radius=18,fill=(0,0,0,215),outline=GOLD,width=2)
@@ -231,7 +232,8 @@ def football(hero, entry, c):
         text(draw,c.get('brand_name','TK SERVERS'),(90,1614,900,80),size=45,color=GOLD,max_lines=1)
         signature = c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
         text(draw,signature,(85,1698,915,63),size=28,max_lines=1)
-        note = 'معاينة تصميم • ليست مباريات مؤكدة' if entry.get('demo') else 'المواعيد: football-data.org • قابلة للتغيير • الخلفية مولّدة بالذكاء الاصطناعي'
+        sources=' / '.join(schedule.get('sources',['football-data.org']))
+        note = 'معاينة تصميم • ليست مباريات مؤكدة' if entry.get('demo') else f'المواعيد: {sources} • قابلة للتغيير • الخلفية مولّدة بالذكاء الاصطناعي'
         text(draw,note,(70,1845,940,45),size=20,max_lines=1)
         result.append(encode(image))
     return result

@@ -100,6 +100,9 @@ class Publisher:
         entry = entries.get(key)
         if entry and entry["status"] in ("submitting", "uncertain", "blocked", "rejected"):
             raise RuntimeError("This date is blocked; never resubmit it blindly")
+        if not entry and self.c.get('content_mode')=='football' and self.c.get('skip_empty_football',True):
+            if not self.football.tomorrow(day)['matches']:
+                return 'No fixtures found in the configured sources; skipped without publishing an empty card'
         if not entry:
             entry = entries[key] = {"day": day, "channel": self.buffer.channel, "due_at": utc_text(slot),
                                     "status": "planned", "created_at": utc_text(now), "image_attempts": 0}
@@ -115,6 +118,8 @@ class Publisher:
             generated = None
             if self.c.get("content_mode") in ("auto", "football"):
                 schedule = self.football.tomorrow(day)
+                if self.c.get('content_mode')=='football' and self.c.get('skip_empty_football',True) and not schedule['matches']:
+                    return 'No fixtures found; no empty card was submitted'
                 # Only a successful empty response authorizes the cinema fallback.
                 if schedule["matches"] or self.c.get('content_mode') == 'football':
                     generated = football_content(schedule, self.c)
@@ -186,7 +191,7 @@ class Publisher:
         if entry["status"] == "image_ready":
             if entry.get("post_kind") == "football":
                 latest = self.football.tomorrow(day)
-                if not latest["matches"] and self.c.get('content_mode') != 'football':
+                if not latest["matches"] and (self.c.get('content_mode') != 'football' or self.c.get('skip_empty_football',True)):
                     raise RuntimeError("Fixtures were cancelled after preparation; review before publishing")
                 changed = latest["matches"] != entry["fixture_schedule"]["matches"]
                 entry.update(football_content(latest, self.c))

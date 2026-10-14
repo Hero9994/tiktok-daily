@@ -129,8 +129,12 @@ def main():
         football_key, = secrets("FOOTBALL_DATA_API_KEY")
         day = datetime.now(timezone.utc).astimezone(ZoneInfo(c["timezone"])).date().isoformat()
         schedule = Football(http, c, token=football_key).tomorrow(day)
+        today=Football(http,dict(c,fixture_day='today'),token=football_key).tomorrow(day)
+        tomorrow=Football(http,dict(c,fixture_day='tomorrow'),token=football_key).tomorrow(day)
         print(json.dumps({"football_api_verified": True, "tomorrow_date": schedule["date"],
             "confirmed_match_count": len(schedule["matches"]), "source": schedule["source_url"],
+            "sources":schedule.get('sources'),"today":{"date":today['date'],'matches':len(today['matches'])},
+            "tomorrow":{"date":tomorrow['date'],'matches':len(tomorrow['matches'])},
             "openai_key_present": bool(os.environ.get("OPENAI_API_KEY")),
             "publishing_enabled": c["enabled"]}, ensure_ascii=False, indent=2))
         return

@@ -21,7 +21,7 @@ NOW = datetime(2026, 10, 13, 9, 0, tzinfo=timezone.utc)
 
 def config():
     c = load_config(ROOT / "config.json")
-    c.update(enabled=True, allow_paid_openai=True, video_enabled=False, daily_posts=None, content_mode="art", card_style="simple", fixed_caption=None,
+    c.update(enabled=True, allow_paid_openai=True, video_enabled=False, daily_posts=None, uefa_competitions=[], content_mode="art", card_style="simple", fixed_caption=None,
              publish_time="19:30", timezone="Asia/Riyadh", prepare_lead_minutes=60,
              hashtag_pool=["#فن", "#تصميم", "#خيال", "#طبيعة", "#هدوء", "#إبداع", "#مناظر"], fixed_hashtags=[])
     return c
