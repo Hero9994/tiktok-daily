@@ -940,7 +940,18 @@
       "attempted_at": "2026-10-14T19:15:31.665534Z",
       "post_id": "6acfd54dedcab17b81297b33",
       "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-14T19:41:08.909159Z"
+      "last_checked_at": "2026-10-14T19:41:08.909159Z",
+      "layout_refresh": {
+        "status": "ready",
+        "video_file": "2026-10-15-layout-615f1e8f7ddf.mp4",
+        "video_sha256": "615f1e8f7ddf468a28c4d20dcdd956a79d149df5ded6beaf1987bc61f074bef6",
+        "image_assets": [
+          {
+            "file": "2026-10-15-layout-110869bef076.jpg",
+            "sha256": "110869bef0767920c37052f9ede3e8647af5a8390579ca12c506a6fe7ecfb2b4"
+          }
+        ]
+      }
     }
   },
   "image_requests": {
