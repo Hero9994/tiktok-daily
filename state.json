@@ -846,7 +846,7 @@
       "day": "2026-10-15",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-15T16:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-14T19:16:58.441526Z",
       "image_attempts": 1,
       "idea": "A visual metaphor for humanity searching the stars for a home as its world fades.",
@@ -916,7 +916,17 @@
         "tvmaze_url": null
       },
       "watch_reason": "قد يعجب محبي دراما الخيال العلمي الملحمية ورحلات البحث عن موطن جديد.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-15-7253d7bdf3-art.jpg",
+      "image_file": "2026-10-15-7253d7bdf3-1.jpg",
+      "image_sha256": "b85b84676f3dcc35d2426124f42a4c32528b3ef3712c606e650508570ad83461",
+      "image_dhash": "17a8a8148cae8e01",
+      "image_assets": [
+        {
+          "file": "2026-10-15-7253d7bdf3-1.jpg",
+          "sha256": "b85b84676f3dcc35d2426124f42a4c32528b3ef3712c606e650508570ad83461"
+        }
+      ]
     }
   },
   "image_requests": {
