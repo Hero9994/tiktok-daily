@@ -942,7 +942,7 @@
       "buffer_status": "scheduled",
       "last_checked_at": "2026-10-14T19:41:08.909159Z",
       "layout_refresh": {
-        "status": "ready",
+        "status": "editing",
         "video_file": "2026-10-15-layout-615f1e8f7ddf.mp4",
         "video_sha256": "615f1e8f7ddf468a28c4d20dcdd956a79d149df5ded6beaf1987bc61f074bef6",
         "image_assets": [
