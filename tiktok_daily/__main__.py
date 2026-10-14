@@ -49,10 +49,11 @@ def activate_verified_schedule(store, config_path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test"])
+    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test", "publish-correction"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument('--track',choices=['football','cinema'],default=os.environ.get('POST_KIND') or 'cinema')
+    parser.add_argument('--correction-id',default='')
     args = parser.parse_args()
     c = load_config(args.config)
     http = HTTP()
@@ -144,7 +145,7 @@ def main():
     if args.mode == "prepare" and os.environ.get("EVENT_SCHEDULE") and not c.get("daily_enabled", True):
         print("Daily generation disabled while the first publishing test is verified")
         return
-    if args.mode in ('prepare','publish-test') and c.get('daily_posts'):
+    if args.mode in ('prepare','publish-test','publish-correction') and c.get('daily_posts'):
         c = track_config(c,args.track)
     buffer_key, = secrets("BUFFER_API_KEY")
     org = os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")
@@ -196,15 +197,17 @@ def main():
                               for e in list(store.state["entries"].values())[-3:]], ensure_ascii=False, indent=2))
             activate_verified_schedule(store, args.config)
         else:
-            publish_now = args.mode == "publish-test"
-            if publish_now:
+            publish_now = args.mode in ("publish-test","publish-correction")
+            if args.mode=='publish-correction' and not args.correction_id:
+                raise RuntimeError('An approved correction ID is required')
+            if publish_now and args.mode!='publish-correction':
                 local = datetime.now(timezone.utc).astimezone(ZoneInfo(c["timezone"]))
                 if not 12 <= local.hour < 20:
                     # Respect the user's publication window even during a live test.
                     c["publish_time"] = "12:05"
                     publish_now = False
                     print("Live test will be scheduled at the next valid 12:05 local publishing slot")
-            print(publisher.prepare(publish_now=publish_now))
+            print(publisher.prepare(publish_now=publish_now,correction_id=args.correction_id if args.mode=='publish-correction' else None))
     finally:
         store.close()
 

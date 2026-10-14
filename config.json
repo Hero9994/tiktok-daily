@@ -72,5 +72,11 @@
     "ECL"
   ],
   "skip_empty_football": true,
-  "fixture_day": "tomorrow"
+  "fixture_day": "tomorrow",
+  "approved_corrections": {
+    "uefa-coverage-2026-10-14": {
+      "day": "2026-10-14",
+      "track": "football"
+    }
+  }
 }

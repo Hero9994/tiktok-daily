@@ -95,6 +95,8 @@ def football_content(schedule, c):
     description = (f"مباريات {day_label} {date}: {len(matches)} مواجهة ضمن {leagues}. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب {sources} وقابلة للتغيير."
                    if matches else f"تحديث رياضي لغد {date}: لا يعرض football-data.org مباريات مؤكدة ضمن البطولات الثماني المتابعة حاليًا. هذا لا يعني عدم وجود مباريات في بطولات أخرى. تابعنا لتحديث الغد.")
     tags = ['#مباريات_'+day_label, "#كرة_القدم"] + [COMPETITIONS[x][1] for x in codes] + ["#TK_Servers"]
+    if c.get('correction_notice'):
+        description=c['correction_notice']+'\n\n'+description
     sports_c = dict(c, hashtag_pool=list(dict.fromkeys(tags)), fixed_hashtags=[])
     # Ensure a sports-only pool of at least five relevant tags.
     sports_c["hashtag_pool"] = list(dict.fromkeys(tags + ["#مباريات", "#كرة_قدم", "#رياضة"]))

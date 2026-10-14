@@ -186,6 +186,8 @@ def football(hero, entry, c):
         draw.text((466,64),'TK',font=font(67),fill=GOLD)
         if entry.get('demo'):
             text(draw, 'معاينة فقط • المباريات والمواعيد تجريبية', (85,222,910,65),size=30,color=WHITE,max_lines=1)
+        elif c.get('correction_notice'):
+            text(draw,'تصحيح جدول المباريات',(85,222,910,65),size=30,color=WHITE,max_lines=1)
         heading='مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
         text(draw, heading, (90,294,900,170),size=100,color=WHITE,max_lines=1,weight=850,stroke=3)
         text(draw, 'بتوقيت ألمانيا ومكة المكرمة', (100,450,880,90),size=39,max_lines=1)

@@ -15,7 +15,11 @@ on:
         description: 'doctor/discover/check-openai/check-football are read-only; publish-test publishes ONE real post now and uses OpenAI credit'
         type: choice
         default: doctor
-        options: [doctor, discover, inspect-buffer, check-openai, check-football, prepare, verify, wait-first, publish-test]
+        options: [doctor, discover, inspect-buffer, check-openai, check-football, prepare, verify, wait-first, publish-test, publish-correction]
+      correction_id:
+        description: 'Explicitly approved one-off correction ID (publish-correction only)'
+        type: string
+        default: ''
       track:
         description: 'Daily content/music track'
         type: choice
@@ -45,12 +49,13 @@ jobs:
       - name: Install dependency
         run: python -m pip install --disable-pip-version-check -r requirements.txt
       - name: Ensure video encoder
-        if: inputs.mode == 'prepare' || inputs.mode == 'publish-test' || github.event.schedule == '7 15 * * *' || github.event.schedule == '7 17 * * *'
+        if: inputs.mode == 'prepare' || inputs.mode == 'publish-test' || inputs.mode == 'publish-correction' || github.event.schedule == '7 15 * * *' || github.event.schedule == '7 17 * * *'
         run: command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - name: Run publisher
         env:
           MODE_INPUT: ${{ inputs.mode }}
           TRACK_INPUT: ${{ inputs.track }}
+          CORRECTION_INPUT: ${{ inputs.correction_id }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
@@ -64,7 +69,7 @@ jobs:
           track="${TRACK_INPUT:-cinema}"
           if [ "$EVENT_SCHEDULE" = '7 15 * * *' ]; then mode=prepare; track=football; fi
           if [ "$EVENT_SCHEDULE" = '7 17 * * *' ]; then mode=prepare; track=cinema; fi
-          python -m tiktok_daily "$mode" --track "$track"
+          python -m tiktok_daily "$mode" --track "$track" --correction-id "${CORRECTION_INPUT:-}"
       - name: Alert on failure
         if: failure()
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
