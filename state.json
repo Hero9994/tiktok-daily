@@ -5,7 +5,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T10:05:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-14T09:34:17.731427Z",
       "image_attempts": 1,
       "idea": "A visual metaphor for communication across the unknown: a quiet, luminous threshold between human language and the vastness of space.",
@@ -23,7 +23,17 @@
       "subject_id": "wikipedia-en:43991244",
       "subject_title": "Arrival (film)",
       "summary": "دراما خيال علمي عن خبيرة لغويات تستعين بها القوات الأمريكية للتواصل مع كائنات فضائية وصلت إلى الأرض، قبل أن تتصاعد التوترات.",
-      "source_url": "https://en.wikipedia.org/wiki/Arrival_(film)"
+      "source_url": "https://en.wikipedia.org/wiki/Arrival_(film)",
+      "hero_file": "2026-10-14-8c86d94a7f-art.jpg",
+      "image_file": "2026-10-14-8c86d94a7f-1.jpg",
+      "image_sha256": "2a252b05ea0bf3f32a5f551c5dd0ea2afbf542d8c3f555fbe633b5a3a5feed58",
+      "image_dhash": "8381c09cc0c0c031",
+      "image_assets": [
+        {
+          "file": "2026-10-14-8c86d94a7f-1.jpg",
+          "sha256": "2a252b05ea0bf3f32a5f551c5dd0ea2afbf542d8c3f555fbe633b5a3a5feed58"
+        }
+      ]
     }
   },
   "image_requests": {
