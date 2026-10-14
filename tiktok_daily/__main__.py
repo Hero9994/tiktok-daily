@@ -185,7 +185,7 @@ def main():
                     time.sleep(min(60, max(0, (due - datetime.now(timezone.utc)).total_seconds())))
                 while True:
                     publisher.verify()
-                    if all(e.get("status") == "sent" for e in store.state["entries"].values()):
+                    if all(e.get("status") == "sent" for e in candidates):
                         break
                     if datetime.now(timezone.utc) >= deadline:
                         raise RuntimeError("Publication remains unconfirmed; verification never creates another post")
