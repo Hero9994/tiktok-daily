@@ -5,7 +5,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T10:05:00Z",
-      "status": "image_ready",
+      "status": "submitting",
       "created_at": "2026-10-14T09:34:17.731427Z",
       "image_attempts": 1,
       "idea": "A visual metaphor for communication across the unknown: a quiet, luminous threshold between human language and the vastness of space.",
@@ -37,7 +37,8 @@
       "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/54aa59bdbd86b998c593c6852e4ad5538314faf4/images/2026-10-14-8c86d94a7f-1.jpg",
       "image_urls": [
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/54aa59bdbd86b998c593c6852e4ad5538314faf4/images/2026-10-14-8c86d94a7f-1.jpg"
-      ]
+      ],
+      "attempted_at": "2026-10-14T09:32:54.692784Z"
     }
   },
   "image_requests": {
