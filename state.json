@@ -926,6 +926,10 @@
           "file": "2026-10-15-7253d7bdf3-1.jpg",
           "sha256": "b85b84676f3dcc35d2426124f42a4c32528b3ef3712c606e650508570ad83461"
         }
+      ],
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ec6e5eb5e6a905aea3daddf9978712a7e709e04b/images/2026-10-15-7253d7bdf3-1.jpg",
+      "image_urls": [
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ec6e5eb5e6a905aea3daddf9978712a7e709e04b/images/2026-10-15-7253d7bdf3-1.jpg"
       ]
     }
   },
