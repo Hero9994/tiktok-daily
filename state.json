@@ -218,7 +218,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T18:25:52.441298Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-10-14T18:25:52.441298Z",
       "image_attempts": 1,
       "correction_id": "uefa-coverage-2026-10-14",
@@ -835,7 +835,10 @@
       "music_file": "assets/audio/sports.m4a",
       "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ffd0fe91a2dfb2c87b615aa498b9d13d12c83c04/videos/2026-10-14-3fe7434996.mp4",
-      "attempted_at": "2026-10-14T18:27:56.300822Z"
+      "attempted_at": "2026-10-14T18:27:56.300822Z",
+      "post_id": "6acfca269b63fb37e458eb92",
+      "buffer_status": "sending",
+      "last_checked_at": "2026-10-14T18:30:08.524338Z"
     }
   },
   "image_requests": {
