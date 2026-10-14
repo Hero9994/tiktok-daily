@@ -21,3 +21,10 @@ Cinema redesign: sourced poster, factual metadata and actor portraits.
 TVmaze match requires the exact sourced IMDb ID; rating labeled TVmaze.
 Reference poster path makes zero paid image calls and does not duplicate posts.
 No additional TikTok post was created for the redesign.
+
+Latest video suite: 59 tests passed locally and in CI.
+CI: https://github.com/Hero9994/tiktok-daily/actions/runs/38568125513
+Live music video: sent at 2026-10-14T12:55:47.577Z.
+URL: https://www.tiktok.com/@tk.player7/video/7696506064065400096
+Daily tracks: football 16:00 / cinema 18:00 Europe/Berlin.
+Audio: first 20 seconds of sports Move It Fast / cinema Five-Note Motif.
