@@ -59,6 +59,7 @@ def main():
     if args.mode == "doctor":
         report = {"config_valid": True, "enabled": c["enabled"], "allow_paid_openai": c["allow_paid_openai"],
                   "daily_enabled": c.get("daily_enabled", True),
+                  "video_enabled": c.get('video_enabled',False), "daily_posts": c.get('daily_posts'),
                   "content_mode": c.get("content_mode", "art"), "caption_suffix_ready": bool(c.get("caption_suffix")),
                   "channel_configured": bool((os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")) and
                                              (os.environ.get("BUFFER_CHANNEL_ID") or c.get("buffer_channel_id"))),
@@ -171,7 +172,7 @@ def main():
                 if not candidates:
                     raise RuntimeError("No accepted first post to wait for; this mode never creates a post")
                 due = max(datetime.fromisoformat(e["due_at"].replace("Z", "+00:00")) for e in candidates)
-                deadline = due + timedelta(minutes=10)
+                deadline = max(due,datetime.now(timezone.utc)) + timedelta(minutes=10)
                 if due - datetime.now(timezone.utc) > timedelta(minutes=35):
                     raise RuntimeError("Post is more than 35 minutes away; hourly verification will continue")
                 print("Waiting for accepted post delivery; no generation or publishing calls will be made", flush=True)
@@ -182,7 +183,7 @@ def main():
                     if all(e.get("status") == "sent" for e in store.state["entries"].values()):
                         break
                     if datetime.now(timezone.utc) >= deadline:
-                        raise RuntimeError("First publication remains unconfirmed; daily generation stays paused")
+                        raise RuntimeError("Publication remains unconfirmed; verification never creates another post")
                     time.sleep(30)
             publisher.verify()
             print("Verification finished; only status=sent is considered confirmed publication")

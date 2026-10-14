@@ -3,6 +3,7 @@ import os
 import re
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 
 
@@ -61,12 +62,21 @@ class GitStore(LocalStore):
         super().__init__(self.directory)
 
     def git(self, *args, directory=None):
-        result = subprocess.run(["git", "-C", str(directory or self.root), *args],
-                                capture_output=True, text=True, timeout=90)
-        if result.returncode:
-            # Git errors can contain auth URLs; never emit its stderr.
-            raise RuntimeError(f"Git operation {args[0]} failed; check branch permissions/remote")
-        return result.stdout
+        attempts = 3 if args[0]=='push' else 1
+        for attempt in range(attempts):
+            try:
+                result = subprocess.run(["git", "-C", str(directory or self.root), *args],
+                                        capture_output=True, text=True, timeout=90)
+            except subprocess.TimeoutExpired:
+                result = None
+            if result is not None and not result.returncode:
+                return result.stdout
+            stderr = result.stderr.lower() if result is not None else ''
+            permanent = any(s in stderr for s in ('non-fast-forward','permission denied','authentication failed','403','rejected'))
+            if permanent or attempt==attempts-1:
+                # Never print Git stderr: it can contain auth URLs.
+                raise RuntimeError(f"Git operation {args[0]} failed; check branch permissions/remote")
+            time.sleep(2**(attempt+1))
 
     def checkpoint(self):
         super().checkpoint()

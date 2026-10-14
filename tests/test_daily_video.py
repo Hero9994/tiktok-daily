@@ -12,6 +12,8 @@ from tiktok_daily.buffer import Buffer
 from tiktok_daily.config import load_config, track_config
 from tiktok_daily.runner import Publisher
 from tiktok_daily.video import make_video
+from tiktok_daily.storage import GitStore
+import subprocess
 from test_project import FakeHTTP, FakeOpenAI, FakeBuffer, MemoryStore, NOW
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -94,6 +96,24 @@ class DailyVideoTests(unittest.TestCase):
         c=copy.deepcopy(self.c);c['daily_posts'][0]['music_file']='assets/audio/cinema.m4a'
         p=Path(self.temp.name)/'bad-config.json';p.write_text(json.dumps(c))
         with self.assertRaises(ValueError):load_config(p)
+
+    def test_transport_failure_retries_the_same_git_push_without_force(self):
+        store=object.__new__(GitStore);store.root=ROOT
+        failed=subprocess.CompletedProcess([],1,'','remote transport disconnected')
+        success=subprocess.CompletedProcess([],0,'ok','')
+        with patch('tiktok_daily.storage.subprocess.run',side_effect=[failed,success]) as call, \
+             patch('tiktok_daily.storage.time.sleep'):
+            self.assertEqual(store.git('push','origin','HEAD:refs/heads/bot-state'),'ok')
+        self.assertEqual(call.call_args_list[0].args,call.call_args_list[1].args)
+        self.assertNotIn('--force',call.call_args.args[0])
+
+    def test_changed_remote_ref_stops_without_retry_or_force(self):
+        store=object.__new__(GitStore);store.root=ROOT
+        failed=subprocess.CompletedProcess([],1,'','rejected: non-fast-forward')
+        with patch('tiktok_daily.storage.subprocess.run',return_value=failed) as call, \
+             patch('tiktok_daily.storage.time.sleep') as sleep:
+            with self.assertRaises(RuntimeError):store.git('push','origin','HEAD:refs/heads/bot-state')
+        self.assertEqual(call.call_count,1);sleep.assert_not_called()
 
     @unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'),'FFmpeg required')
     def test_real_twenty_second_video_contains_every_card_and_audio(self):
