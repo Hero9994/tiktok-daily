@@ -954,6 +954,15 @@
         "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/d59c61a899796c4de7327f58451886a42f99813f/videos/2026-10-15-layout-615f1e8f7ddf.mp4"
       },
       "cinema_template": "cinema-reference-v2"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-14:cinema:preview:cinema-layout-2026-10-14": {
+      "day": "2026-10-14",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-14T20:32:43.452689Z",
+      "status": "planned",
+      "created_at": "2026-10-14T20:32:43.452689Z",
+      "image_attempts": 0,
+      "preview_id": "cinema-layout-2026-10-14"
     }
   },
   "image_requests": {
