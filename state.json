@@ -218,7 +218,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T18:25:52.441298Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-14T18:25:52.441298Z",
       "image_attempts": 1,
       "correction_id": "uefa-coverage-2026-10-14",
@@ -782,14 +782,44 @@
           }
         ],
         "date_mode": "tomorrow",
-        "checked_at": "2026-10-14T18:26:01.588724+00:00",
+        "checked_at": "2026-10-14T18:26:08.375737+00:00",
         "source_url": "https://www.football-data.org/",
         "sources": [
           "football-data.org",
           "UEFA.com"
         ]
       },
-      "source_url": "https://www.football-data.org/"
+      "source_url": "https://www.football-data.org/",
+      "hero_file": "2026-10-14-3fe7434996-art.jpg",
+      "image_file": "2026-10-14-3fe7434996-1.jpg",
+      "image_sha256": "5f14d014a5b203b5a5c9146a58f8151fb6bfc7fae346da020b72551742420918",
+      "image_dhash": "e4311b191921c693",
+      "image_assets": [
+        {
+          "file": "2026-10-14-3fe7434996-1.jpg",
+          "sha256": "5f14d014a5b203b5a5c9146a58f8151fb6bfc7fae346da020b72551742420918"
+        },
+        {
+          "file": "2026-10-14-3fe7434996-2.jpg",
+          "sha256": "2f20da9ca64d5d120672bed7c32bd52840c79995e84929c7286b527d7f53547e"
+        },
+        {
+          "file": "2026-10-14-3fe7434996-3.jpg",
+          "sha256": "2008dcbe2fdfd48c8af703cdf2a8308146a4cf76a4e6ac6f96daff4443461d43"
+        },
+        {
+          "file": "2026-10-14-3fe7434996-4.jpg",
+          "sha256": "9dde418c4cdabcc4ed517f0dd796612ae0e639446d1eac46b1d6f36e22e813cb"
+        },
+        {
+          "file": "2026-10-14-3fe7434996-5.jpg",
+          "sha256": "256784754e8a59b332b99485afa9fa9e811b2f825c38d2e8ab05415aa8f6f0ec"
+        },
+        {
+          "file": "2026-10-14-3fe7434996-6.jpg",
+          "sha256": "685f484d3d8a77d77b098fca90de815674c9189e15971535cd464af5ce63fb34"
+        }
+      ]
     }
   },
   "image_requests": {
