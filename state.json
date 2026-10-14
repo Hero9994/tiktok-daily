@@ -846,7 +846,7 @@
       "day": "2026-10-15",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-15T16:00:00Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-10-14T19:16:58.441526Z",
       "image_attempts": 1,
       "idea": "A visual metaphor for humanity searching the stars for a home as its world fades.",
@@ -937,7 +937,10 @@
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/39beb5fcc9c8fb23a524dfb52273f9a38e1b378e/videos/2026-10-15-7253d7bdf3.mp4",
-      "attempted_at": "2026-10-14T19:15:31.665534Z"
+      "attempted_at": "2026-10-14T19:15:31.665534Z",
+      "post_id": "6acfd54dedcab17b81297b33",
+      "buffer_status": "scheduled",
+      "last_checked_at": "2026-10-14T19:17:33.447724Z"
     }
   },
   "image_requests": {
