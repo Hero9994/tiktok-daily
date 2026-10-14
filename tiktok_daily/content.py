@@ -8,6 +8,7 @@ import urllib.parse
 from pathlib import Path
 from PIL import Image, ImageOps, ImageDraw, ImageFont, features
 from .config import DISCLOSURE, STYLES
+from .cinema_media import enrich
 
 
 def normalize(text):
@@ -207,15 +208,23 @@ class OpenAI:
             "without official poster copies, actor likenesses, people, logos, recognizable copyrighted characters, violence or text. "
             "hashtags: choose five from supplied pool. safe_fictional_art: true only if the illustration is safe fictional art. "
             "Prefer cinema/series hashtags, not football hashtags. Do not include advertising or the configured brand signature in your description. "
+            "watch_reason: Arabic sentence under 100 characters explaining who may enjoy this work, based only on its sourced genre or premise. "
             "Keep image focal elements within the upper 65% and central 80% for an Arabic information panel below.",
             {"source_title": source["title"], "extract": extract[:5000], "hashtag_pool": self.c["hashtag_pool"]},
-            {**{k: {"type": "string"} for k in ("idea", "prompt", "title", "description")},
+            {**{k: {"type": "string"} for k in ("idea", "prompt", "title", "description", "watch_reason")},
              "hashtags": {"type": "array", "items": {"type": "string"}}, "safe_fictional_art": {"type": "boolean"}}, "cinema_card")
         if len(raw.get("description", "")) > 220:
             raise ValueError("Synopsis exceeds the cinema card limit")
         content = finalize_content(raw, self.c, previous)
         content.update(subject_id=subject_id, subject_title=source["title"], summary=raw["description"].strip(),
                        source_url=source.get("content_urls", {}).get("desktop", {}).get("page"))
+        content.update(enrich(self.http, source))
+        reason = raw.get('watch_reason', '')
+        if reason and (len(reason) > 100 or not re.search(r'[\u0600-\u06ff]', reason) or '#' in reason):
+            raise ValueError('Invalid sourced watch recommendation')
+        content['watch_reason'] = reason
+        if content.get('cinema_details', {}).get('poster_url'):
+            content['caption'] = content['caption'].replace(DISCLOSURE, 'تصميم أُعد بمساعدة الذكاء الاصطناعي.', 1)
         return content
 
     def image(self, prompt):

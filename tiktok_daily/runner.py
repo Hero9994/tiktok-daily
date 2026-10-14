@@ -6,7 +6,8 @@ from .config import next_slot
 from .content import prepare_image, image_is_duplicate
 from .http import APIError
 from .football import Football, football_content
-from .cards import render
+from .cards import render, encode
+from .cinema_media import artwork
 
 
 def utc_text(now):
@@ -129,11 +130,13 @@ class Publisher:
         if entry["status"] == "content_ready":
             while entry["image_attempts"] < 3:
                 month = self.clock().strftime("%Y-%m")
-                self.consume("image_requests", month, self.c["max_image_requests_per_month"])
+                poster_url = entry.get('cinema_details', {}).get('poster_url') if self.c.get('card_style') == 'black_gold' else None
+                if not poster_url:
+                    self.consume("image_requests", month, self.c["max_image_requests_per_month"])
                 entry["image_attempts"] += 1
                 self.store.checkpoint()
                 try:
-                    image = self.generator.image(entry["prompt"])
+                    image = encode(artwork(poster_url)) if poster_url else self.generator.image(entry["prompt"])
                 except APIError as exc:
                     if exc.code in {"insufficient_quota", "invalid_api_key", "model_not_found", "billing_hard_limit_reached", "organization_not_verified", "unsupported_parameter"}:
                         raise
