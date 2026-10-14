@@ -1,6 +1,6 @@
 from .http import APIError
 
-FIELDS = "id text status dueAt sentAt externalLink schedulingType channelId metadata { ... on TiktokMetadata { title } } assets { ... on ImageAsset { source } }"
+FIELDS = "id text status dueAt sentAt externalLink schedulingType channelId metadata { __typename } assets { ... on ImageAsset { source } }"
 
 
 class Buffer:
@@ -12,7 +12,10 @@ class Buffer:
                                 self.token, safe_retry=not mutation)
         if result.get("errors") or not isinstance(result.get("data"), dict):
             # A GraphQL mutation error does not necessarily prove no write happened.
-            raise APIError("Buffer GraphQL", uncertain=mutation)
+            errors = result.get("errors") or []
+            validation_only = bool(errors) and all(e.get("extensions", {}).get("code") == "GRAPHQL_VALIDATION_FAILED" for e in errors)
+            raise APIError("Buffer GraphQL", uncertain=mutation and not validation_only,
+                           code="GRAPHQL_VALIDATION_FAILED" if validation_only else None)
         return result["data"]
 
     def discover(self):
@@ -34,7 +37,7 @@ class Buffer:
             raise RuntimeError("TikTok channel is disconnected, locked, or paused")
 
     def inspect(self, entries):
-        schema_query = 'query { postType: __type(name: "Post") { name fields { name } } tiktokType: __type(name: "TiktokMetadata") { name fields { name } } createInput: __type(name: "CreatePostInput") { name inputFields { name } } }'
+        schema_query = 'query { postType: __type(name: "Post") { name fields { name } } tiktokType: __type(name: "TiktokMetadata") { name fields { name } } createInput: __type(name: "CreatePostInput") { name inputFields { name } } metadataInput: __type(name: "PostInputMetaData") { inputFields { name type { name ofType { name } } } } tiktokInput: __type(name: "TikTokPostMetadataInput") { name inputFields { name } } }'
         schema = self.http.json("https://api.buffer.com", {"query": schema_query}, self.token, safe_retry=True)
         pending = [e for e in entries if e.get("status") in ("submitting", "uncertain", "accepted", "blocked")]
         basic = "id text status dueAt channelId schedulingType sentAt externalLink metadata { __typename } assets { ... on ImageAsset { source } }"
@@ -71,9 +74,10 @@ class Buffer:
                 "filter": {"channelIds": [self.channel], "createdAt": {"start": entry["attempted_at"]}}}, "after": after})["posts"]
             for edge in result["edges"]:
                 post = edge["node"]
-                # Exact caption includes mandatory disclosure; URL is secondary evidence.
+                sources = {asset.get("source") for asset in post.get("assets", [])}
+                expected = set(entry.get("image_urls", [])) | {entry.get("image_url")}
                 if (post["text"] == entry["caption"] and post["channelId"] == self.channel
-                        and (post.get("metadata") or {}).get("title") == entry["title"]):
+                        and bool((sources - {None}) & (expected - {None}))):
                     matches.append(post)
             page = result["pageInfo"]
             if not page["hasNextPage"]:
@@ -98,5 +102,9 @@ class Buffer:
         result = self.query(f"mutation($input: CreatePostInput!) {{ createPost(input: $input) {{ __typename ... on PostActionSuccess {{ post {{ {FIELDS} }} }} ... on MutationError {{ message }} }} }}",
                             {"input": input_value}, mutation=True)["createPost"]
         if not result.get("post"):
+            # A typed validation message is safe after removing the bearer value;
+            # never emit response bodies or HTTP headers.
+            message = str(result.get("message", "Rejected without a reason"))[:400].replace(self.token, "[REDACTED]")
+            print("Buffer rejected post: " + message)
             raise APIError("Buffer typed mutation rejection", 400, uncertain=False)
         return result["post"]

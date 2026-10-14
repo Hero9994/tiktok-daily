@@ -311,12 +311,12 @@ class BufferTests(unittest.TestCase):
         self.assertFalse(ctx.exception.uncertain)
 
     def test_reconciliation_paginates(self):
-        post = {"id": "p", "text": "caption", "channelId": "ch", "metadata": {"title": "test film"}}
+        post = {"id": "p", "text": "caption", "channelId": "ch", "assets": [{"source": "https://example.test/photo.jpg"}]}
         http = FakeHTTP([
             {"data": {"posts": {"edges": [], "pageInfo": {"hasNextPage": True, "endCursor": "cursor-1"}}}},
             {"data": {"posts": {"edges": [{"node": post}], "pageInfo": {"hasNextPage": False, "endCursor": None}}}},
         ])
-        self.assertEqual(Buffer(http, "key", "org", "ch").reconcile({"caption": "caption", "title": "test film", "attempted_at": "2026-10-13T08:58:00Z"}), post)
+        self.assertEqual(Buffer(http, "key", "org", "ch").reconcile({"caption": "caption", "image_url": "https://example.test/photo.jpg", "attempted_at": "2026-10-13T08:58:00Z"}), post)
         self.assertEqual(http.calls[1][1]["variables"]["after"], "cursor-1")
 
     def test_disconnected_channel_is_blocked(self):
