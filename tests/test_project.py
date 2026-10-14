@@ -110,9 +110,17 @@ class FakeHTTP:
 
 
 class ContentTests(unittest.TestCase):
-    def test_daily_automation_is_disabled_until_live_test_confirmed(self):
-        c = load_config(ROOT / "config.json")
-        self.assertFalse(c["daily_enabled"])
+    def test_scheduled_generation_can_be_paused_without_disabling_verification(self):
+        from tiktok_daily.__main__ import main
+        import os
+        c = config(); c.update(enabled=True, daily_enabled=False)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"; path.write_text(json.dumps(c))
+            with patch("sys.argv", ["tiktok_daily", "prepare", "--config", str(path)]), \
+                    patch.dict(os.environ, {"EVENT_SCHEDULE": "7 17 * * *"}), \
+                    patch("tiktok_daily.http.HTTP.json", side_effect=AssertionError("No remote request allowed")), \
+                    patch("builtins.print"):
+                main()
 
     def test_invalid_config(self):
         c = config(); c["publish_time"] = "25:00"
