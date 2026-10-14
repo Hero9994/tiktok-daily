@@ -31,6 +31,8 @@ def load_config(path):
     suffix = c.get("caption_suffix", "")
     if not isinstance(suffix, str) or len(suffix) > 500 or "#" in suffix:
         raise ValueError("caption_suffix must be text under 500 characters without hashtags")
+    if c.get("football_background") not in (None, "assets/football-stadium.jpg"):
+        raise ValueError("Choose the bundled football background or null")
     if c.get("card_style", "simple") not in ("simple", "black_gold"):
         raise ValueError("Invalid card_style")
     if not isinstance(c.get("brand_name", "TK SERVERS"), str) or len(c.get("brand_name", "")) > 60:

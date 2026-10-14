@@ -1,3 +1,4 @@
+from pathlib import Path
 import hashlib
 import time
 from datetime import datetime, timedelta, timezone
@@ -131,12 +132,14 @@ class Publisher:
             while entry["image_attempts"] < 3:
                 month = self.clock().strftime("%Y-%m")
                 poster_url = entry.get('cinema_details', {}).get('poster_url') if self.c.get('card_style') == 'black_gold' else None
-                if not poster_url:
+                stadium = self.c.get("football_background") if entry.get("post_kind") == "football" else None
+                if not poster_url and not stadium:
                     self.consume("image_requests", month, self.c["max_image_requests_per_month"])
                 entry["image_attempts"] += 1
                 self.store.checkpoint()
                 try:
-                    image = encode(artwork(poster_url)) if poster_url else self.generator.image(entry["prompt"])
+                    image = ((Path(__file__).resolve().parents[1] / stadium).read_bytes() if stadium else
+                             encode(artwork(poster_url)) if poster_url else self.generator.image(entry["prompt"]))
                 except APIError as exc:
                     if exc.code in {"insufficient_quota", "invalid_api_key", "model_not_found", "billing_hard_limit_reached", "organization_not_verified", "unsupported_parameter"}:
                         raise

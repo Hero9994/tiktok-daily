@@ -51,5 +51,6 @@
   "max_image_requests_per_month": 31,
   "max_text_requests_per_day": 3,
   "verification_grace_minutes": 90,
-  "state_branch": "bot-state"
+  "state_branch": "bot-state",
+  "football_background": "assets/football-stadium.jpg"
 }

@@ -13,17 +13,28 @@ from .cinema_media import artwork
 GOLD, WHITE, PANEL = "#d9ac57", "#f8f5eb", "#0c1016"
 
 
-def font(size):
+def font(size, weight=400):
     if not features.check_feature("raqm"):
         raise RuntimeError("Arabic card rendering requires Pillow RAQM")
-    return ImageFont.truetype(str(Path(__file__).resolve().parents[1] / "fonts/NotoSansArabic.ttf"), size)
+    face = ImageFont.truetype(str(Path(__file__).resolve().parents[1] / "fonts/NotoSansArabic.ttf"), size)
+    if weight != 400:
+        try:
+            axes = face.get_variation_axes()
+            settings = [a['default'] for a in axes]
+            for i, axis in enumerate(axes):
+                if axis['name'] == b'Weight':
+                    settings[i] = weight
+            face.set_variation_by_axes(settings)
+        except OSError:
+            pass
+    return face
 
 
-def text(draw, value, box, size=40, color=WHITE, max_lines=4):
+def text(draw, value, box, size=40, color=WHITE, max_lines=4, weight=400, stroke=0):
     x, y, width, height = box
     direction = 'rtl' if re.search(r'[\u0600-\u06ff]', str(value)) else 'ltr'
     for trial in range(size, 19, -2):
-        face, lines, current = font(trial), [], ""
+        face, lines, current = font(trial, weight), [], ""
         for word in str(value).split():
             candidate = (current + " " + word).strip()
             if draw.textlength(candidate, font=face, direction=direction, language="ar") > width and current:
@@ -35,7 +46,7 @@ def text(draw, value, box, size=40, color=WHITE, max_lines=4):
         step = int(trial * 1.8)
         if len(lines) <= max_lines and len(lines) * step <= height and all(draw.textlength(line, font=face, direction=direction, language="ar") <= width for line in lines):
             for i, line in enumerate(lines):
-                draw.text((x + width, y + i * step), line, font=face, fill=color, anchor="ra", direction=direction, language="ar")
+                draw.text((x + width, y + i * step), line, font=face, fill=color, anchor="ra", direction=direction, language="ar", stroke_width=stroke, stroke_fill='#080a0d')
             return
     raise ValueError("Card text does not fit; refusing to clip factual content")
 
@@ -164,48 +175,57 @@ def football(hero, entry, c):
         raise RuntimeError("Fixture schedule exceeds Buffer's 10-photo carousel capacity; do not silently omit matches")
     result = []
     for index in range(pages):
-        image, draw = canvas()
-        draw.rectangle((440, 35, 640, 200), fill='#04070b')
-        draw.rounded_rectangle((55, 45, 174, 139), radius=18, outline=GOLD, width=3)
-        draw.text((74, 47), 'TK', font=font(48), fill=GOLD)
-        text(draw, 'جدول كرة القدم', (230, 57, 790, 75), size=38, color=GOLD, max_lines=1)
-        # One AI-generated stadium background is reused across all factual pages.
         with Image.open(io.BytesIO(hero)) as src:
-            banner = ImageOps.fit(src.convert("RGB"), (960, 230), method=Image.Resampling.LANCZOS)
-        image.paste(banner, (60, 215))
-        shade = Image.new('RGBA', (960,230), (0,0,0,145))
-        image.paste(shade, (60,215), shade)
-        text(draw, "مباريات الغد", (75, 225, 930, 155), size=92, color=GOLD, max_lines=1)
-        day = datetime.fromisoformat(schedule["date"]).strftime("%d/%m/%Y")
-        text(draw, f"{day}  |  ألمانيا ومكة  |  {index + 1}/{pages}", (70, 378, 940, 68), size=30, max_lines=1)
+            image = ImageOps.fit(src.convert('RGB'), (1080,1920), method=Image.Resampling.LANCZOS)
+        overlay = Image.new('RGBA', image.size)
+        panel_draw = ImageDraw.Draw(overlay)
+        draw = ImageDraw.Draw(image)
+        draw.rounded_rectangle((22,22,1058,1898), radius=24, outline=GOLD, width=2)
+        # A compact play-shaped TK mark preserves the illuminated stadium artwork.
+        draw.line([(444,58),(444,204),(621,130),(444,58)], fill=GOLD, width=6)
+        draw.text((466,64),'TK',font=font(67),fill=GOLD)
+        if entry.get('demo'):
+            text(draw, 'معاينة فقط • المباريات والمواعيد تجريبية', (85,222,910,65),size=30,color=WHITE,max_lines=1)
+        text(draw, 'مباريات الغد', (90,294,900,170),size=100,color=WHITE,max_lines=1,weight=850,stroke=3)
+        text(draw, 'بتوقيت ألمانيا ومكة المكرمة', (100,450,880,90),size=39,max_lines=1)
+        day = datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
+        panel_draw.rounded_rectangle((185,550,895,634),radius=18,fill=(0,0,0,215),outline=GOLD,width=2)
         page_matches = matches[index * 6:(index + 1) * 6]
-        row_height = 1180 // len(page_matches)
+        row_height = min(265, 880 // len(page_matches))
         for row, match in enumerate(page_matches):
-            top = 470 + row * row_height
-            draw.rounded_rectangle((55, top, 1025, top + row_height - 17), radius=20, fill=PANEL, outline=GOLD, width=2)
-            text(draw, match["competition"], (75, top + int(row_height * .05), 930, int(row_height * .22)), size=33 if row_height > 300 else 25, color=GOLD, max_lines=1)
-            badge_size = 83 if row_height > 300 else 43
-            badge_top = top + int(row_height * .25)
-            for field, left in [('away_crest', 93), ('home_crest', 902)]:
+            top = 690 + row * row_height
+            panel_draw.rounded_rectangle((55,top,1025,top+row_height-12),radius=17,fill=(4,9,13,218),outline=GOLD,width=2)
+        panel_draw.rounded_rectangle((55,1600,1025,1763),radius=18,fill=(0,0,0,160),outline=GOLD,width=2)
+        image = Image.alpha_composite(image.convert('RGBA'),overlay).convert('RGB')
+        draw = ImageDraw.Draw(image)
+        text(draw, f'{day}   |   {index+1}/{pages}', (205,562,670,68),size=36,max_lines=1)
+        for row, match in enumerate(page_matches):
+            top = 690 + row * row_height
+            compact = row_height < 210
+            text(draw, match['competition'], (80,top+5,920,44 if compact else 55),size=22 if compact else 29,color=GOLD,max_lines=1)
+            name_top = top + (45 if compact else 70)
+            name_height = 54 if compact else 92
+            badge_size = 43 if compact else 69
+            for field,left in [('away_crest',82),('home_crest',945)]:
                 badge = crest(match.get(field))
                 if badge is not None:
-                    badge = ImageOps.contain(badge, (badge_size,badge_size), method=Image.Resampling.LANCZOS)
-                    image.paste(badge, (left,badge_top), badge)
-            name_top = top + int(row_height * .47)
-            name_height = int(row_height * .22)
-            text(draw, match['away'], (75, name_top, 415, name_height), size=46 if row_height > 300 else 32, max_lines=1)
-            text(draw, match['home'], (575, name_top, 425, name_height), size=46 if row_height > 300 else 32, max_lines=1)
-            draw.rounded_rectangle((505, name_top, 565, name_top+50), radius=12, outline=GOLD, width=2)
-            draw.text((514,name_top+1), 'VS', font=font(25), fill=GOLD)
+                    badge = ImageOps.contain(badge,(badge_size,badge_size),method=Image.Resampling.LANCZOS)
+                    image.paste(badge,(left,name_top),badge)
+            text(draw, match['away'], (140,name_top,340,name_height),size=28 if compact else 43,max_lines=1)
+            text(draw, match['home'], (615,name_top,315,name_height),size=28 if compact else 43,max_lines=1)
+            draw.text((515,name_top+5),'VS',font=font(25 if compact else 32),fill=GOLD)
             germany = f"ألمانيا {match['germany_time']}"
             makkah = f"مكة {match['makkah_time']}"
-            if match["makkah_date"] != match["germany_date"]:
-                makkah += " (+1 يوم)"
-            text(draw, germany, (80, top + int(row_height * .73), 430, int(row_height * .24)), size=36 if row_height > 300 else 27, color=GOLD, max_lines=1)
-            text(draw, makkah, (560, top + int(row_height * .73), 440, int(row_height * .24)), size=36 if row_height > 300 else 27, color=GOLD, max_lines=1)
-        footer(draw, c, "معاينة فقط • الفرق والمواعيد تجريبية • غير معدّة للنشر" if entry.get('demo') else "المواعيد: football-data.org | قابلة للتغيير | الرسم الفني مولّد بالذكاء الاصطناعي")
-        if entry.get("demo"):
-            text(draw, "معاينة تصميم • ليست مباريات مؤكدة", (70, 150, 940, 55), size=30, color=GOLD, max_lines=1)
+            if match['makkah_date'] != match['germany_date']:
+                makkah += ' (+1 يوم)'
+            time_top = top + (100 if compact else 174)
+            text(draw,germany,(85,time_top,420,42 if compact else 73),size=22 if compact else 36,color=GOLD,max_lines=1)
+            text(draw,makkah,(575,time_top,420,42 if compact else 73),size=22 if compact else 36,color=GOLD,max_lines=1)
+        text(draw,c.get('brand_name','TK SERVERS'),(90,1614,900,80),size=45,color=GOLD,max_lines=1)
+        signature = c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
+        text(draw,signature,(85,1698,915,63),size=28,max_lines=1)
+        note = 'معاينة تصميم • ليست مباريات مؤكدة' if entry.get('demo') else 'المواعيد: football-data.org • قابلة للتغيير • الخلفية مولّدة بالذكاء الاصطناعي'
+        text(draw,note,(70,1845,940,45),size=20,max_lines=1)
         result.append(encode(image))
     return result
 

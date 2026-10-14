@@ -105,10 +105,13 @@ class RoutingTests(unittest.TestCase):
         self.publisher(Changing()).prepare()
         entry = next(iter(self.store.state["entries"].values()))
         self.assertEqual(entry["fixture_schedule"]["matches"][0]["germany_time"], "21:00")
-        self.assertEqual(self.generator.images, 1)
+        self.assertEqual(self.generator.images, 0)
+        self.assertEqual(self.store.state['image_requests'], {})
         self.assertEqual(self.generator.ideas, 0)
         self.assertEqual(self.buffer.creates, 1)
         self.assertEqual(len(entry["image_urls"]), 1)
+        self.publisher(Changing()).prepare()
+        self.assertEqual(self.buffer.creates, 1)
 
 
 if __name__ == "__main__": unittest.main()
