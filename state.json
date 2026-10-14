@@ -1054,7 +1054,8 @@
       "video_sha256": "7a2c618fa73e3030975988542f184eb4665879828c3a7042cc3b1c641d8b2390",
       "video_fingerprint": "ba98858828b744291bedadcfd7bdc3551364444daa7750f726c1f8ea122939ea",
       "music_file": "assets/audio/cinema.m4a",
-      "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd"
+      "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
+      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f7d28fac04a3543564327c12393d8aa2d20484c9/videos/2026-10-14-522b00fa5d.mp4"
     }
   },
   "image_requests": {
