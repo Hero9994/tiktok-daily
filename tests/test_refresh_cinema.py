@@ -14,7 +14,7 @@ class QueuedBuffer:
     channel='channel'
     def __init__(self):
         self.calls=0;self.uncertain=False
-        self.post={'id':'queued','channelId':self.channel,'status':'buffer','dueAt':(NOW+timedelta(days=1)).isoformat(),
+        self.post={'id':'queued','channelId':self.channel,'status':'scheduled','dueAt':(NOW+timedelta(days=1)).isoformat(),
                    'text':'caption','assets':[{'source':'https://example.test/old.mp4'}]}
     def get(self, post_id):return copy.deepcopy(self.post)
     def query(self, doc, variables, mutation=False):
@@ -54,6 +54,6 @@ class RefreshCinemaTests(unittest.TestCase):
     def test_sent_or_near_delivery_posts_are_never_edited(self):
         self.b.post['status']='sent'
         with self.assertRaises(RuntimeError):self.call()
-        self.b.post.update(status='buffer',dueAt=(NOW+timedelta(minutes=5)).isoformat())
+        self.b.post.update(status='scheduled',dueAt=(NOW+timedelta(minutes=5)).isoformat())
         with self.assertRaises(RuntimeError):self.call()
         self.assertEqual(self.b.calls,0)

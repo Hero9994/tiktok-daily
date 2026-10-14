@@ -19,7 +19,7 @@ def refresh(store, buffer, http, c, post_id, clock=lambda:datetime.now(timezone.
     if not entry or entry.get('post_kind')!='cinema' or entry['status']!='accepted':
         raise RuntimeError('Only an existing accepted cinema post can be refreshed')
     post=buffer.get(post_id)
-    if post['channelId']!=buffer.channel or post['status']!='buffer':
+    if post['channelId']!=buffer.channel or post['status']!='scheduled':
         raise RuntimeError('Post is no longer queued on the configured channel')
     if datetime.fromisoformat(post['dueAt'].replace('Z','+00:00')) < clock()+timedelta(minutes=15):
         raise RuntimeError('Queued post is too close to delivery to edit safely')
