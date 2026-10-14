@@ -34,9 +34,9 @@
           "sha256": "2a252b05ea0bf3f32a5f551c5dd0ea2afbf542d8c3f555fbe633b5a3a5feed58"
         }
       ],
-      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/54aa59bdbd86b998c593c6852e4ad5538314faf4/images/2026-10-14-8c86d94a7f-1.jpg",
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/290bcf37900e686e3c730960fdf8724b1a52a8b8/images/2026-10-14-8c86d94a7f-1.jpg",
       "image_urls": [
-        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/54aa59bdbd86b998c593c6852e4ad5538314faf4/images/2026-10-14-8c86d94a7f-1.jpg"
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/290bcf37900e686e3c730960fdf8724b1a52a8b8/images/2026-10-14-8c86d94a7f-1.jpg"
       ],
       "attempted_at": "2026-10-14T09:32:54.692784Z",
       "recovery_note": "Confirmed by live schema introspection: TiktokMetadata.title does not exist. The original GraphQL operation failed validation before execution. Two complete caption scans found no matching Buffer posts. Reusing the existing image; no regeneration.",
