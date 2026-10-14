@@ -170,7 +170,7 @@ def cinema(hero, entry, c):
 def football(hero, entry, c):
     schedule = entry["fixture_schedule"]
     matches = schedule["matches"]
-    pages = math.ceil(len(matches) / 6)
+    pages = max(1, math.ceil(len(matches) / 6))
     if not 1 <= pages <= 10:
         raise RuntimeError("Fixture schedule exceeds Buffer's 10-photo carousel capacity; do not silently omit matches")
     result = []
@@ -191,7 +191,9 @@ def football(hero, entry, c):
         day = datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
         panel_draw.rounded_rectangle((185,550,895,634),radius=18,fill=(0,0,0,215),outline=GOLD,width=2)
         page_matches = matches[index * 6:(index + 1) * 6]
-        row_height = min(265, 880 // len(page_matches))
+        row_height = min(265, 880 // max(1,len(page_matches)))
+        if not page_matches:
+            panel_draw.rounded_rectangle((55,690,1025,1470),radius=20,fill=(4,9,13,218),outline=GOLD,width=2)
         for row, match in enumerate(page_matches):
             top = 690 + row * row_height
             panel_draw.rounded_rectangle((55,top,1025,top+row_height-12),radius=17,fill=(4,9,13,218),outline=GOLD,width=2)
@@ -199,6 +201,11 @@ def football(hero, entry, c):
         image = Image.alpha_composite(image.convert('RGBA'),overlay).convert('RGB')
         draw = ImageDraw.Draw(image)
         text(draw, f'{day}   |   {index+1}/{pages}', (205,562,670,68),size=36,max_lines=1)
+        if not page_matches:
+            text(draw,'لا مباريات مؤكدة',(85,775,910,135),size=62,color=GOLD,max_lines=1,weight=750)
+            text(draw,'في البطولات المتابعة حسب المصدر حاليًا',(85,947,910,150),size=43,max_lines=2)
+            text(draw,'قد توجد مباريات في بطولات أخرى. نراجع الجدول يوميًا من football-data.org.',(85,1140,910,180),size=35,max_lines=3)
+            text(draw,'نعود غدًا بتحديث جديد',(85,1360,910,90),size=36,color=GOLD,max_lines=1)
         for row, match in enumerate(page_matches):
             top = 690 + row * row_height
             compact = row_height < 210

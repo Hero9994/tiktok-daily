@@ -23,8 +23,19 @@ def load_config(path):
         raise ValueError("daily_enabled must be a boolean")
     if type(c.get("activate_after_first_success", False)) is not bool:
         raise ValueError("activate_after_first_success must be a boolean")
-    if c.get("content_mode", "art") not in ("art", "cinema", "auto"):
-        raise ValueError("content_mode must be art, cinema or auto")
+    if c.get("content_mode", "art") not in ("art", "cinema", "auto", "football"):
+        raise ValueError("Invalid content_mode")
+    if type(c.get('video_enabled',False)) is not bool:
+        raise ValueError('video_enabled must be a boolean')
+    posts = c.get('daily_posts')
+    if posts is not None:
+        if not isinstance(posts,list) or len(posts)!=2 or {p.get('kind') for p in posts}!={'football','cinema'}:
+            raise ValueError('Configure exactly one sports and one cinema post')
+        for post in posts:
+            if not re.fullmatch(r'(?:1[2-9]):[0-5]\d',post.get('time','')):
+                raise ValueError('Daily post times must be between 12:00 and 20:00')
+            if post.get('music_file') != f"assets/audio/{'sports' if post['kind']=='football' else 'cinema'}.m4a":
+                raise ValueError('Invalid daily music assignment')
     caption = c.get("fixed_caption")
     if caption is not None and (not isinstance(caption, str) or len(caption) > 1500 or "#" in caption):
         raise ValueError("fixed_caption must be plain text under 1500 characters; configure hashtags separately")
@@ -37,7 +48,7 @@ def load_config(path):
         raise ValueError("Invalid card_style")
     if not isinstance(c.get("brand_name", "TK SERVERS"), str) or len(c.get("brand_name", "")) > 60:
         raise ValueError("Invalid brand_name")
-    if c.get("content_mode") == "auto":
+    if c.get("content_mode") in ("auto","football"):
         supported = {"CL", "PL", "PD", "BL1", "SA", "FL1", "WC", "EC"}
         competitions = c.get("football_competitions")
         if not isinstance(competitions, list) or not competitions or any(x not in supported for x in competitions):
@@ -73,6 +84,13 @@ def load_config(path):
     if any(not isinstance(t, str) or not re.fullmatch(r"#[\w]+", t) or len(t) > 50 for t in pool + fixed):
         raise ValueError("Use hashtags without spaces or punctuation")
     return c
+
+
+def track_config(c, kind):
+    post = next((p for p in c.get('daily_posts',[]) if p['kind']==kind),None)
+    if not post:
+        raise ValueError('This publishing track is not configured')
+    return dict(c,post_kind=kind,content_mode=kind,publish_time=post['time'],music_file=post['music_file'])
 
 
 def next_slot(c, now):

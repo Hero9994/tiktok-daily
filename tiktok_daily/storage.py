@@ -34,6 +34,12 @@ class LocalStore:
         path.write_bytes(data)
         return path
 
+    def save_video(self, filename, data):
+        path = self.path / 'videos' / filename
+        path.parent.mkdir(exist_ok=True)
+        path.write_bytes(data)
+        return path
+
 
 class GitStore(LocalStore):
     """Push every checkpoint BEFORE remote side effects. Never force-push."""
@@ -67,6 +73,8 @@ class GitStore(LocalStore):
         self.git("add", "state.json", directory=self.path)
         if (self.path / "images").exists():
             self.git("add", "images", directory=self.path)
+        if (self.path / 'videos').exists():
+            self.git('add', 'videos', directory=self.path)
         if self.git("diff", "--cached", "--name-only", directory=self.path).strip():
             self.git("-c", "user.name=Daily Image Bot", "-c", "user.email=daily-image-bot@users.noreply.github.com",
                      "commit", "-m", "Save daily publishing checkpoint [skip ci]", directory=self.path)
@@ -76,6 +84,10 @@ class GitStore(LocalStore):
         # A commit SHA is immutable, avoiding stale branch media caches.
         sha = self.git("rev-parse", "HEAD", directory=self.path).strip()
         return f"https://raw.githubusercontent.com/{self.repository}/{sha}/images/{filename}"
+
+    def video_url(self, filename):
+        sha = self.git('rev-parse', 'HEAD', directory=self.path).strip()
+        return f'https://raw.githubusercontent.com/{self.repository}/{sha}/videos/{filename}'
 
     def close(self):
         self.git("worktree", "remove", "--force", str(self.directory))

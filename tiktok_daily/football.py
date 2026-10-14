@@ -78,18 +78,18 @@ class Football:
 def football_content(schedule, c):
     """Copy every factual field from provider data. AI only draws the background."""
     matches = schedule["matches"]
-    if not matches:
-        raise ValueError("Cannot create a football post with no matches")
     date = schedule["date"]
     codes = list(dict.fromkeys(m["competition_code"] for m in matches))
     leagues = "، ".join(COMPETITIONS[x][0] for x in codes)
+    description = (f"مباريات الغد {date}: {len(matches)} مواجهة ضمن {leagues}. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org وقابلة للتغيير."
+                   if matches else f"تحديث رياضي لغد {date}: لا يعرض football-data.org مباريات مؤكدة ضمن البطولات الثماني المتابعة حاليًا. هذا لا يعني عدم وجود مباريات في بطولات أخرى. تابعنا لتحديث الغد.")
     tags = ["#مباريات_الغد", "#كرة_القدم"] + [COMPETITIONS[x][1] for x in codes] + ["#TK_Servers"]
     sports_c = dict(c, hashtag_pool=list(dict.fromkeys(tags)), fixed_hashtags=[])
     # Ensure a sports-only pool of at least five relevant tags.
     sports_c["hashtag_pool"] = list(dict.fromkeys(tags + ["#مباريات", "#كرة_قدم", "#رياضة"]))
     raw = {"idea": f"Official tomorrow football fixtures {date}",
         "title": f"مباريات الغد | {date}",
-        "description": f"مباريات الغد {date}: {len(matches)} مواجهة ضمن {leagues}. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org وقابلة للتغيير.",
+        "description": description,
         "prompt": "An original black and gold football stadium illustration, illuminated field, gold particles, dramatic night atmosphere, empty space for schedule cards. No people, team badges, trophies, text or logos.",
         "hashtags": tags, "safe_fictional_art": True}
     content = finalize_content(raw, sports_c, [])

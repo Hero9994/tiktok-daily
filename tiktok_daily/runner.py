@@ -9,6 +9,7 @@ from .http import APIError
 from .football import Football, football_content
 from .cards import render, encode
 from .cinema_media import artwork
+from .video import make_video
 
 
 def utc_text(now):
@@ -87,6 +88,13 @@ class Publisher:
         self.active_day = day
         key = f"{self.buffer.channel}:{day}"
         entries = self.store.state["entries"]
+        track = self.c.get('post_kind')
+        if track:
+            legacy = entries.get(key)
+            if (legacy and legacy['status'] in ('accepted','sent')
+                    and legacy.get('post_kind','cinema') == track):
+                return 'This track already has a legacy post today; skipped'
+            key += ':' + track
         if key in entries and entries[key]["status"] in ("accepted", "sent"):
             return "This day's post already exists; skipped"
         entry = entries.get(key)
@@ -105,10 +113,10 @@ class Publisher:
         if entry["status"] == "planned":
             self.generator.moderate(self.c["theme"])
             generated = None
-            if self.c.get("content_mode") == "auto":
+            if self.c.get("content_mode") in ("auto", "football"):
                 schedule = self.football.tomorrow(day)
                 # Only a successful empty response authorizes the cinema fallback.
-                if schedule["matches"]:
+                if schedule["matches"] or self.c.get('content_mode') == 'football':
                     generated = football_content(schedule, self.c)
             while self.store.state["text_requests"].get(day, 0) < self.c["max_text_requests_per_day"]:
                 if generated is not None:
@@ -127,6 +135,8 @@ class Publisher:
             if generated is None:
                 raise RuntimeError("Could not produce a safe unique idea within the daily request cap")
             entry.update(generated, status="content_ready")
+            if track:
+                entry['post_kind'] = track
             self.store.checkpoint()
         if entry["status"] == "content_ready":
             while entry["image_attempts"] < 3:
@@ -176,7 +186,7 @@ class Publisher:
         if entry["status"] == "image_ready":
             if entry.get("post_kind") == "football":
                 latest = self.football.tomorrow(day)
-                if not latest["matches"]:
+                if not latest["matches"] and self.c.get('content_mode') != 'football':
                     raise RuntimeError("Fixtures were cancelled after preparation; review before publishing")
                 changed = latest["matches"] != entry["fixture_schedule"]["matches"]
                 entry.update(football_content(latest, self.c))
@@ -195,6 +205,20 @@ class Publisher:
             self.store.checkpoint()
             for url, asset in zip(entry["image_urls"], entry.get("image_assets", [{"sha256": entry["image_sha256"]}])):
                 self.http.image(url, asset["sha256"])
+            if self.c.get('video_enabled'):
+                cards = [(self.store.path / 'images' / asset['file']).read_bytes() for asset in entry['image_assets']]
+                audio = Path(__file__).resolve().parents[1] / self.c['music_file']
+                fingerprint = hashlib.sha256(b''.join(cards) + audio.read_bytes()).hexdigest()
+                if entry.get('video_fingerprint') != fingerprint:
+                    video, digest = make_video(cards, audio)
+                    filename = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}.mp4"
+                    self.store.save_video(filename, video)
+                    entry.update(video_file=filename,video_sha256=digest,video_fingerprint=fingerprint,
+                                 music_file=self.c['music_file'],music_sha256=hashlib.sha256(audio.read_bytes()).hexdigest())
+                    self.store.checkpoint()
+                entry['video_url'] = self.store.video_url(entry['video_file'])
+                self.store.checkpoint()
+                self.http.image(entry['video_url'],entry['video_sha256'])
             if entry.get("post_kind") == "football":
                 checked = datetime.fromisoformat(entry["fixture_schedule"]["checked_at"])
                 if self.clock() - checked > timedelta(minutes=self.c["fixture_max_age_minutes"]):

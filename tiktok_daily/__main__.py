@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from .buffer import Buffer
-from .config import load_config, DISCLOSURE
+from .config import load_config, DISCLOSURE, track_config
 from .content import OpenAI, prepare_image
 from .http import HTTP
 from .runner import Publisher
@@ -52,6 +52,7 @@ def main():
     parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
+    parser.add_argument('--track',choices=['football','cinema'],default=os.environ.get('POST_KIND') or 'cinema')
     args = parser.parse_args()
     c = load_config(args.config)
     http = HTTP()
@@ -138,6 +139,8 @@ def main():
     if args.mode == "prepare" and os.environ.get("EVENT_SCHEDULE") and not c.get("daily_enabled", True):
         print("Daily generation disabled while the first publishing test is verified")
         return
+    if args.mode in ('prepare','publish-test') and c.get('daily_posts'):
+        c = track_config(c,args.track)
     buffer_key, = secrets("BUFFER_API_KEY")
     org = os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")
     channel = os.environ.get("BUFFER_CHANNEL_ID") or c.get("buffer_channel_id")
@@ -148,7 +151,7 @@ def main():
         if not c["allow_paid_openai"]:
             raise RuntimeError("Paid OpenAI calls are disabled in config.json")
         openai_key, = secrets("OPENAI_API_KEY")
-        if c.get("content_mode") == "auto":
+        if c.get("content_mode") in ("auto","football"):
             secrets("FOOTBALL_DATA_API_KEY")
     if os.environ.get("GITHUB_REPOSITORY_VISIBILITY") != "public":
         raise RuntimeError("This media hosting mode requires a PUBLIC GitHub repository")

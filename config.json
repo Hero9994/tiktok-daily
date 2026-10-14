@@ -52,5 +52,18 @@
   "max_text_requests_per_day": 3,
   "verification_grace_minutes": 90,
   "state_branch": "bot-state",
-  "football_background": "assets/football-stadium.jpg"
+  "football_background": "assets/football-stadium.jpg",
+  "video_enabled": true,
+  "daily_posts": [
+    {
+      "kind": "football",
+      "time": "16:00",
+      "music_file": "assets/audio/sports.m4a"
+    },
+    {
+      "kind": "cinema",
+      "time": "18:00",
+      "music_file": "assets/audio/cinema.m4a"
+    }
+  ]
 }

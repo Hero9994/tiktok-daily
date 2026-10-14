@@ -1,6 +1,6 @@
 from .http import APIError
 
-FIELDS = "id text status dueAt sentAt externalLink schedulingType channelId metadata { __typename } assets { ... on ImageAsset { source } }"
+FIELDS = "id text status dueAt sentAt externalLink schedulingType channelId metadata { __typename } assets { ... on ImageAsset { source } ... on VideoAsset { source } }"
 
 
 class Buffer:
@@ -76,6 +76,7 @@ class Buffer:
                 post = edge["node"]
                 sources = {asset.get("source") for asset in post.get("assets", [])}
                 expected = set(entry.get("image_urls", [])) | {entry.get("image_url")}
+                expected.add(entry.get('video_url'))
                 if (post["text"] == entry["caption"] and post["channelId"] == self.channel
                         and bool((sources - {None}) & (expected - {None}))):
                     matches.append(post)
@@ -99,6 +100,9 @@ class Buffer:
         }
         if not now:
             input_value["dueAt"] = entry["due_at"]
+        if entry.get('video_url'):
+            input_value['assets'] = [{'video': {'url': entry['video_url'], 'metadata': {'thumbnailOffset': 0}}}]
+            input_value['metadata'] = {'tiktok': {'isAiGenerated': True}}
         result = self.query(f"mutation($input: CreatePostInput!) {{ createPost(input: $input) {{ __typename ... on PostActionSuccess {{ post {{ {FIELDS} }} }} ... on MutationError {{ message }} }} }}",
                             {"input": input_value}, mutation=True)["createPost"]
         if not result.get("post"):
