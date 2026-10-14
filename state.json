@@ -959,7 +959,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T20:32:43.452689Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-14T20:32:43.452689Z",
       "image_attempts": 1,
       "preview_id": "cinema-layout-2026-10-14",
@@ -1058,8 +1058,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f7d28fac04a3543564327c12393d8aa2d20484c9/videos/2026-10-14-522b00fa5d.mp4",
       "attempted_at": "2026-10-14T20:31:17.845702Z",
       "post_id": "6acfe71019ce835278f682c4",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-10-14T20:34:43.962015Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-14T20:35:07.175083Z",
+      "sent_at": "2026-10-14T20:35:04.025Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7696624423675219232"
     }
   },
   "image_requests": {
