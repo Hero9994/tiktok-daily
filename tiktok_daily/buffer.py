@@ -33,6 +33,29 @@ class Buffer:
         if any(channel.get(k) for k in ("isDisconnected", "isLocked", "isQueuePaused")):
             raise RuntimeError("TikTok channel is disconnected, locked, or paused")
 
+    def inspect(self, entries):
+        schema_query = 'query { postType: __type(name: "Post") { name fields { name } } tiktokType: __type(name: "TiktokMetadata") { name fields { name } } createInput: __type(name: "CreatePostInput") { name inputFields { name } } }'
+        schema = self.http.json("https://api.buffer.com", {"query": schema_query}, self.token, safe_retry=True)
+        pending = [e for e in entries if e.get("status") in ("submitting", "uncertain", "accepted", "blocked")]
+        basic = "id text status dueAt channelId schedulingType sentAt externalLink metadata { __typename } assets { ... on ImageAsset { source } }"
+        found = []
+        for entry in pending:
+            query = f"query($input: PostsInput!, $after: String) {{ posts(input: $input, first: 100, after: $after) {{ edges {{ node {{ {basic} }} }} pageInfo {{ hasNextPage endCursor }} }} }}"
+            after = None
+            for _ in range(30):
+                data = self.query(query, {"input": {"organizationId": self.organization, "filter": {
+                    "channelIds": [self.channel], "createdAt": {"start": entry["attempted_at"]}}}, "after": after})["posts"]
+                for edge in data["edges"]:
+                    post = edge["node"]
+                    if post["text"] == entry["caption"]:
+                        found.append(post)
+                if not data["pageInfo"]["hasNextPage"]:
+                    break
+                after = data["pageInfo"]["endCursor"]
+            else:
+                raise RuntimeError("Diagnostic post scan exceeded page limit")
+        return {"schema": schema, "matching_posts": found}
+
     def get(self, post_id):
         data = self.query(f"query($input: PostInput!) {{ post(input: $input) {{ {FIELDS} }} }}", {"input": {"id": post_id}})
         if not data.get("post"):

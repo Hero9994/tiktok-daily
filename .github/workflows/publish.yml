@@ -13,7 +13,7 @@ on:
         description: 'doctor/discover/check-openai/check-football are read-only; publish-test publishes ONE real post now and uses OpenAI credit'
         type: choice
         default: doctor
-        options: [doctor, discover, check-openai, check-football, prepare, verify, publish-test]
+        options: [doctor, discover, inspect-buffer, check-openai, check-football, prepare, verify, publish-test]
 
 permissions:
   contents: write

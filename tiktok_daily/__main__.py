@@ -22,7 +22,7 @@ def secrets(*names):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["doctor", "discover", "check-openai", "check-football", "preview", "prepare", "verify", "publish-test"])
+    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "publish-test"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
     args = parser.parse_args()
@@ -117,7 +117,7 @@ def main():
     if not org or not channel:
         raise RuntimeError("Run discover and configure Buffer organization/channel IDs in config.json")
     openai_key = None
-    if args.mode != "verify":
+    if args.mode not in ("verify", "inspect-buffer"):
         if not c["allow_paid_openai"]:
             raise RuntimeError("Paid OpenAI calls are disabled in config.json")
         openai_key, = secrets("OPENAI_API_KEY")
@@ -128,7 +128,14 @@ def main():
     store = GitStore(Path.cwd(), c["state_branch"], os.environ.get("GITHUB_REPOSITORY", ""))
     try:
         publisher = Publisher(c, store, OpenAI(http, openai_key, c), Buffer(http, buffer_key, org, channel), http)
-        if args.mode == "verify":
+        if args.mode == "inspect-buffer":
+            result = publisher.buffer.inspect(list(store.state["entries"].values()))
+            message = json.dumps(result, ensure_ascii=False, indent=2)
+            for name in ("BUFFER_API_KEY", "OPENAI_API_KEY", "FOOTBALL_DATA_API_KEY"):
+                if os.environ.get(name):
+                    message = message.replace(os.environ[name], "[REDACTED]")
+            print(message)
+        elif args.mode == "verify":
             publisher.verify()
             print("Verification finished; only status=sent is considered confirmed publication")
             print(json.dumps([{"day": e["day"], "status": e["status"],
