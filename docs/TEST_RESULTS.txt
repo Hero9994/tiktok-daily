@@ -1,22 +1,18 @@
-Verification date: 2026-10-13
-Environment: Python 3.12.14, Pillow 12.0.0 (requirements.txt)
+Verification date: 2026-10-14
+GitHub Actions test suite: 46 tests passed.
+CI: https://github.com/Hero9994/tiktok-daily/actions/runs/38545359933
 
-Command: python -m unittest discover -s tests -v
-Result: Ran 42 tests in 2.409s; OK
+Coverage: HTTP adapters, immutable image URLs, Git state persistence,
+uncertain-write reconciliation, canonical subject deduplication, Arabic card rendering,
+fixture refresh, DST, midnight conversion, pagination and safe empty-only fallback.
+Activation: accepted is insufficient; preserve owner settings and manual pauses.
 
-Integration: real local HTTP transport, simulated OpenAI/Buffer providers,
-image URL fetch and hash validation, generation -> scheduling -> restart -> sent.
-Git integration: real local orphan branch, commit, push, reload, immutable SHA URL.
-Workflow YAML syntax and pinned-action SHA checks: passed.
-
-Doctor: configuration valid; enabled=false; allow_paid_openai=false.
-OpenAI, Buffer and football-data.org keys are absent from this execution environment.
-Offline preview: generated local JPEG 1080x1920 and sample JSON, with Arabic synopsis panel.
-Cinema tests: constant caption, sourced synopsis, canonical work-ID deduplication, Arabic rendering.
-Sports tests: official response validation, TIMED-only fixtures, DST and midnight date conversion,
-multiple pages without dropped games, safe empty-only fallback, last-minute fixture update without a second image call.
-Caption policy: dynamic caption and five tags, fixed TK suffix at the very end.
-
-LIVE TIKTOK TEST: NOT RUN (no user accounts, credentials or configured repository).
-External API spending: none.
-External posts created: none.
+LIVE TIKTOK TEST: PASSED.
+Buffer confirmed sent at 2026-10-14T10:08:44.621Z.
+Post: https://www.tiktok.com/@tk.player7/video/7696462411368369440
+Public TikTok HTTP 200; item data confirmed author tk.player7, one image,
+Arabic disclosure, five hashtags and exact TK suffix.
+One paid image request and two text requests; no duplicate post.
+Final JPEG dimensions: 1080x1920.
+Daily schedule active: 18:00 Europe/Berlin, preparation at 17:07.
+Delivery verifier: https://github.com/Hero9994/tiktok-daily/actions/runs/38545238291
