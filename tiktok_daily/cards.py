@@ -168,75 +168,65 @@ def cinema(hero, entry, c):
 
 
 def football(hero, entry, c):
-    schedule = entry["fixture_schedule"]
-    matches = schedule["matches"]
+    schedule = entry['fixture_schedule']
+    matches = schedule['matches']
     pages = max(1, math.ceil(len(matches) / 6))
-    if not 1 <= pages <= 10:
-        raise RuntimeError("Fixture schedule exceeds Buffer's 10-photo carousel capacity; do not silently omit matches")
+    if pages > 10:
+        raise RuntimeError('Fixture schedule exceeds 60 matches; refusing to omit fixtures')
     result = []
     for index in range(pages):
         with Image.open(io.BytesIO(hero)) as src:
             image = ImageOps.fit(src.convert('RGB'), (1080,1920), method=Image.Resampling.LANCZOS)
+        # Data remains separate from the artwork: never bake teams or times into AI art.
         overlay = Image.new('RGBA', image.size)
-        panel_draw = ImageDraw.Draw(overlay)
-        draw = ImageDraw.Draw(image)
-        draw.rounded_rectangle((22,22,1058,1898), radius=24, outline=GOLD, width=2)
-        # A compact play-shaped TK mark preserves the illuminated stadium artwork.
-        draw.line([(444,58),(444,204),(621,130),(444,58)], fill=GOLD, width=6)
-        draw.text((466,64),'TK',font=font(67),fill=GOLD)
-        if entry.get('demo'):
-            text(draw, 'معاينة فقط • المباريات والمواعيد تجريبية', (85,222,910,65),size=30,color=WHITE,max_lines=1)
-        elif c.get('correction_notice'):
-            text(draw,'تصحيح جدول المباريات',(85,222,910,65),size=30,color=WHITE,max_lines=1)
-        heading='مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
-        text(draw, heading, (90,294,900,170),size=100,color=WHITE,max_lines=1,weight=850,stroke=3)
-        text(draw, 'بتوقيت ألمانيا ومكة المكرمة', (100,450,880,90),size=39,max_lines=1)
-        day = datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
-        panel_draw.rounded_rectangle((185,550,895,634),radius=18,fill=(0,0,0,215),outline=GOLD,width=2)
-        page_matches = matches[index * 6:(index + 1) * 6]
-        row_height = min(265, 880 // max(1,len(page_matches)))
-        if not page_matches:
-            panel_draw.rounded_rectangle((55,690,1025,1470),radius=20,fill=(4,9,13,218),outline=GOLD,width=2)
-        for row, match in enumerate(page_matches):
-            top = 690 + row * row_height
-            panel_draw.rounded_rectangle((55,top,1025,top+row_height-12),radius=17,fill=(4,9,13,218),outline=GOLD,width=2)
-        panel_draw.rounded_rectangle((55,1600,1025,1763),radius=18,fill=(0,0,0,160),outline=GOLD,width=2)
+        pd = ImageDraw.Draw(overlay)
+        pd.rounded_rectangle((275,465,805,542), radius=38, fill=(0,0,0,222), outline=GOLD, width=3)
+        page_matches = matches[index*6:(index+1)*6]
+        for row in range(len(page_matches)):
+            top = 588 + row*160
+            # Concentric outlines create a fine gold rim around an opaque readable panel.
+            pd.rounded_rectangle((38,top-3,1042,top+147),radius=23,outline=(255,190,65,65),width=7)
+            pd.rounded_rectangle((42,top,1038,top+144),radius=21,fill=(2,5,7,239),outline=(242,196,99,255),width=3)
+            pd.line((474,top+132,520,top+14),fill=(168,111,36,160),width=2)
+        pd.rounded_rectangle((390,1610,1038,1815),radius=24,fill=(0,0,0,215),outline=GOLD,width=3)
         image = Image.alpha_composite(image.convert('RGBA'),overlay).convert('RGB')
         draw = ImageDraw.Draw(image)
-        text(draw, f'{day}   |   {index+1}/{pages}', (205,562,670,68),size=36,max_lines=1)
+        draw.line([(45,35),(45,145),(169,90),(45,35)],fill=GOLD,width=5)
+        draw.text((60,42),'TK',font=font(49,650),fill=WHITE)
+        heading = 'مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
+        # A darker offset gives the title the embossed metallic look of the approved reference.
+        text(draw,heading,(83,238,917,175),size=115,color='#603e16',max_lines=1,weight=900,stroke=4)
+        text(draw,heading,(80,232,917,175),size=115,color='#ffdc85',max_lines=1,weight=900,stroke=2)
+        text(draw,'بتوقيت ألمانيا ومكة المكرمة',(130,397,820,74),size=40,max_lines=1,weight=600,stroke=2)
+        day = datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
+        text(draw,f'{day}   |   {index+1}/{pages}',(294,471,490,65),size=35,max_lines=1)
+        if entry.get('demo') or c.get('correction_notice'):
+            label = 'معاينة فقط • المباريات والمواعيد تجريبية' if entry.get('demo') else 'تصحيح جدول المباريات'
+            text(draw,label,(90,161,900,65),size=28,max_lines=1,color=GOLD,stroke=2)
         if not page_matches:
-            text(draw,'لا مباريات مؤكدة',(85,775,910,135),size=62,color=GOLD,max_lines=1,weight=750)
-            text(draw,'في البطولات المتابعة حسب المصدر حاليًا',(85,947,910,150),size=43,max_lines=2)
-            text(draw,'قد توجد مباريات في بطولات أخرى. نراجع الجدول يوميًا من football-data.org.',(85,1140,910,180),size=35,max_lines=3)
-            text(draw,'نعود غدًا بتحديث جديد',(85,1360,910,90),size=36,color=GOLD,max_lines=1)
+            text(draw,'لا مباريات مؤكدة',(80,760,920,120),size=60,color=GOLD,max_lines=1)
         for row, match in enumerate(page_matches):
-            top = 690 + row * row_height
-            compact = row_height < 210
-            text(draw, match['competition'], (80,top+5,920,44 if compact else 55),size=22 if compact else 29,color=GOLD,max_lines=1)
-            name_top = top + (45 if compact else 70)
-            name_height = 54 if compact else 92
-            badge_size = 43 if compact else 69
-            for field,left in [('away_crest',82),('home_crest',945)]:
+            top = 588 + row*160
+            text(draw,match['competition'],(550,top+1,355,40),size=21,color=GOLD,max_lines=1)
+            for field, left in [('away_crest',70),('home_crest',920)]:
                 badge = crest(match.get(field))
                 if badge is not None:
-                    badge = ImageOps.contain(badge,(badge_size,badge_size),method=Image.Resampling.LANCZOS)
-                    image.paste(badge,(left,name_top),badge)
-            text(draw, match['away'], (140,name_top,340,name_height),size=28 if compact else 43,max_lines=1)
-            text(draw, match['home'], (615,name_top,315,name_height),size=28 if compact else 43,max_lines=1)
-            draw.text((515,name_top+5),'VS',font=font(25 if compact else 32),fill=GOLD)
+                    badge = ImageOps.contain(badge,(94,100),method=Image.Resampling.LANCZOS)
+                    image.paste(badge,(left+(94-badge.width)//2,top+26+(100-badge.height)//2),badge)
+            text(draw,match['away'],(177,top+25,266,91),size=36,max_lines=2,weight=700)
+            text(draw,match['home'],(580,top+25,325,91),size=34,max_lines=2,weight=700)
+            text(draw,'VS',(453,top+39,80,65),size=34,color='#ffdc85',max_lines=1,weight=700)
             germany = f"ألمانيا {match['germany_time']}"
             makkah = f"مكة {match['makkah_time']}"
             if match['makkah_date'] != match['germany_date']:
                 makkah += ' (+1 يوم)'
-            time_top = top + (100 if compact else 174)
-            text(draw,germany,(85,time_top,420,42 if compact else 73),size=22 if compact else 36,color=GOLD,max_lines=1)
-            text(draw,makkah,(575,time_top,420,42 if compact else 73),size=22 if compact else 36,color=GOLD,max_lines=1)
-        text(draw,c.get('brand_name','TK SERVERS'),(90,1614,900,80),size=45,color=GOLD,max_lines=1)
+            text(draw,germany,(175,top+102,268,40),size=25,color=WHITE,max_lines=1)
+            text(draw,makkah,(550,top+102,355,40),size=25,color=WHITE,max_lines=1)
+        text(draw,c.get('brand_name','TK SERVERS'),(410,1643,600,106),size=67,color='#ffdc85',max_lines=1,weight=850,stroke=2)
         signature = c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
-        text(draw,signature,(85,1698,915,63),size=28,max_lines=1)
-        sources=' / '.join(schedule.get('sources',['football-data.org']))
-        note = 'معاينة تصميم • ليست مباريات مؤكدة' if entry.get('demo') else f'المواعيد: {sources} • قابلة للتغيير • الخلفية مولّدة بالذكاء الاصطناعي'
-        text(draw,note,(70,1845,940,45),size=20,max_lines=1)
+        text(draw,signature,(402,1753,610,59),size=25,max_lines=1,weight=600)
+        sources = ' / '.join(schedule.get('sources',['football-data.org']))
+        text(draw,f'المواعيد: {sources} • قابلة للتغيير',(70,1848,940,42),size=21,max_lines=1)
         result.append(encode(image))
     return result
 

@@ -8,8 +8,11 @@ from .content import prepare_image, image_is_duplicate
 from .http import APIError
 from .football import Football, football_content
 from .cards import render, encode
+
 from .cinema_media import artwork
 from .video import make_video
+
+FOOTBALL_TEMPLATE = "gold-reference-v2"
 
 
 def utc_text(now):
@@ -192,7 +195,8 @@ class Publisher:
                     self.store.save_image(filename, data)
                     assets.append({"file": filename, "sha256": checksum})
                 entry.update(status="image_ready", image_file=assets[0]["file"], image_sha256=assets[0]["sha256"],
-                             image_dhash=perceptual, image_assets=assets)
+                             image_dhash=perceptual, image_assets=assets,
+                             football_template=FOOTBALL_TEMPLATE if entry.get("post_kind") == "football" else None)
                 self.store.checkpoint()
                 break
             if entry["status"] != "image_ready":
@@ -204,15 +208,18 @@ class Publisher:
                     raise RuntimeError("Fixtures were cancelled after preparation; review before publishing")
                 changed = latest["matches"] != entry["fixture_schedule"]["matches"]
                 entry.update(football_content(latest, self.c))
-                if changed:
-                    hero = (self.store.path / "images" / entry["hero_file"]).read_bytes()
+                if changed or entry.get("football_template") != FOOTBALL_TEMPLATE:
+                    stadium = self.c.get("football_background")
+                    hero = ((Path(__file__).resolve().parents[1] / stadium).read_bytes() if stadium else
+                            (self.store.path / "images" / entry["hero_file"]).read_bytes())
                     assets = []
                     for index, picture in enumerate(render(hero, entry, self.c)):
                         data, checksum, _ = prepare_image(picture)
                         filename = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}-{index + 1}.jpg"
                         self.store.save_image(filename, data)
                         assets.append({"file": filename, "sha256": checksum})
-                    entry.update(image_assets=assets, image_file=assets[0]["file"], image_sha256=assets[0]["sha256"])
+                    entry.update(image_assets=assets, image_file=assets[0]["file"], image_sha256=assets[0]["sha256"],
+                                 football_template=FOOTBALL_TEMPLATE)
                 self.store.checkpoint()
             entry["image_url"] = self.store.image_url(entry["image_file"])
             entry["image_urls"] = [self.store.image_url(a["file"]) for a in entry.get("image_assets", [{"file": entry["image_file"]}])]

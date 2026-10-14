@@ -113,5 +113,20 @@ class RoutingTests(unittest.TestCase):
         self.publisher(Changing()).prepare()
         self.assertEqual(self.buffer.creates, 1)
 
+    def test_prepared_unsubmitted_sports_card_upgrades_template_without_paid_image(self):
+        from tiktok_daily.runner import FOOTBALL_TEMPLATE
+        schedule = Football(FakeHTTP([{"matches": [fixture()]}]), auto_config(), token="dummy", clock=lambda: NOW).tomorrow("2026-10-13")
+        class Stable:
+            def tomorrow(self, day): return copy.deepcopy(schedule)
+        self.publisher(Stable()).prepare()
+        entry = next(iter(self.store.state['entries'].values()))
+        # Simulate the persisted, not-yet-submitted card left by a previous renderer.
+        entry.update(status='image_ready', football_template='old', image_sha256='old-card')
+        self.publisher(Stable()).prepare()
+        self.assertEqual(entry['football_template'], FOOTBALL_TEMPLATE)
+        self.assertNotEqual(entry['image_sha256'], 'old-card')
+        self.assertEqual(self.generator.images, 0)
+        self.assertEqual(self.store.state['image_requests'], {})
+
 
 if __name__ == "__main__": unittest.main()
