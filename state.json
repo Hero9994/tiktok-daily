@@ -51,7 +51,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T12:51:05.920327Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-14T12:51:05.920327Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-10-15",
@@ -72,10 +72,20 @@
       "fixture_schedule": {
         "date": "2026-10-15",
         "matches": [],
-        "checked_at": "2026-10-14T12:51:09.657546+00:00",
+        "checked_at": "2026-10-14T12:53:38.945588+00:00",
         "source_url": "https://www.football-data.org/"
       },
-      "source_url": "https://www.football-data.org/"
+      "source_url": "https://www.football-data.org/",
+      "hero_file": "2026-10-14-700ae0fb5b-art.jpg",
+      "image_file": "2026-10-14-700ae0fb5b-1.jpg",
+      "image_sha256": "8eed9722dea02461a3afa0d64728b2dc46c99ec8d44ab00e0777de0eabccaadf",
+      "image_dhash": "e4710d4925258693",
+      "image_assets": [
+        {
+          "file": "2026-10-14-700ae0fb5b-1.jpg",
+          "sha256": "8eed9722dea02461a3afa0d64728b2dc46c99ec8d44ab00e0777de0eabccaadf"
+        }
+      ]
     }
   },
   "image_requests": {
