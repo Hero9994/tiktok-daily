@@ -5,9 +5,25 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T10:05:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-14T09:34:17.731427Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A visual metaphor for communication across the unknown: a quiet, luminous threshold between human language and the vastness of space.",
+      "prompt": "Create original abstract cinematic science-fiction drama artwork: a vast muted twilight sky above a calm landscape, with a distant, softly glowing oval veil and delicate ink-like circular patterns suggesting an unknown language. Atmospheric mist, restrained blue-gray and amber palette, contemplative mood, elegant filmic lighting. No people, no text, no logos, no recognizable characters, no violence, no poster imitation. Keep all focal elements within the upper 65% and central 80% of the image, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "Arrival",
+      "caption": "صورة فنية خيالية مولّدة بالذكاء الاصطناعي.\n\nدراما خيال علمي عن خبيرة لغويات تستعين بها القوات الأمريكية للتواصل مع كائنات فضائية وصلت إلى الأرض، قبل أن تتصاعد التوترات.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "دراما خيال علمي عن خبيرة لغويات تستعين بها القوات الأمريكية للتواصل مع كائنات فضائية وصلت إلى الأرض، قبل أن تتصاعد التوترات.",
+      "subject_id": "wikipedia-en:43991244",
+      "subject_title": "Arrival (film)",
+      "summary": "دراما خيال علمي عن خبيرة لغويات تستعين بها القوات الأمريكية للتواصل مع كائنات فضائية وصلت إلى الأرض، قبل أن تتصاعد التوترات.",
+      "source_url": "https://en.wikipedia.org/wiki/Arrival_(film)"
     }
   },
   "image_requests": {},
