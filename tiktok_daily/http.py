@@ -6,9 +6,10 @@ import urllib.request
 
 
 class APIError(RuntimeError):
-    def __init__(self, service, status=None, uncertain=False):
+    def __init__(self, service, status=None, uncertain=False, code=None):
         self.status, self.uncertain = status, uncertain
-        super().__init__(f"{service} request failed (HTTP {status or 'connection/invalid response'}; uncertain={uncertain})")
+        self.code = code
+        super().__init__(f"{service} request failed (HTTP {status or 'connection/invalid response'}; uncertain={uncertain}; code={code or 'unspecified'})")
 
 
 class HTTP:
@@ -36,14 +37,23 @@ class HTTP:
                 with urllib.request.urlopen(req, timeout=timeout) as response:
                     return json.load(response)
             except urllib.error.HTTPError as exc:
+                code = None
+                try:
+                    candidate = json.loads(exc.read(16384)).get("error", {}).get("code")
+                    if candidate in {"insufficient_quota", "rate_limit_exceeded", "invalid_api_key", "model_not_found", "billing_hard_limit_reached", "organization_not_verified", "unsupported_parameter"}:
+                        code = candidate
+                except (ValueError, AttributeError, OSError):
+                    pass
                 retryable = exc.code in (429, 500, 502, 503, 504)
+                if code in {"insufficient_quota", "invalid_api_key", "model_not_found", "billing_hard_limit_reached", "organization_not_verified", "unsupported_parameter"}:
+                    retryable = False
                 try:
                     delay = min(60, max(delay, int(exc.headers.get("Retry-After", "0"))))
                 except (ValueError, TypeError):
                     pass
                 if not retryable or attempt == attempts - 1:
                     # Server failures on writes can have occurred after accepting them.
-                    raise APIError(service, exc.code, uncertain=exc.code >= 500) from None
+                    raise APIError(service, exc.code, uncertain=exc.code >= 500, code=code) from None
             except (OSError, ValueError, TimeoutError):
                 if attempt == attempts - 1:
                     raise APIError(service, uncertain=True) from None

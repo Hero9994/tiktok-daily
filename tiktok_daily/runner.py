@@ -117,7 +117,9 @@ class Publisher:
                     self.generator.moderate(candidate["prompt"] + "\n" + candidate["caption"] + "\n" + candidate.get("summary", ""))
                     generated = candidate
                     break
-                except (ValueError, APIError):
+                except (ValueError, APIError) as exc:
+                    if isinstance(exc, APIError) and exc.code in {"insufficient_quota", "invalid_api_key", "model_not_found", "billing_hard_limit_reached", "organization_not_verified", "unsupported_parameter"}:
+                        raise
                     self.sleep(2 ** self.store.state["text_requests"][day])
                     continue
             if generated is None:
@@ -132,7 +134,9 @@ class Publisher:
                 self.store.checkpoint()
                 try:
                     image = self.generator.image(entry["prompt"])
-                except APIError:
+                except APIError as exc:
+                    if exc.code in {"insufficient_quota", "invalid_api_key", "model_not_found", "billing_hard_limit_reached", "organization_not_verified", "unsupported_parameter"}:
+                        raise
                     self.sleep(2 ** entry["image_attempts"])
                     continue  # Each generation retry is separately budgeted and might incur cost.
                 if self.c.get("card_style") == "black_gold":

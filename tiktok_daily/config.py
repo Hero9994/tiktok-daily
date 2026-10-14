@@ -19,6 +19,8 @@ def load_config(path):
     for flag in ("enabled", "allow_paid_openai"):
         if type(c.get(flag)) is not bool:
             raise ValueError(f"{flag} must be a boolean")
+    if type(c.get("daily_enabled", True)) is not bool:
+        raise ValueError("daily_enabled must be a boolean")
     if c.get("content_mode", "art") not in ("art", "cinema", "auto"):
         raise ValueError("content_mode must be art, cinema or auto")
     caption = c.get("fixed_caption")

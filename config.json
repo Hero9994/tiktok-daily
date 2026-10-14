@@ -1,6 +1,7 @@
 {
-  "enabled": false,
-  "allow_paid_openai": false,
+  "enabled": true,
+  "daily_enabled": false,
+  "allow_paid_openai": true,
   "content_mode": "auto",
   "fixed_caption": null,
   "caption_suffix": "شاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",

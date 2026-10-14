@@ -2,6 +2,8 @@ import argparse
 import json
 import os
 import sys
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from .buffer import Buffer
 from .config import load_config, DISCLOSURE
@@ -28,6 +30,7 @@ def main():
     http = HTTP()
     if args.mode == "doctor":
         report = {"config_valid": True, "enabled": c["enabled"], "allow_paid_openai": c["allow_paid_openai"],
+                  "daily_enabled": c.get("daily_enabled", True),
                   "content_mode": c.get("content_mode", "art"), "caption_suffix_ready": bool(c.get("caption_suffix")),
                   "channel_configured": bool((os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")) and
                                              (os.environ.get("BUFFER_CHANNEL_ID") or c.get("buffer_channel_id"))),
@@ -93,8 +96,6 @@ def main():
         print(json.dumps(Buffer(http, token, "", "").discover(), ensure_ascii=False, indent=2))
         return
     if args.mode == "check-football":
-        from datetime import datetime, timezone
-        from zoneinfo import ZoneInfo
         from .football import Football
         football_key, = secrets("FOOTBALL_DATA_API_KEY")
         day = datetime.now(timezone.utc).astimezone(ZoneInfo(c["timezone"])).date().isoformat()
@@ -106,6 +107,9 @@ def main():
         return
     if not c["enabled"]:
         print("Automation disabled in config.json; no remote request made")
+        return
+    if args.mode == "prepare" and os.environ.get("EVENT_SCHEDULE") and not c.get("daily_enabled", True):
+        print("Daily generation disabled while the first publishing test is verified")
         return
     buffer_key, = secrets("BUFFER_API_KEY")
     org = os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")
@@ -131,7 +135,15 @@ def main():
                                "external_link": e.get("external_link")}
                               for e in list(store.state["entries"].values())[-3:]], ensure_ascii=False, indent=2))
         else:
-            print(publisher.prepare(publish_now=args.mode == "publish-test"))
+            publish_now = args.mode == "publish-test"
+            if publish_now:
+                local = datetime.now(timezone.utc).astimezone(ZoneInfo(c["timezone"]))
+                if not 12 <= local.hour < 20:
+                    # Respect the user's publication window even during a live test.
+                    c["publish_time"] = "12:05"
+                    publish_now = False
+                    print("Live test will be scheduled at the next valid 12:05 local publishing slot")
+            print(publisher.prepare(publish_now=publish_now))
     finally:
         store.close()
 

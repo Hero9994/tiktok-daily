@@ -110,10 +110,9 @@ class FakeHTTP:
 
 
 class ContentTests(unittest.TestCase):
-    def test_default_config_is_disabled(self):
+    def test_daily_automation_is_disabled_until_live_test_confirmed(self):
         c = load_config(ROOT / "config.json")
-        self.assertFalse(c["enabled"])
-        self.assertFalse(c["allow_paid_openai"])
+        self.assertFalse(c["daily_enabled"])
 
     def test_invalid_config(self):
         c = config(); c["publish_time"] = "25:00"
