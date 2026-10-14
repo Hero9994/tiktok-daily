@@ -107,9 +107,93 @@
       "day": "2026-10-15",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-15T14:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-14T17:57:14.117735Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "Official tomorrow football fixtures 2026-10-16",
+      "prompt": "An original black and gold football stadium illustration, illuminated field, gold particles, dramatic night atmosphere, empty space for schedule cards. No people, team badges, trophies, text or logos.",
+      "title": "مباريات الغد | 2026-10-16",
+      "caption": "صورة فنية خيالية مولّدة بالذكاء الاصطناعي.\n\nمباريات الغد 2026-10-16: 4 مواجهة ضمن الدوري الإسباني، الدوري الألماني، الدوري الإيطالي، الدوري الفرنسي. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org و UEFA.com وقابلة للتغيير.\n\n#مباريات_الغد #كرة_القدم #الدوري_الإسباني #الدوري_الألماني #الدوري_الإيطالي\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مباريات_الغد",
+        "#كرة_القدم",
+        "#الدوري_الإسباني",
+        "#الدوري_الألماني",
+        "#الدوري_الإيطالي"
+      ],
+      "description": "مباريات الغد 2026-10-16: 4 مواجهة ضمن الدوري الإسباني، الدوري الألماني، الدوري الإيطالي، الدوري الفرنسي. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org و UEFA.com وقابلة للتغيير.",
+      "post_kind": "football",
+      "subject_id": "fixtures:2026-10-16",
+      "subject_title": "مباريات الغد | 2026-10-16",
+      "fixture_schedule": {
+        "date": "2026-10-16",
+        "matches": [
+          {
+            "id": 564716,
+            "competition_code": "PD",
+            "competition": "الدوري الإسباني",
+            "home": "Deportivo",
+            "away": "Levante",
+            "home_crest": "https://crests.football-data.org/560.png",
+            "away_crest": "https://crests.football-data.org/88.png",
+            "kickoff_utc": "2026-10-16T19:00:00+00:00",
+            "germany_time": "21:00",
+            "germany_date": "2026-10-16",
+            "makkah_time": "22:00",
+            "makkah_date": "2026-10-16"
+          },
+          {
+            "id": 565828,
+            "competition_code": "BL1",
+            "competition": "الدوري الألماني",
+            "home": "Frankfurt",
+            "away": "1. FC Köln",
+            "home_crest": "https://crests.football-data.org/19.png",
+            "away_crest": "https://crests.football-data.org/1.png",
+            "kickoff_utc": "2026-10-16T18:30:00+00:00",
+            "germany_time": "20:30",
+            "germany_date": "2026-10-16",
+            "makkah_time": "21:30",
+            "makkah_date": "2026-10-16"
+          },
+          {
+            "id": 558573,
+            "competition_code": "SA",
+            "competition": "الدوري الإيطالي",
+            "home": "Frosinone",
+            "away": "Sassuolo",
+            "home_crest": "https://crests.football-data.org/470.png",
+            "away_crest": "https://crests.football-data.org/471.png",
+            "kickoff_utc": "2026-10-16T18:45:00+00:00",
+            "germany_time": "20:45",
+            "germany_date": "2026-10-16",
+            "makkah_time": "21:45",
+            "makkah_date": "2026-10-16"
+          },
+          {
+            "id": 559661,
+            "competition_code": "FL1",
+            "competition": "الدوري الفرنسي",
+            "home": "Le Mans",
+            "away": "Toulouse",
+            "home_crest": "https://crests.football-data.org/535.png",
+            "away_crest": "https://crests.football-data.org/511.png",
+            "kickoff_utc": "2026-10-16T18:45:00+00:00",
+            "germany_time": "20:45",
+            "germany_date": "2026-10-16",
+            "makkah_time": "21:45",
+            "makkah_date": "2026-10-16"
+          }
+        ],
+        "date_mode": "tomorrow",
+        "checked_at": "2026-10-14T17:57:22.943766+00:00",
+        "source_url": "https://www.football-data.org/",
+        "sources": [
+          "football-data.org",
+          "UEFA.com"
+        ]
+      },
+      "source_url": "https://www.football-data.org/"
     }
   },
   "image_requests": {
