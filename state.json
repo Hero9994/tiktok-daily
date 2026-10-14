@@ -5,7 +5,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T10:05:00Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-10-14T09:34:17.731427Z",
       "image_attempts": 1,
       "idea": "A visual metaphor for communication across the unknown: a quiet, luminous threshold between human language and the vastness of space.",
@@ -40,7 +40,10 @@
       ],
       "attempted_at": "2026-10-14T09:40:33.567485Z",
       "recovery_note": "Confirmed by live schema introspection: TiktokMetadata.title does not exist. The original GraphQL operation failed validation before execution. Two complete caption scans found no matching Buffer posts. Reusing the existing image; no regeneration.",
-      "previous_attempted_at": "2026-10-14T09:32:54.692784Z"
+      "previous_attempted_at": "2026-10-14T09:32:54.692784Z",
+      "post_id": "6acf4e8b789ade897f085900",
+      "buffer_status": "scheduled",
+      "last_checked_at": "2026-10-14T09:42:35.127641Z"
     }
   },
   "image_requests": {
