@@ -959,7 +959,7 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T20:32:43.452689Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-14T20:32:43.452689Z",
       "image_attempts": 1,
       "preview_id": "cinema-layout-2026-10-14",
@@ -1033,7 +1033,19 @@
         "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes."
       },
       "watch_reason": "قد يستمتع به محبو أفلام الخيال العلمي والرسوم المتحركة ذات الأجواء الحالمة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-14-522b00fa5d-art.jpg",
+      "image_file": "2026-10-14-522b00fa5d-1.jpg",
+      "image_sha256": "b5f858af9b8e9881cc43f4a87150fccf80e7ffc59b45587f14b0f56746a74a0b",
+      "image_dhash": "c08a843a3b3f2ee9",
+      "image_assets": [
+        {
+          "file": "2026-10-14-522b00fa5d-1.jpg",
+          "sha256": "b5f858af9b8e9881cc43f4a87150fccf80e7ffc59b45587f14b0f56746a74a0b"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
