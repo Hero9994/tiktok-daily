@@ -66,6 +66,7 @@ class Football:
             germany, makkah = kickoff.astimezone(ZoneInfo("Europe/Berlin")), kickoff.astimezone(ZoneInfo("Asia/Riyadh"))
             matches.append({"id": source["id"], "competition_code": code, "competition": COMPETITIONS[code][0],
                 "home": home.get("shortName") or home["name"], "away": away.get("shortName") or away["name"],
+                "home_crest": home.get("crest"), "away_crest": away.get("crest"),
                 "kickoff_utc": kickoff.astimezone(timezone.utc).isoformat(),
                 "germany_time": germany.strftime("%H:%M"), "germany_date": germany.date().isoformat(),
                 "makkah_time": makkah.strftime("%H:%M"), "makkah_date": makkah.date().isoformat()})

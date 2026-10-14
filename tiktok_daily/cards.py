@@ -2,6 +2,9 @@
 import io
 import math
 import re
+import urllib.parse
+import urllib.request
+from functools import lru_cache
 from pathlib import Path
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont, ImageOps, features
@@ -63,6 +66,28 @@ def footer(draw, c, note):
 def encode(image):
     out = io.BytesIO(); image.save(out, format="JPEG", quality=92, optimize=True)
     return out.getvalue()
+
+
+@lru_cache(maxsize=128)
+def crest(url):
+    parsed = urllib.parse.urlsplit(url or '')
+    if parsed.scheme != 'https' or parsed.hostname not in {'crests.football-data.org', 'upload.wikimedia.org'}:
+        return None
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'TKDaily/1.0'})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            final = urllib.parse.urlsplit(response.url)
+            if final.scheme != 'https' or final.hostname not in {'crests.football-data.org', 'upload.wikimedia.org'}:
+                return None
+            data = response.read(2_000_001)
+        if len(data) > 2_000_000:
+            return None
+        with Image.open(io.BytesIO(data)) as im:
+            if im.width * im.height > 4_000_000:
+                return None
+            return im.convert('RGBA')
+    except (OSError, ValueError):
+        return None  # Missing/unsupported crests must not hide a verified fixture.
 
 
 def cinema(hero, entry, c):
@@ -140,11 +165,17 @@ def football(hero, entry, c):
     result = []
     for index in range(pages):
         image, draw = canvas()
+        draw.rectangle((440, 35, 640, 200), fill='#04070b')
+        draw.rounded_rectangle((55, 45, 174, 139), radius=18, outline=GOLD, width=3)
+        draw.text((74, 47), 'TK', font=font(48), fill=GOLD)
+        text(draw, 'جدول كرة القدم', (230, 57, 790, 75), size=38, color=GOLD, max_lines=1)
         # One AI-generated stadium background is reused across all factual pages.
         with Image.open(io.BytesIO(hero)) as src:
             banner = ImageOps.fit(src.convert("RGB"), (960, 230), method=Image.Resampling.LANCZOS)
         image.paste(banner, (60, 215))
-        text(draw, "مباريات الغد", (75, 235, 930, 140), size=70, color=GOLD, max_lines=1)
+        shade = Image.new('RGBA', (960,230), (0,0,0,145))
+        image.paste(shade, (60,215), shade)
+        text(draw, "مباريات الغد", (75, 225, 930, 155), size=92, color=GOLD, max_lines=1)
         day = datetime.fromisoformat(schedule["date"]).strftime("%d/%m/%Y")
         text(draw, f"{day}  |  ألمانيا ومكة  |  {index + 1}/{pages}", (70, 378, 940, 68), size=30, max_lines=1)
         page_matches = matches[index * 6:(index + 1) * 6]
@@ -153,16 +184,28 @@ def football(hero, entry, c):
             top = 470 + row * row_height
             draw.rounded_rectangle((55, top, 1025, top + row_height - 17), radius=20, fill=PANEL, outline=GOLD, width=2)
             text(draw, match["competition"], (75, top + int(row_height * .05), 930, int(row_height * .22)), size=33 if row_height > 300 else 25, color=GOLD, max_lines=1)
-            text(draw, f"{match['home']}  ×  {match['away']}", (75, top + int(row_height * .30), 930, int(row_height * .29)), size=52 if row_height > 300 else 35, max_lines=1)
+            badge_size = 83 if row_height > 300 else 43
+            badge_top = top + int(row_height * .25)
+            for field, left in [('away_crest', 93), ('home_crest', 902)]:
+                badge = crest(match.get(field))
+                if badge is not None:
+                    badge = ImageOps.contain(badge, (badge_size,badge_size), method=Image.Resampling.LANCZOS)
+                    image.paste(badge, (left,badge_top), badge)
+            name_top = top + int(row_height * .47)
+            name_height = int(row_height * .22)
+            text(draw, match['away'], (75, name_top, 415, name_height), size=46 if row_height > 300 else 32, max_lines=1)
+            text(draw, match['home'], (575, name_top, 425, name_height), size=46 if row_height > 300 else 32, max_lines=1)
+            draw.rounded_rectangle((505, name_top, 565, name_top+50), radius=12, outline=GOLD, width=2)
+            draw.text((514,name_top+1), 'VS', font=font(25), fill=GOLD)
             germany = f"ألمانيا {match['germany_time']}"
             makkah = f"مكة {match['makkah_time']}"
             if match["makkah_date"] != match["germany_date"]:
                 makkah += " (+1 يوم)"
-            text(draw, germany, (80, top + int(row_height * .67), 430, int(row_height * .25)), size=36 if row_height > 300 else 27, color=GOLD, max_lines=1)
-            text(draw, makkah, (560, top + int(row_height * .67), 440, int(row_height * .25)), size=36 if row_height > 300 else 27, color=GOLD, max_lines=1)
-        footer(draw, c, "المواعيد: football-data.org | قابلة للتغيير | الرسم الفني مولّد بالذكاء الاصطناعي")
+            text(draw, germany, (80, top + int(row_height * .73), 430, int(row_height * .24)), size=36 if row_height > 300 else 27, color=GOLD, max_lines=1)
+            text(draw, makkah, (560, top + int(row_height * .73), 440, int(row_height * .24)), size=36 if row_height > 300 else 27, color=GOLD, max_lines=1)
+        footer(draw, c, "معاينة فقط • الفرق والمواعيد تجريبية • غير معدّة للنشر" if entry.get('demo') else "المواعيد: football-data.org | قابلة للتغيير | الرسم الفني مولّد بالذكاء الاصطناعي")
         if entry.get("demo"):
-            text(draw, "نموذج تصميم — الفرق والمواعيد تجريبية", (70, 209, 940, 40), size=23, color=GOLD, max_lines=1)
+            text(draw, "معاينة تصميم • ليست مباريات مؤكدة", (70, 150, 940, 55), size=30, color=GOLD, max_lines=1)
         result.append(encode(image))
     return result
 
