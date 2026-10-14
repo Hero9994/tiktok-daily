@@ -846,9 +846,77 @@
       "day": "2026-10-15",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-15T16:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-14T19:16:58.441526Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A visual metaphor for humanity searching the stars for a home as its world fades.",
+      "prompt": "Create original abstract cinematic science-fiction art: a small luminous spacecraft silhouette crossing a vast, softly glowing cosmic passage toward a distant blue planet, with subtle atmospheric haze and muted earth-toned shadows suggesting a troubled world. Epic, contemplative mood, elegant light and scale, no people, no text, no logos, no recognizable copyrighted characters, no violence. Keep all focal elements within the upper 65% and central 80% of the frame; leave the bottom area uncluttered for an Arabic information panel.",
+      "title": "إنترستيلر",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nدراما خيال علمي ملحمية عن مجموعة من رواد الفضاء ينطلقون عبر الفضاء بحثًا عن موطن جديد للبشرية، بينما تعاني الأرض من كارثة زراعية ومجاعة.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "دراما خيال علمي ملحمية عن مجموعة من رواد الفضاء ينطلقون عبر الفضاء بحثًا عن موطن جديد للبشرية، بينما تعاني الأرض من كارثة زراعية ومجاعة.",
+      "subject_id": "wikipedia-en:6009939",
+      "subject_title": "Interstellar (film)",
+      "summary": "دراما خيال علمي ملحمية عن مجموعة من رواد الفضاء ينطلقون عبر الفضاء بحثًا عن موطن جديد للبشرية، بينما تعاني الأرض من كارثة زراعية ومجاعة.",
+      "source_url": "https://en.wikipedia.org/wiki/Interstellar_(film)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2014"
+          },
+          {
+            "label": "المدة",
+            "value": "169 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          }
+        ],
+        "genres": [
+          "فلم خيال علمي",
+          "فلم مغامرة",
+          "فيلم ديستوبيا"
+        ],
+        "cast": [
+          {
+            "name": "ماثيو ماكونهي",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matthew%20McConaughey%202025.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q188955"
+          },
+          {
+            "name": "آن هاثاواي",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anne%20Hathaway-%20Press%20conference%20for%20the%20film%20%22The%20Devil%20Wears%20Prada%202%22%20-%2055194764955%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q36301"
+          },
+          {
+            "name": "جيسيكا شاستاين",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jessica%20Chastain-64424%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q229313"
+          },
+          {
+            "name": "مايكل كين",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Caine%20-%20Viennale%202012%20a%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q123351"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q13417189",
+        "tvmaze_url": null
+      },
+      "watch_reason": "قد يعجب محبي دراما الخيال العلمي الملحمية ورحلات البحث عن موطن جديد.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
