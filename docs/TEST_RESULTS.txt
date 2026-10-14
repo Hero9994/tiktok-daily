@@ -1,6 +1,6 @@
 Verification date: 2026-10-14
-GitHub Actions test suite: 46 tests passed.
-CI: https://github.com/Hero9994/tiktok-daily/actions/runs/38545359933
+GitHub Actions test suite: 51 tests passed.
+CI: https://github.com/Hero9994/tiktok-daily/actions/runs/38559347964
 
 Coverage: HTTP adapters, immutable image URLs, Git state persistence,
 uncertain-write reconciliation, canonical subject deduplication, Arabic card rendering,
@@ -16,3 +16,8 @@ One paid image request and two text requests; no duplicate post.
 Final JPEG dimensions: 1080x1920.
 Daily schedule active: 18:00 Europe/Berlin, preparation at 17:07.
 Delivery verifier: https://github.com/Hero9994/tiktok-daily/actions/runs/38545238291
+
+Cinema redesign: sourced poster, factual metadata and actor portraits.
+TVmaze match requires the exact sourced IMDb ID; rating labeled TVmaze.
+Reference poster path makes zero paid image calls and does not duplicate posts.
+No additional TikTok post was created for the redesign.
