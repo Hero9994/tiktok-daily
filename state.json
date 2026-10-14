@@ -107,7 +107,7 @@
       "day": "2026-10-15",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-15T14:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-14T17:57:14.117735Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-10-16",
@@ -186,14 +186,24 @@
           }
         ],
         "date_mode": "tomorrow",
-        "checked_at": "2026-10-14T17:57:22.943766+00:00",
+        "checked_at": "2026-10-14T17:57:27.265010+00:00",
         "source_url": "https://www.football-data.org/",
         "sources": [
           "football-data.org",
           "UEFA.com"
         ]
       },
-      "source_url": "https://www.football-data.org/"
+      "source_url": "https://www.football-data.org/",
+      "hero_file": "2026-10-15-f22a27e693-art.jpg",
+      "image_file": "2026-10-15-f22a27e693-1.jpg",
+      "image_sha256": "420b978f751229772dc0daf01c49e00a6b6ad7bcfbbf0727fbab31ec398a07ea",
+      "image_dhash": "e43119191921c693",
+      "image_assets": [
+        {
+          "file": "2026-10-15-f22a27e693-1.jpg",
+          "sha256": "420b978f751229772dc0daf01c49e00a6b6ad7bcfbbf0727fbab31ec398a07ea"
+        }
+      ]
     }
   },
   "image_requests": {
