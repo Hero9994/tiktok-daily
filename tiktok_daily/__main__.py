@@ -2,6 +2,8 @@ import argparse
 import json
 import os
 import sys
+import time
+from datetime import timedelta
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 from pathlib import Path
@@ -20,9 +22,34 @@ def secrets(*names):
     return [os.environ[name] for name in names]
 
 
+def activate_verified_schedule(store, config_path):
+    entries = list(store.state["entries"].values())
+    if not entries or not all(e.get("status") == "sent" for e in entries):
+        return False
+    if config_path.resolve() != (store.root / "config.json").resolve():
+        return False
+    current = load_config(config_path)
+    if not current.get("activate_after_first_success"):
+        return False
+    # Fetch and fast-forward before editing, so any newer user settings are preserved.
+    store.git("fetch", "origin", "main")
+    store.git("merge", "--ff-only", "origin/main")
+    current = load_config(config_path)
+    if not current["enabled"] or not current["allow_paid_openai"] or not current.get("activate_after_first_success"):
+        return False
+    current.update(daily_enabled=True, activate_after_first_success=False)
+    config_path.write_text(json.dumps(current, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    store.git("add", "config.json")
+    store.git("-c", "user.name=Daily Image Bot", "-c", "user.email=daily-image-bot@users.noreply.github.com",
+              "commit", "-m", "Enable daily posts after confirmed first TikTok publication")
+    store.git("push", "origin", "HEAD:refs/heads/main")
+    print("DAILY_SCHEDULE_ACTIVATED_AFTER_CONFIRMED_PUBLICATION")
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "publish-test"])
+    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
     args = parser.parse_args()
@@ -117,7 +144,7 @@ def main():
     if not org or not channel:
         raise RuntimeError("Run discover and configure Buffer organization/channel IDs in config.json")
     openai_key = None
-    if args.mode not in ("verify", "inspect-buffer"):
+    if args.mode not in ("verify", "inspect-buffer", "wait-first"):
         if not c["allow_paid_openai"]:
             raise RuntimeError("Paid OpenAI calls are disabled in config.json")
         openai_key, = secrets("OPENAI_API_KEY")
@@ -135,12 +162,31 @@ def main():
                 if os.environ.get(name):
                     message = message.replace(os.environ[name], "[REDACTED]")
             print(message)
-        elif args.mode == "verify":
+        elif args.mode in ("verify", "wait-first"):
+            if args.mode == "wait-first":
+                candidates = [e for e in store.state["entries"].values() if e.get("status") == "accepted" and e.get("post_id")]
+                if not candidates:
+                    raise RuntimeError("No accepted first post to wait for; this mode never creates a post")
+                due = max(datetime.fromisoformat(e["due_at"].replace("Z", "+00:00")) for e in candidates)
+                deadline = due + timedelta(minutes=10)
+                if due - datetime.now(timezone.utc) > timedelta(minutes=35):
+                    raise RuntimeError("Post is more than 35 minutes away; hourly verification will continue")
+                print("Waiting for accepted post delivery; no generation or publishing calls will be made", flush=True)
+                while datetime.now(timezone.utc) < due:
+                    time.sleep(min(60, max(0, (due - datetime.now(timezone.utc)).total_seconds())))
+                while True:
+                    publisher.verify()
+                    if all(e.get("status") == "sent" for e in store.state["entries"].values()):
+                        break
+                    if datetime.now(timezone.utc) >= deadline:
+                        raise RuntimeError("First publication remains unconfirmed; daily generation stays paused")
+                    time.sleep(30)
             publisher.verify()
             print("Verification finished; only status=sent is considered confirmed publication")
             print(json.dumps([{"day": e["day"], "status": e["status"],
                                "external_link": e.get("external_link")}
                               for e in list(store.state["entries"].values())[-3:]], ensure_ascii=False, indent=2))
+            activate_verified_schedule(store, args.config)
         else:
             publish_now = args.mode == "publish-test"
             if publish_now:

@@ -21,6 +21,8 @@ def load_config(path):
             raise ValueError(f"{flag} must be a boolean")
     if type(c.get("daily_enabled", True)) is not bool:
         raise ValueError("daily_enabled must be a boolean")
+    if type(c.get("activate_after_first_success", False)) is not bool:
+        raise ValueError("activate_after_first_success must be a boolean")
     if c.get("content_mode", "art") not in ("art", "cinema", "auto"):
         raise ValueError("content_mode must be art, cinema or auto")
     caption = c.get("fixed_caption")

@@ -1,6 +1,7 @@
 {
   "enabled": true,
   "daily_enabled": false,
+  "activate_after_first_success": true,
   "allow_paid_openai": true,
   "content_mode": "auto",
   "fixed_caption": null,
