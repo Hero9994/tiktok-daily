@@ -49,6 +49,7 @@ class DailyVideoTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.store = VideoStore(self.temp.name)
         self.c = load_config(ROOT/'config.json')
+        self.c['cinema_curated_only']=False  # Track tests use generic fake works, policy tested separately.
         self.c['skip_empty_football']=False  # Exercise the historical opt-in empty-card path as well.
         self.buffer,self.ai,self.http = MultiBuffer(),FakeOpenAI(),FakeHTTP()
     def publisher(self, kind, football=None):

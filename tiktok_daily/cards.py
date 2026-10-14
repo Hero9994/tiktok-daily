@@ -102,68 +102,84 @@ def crest(url):
 
 
 def cinema(hero, entry, c):
-    image, draw = canvas()
-    # Compact brand mark leaves the largest type for the actual work name.
-    draw.rectangle((440, 35, 640, 200), fill="#04070b")
-    draw.rounded_rectangle((55, 45, 174, 139), radius=18, outline=GOLD, width=3)
-    draw.text((74, 47), "TK", font=font(48), fill=GOLD)
-    text(draw, "ترشيح يستحق المشاهدة", (230, 57, 790, 75), size=38, color=GOLD, max_lines=1)
-    text(draw, entry["title"], (55, 150, 970, 150), size=92, max_lines=1)
-    details = entry.get("cinema_details", {})
-    if details.get("poster_url"):
+    image = Image.new('RGB',(1080,1920),'#050a0d')
+    details = entry.get('cinema_details',{})
+    if details.get('poster_url'):
         poster = artwork(details['poster_url'])
     else:
-        with Image.open(io.BytesIO(hero)) as src:
-            poster = src.convert('RGB')
-    panel = ImageOps.contain(poster, (398, 620), method=Image.Resampling.LANCZOS)
-    image.paste(panel, (62 + (398 - panel.width)//2, 315 + (620 - panel.height)//2))
-    draw.rounded_rectangle((55, 308, 467, 942), radius=14, outline=GOLD, width=3)
-    facts = details.get('facts', [])[:6]
-    if not facts:
-        facts = [{'label': 'ترشيح اليوم', 'value': 'فيلم أو مسلسل'}, {'label': 'النبذة', 'value': 'دون حرق الأحداث'}]
-    for index, fact in enumerate(facts):
-        col, row = index % 2, index // 2
-        left, top = 490 + col * 270, 310 + row * 148
-        draw.rounded_rectangle((left, top, left + 255, top + 135), radius=15, fill=PANEL, outline="#76613c", width=2)
-        text(draw, fact['label'], (left+12, top+8, 231, 54), size=27, color=GOLD, max_lines=1)
-        text(draw, fact['value'], (left+12, top+61, 231, 65), size=38, max_lines=1)
-    if len(facts) <= 4 and entry.get('watch_reason'):
-        draw.rounded_rectangle((490, 616, 1018, 760), radius=15, fill=PANEL, outline='#76613c', width=2)
-        text(draw, 'لماذا تشاهده؟', (509, 622, 490, 49), size=27, color=GOLD, max_lines=1)
-        text(draw, entry['watch_reason'], (509, 673, 490, 83), size=28, max_lines=2)
-    genres = ' • '.join(details.get('genres', []))
-    if genres:
-        draw.rounded_rectangle((490, 772, 1018, 939), radius=16, fill=PANEL, outline=GOLD, width=2)
-        text(draw, 'التصنيف', (512, 781, 485, 55), size=29, color=GOLD, max_lines=1)
-        text(draw, genres, (512, 836, 485, 95), size=30, max_lines=2)
-    draw.rounded_rectangle((55, 965, 1025, 1248), radius=22, fill=PANEL, outline=GOLD, width=2)
-    text(draw, "القصة باختصار • دون حرق", (80, 975, 920, 72), size=37, color=GOLD, max_lines=1)
-    text(draw, entry.get("summary") or entry.get("description", ""), (80, 1048, 920, 190), size=39, max_lines=3)
-    cast = details.get('cast', [])[:4]
-    if cast:
-        text(draw, 'من طاقم التمثيل', (75, 1265, 930, 64), size=37, color=GOLD, max_lines=1)
-        width = 930 // len(cast)
-        for index, actor in enumerate(cast):
-            left = 75 + index * width
-            draw.rounded_rectangle((left, 1330, left+width-12, 1638), radius=15, fill=PANEL, outline='#76613c', width=2)
-            portrait = None
-            if actor.get('image_url'):
-                try:
-                    portrait = artwork(actor['image_url'])
-                except (OSError, ValueError):
-                    pass  # Missing portraits never produce invented faces.
-            if portrait is not None:
-                photo = ImageOps.contain(portrait, (width-26, 217), method=Image.Resampling.LANCZOS)
-                image.paste(photo, (left+7+(width-26-photo.width)//2, 1337+(217-photo.height)//2))
-            else:
-                text(draw, actor['name'].split()[0], (left+12, 1400, width-36, 90), size=35, color=GOLD, max_lines=1)
-            text(draw, actor['name'], (left+10, 1553, width-32, 78), size=26, max_lines=2)
-    else:
-        text(draw, 'اختر مشاهدتك القادمة', (80, 1370, 920, 100), size=52, color=GOLD, max_lines=1)
-        text(draw, 'ما رأيك بهذا الترشيح؟', (80, 1490, 920, 95), size=42, max_lines=1)
-    footer(draw, c, "المصادر: Wikipedia / Wikidata / Wikimedia" + (" / TVmaze" if details.get('tvmaze_url') else ""))
-    if entry.get("demo"):
-        text(draw, "نموذج تصميم — صورة تجريبية", (70, 1875, 940, 40), size=23, color=GOLD, max_lines=1)
+        with Image.open(io.BytesIO(hero)) as src: poster = src.convert('RGB')
+    # An enlarged reference poster anchors the composition; details remain sourced text.
+    art = ImageOps.fit(poster,(745,1060),method=Image.Resampling.LANCZOS,centering=(0.5,0.35))
+    image.paste(art,(0,180))
+    wash = Image.new('RGBA',image.size)
+    wd = ImageDraw.Draw(wash)
+    for x in range(745):
+        alpha = int(240*max(0,(x-480)/265))
+        wd.line((x,180,x,1240),fill=(5,10,13,alpha))
+    for y in range(1060,1240):
+        wd.line((0,y,1080,y),fill=(5,10,13,int(255*(y-1060)/180)))
+    image=Image.alpha_composite(image.convert('RGBA'),wash).convert('RGB')
+    draw=ImageDraw.Draw(image)
+    draw.rounded_rectangle((978,30,1048,105),radius=12,outline=GOLD,width=3)
+    draw.text((989,34),'TK',font=font(33,650),fill=GOLD)
+    text(draw,entry['title'],(60,0,875,164),size=98,color='#f7d27e',max_lines=1,weight=800,stroke=2)
+    original = entry.get('subject_title','')
+    original = re.sub(r'\s*\([^)]*\)\s*$','',original)
+    if original and original.casefold()!=entry['title'].casefold():
+        text(draw,original,(60,152,870,70),size=31,color=GOLD,max_lines=1)
+    draw.line((100,149,875,149),fill=GOLD,width=2)
+    facts = list(details.get('facts',[]))
+    genres = ' / '.join(details.get('genres',[])[:2])
+    if genres: facts.append({'label':'التصنيف','value':genres})
+    ordered=[]
+    for names in [('سنة الإصدار',),('التصنيف',),('المدة','المواسم'),('تقييم Common Sense','تقييم TVmaze'),('بلد الإنتاج',),('اللغة الأصلية','الحلقات','نوع العمل')]:
+        fact=next((f for name in names for f in facts if f['label']==name),None)
+        if fact:ordered.append(fact)
+    if not ordered:ordered=[{'label':'ترشيح اليوم','value':'فيلم أو مسلسل'}]
+    for i,fact in enumerate(ordered[:6]):
+        top=280+i*139
+        draw.rounded_rectangle((715,top,1050,top+124),radius=19,fill='#070c0f',outline='#a58a52',width=2)
+        # Small geometric gold emblems avoid missing icon glyphs in the Arabic font.
+        icon_x,icon_y=738,top+34
+        if 'تقييم' in fact['label']:
+            points=[]
+            for n in range(10):
+                angle=-math.pi/2+n*math.pi/5;r=22 if n%2==0 else 10
+                points.append((icon_x+22+math.cos(angle)*r,icon_y+22+math.sin(angle)*r))
+            draw.polygon(points,outline=GOLD,width=3)
+        elif fact['label']=='المدة':
+            draw.ellipse((icon_x,icon_y,icon_x+44,icon_y+44),outline=GOLD,width=3)
+            draw.line((icon_x+22,icon_y+8,icon_x+22,icon_y+23,icon_x+32,icon_y+29),fill=GOLD,width=3)
+        else:
+            draw.rounded_rectangle((icon_x,icon_y,icon_x+44,icon_y+44),radius=6,outline=GOLD,width=2)
+            draw.line((icon_x+8,icon_y+13,icon_x+36,icon_y+13),fill=GOLD,width=2)
+        text(draw,fact['label'],(797,top+6,235,43),size=24,color=GOLD,max_lines=1)
+        text(draw,fact['value'],(795,top+44,239,76),size=32,max_lines=2,weight=600)
+    text(draw,'القصة',(70,1122,940,70),size=43,color=GOLD,max_lines=1,weight=700)
+    draw.line((50,1188,1030,1188),fill=GOLD,width=2)
+    draw.rounded_rectangle((35,1208,1045,1425),radius=22,fill='#0b1014',outline='#a58a52',width=2)
+    text(draw,entry.get('summary') or entry.get('description',''),(60,1223,960,190),size=36,max_lines=3)
+    cast=details.get('cast',[])[:3]
+    text(draw,'أبطال العمل' if cast else 'لماذا تشاهده؟',(65,1440,950,74),size=41,color=GOLD,max_lines=1,weight=700)
+    draw.line((50,1511,1030,1511),fill=GOLD,width=2)
+    for i,actor in enumerate(cast):
+        left=43+i*335
+        draw.rounded_rectangle((left,1534,left+320,1823),radius=21,fill='#0b1014',outline=GOLD,width=3)
+        if actor.get('image_url'):
+            try:
+                portrait=artwork(actor['image_url'])
+                photo=ImageOps.fit(portrait,(306,211),method=Image.Resampling.LANCZOS,centering=(0.5,0.20))
+                image.paste(photo,(left+7,1541))
+            except (OSError,ValueError): pass
+        text(draw,actor['name'],(left+12,1755,296,64),size=29,max_lines=1,color='#f7d27e',weight=650)
+    if not cast:
+        text(draw,entry.get('watch_reason') or 'ترشيح جديد لمحبي السينما والمسلسلات',(70,1580,940,180),size=42,max_lines=2)
+    note='TK SERVERS • Wikipedia / Wikidata'
+    if details.get('tvmaze_url'):note+=' / TVmaze'
+    if entry.get('cinema_review'):note+=' / Common Sense Media'
+    text(draw,note,(50,1853,980,43),size=20,color='#b6ac97',max_lines=1)
+    if entry.get('demo'):
+        text(draw,'معاينة تصميم فقط',(50,1879,980,40),size=20,color=GOLD,max_lines=1)
     return [encode(image)]
 
 

@@ -43,6 +43,10 @@ def load_config(path):
                 raise ValueError('Daily post times must be between 12:00 and 20:00')
             if post.get('music_file') != f"assets/audio/{'sports' if post['kind']=='football' else 'cinema'}.m4a":
                 raise ValueError('Invalid daily music assignment')
+    if type(c.get('cinema_curated_only', False)) is not bool:
+        raise ValueError('cinema_curated_only must be boolean')
+    if type(c.get('cinema_min_critic_rating',4)) not in (int,float) or not 4 <= c.get('cinema_min_critic_rating',4) <= 5:
+        raise ValueError('Cinema critic threshold must be between 4 and 5 out of 5')
     caption = c.get("fixed_caption")
     if caption is not None and (not isinstance(caption, str) or len(caption) > 1500 or "#" in caption):
         raise ValueError("fixed_caption must be plain text under 1500 characters; configure hashtags separately")

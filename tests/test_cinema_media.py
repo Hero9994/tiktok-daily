@@ -29,6 +29,12 @@ class CinemaMediaTests(unittest.TestCase):
         self.assertNotIn('rating', data)
         self.assertEqual(len(http.calls), 2)
 
+    def test_documentary_series_is_not_mislabelled_as_a_film(self):
+        source={'wikibase_item':'Q1','extract':'A British nature documentary series.',
+                'originalimage':{'source':'https://upload.wikimedia.org/title.jpg'}}
+        data=enrich(FakeHTTP([{'entities':{'Q1':{'claims':{}}}}]),source)['cinema_details']
+        self.assertEqual(data['facts'][0],{'label':'نوع العمل','value':'مسلسل'})
+
     def test_missing_work_artwork_stops_before_publication(self):
         http = FakeHTTP([{'entities': {'Q1': {'claims': {}}}}])
         with self.assertRaises(ValueError):

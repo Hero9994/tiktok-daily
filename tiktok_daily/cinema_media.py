@@ -29,7 +29,7 @@ def enrich(http, source):
         return {}  # Older saved entries/test sources remain renderable.
     work = entity(http, qid)
     art = (source.get('originalimage') or source.get('thumbnail') or {}).get('source')
-    kind = 'مسلسل' if re.search(r'\b(television series|miniseries)\b', source.get('extract', ''), re.I) else 'فيلم'
+    kind = 'مسلسل' if re.search(r'\b(?:television|documentary|animated) (?:\w+ ){0,3}series\b|\bminiseries\b', source.get('extract', ''), re.I) else 'فيلم'
     facts = [{'label': 'نوع العمل', 'value': kind}]
     imdb = values(work, 'P345')
     tvmaze_url = None
@@ -75,6 +75,11 @@ def enrich(http, source):
         country = label(entity(http, countries[0]['id']))
         if country:
             facts.append({'label': 'بلد الإنتاج', 'value': country})
+    languages = values(work, 'P364') or values(work, 'P407')
+    if languages:
+        language = label(entity(http, languages[0]['id']))
+        if language:
+            facts.append({'label': 'اللغة الأصلية', 'value': language})
     cast = []
     for v in ([] if tvmaze_cast else values(work, 'P161')[:4]):
         actor = entity(http, v['id'])

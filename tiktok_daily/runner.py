@@ -11,8 +11,10 @@ from .cards import render, encode
 
 from .cinema_media import artwork
 from .video import make_video
+from .cinema_catalog import approve_entry
 
 FOOTBALL_TEMPLATE = "gold-reference-v2"
+CINEMA_TEMPLATE = "cinema-reference-v2"
 
 
 def utc_text(now):
@@ -124,7 +126,7 @@ class Publisher:
             due = datetime.fromisoformat(entry["due_at"].replace("Z", "+00:00"))
             if not publish_now and due <= now + timedelta(minutes=5):
                 raise RuntimeError("Unfinished post's publishing time has passed; review it manually")
-        previous = [e for k, e in entries.items() if k != key and e.get("idea")]
+        previous = [e for k, e in entries.items() if k != key and any(e.get(f) for f in ("idea", "subject_id", "subject_imdb", "subject_wikidata"))]
         if entry["status"] == "planned":
             self.generator.moderate(self.c["theme"])
             generated = None
@@ -155,6 +157,8 @@ class Publisher:
             if track:
                 entry['post_kind'] = track
             self.store.checkpoint()
+        if entry.get('post_kind') != 'football' and self.c.get('cinema_curated_only'):
+            approve_entry(self.c, entry, previous)
         if entry["status"] == "content_ready":
             while entry["image_attempts"] < 3:
                 month = self.clock().strftime("%Y-%m")
@@ -196,7 +200,8 @@ class Publisher:
                     assets.append({"file": filename, "sha256": checksum})
                 entry.update(status="image_ready", image_file=assets[0]["file"], image_sha256=assets[0]["sha256"],
                              image_dhash=perceptual, image_assets=assets,
-                             football_template=FOOTBALL_TEMPLATE if entry.get("post_kind") == "football" else None)
+                             football_template=FOOTBALL_TEMPLATE if entry.get("post_kind") == "football" else None,
+                             cinema_template=CINEMA_TEMPLATE if entry.get("post_kind") != "football" else None)
                 self.store.checkpoint()
                 break
             if entry["status"] != "image_ready":
@@ -220,6 +225,17 @@ class Publisher:
                         assets.append({"file": filename, "sha256": checksum})
                     entry.update(image_assets=assets, image_file=assets[0]["file"], image_sha256=assets[0]["sha256"],
                                  football_template=FOOTBALL_TEMPLATE)
+                self.store.checkpoint()
+            elif self.c.get('card_style') == 'black_gold' and entry.get('cinema_template') != CINEMA_TEMPLATE:
+                hero = (self.store.path / 'images' / entry['hero_file']).read_bytes()
+                assets = []
+                for index, picture in enumerate(render(hero, entry, self.c)):
+                    data, checksum, _ = prepare_image(picture)
+                    filename = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}-{index + 1}.jpg"
+                    self.store.save_image(filename, data)
+                    assets.append({'file': filename, 'sha256': checksum})
+                entry.update(image_assets=assets, image_file=assets[0]['file'], image_sha256=assets[0]['sha256'],
+                             cinema_template=CINEMA_TEMPLATE)
                 self.store.checkpoint()
             entry["image_url"] = self.store.image_url(entry["image_file"])
             entry["image_urls"] = [self.store.image_url(a["file"]) for a in entry.get("image_assets", [{"file": entry["image_file"]}])]
