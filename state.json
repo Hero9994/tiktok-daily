@@ -848,7 +848,7 @@
       "due_at": "2026-10-15T16:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-14T19:16:58.441526Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A visual metaphor for humanity searching the stars for a home as its world fades.",
       "prompt": "Create original abstract cinematic science-fiction art: a small luminous spacecraft silhouette crossing a vast, softly glowing cosmic passage toward a distant blue planet, with subtle atmospheric haze and muted earth-toned shadows suggesting a troubled world. Epic, contemplative mood, elegant light and scale, no people, no text, no logos, no recognizable copyrighted characters, no violence. Keep all focal elements within the upper 65% and central 80% of the frame; leave the bottom area uncluttered for an Arabic information panel.",
       "title": "إنترستيلر",
