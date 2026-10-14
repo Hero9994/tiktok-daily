@@ -82,7 +82,7 @@ class Publisher:
         if failures:
             raise RuntimeError("Publication verification failed: " + "; ".join(sorted(set(failures))))
 
-    def prepare(self, publish_now=False, correction_id=None):
+    def prepare(self, publish_now=False, correction_id=None, preview_id=None):
         if not self.c["enabled"] or not self.c["allow_paid_openai"]:
             raise RuntimeError("Live publishing is disabled. Enable it only after reviewing OpenAI costs")
         self.verify()  # Stop new posting if prior delivery is uncertain or failed.
@@ -94,6 +94,10 @@ class Publisher:
         key = f"{self.buffer.channel}:{day}"
         entries = self.store.state["entries"]
         track = self.c.get('post_kind')
+        if preview_id:
+            approval=self.c.get('approved_previews',{}).get(preview_id)
+            if correction_id or not publish_now or approval!={'day':day,'track':track} or track!='cinema':
+                raise RuntimeError('Preview is not approved for this day and track')
         if correction_id:
             approval=self.c.get('approved_corrections',{}).get(correction_id)
             if not publish_now or approval!={'day':day,'track':track} or track!='football':
@@ -101,12 +105,14 @@ class Publisher:
             self.c=dict(self.c,correction_notice='تصحيح للمنشور السابق: الجدول الموسّع من UEFA والبطولات المتابعة.')
         if track:
             legacy = entries.get(key)
-            if (not correction_id and legacy and legacy['status'] in ('accepted','sent')
+            if (not correction_id and not preview_id and legacy and legacy['status'] in ('accepted','sent')
                     and legacy.get('post_kind','cinema') == track):
                 return 'This track already has a legacy post today; skipped'
             key += ':' + track
         if correction_id:
             key += ':correction:' + correction_id
+        if preview_id:
+            key += ":preview:" + preview_id
         if key in entries and entries[key]["status"] in ("accepted", "sent"):
             return "This day's post already exists; skipped"
         entry = entries.get(key)
@@ -120,6 +126,8 @@ class Publisher:
                                     "status": "planned", "created_at": utc_text(now), "image_attempts": 0}
             if correction_id:
                 entry['correction_id']=correction_id
+            if preview_id:
+                entry['preview_id']=preview_id
             self.store.checkpoint()
         else:
             # Retrying an unfinished generation after its original slot has passed is unsafe.

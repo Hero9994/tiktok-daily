@@ -80,5 +80,11 @@
     }
   },
   "cinema_curated_only": true,
-  "cinema_min_critic_rating": 4
+  "cinema_min_critic_rating": 4,
+  "approved_previews": {
+    "cinema-layout-2026-10-14": {
+      "day": "2026-10-14",
+      "track": "cinema"
+    }
+  }
 }

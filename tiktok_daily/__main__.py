@@ -49,11 +49,12 @@ def activate_verified_schedule(store, config_path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test", "publish-correction"])
+    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test", "publish-correction", "publish-preview"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument('--track',choices=['football','cinema'],default=os.environ.get('POST_KIND') or 'cinema')
     parser.add_argument('--correction-id',default='')
+    parser.add_argument('--preview-id',default='')
     args = parser.parse_args()
     c = load_config(args.config)
     http = HTTP()
@@ -145,7 +146,7 @@ def main():
     if args.mode == "prepare" and os.environ.get("EVENT_SCHEDULE") and not c.get("daily_enabled", True):
         print("Daily generation disabled while the first publishing test is verified")
         return
-    if args.mode in ('prepare','publish-test','publish-correction') and c.get('daily_posts'):
+    if args.mode in ('prepare','publish-test','publish-correction','publish-preview') and c.get('daily_posts'):
         c = track_config(c,args.track)
     buffer_key, = secrets("BUFFER_API_KEY")
     org = os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")
@@ -197,17 +198,32 @@ def main():
                               for e in list(store.state["entries"].values())[-3:]], ensure_ascii=False, indent=2))
             activate_verified_schedule(store, args.config)
         else:
-            publish_now = args.mode in ("publish-test","publish-correction")
+            publish_now = args.mode in ("publish-test","publish-correction","publish-preview")
             if args.mode=='publish-correction' and not args.correction_id:
                 raise RuntimeError('An approved correction ID is required')
-            if publish_now and args.mode!='publish-correction':
+            if publish_now and args.mode not in ('publish-correction','publish-preview'):
                 local = datetime.now(timezone.utc).astimezone(ZoneInfo(c["timezone"]))
                 if not 12 <= local.hour < 20:
                     # Respect the user's publication window even during a live test.
                     c["publish_time"] = "12:05"
                     publish_now = False
                     print("Live test will be scheduled at the next valid 12:05 local publishing slot")
-            print(publisher.prepare(publish_now=publish_now,correction_id=args.correction_id if args.mode=='publish-correction' else None))
+            if args.mode=='publish-preview' and not args.preview_id:
+                raise RuntimeError('An approved preview ID is required')
+            print(publisher.prepare(publish_now=publish_now,
+                correction_id=args.correction_id if args.mode=='publish-correction' else None,
+                preview_id=args.preview_id if args.mode=='publish-preview' else None))
+            if args.mode=='publish-preview':
+                target=next(e for e in store.state['entries'].values() if e.get('preview_id')==args.preview_id)
+                deadline=datetime.now(timezone.utc)+timedelta(minutes=10)
+                while target.get('status')!='sent':
+                    publisher.verify()
+                    if target.get('status')=='sent':break
+                    if datetime.now(timezone.utc)>=deadline:
+                        raise RuntimeError('Preview delivery remains unconfirmed; never recreate the post')
+                    time.sleep(20)
+                print(json.dumps({'preview_id':args.preview_id,'status':target['status'],
+                                  'external_link':target.get('external_link')},ensure_ascii=False),flush=True)
     finally:
         store.close()
 
