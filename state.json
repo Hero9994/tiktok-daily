@@ -961,7 +961,7 @@
       "due_at": "2026-10-14T20:32:43.452689Z",
       "status": "content_ready",
       "created_at": "2026-10-14T20:32:43.452689Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "preview_id": "cinema-layout-2026-10-14",
       "idea": "A quiet science-fiction still life: a tiny, unbranded maintenance machine amid sculptural towers of compacted waste, with a distant starship glow suggesting a journey beyond Earth.",
       "prompt": "Create original abstract cinematic art inspired by animated science fiction: a deserted, softly glowing landscape of sculptural recycled-metal forms and geometric debris, with one tiny generic, unbranded maintenance machine and a distant luminous spacecraft shape. Evoke solitude, wonder, and a hopeful journey through color and composition. No people, no recognizable characters, no logos, no text, no violence, no poster imitation. Keep all focal elements within the upper 65% and central 80%, leaving the lower area visually quiet for an Arabic information panel.",
