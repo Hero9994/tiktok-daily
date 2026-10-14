@@ -959,10 +959,81 @@
       "day": "2026-10-14",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-14T20:32:43.452689Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-14T20:32:43.452689Z",
       "image_attempts": 0,
-      "preview_id": "cinema-layout-2026-10-14"
+      "preview_id": "cinema-layout-2026-10-14",
+      "idea": "A quiet science-fiction still life: a tiny, unbranded maintenance machine amid sculptural towers of compacted waste, with a distant starship glow suggesting a journey beyond Earth.",
+      "prompt": "Create original abstract cinematic art inspired by animated science fiction: a deserted, softly glowing landscape of sculptural recycled-metal forms and geometric debris, with one tiny generic, unbranded maintenance machine and a distant luminous spacecraft shape. Evoke solitude, wonder, and a hopeful journey through color and composition. No people, no recognizable characters, no logos, no text, no violence, no poster imitation. Keep all focal elements within the upper 65% and central 80%, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "WALL-E",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفي عام 2805، يعمل روبوت وحيد على تنظيف أرض مهجورة، حتى تزوره روبوتة قادمة من سفينة فضائية؛ فتبدأ رحلة عبر المجرة.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "في عام 2805، يعمل روبوت وحيد على تنظيف أرض مهجورة، حتى تزوره روبوتة قادمة من سفينة فضائية؛ فتبدأ رحلة عبر المجرة.",
+      "subject_id": "wikipedia-en:8980330",
+      "subject_title": "WALL-E",
+      "summary": "في عام 2805، يعمل روبوت وحيد على تنظيف أرض مهجورة، حتى تزوره روبوتة قادمة من سفينة فضائية؛ فتبدأ رحلة عبر المجرة.",
+      "source_url": "https://en.wikipedia.org/wiki/WALL-E",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/4/4c/WALL-E_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2008"
+          },
+          {
+            "label": "المدة",
+            "value": "98 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم كوميدي رومانسي",
+          "فيلم ما بعد الكارثة",
+          "الخيال العلمي الهزلي"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q104905",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q104905",
+      "subject_imdb": "tt0910970",
+      "cinema_review": {
+        "wikipedia_title": "WALL-E",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/wall-e",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 8980330,
+        "wikidata_id": "Q104905",
+        "imdb_id": "tt0910970",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes."
+      },
+      "watch_reason": "قد يستمتع به محبو أفلام الخيال العلمي والرسوم المتحركة ذات الأجواء الحالمة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
