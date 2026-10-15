@@ -49,12 +49,13 @@ def activate_verified_schedule(store, config_path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test", "publish-correction", "publish-preview"])
+    parser.add_argument("mode", choices=["doctor", "discover", "inspect-buffer", "check-openai", "check-football", "preview", "prepare", "verify", "wait-first", "publish-test", "publish-correction", "publish-preview", "maintain"])
     parser.add_argument("--config", type=Path, default=Path("config.json"))
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument('--track',choices=['football','cinema'],default=os.environ.get('POST_KIND') or 'cinema')
     parser.add_argument('--correction-id',default='')
     parser.add_argument('--preview-id',default='')
+    parser.add_argument('--post-id',default='')
     args = parser.parse_args()
     c = load_config(args.config)
     http = HTTP()
@@ -143,7 +144,7 @@ def main():
     if not c["enabled"]:
         print("Automation disabled in config.json; no remote request made")
         return
-    if args.mode == "prepare" and os.environ.get("EVENT_SCHEDULE") and not c.get("daily_enabled", True):
+    if args.mode in ("prepare","maintain") and os.environ.get("EVENT_SCHEDULE") and not c.get("daily_enabled", True):
         print("Daily generation disabled while the first publishing test is verified")
         return
     if args.mode in ('prepare','publish-test','publish-correction','publish-preview') and c.get('daily_posts'):
@@ -165,7 +166,14 @@ def main():
     store = GitStore(Path.cwd(), c["state_branch"], os.environ.get("GITHUB_REPOSITORY", ""))
     try:
         publisher = Publisher(c, store, OpenAI(http, openai_key, c), Buffer(http, buffer_key, org, channel), http)
-        if args.mode == "inspect-buffer":
+        if args.mode == 'maintain':
+            from .maintenance import maintain
+            publisher.verify()
+            def factory(settings):
+                return Publisher(settings,store,OpenAI(http,openai_key,settings),
+                                 Buffer(http,buffer_key,org,channel),http)
+            print(json.dumps(maintain(c,store.state['entries'],channel,factory,datetime.now(timezone.utc)),ensure_ascii=False))
+        elif args.mode == "inspect-buffer":
             result = publisher.buffer.inspect(list(store.state["entries"].values()))
             message = json.dumps(result, ensure_ascii=False, indent=2)
             for name in ("BUFFER_API_KEY", "OPENAI_API_KEY", "FOOTBALL_DATA_API_KEY"):
@@ -174,7 +182,7 @@ def main():
             print(message)
         elif args.mode in ("verify", "wait-first"):
             if args.mode == "wait-first":
-                candidates = [e for e in store.state["entries"].values() if e.get("status") == "accepted" and e.get("post_id")]
+                candidates = [e for e in store.state["entries"].values() if e.get("status") == "accepted" and e.get("post_id") and (not args.post_id or e.get("post_id")==args.post_id)]
                 if not candidates:
                     raise RuntimeError("No accepted first post to wait for; this mode never creates a post")
                 due = max(datetime.fromisoformat(e["due_at"].replace("Z", "+00:00")) for e in candidates)

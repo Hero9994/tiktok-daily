@@ -2,12 +2,10 @@ name: Daily TikTok
 
 on:
   schedule:
-    # Prepare early, then let Buffer publish at config.json's local time.
-    - cron: '7 15 * * *'
+    # Every wake-up books BOTH posts in Buffer well before their due times.
+    # GitHub cron can be delayed or dropped; it is not the publication clock.
+    - cron: '17 6,8,10 * * *'
       timezone: 'Europe/Berlin'
-    - cron: '7 17 * * *'
-      timezone: 'Europe/Berlin'
-    # Check confirmed delivery every hour. No generation in verification runs.
     - cron: '43 * * * *'
   workflow_dispatch:
     inputs:
@@ -15,7 +13,11 @@ on:
         description: 'doctor/discover/check-openai/check-football are read-only; publish-test publishes ONE real post now and uses OpenAI credit'
         type: choice
         default: doctor
-        options: [doctor, discover, inspect-buffer, check-openai, check-football, prepare, verify, wait-first, publish-test, publish-correction, publish-preview]
+        options: [doctor, discover, inspect-buffer, check-openai, check-football, prepare, verify, wait-first, publish-test, publish-correction, publish-preview, maintain]
+      post_id:
+        description: 'Optional specific Buffer post for wait-first delivery verification'
+        type: string
+        default: ''
       preview_id:
         description: 'Explicitly approved one-off cinema preview ID'
         type: string
@@ -53,12 +55,13 @@ jobs:
       - name: Install dependency
         run: python -m pip install --disable-pip-version-check -r requirements.txt
       - name: Ensure video encoder
-        if: inputs.mode == 'prepare' || inputs.mode == 'publish-test' || inputs.mode == 'publish-correction' || inputs.mode == 'publish-preview' || github.event.schedule == '7 15 * * *' || github.event.schedule == '7 17 * * *'
+        if: inputs.mode == 'prepare' || inputs.mode == 'publish-test' || inputs.mode == 'publish-correction' || inputs.mode == 'publish-preview' || inputs.mode == 'maintain' || github.event_name == 'schedule'
         run: command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - name: Run publisher
         env:
           MODE_INPUT: ${{ inputs.mode }}
           TRACK_INPUT: ${{ inputs.track }}
+          POST_INPUT: ${{ inputs.post_id }}
           PREVIEW_INPUT: ${{ inputs.preview_id }}
           CORRECTION_INPUT: ${{ inputs.correction_id }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
@@ -72,9 +75,8 @@ jobs:
         run: |
           mode="${MODE_INPUT:-verify}"
           track="${TRACK_INPUT:-cinema}"
-          if [ "$EVENT_SCHEDULE" = '7 15 * * *' ]; then mode=prepare; track=football; fi
-          if [ "$EVENT_SCHEDULE" = '7 17 * * *' ]; then mode=prepare; track=cinema; fi
-          python -m tiktok_daily "$mode" --track "$track" --correction-id "${CORRECTION_INPUT:-}" --preview-id "${PREVIEW_INPUT:-}"
+          if [ -n "$EVENT_SCHEDULE" ]; then mode=maintain; fi
+          python -m tiktok_daily "$mode" --track "$track" --correction-id "${CORRECTION_INPUT:-}" --preview-id "${PREVIEW_INPUT:-}" --post-id "${POST_INPUT:-}"
       - name: Alert on failure
         if: failure()
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1

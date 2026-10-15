@@ -132,6 +132,10 @@ class Publisher:
         else:
             # Retrying an unfinished generation after its original slot has passed is unsafe.
             due = datetime.fromisoformat(entry["due_at"].replace("Z", "+00:00"))
+            if publish_now and due < now:
+                entry.setdefault('original_due_at',entry['due_at'])
+                entry['due_at']=utc_text(now)
+                self.store.checkpoint()
             if not publish_now and due <= now + timedelta(minutes=5):
                 raise RuntimeError("Unfinished post's publishing time has passed; review it manually")
         previous = [e for k, e in entries.items() if k != key and any(e.get(f) for f in ("idea", "subject_id", "subject_imdb", "subject_wikidata"))]
