@@ -107,7 +107,7 @@
       "day": "2026-10-15",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-15T14:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-14T17:57:14.117735Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-10-16",
@@ -217,8 +217,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/48a99222d220cabd6e284db1e4a5700311c61f87/videos/2026-10-15-f22a27e693.mp4",
       "attempted_at": "2026-10-15T15:14:34.317649Z",
       "post_id": "6ad0ee544e51e6e98578e5c6",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-10-15T15:16:46.482435Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-15T15:18:35.559156Z",
+      "sent_at": "2026-10-15T15:18:19.270Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7696913866491661601"
     },
     "6ace9df3778b240e2ffd7494:2026-10-14:football:correction:uefa-coverage-2026-10-14": {
       "day": "2026-10-14",
