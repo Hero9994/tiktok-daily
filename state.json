@@ -186,7 +186,7 @@
           }
         ],
         "date_mode": "tomorrow",
-        "checked_at": "2026-10-14T17:57:40.006693+00:00",
+        "checked_at": "2026-10-15T15:16:13.596594+00:00",
         "source_url": "https://www.football-data.org/",
         "sources": [
           "football-data.org",
@@ -196,12 +196,12 @@
       "source_url": "https://www.football-data.org/",
       "hero_file": "2026-10-15-f22a27e693-art.jpg",
       "image_file": "2026-10-15-f22a27e693-1.jpg",
-      "image_sha256": "420b978f751229772dc0daf01c49e00a6b6ad7bcfbbf0727fbab31ec398a07ea",
+      "image_sha256": "b27d7e9ce6678a9d57800550480936eb9d81666bfa63e58da9230de57b1de752",
       "image_dhash": "e43119191921c693",
       "image_assets": [
         {
           "file": "2026-10-15-f22a27e693-1.jpg",
-          "sha256": "420b978f751229772dc0daf01c49e00a6b6ad7bcfbbf0727fbab31ec398a07ea"
+          "sha256": "b27d7e9ce6678a9d57800550480936eb9d81666bfa63e58da9230de57b1de752"
         }
       ],
       "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/d18b7ae808fd08ee4343ff8c9fa76d0e6fce97af/images/2026-10-15-f22a27e693-1.jpg",
@@ -212,7 +212,8 @@
       "video_sha256": "3e51969e99bcfb2934a4dd41bf1a814a96962fd026c22407c62c0ca7040d13cb",
       "video_fingerprint": "30388f09425f97a7954d5d1123ebba1dbded71469bc05a26b5a1b66d34e4ee27",
       "music_file": "assets/audio/sports.m4a",
-      "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb"
+      "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb",
+      "football_template": "gold-reference-v2"
     },
     "6ace9df3778b240e2ffd7494:2026-10-14:football:correction:uefa-coverage-2026-10-14": {
       "day": "2026-10-14",
