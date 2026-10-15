@@ -854,7 +854,7 @@
       "day": "2026-10-15",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-15T16:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-14T19:16:58.441526Z",
       "image_attempts": 1,
       "idea": "A visual metaphor for humanity searching the stars for a home as its world fades.",
@@ -947,8 +947,8 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/d59c61a899796c4de7327f58451886a42f99813f/videos/2026-10-15-layout-615f1e8f7ddf.mp4",
       "attempted_at": "2026-10-14T19:15:31.665534Z",
       "post_id": "6acfd54dedcab17b81297b33",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-15T15:20:59.003711Z",
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-15T17:20:40.410467Z",
       "layout_refresh": {
         "status": "confirmed",
         "video_file": "2026-10-15-layout-615f1e8f7ddf.mp4",
@@ -961,7 +961,9 @@
         ],
         "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/d59c61a899796c4de7327f58451886a42f99813f/videos/2026-10-15-layout-615f1e8f7ddf.mp4"
       },
-      "cinema_template": "cinema-reference-v2"
+      "cinema_template": "cinema-reference-v2",
+      "sent_at": "2026-10-15T16:06:04.163Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7696926068086770977"
     },
     "6ace9df3778b240e2ffd7494:2026-10-14:cinema:preview:cinema-layout-2026-10-14": {
       "day": "2026-10-14",
