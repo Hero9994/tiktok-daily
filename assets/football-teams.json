@@ -1,5 +1,5 @@
 {
-  "note": "Editorial priorities 3–5; not live follower statistics. A fixture qualifies if at least one team meets the threshold. Competition coverage remains limited to configured free sources.",
+  "note": "Editorial priorities 1–5; not live follower statistics. A fixture qualifies if at least one team meets the configured threshold (default 4). Low-priority entries supply Arabic translations only.",
   "teams": [
     {
       "name_ar": "ريال مدريد",
@@ -16,7 +16,9 @@
       "aliases": [
         "Barcelona",
         "FC Barcelona",
-        "برشلونة"
+        "برشلونة",
+        "Barça",
+        "Barca"
       ]
     },
     {
@@ -596,6 +598,104 @@
       "aliases": [
         "Ghana",
         "غانا"
+      ]
+    },
+    {
+      "name_ar": "إيفرتون",
+      "priority": 1,
+      "aliases": [
+        "Everton",
+        "Everton FC"
+      ]
+    },
+    {
+      "name_ar": "إبسويتش تاون",
+      "priority": 1,
+      "aliases": [
+        "Ipswich",
+        "Ipswich Town",
+        "Ipswich Town FC"
+      ]
+    },
+    {
+      "name_ar": "برينتفورد",
+      "priority": 1,
+      "aliases": [
+        "Brentford",
+        "Brentford FC"
+      ]
+    },
+    {
+      "name_ar": "ستراسبورغ",
+      "priority": 1,
+      "aliases": [
+        "Strasbourg",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name_ar": "بولونيا",
+      "priority": 1,
+      "aliases": [
+        "Bologna",
+        "Bologna FC 1909"
+      ]
+    },
+    {
+      "name_ar": "إسبانيول",
+      "priority": 1,
+      "aliases": [
+        "Espanyol",
+        "RCD Espanyol de Barcelona"
+      ]
+    },
+    {
+      "name_ar": "فينيـتسيا",
+      "priority": 1,
+      "aliases": [
+        "Venezia",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name_ar": "يونيون برلين",
+      "priority": 1,
+      "aliases": [
+        "Union Berlin",
+        "1. FC Union Berlin"
+      ]
+    },
+    {
+      "name_ar": "هامبورغ",
+      "priority": 1,
+      "aliases": [
+        "HSV",
+        "Hamburg",
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name_ar": "إلتشي",
+      "priority": 1,
+      "aliases": [
+        "Elche",
+        "Elche CF"
+      ]
+    },
+    {
+      "name_ar": "جنوى",
+      "priority": 1,
+      "aliases": [
+        "Genoa",
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name_ar": "بريست",
+      "priority": 1,
+      "aliases": [
+        "Brest",
+        "Stade Brestois 29"
       ]
     }
   ]

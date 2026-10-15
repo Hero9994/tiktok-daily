@@ -39,3 +39,27 @@ class SelectionTests(unittest.TestCase):
         selected,meta=select(source,{'football_featured_only':False})
         self.assertEqual(selected,source)
         self.assertEqual(meta,{})
+
+    def test_barca_short_name_is_recognized_and_low_priority_translations_do_not_qualify(self):
+        selected,_=select([match(1,'Barça','Real Betis'),match(2,'Everton','Ipswich Town')],self.c)
+        self.assertEqual([m['id'] for m in selected],[1])
+        self.assertEqual(selected[0]['home'],'برشلونة')
+
+    def test_transient_badge_download_is_retried_and_success_is_cached(self):
+        import io
+        from types import SimpleNamespace
+        from unittest.mock import patch,MagicMock
+        from urllib.error import URLError
+        from PIL import Image
+        from tiktok_daily.cards import crest
+        url='https://crests.football-data.org/999999.png'
+        raw=io.BytesIO();Image.new('RGBA',(80,80),'gold').save(raw,format='PNG')
+        context=MagicMock()
+        context.__enter__.return_value=SimpleNamespace(url=url,read=lambda limit:raw.getvalue())
+        crest.cache_clear()
+        self.addCleanup(crest.cache_clear)
+        with patch('tiktok_daily.cards.urllib.request.urlopen',side_effect=[URLError('temporary'),context]) as request, \
+             patch('tiktok_daily.cards.time.sleep'):
+            self.assertIsNotNone(crest(url))
+            self.assertIsNotNone(crest(url))
+        self.assertEqual(request.call_count,2)

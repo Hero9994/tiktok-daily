@@ -2,6 +2,7 @@
 import io
 import math
 import re
+import time
 import urllib.parse
 import urllib.request
 from functools import lru_cache
@@ -30,7 +31,7 @@ def font(size, weight=400):
     return face
 
 
-def text(draw, value, box, size=40, color=WHITE, max_lines=4, weight=400, stroke=0):
+def text(draw, value, box, size=40, color=WHITE, max_lines=4, weight=400, stroke=0, align="right"):
     x, y, width, height = box
     direction = 'rtl' if re.search(r'[\u0600-\u06ff]', str(value)) else 'ltr'
     for trial in range(size, 19, -2):
@@ -46,7 +47,7 @@ def text(draw, value, box, size=40, color=WHITE, max_lines=4, weight=400, stroke
         step = int(trial * 1.8)
         if len(lines) <= max_lines and len(lines) * step <= height and all(draw.textlength(line, font=face, direction=direction, language="ar") <= width for line in lines):
             for i, line in enumerate(lines):
-                draw.text((x + width, y + i * step), line, font=face, fill=color, anchor="ra", direction=direction, language="ar", stroke_width=stroke, stroke_fill='#080a0d')
+                draw.text((x + width if align == "right" else x + (width + draw.textlength(line,font=face,direction=direction,language="ar"))/2, y + i * step), line, font=face, fill=color, anchor="ra", direction=direction, language="ar", stroke_width=stroke, stroke_fill='#080a0d')
             return
     raise ValueError("Card text does not fit; refusing to clip factual content")
 
@@ -79,8 +80,7 @@ def encode(image):
     return out.getvalue()
 
 
-@lru_cache(maxsize=128)
-def crest(url):
+def _crest_once(url):
     parsed = urllib.parse.urlsplit(url or '')
     if parsed.scheme != 'https' or parsed.hostname not in {'crests.football-data.org', 'upload.wikimedia.org','img.uefa.com'}:
         return None
@@ -99,6 +99,16 @@ def crest(url):
             return im.convert('RGBA')
     except (OSError, ValueError):
         return None  # Missing/unsupported crests must not hide a verified fixture.
+
+
+@lru_cache(maxsize=128)
+def crest(url):
+    if not url:return None
+    for attempt in range(3):
+        badge=_crest_once(url)
+        if badge is not None:return badge
+        if attempt<2:time.sleep(0.3*(attempt+1))
+    return None
 
 
 def cinema(hero, entry, c):
@@ -208,34 +218,34 @@ def football(hero, entry, c):
         draw.text((52,37),'TK',font=font(46,750),fill='#ffdd88')
         draw.polygon([(69,27),(61,13),(78,20),(88,8),(98,20),(115,13),(108,27)],fill=GOLD)
         heading='مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
-        text(draw,heading,(70,97,940,190),size=120,color='#5b3611',max_lines=1,weight=900,stroke=4)
-        text(draw,heading,(67,91,940,190),size=120,color='#ffdb7d',max_lines=1,weight=900,stroke=2)
-        text(draw,'بتوقيت ألمانيا ومكة المكرمة',(160,277,760,68),size=37,max_lines=1,weight=650,stroke=2)
+        text(draw,heading,(88,56,910,252),size=140,color='#5b3611',max_lines=1,weight=900,stroke=4,align="center")
+        text(draw,heading,(85,50,910,252),size=140,color='#ffdb7d',max_lines=1,weight=900,stroke=2,align="center")
+        text(draw,'بتوقيت ألمانيا ومكة المكرمة',(160,277,760,68),size=37,max_lines=1,weight=650,stroke=2,align="center")
         day=datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
         if pages>1:day+=f'   |   {page+1}/{pages}'
-        text(draw,day,(310,353,460,60),size=34,color='#ffe6a1',max_lines=1,weight=650)
+        text(draw,day,(310,353,460,60),size=34,color='#ffe6a1',max_lines=1,weight=650,align="center")
         if entry.get('demo'):
-            text(draw,'مثال تصميم تجريبي • المباريات غير مؤكدة',(90,425,900,45),size=23,color=GOLD,max_lines=1)
+            text(draw,'مثال تصميم تجريبي • المباريات غير مؤكدة',(90,425,900,45),size=23,color=GOLD,max_lines=1,align="center")
         elif c.get('correction_notice'):
-            text(draw,'تصحيح جدول المباريات',(90,425,900,45),size=23,color=GOLD,max_lines=1)
+            text(draw,'تصحيح جدول المباريات',(90,425,900,45),size=23,color=GOLD,max_lines=1,align="center")
         elif entry.get('preview'):
-            text(draw,'معاينة أولية • تُحدَّث البيانات قبل الحجز',(90,425,900,45),size=23,color=GOLD,max_lines=1)
-        if not selected:text(draw,'لا توجد مواجهات مختارة مؤكدة',(80,780,920,130),size=52,color=GOLD,max_lines=1)
+            text(draw,'معاينة أولية • تُحدَّث البيانات قبل الحجز',(90,425,900,45),size=23,color=GOLD,max_lines=1,align="center")
+        if not selected:text(draw,'لا توجد مواجهات مختارة مؤكدة',(80,780,920,130),size=52,color=GOLD,max_lines=1,align="center")
         for row,match in enumerate(selected):
             top=478+row*233
-            text(draw,match['competition'],(356,top-14,366,43),size=24,color=WHITE,max_lines=1,weight=600)
+            text(draw,match['competition'],(356,top-14,366,43),size=24,color=WHITE,max_lines=1,weight=600,align="center")
             for field,left in [('away_crest',65),('home_crest',895)]:
                 badge=crest(match.get(field))
                 if badge is not None:
                     badge=ImageOps.contain(badge,(120,138),method=Image.Resampling.LANCZOS)
                     image.paste(badge,(left+(120-badge.width)//2,top+45+(138-badge.height)//2),badge)
-            text(draw,match['away'],(202,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1)
-            text(draw,match['home'],(661,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1)
-            text(draw,match['germany_time'],(451,top+22,177,83),size=54,color='#ffe388',max_lines=1,weight=850)
-            text(draw,'ألمانيا',(460,top+85,160,39),size=21,color='#f8de97',max_lines=1,weight=650)
-            text(draw,match['makkah_time'],(451,top+117,177,77),size=51,color='#ffe388',max_lines=1,weight=850)
+            text(draw,match['away'],(202,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1,align="center")
+            text(draw,match['home'],(661,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1,align="center")
+            text(draw,match['germany_time'],(451,top+22,177,83),size=54,color='#ffe388',max_lines=1,weight=850,align="center")
+            text(draw,'ألمانيا',(460,top+85,160,39),size=21,color='#f8de97',max_lines=1,weight=650,align="center")
+            text(draw,match['makkah_time'],(451,top+117,177,77),size=51,color='#ffe388',max_lines=1,weight=850,align="center")
             label='مكة (+1)' if match['makkah_date']!=match['germany_date'] else 'مكة'
-            text(draw,label,(451,top+175,177,39),size=21,color='#f8de97',max_lines=1,weight=650)
+            text(draw,label,(451,top+175,177,39),size=21,color='#f8de97',max_lines=1,weight=650,align="center")
         text(draw,c.get('brand_name','TK SERVERS'),(475,1745,545,95),size=52,color='#ffdb7d',max_lines=1,weight=800,stroke=2)
         signature=c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
         text(draw,signature,(390,1834,630,57),size=24,max_lines=1,weight=600,stroke=1)

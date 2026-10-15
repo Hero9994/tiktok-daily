@@ -31,7 +31,7 @@ def select(matches,c):
             if team:
                 match[side+'_original']=match[side]
                 match[side]=team['name_ar']
-        score=max(ranks)*100+min(ranks)*35
+        score=max(ranks)*150+min(ranks)*20
         score+= {'CL':35,'WC':30,'EC':25,'EL':10}.get(match['competition_code'],0)
         match['editorial_priority']=score
         selected.append(match)
