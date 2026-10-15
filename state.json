@@ -213,7 +213,8 @@
       "video_fingerprint": "783d1d0acff51f8b6b525361aaa9f557c4e6c1501e9c4dd907ff5a3ff70cdd4e",
       "music_file": "assets/audio/sports.m4a",
       "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb",
-      "football_template": "gold-reference-v2"
+      "football_template": "gold-reference-v2",
+      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/48a99222d220cabd6e284db1e4a5700311c61f87/videos/2026-10-15-f22a27e693.mp4"
     },
     "6ace9df3778b240e2ffd7494:2026-10-14:football:correction:uefa-coverage-2026-10-14": {
       "day": "2026-10-14",
