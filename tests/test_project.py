@@ -21,6 +21,7 @@ NOW = datetime(2026, 10, 13, 9, 0, tzinfo=timezone.utc)
 
 def config():
     c = load_config(ROOT / "config.json")
+    c["football_featured_only"] = False  # Generic fixtures; selection has dedicated tests.
     c["cinema_curated_only"] = False  # Generic fake ideas; reviewed catalogue has dedicated tests.
     c.update(enabled=True, allow_paid_openai=True, video_enabled=False, daily_posts=None, uefa_competitions=[], content_mode="art", card_style="simple", fixed_caption=None,
              publish_time="19:30", timezone="Asia/Riyadh", prepare_lead_minutes=60,

@@ -29,6 +29,10 @@ def load_config(path):
         raise ValueError('video_enabled must be a boolean')
     if type(c.get('skip_empty_football',True)) is not bool:
         raise ValueError('skip_empty_football must be boolean')
+    if type(c.get('football_featured_only',False)) is not bool:
+        raise ValueError('football_featured_only must be boolean')
+    if type(c.get('football_min_team_priority',3)) is not int or not 3 <= c.get('football_min_team_priority',3) <= 5:
+        raise ValueError('football_min_team_priority must be 3, 4 or 5')
     if c.get('fixture_day','tomorrow') not in ('today','tomorrow'):
         raise ValueError('fixture_day must be today or tomorrow')
     extra=c.get('uefa_competitions',[])

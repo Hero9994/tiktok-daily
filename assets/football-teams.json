@@ -1,0 +1,602 @@
+{
+  "note": "Editorial priorities 3–5; not live follower statistics. A fixture qualifies if at least one team meets the threshold. Competition coverage remains limited to configured free sources.",
+  "teams": [
+    {
+      "name_ar": "ريال مدريد",
+      "priority": 5,
+      "aliases": [
+        "Real Madrid",
+        "Real Madrid CF",
+        "ريال مدريد"
+      ]
+    },
+    {
+      "name_ar": "برشلونة",
+      "priority": 5,
+      "aliases": [
+        "Barcelona",
+        "FC Barcelona",
+        "برشلونة"
+      ]
+    },
+    {
+      "name_ar": "ليفربول",
+      "priority": 5,
+      "aliases": [
+        "Liverpool",
+        "Liverpool FC",
+        "ليفربول"
+      ]
+    },
+    {
+      "name_ar": "مانشستر سيتي",
+      "priority": 5,
+      "aliases": [
+        "Man City",
+        "Manchester City",
+        "Manchester City FC",
+        "مانشستر سيتي"
+      ]
+    },
+    {
+      "name_ar": "مانشستر يونايتد",
+      "priority": 5,
+      "aliases": [
+        "Man United",
+        "Manchester Utd",
+        "Manchester United",
+        "Manchester United FC",
+        "مانشستر يونايتد"
+      ]
+    },
+    {
+      "name_ar": "آرسنال",
+      "priority": 5,
+      "aliases": [
+        "Arsenal",
+        "Arsenal FC",
+        "أرسنال"
+      ]
+    },
+    {
+      "name_ar": "تشيلسي",
+      "priority": 5,
+      "aliases": [
+        "Chelsea",
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name_ar": "بايرن ميونخ",
+      "priority": 5,
+      "aliases": [
+        "Bayern",
+        "FC Bayern München",
+        "Bayern München",
+        "Bayern Munich",
+        "بايرن"
+      ]
+    },
+    {
+      "name_ar": "باريس سان جيرمان",
+      "priority": 5,
+      "aliases": [
+        "PSG",
+        "Paris",
+        "Paris Saint-Germain",
+        "Paris Saint-Germain FC",
+        "باريس سان جيرمان"
+      ]
+    },
+    {
+      "name_ar": "يوفنتوس",
+      "priority": 5,
+      "aliases": [
+        "Juventus",
+        "Juventus FC"
+      ]
+    },
+    {
+      "name_ar": "ميلان",
+      "priority": 5,
+      "aliases": [
+        "AC Milan",
+        "Milan",
+        "ميلان"
+      ]
+    },
+    {
+      "name_ar": "إنتر ميلان",
+      "priority": 5,
+      "aliases": [
+        "Inter",
+        "Internazionale",
+        "FC Internazionale Milano",
+        "إنتر",
+        "انتر ميلان"
+      ]
+    },
+    {
+      "name_ar": "أتلتيكو مدريد",
+      "priority": 4,
+      "aliases": [
+        "Atletico Madrid",
+        "Atlético de Madrid",
+        "Club Atlético de Madrid",
+        "Atleti",
+        "أتلتيكو"
+      ]
+    },
+    {
+      "name_ar": "بوروسيا دورتموند",
+      "priority": 4,
+      "aliases": [
+        "Dortmund",
+        "Borussia Dortmund",
+        "BVB"
+      ]
+    },
+    {
+      "name_ar": "نابولي",
+      "priority": 4,
+      "aliases": [
+        "Napoli",
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name_ar": "روما",
+      "priority": 4,
+      "aliases": [
+        "Roma",
+        "AS Roma"
+      ]
+    },
+    {
+      "name_ar": "توتنهام",
+      "priority": 4,
+      "aliases": [
+        "Tottenham",
+        "Tottenham Hotspur",
+        "Tottenham Hotspur FC",
+        "Spurs"
+      ]
+    },
+    {
+      "name_ar": "نيوكاسل",
+      "priority": 4,
+      "aliases": [
+        "Newcastle",
+        "Newcastle United",
+        "Newcastle United FC"
+      ]
+    },
+    {
+      "name_ar": "أستون فيلا",
+      "priority": 4,
+      "aliases": [
+        "Aston Villa",
+        "Aston Villa FC"
+      ]
+    },
+    {
+      "name_ar": "باير ليفركوزن",
+      "priority": 4,
+      "aliases": [
+        "Leverkusen",
+        "Bayer Leverkusen",
+        "Bayer 04 Leverkusen",
+        "ليفركوزن"
+      ]
+    },
+    {
+      "name_ar": "لايبزيغ",
+      "priority": 4,
+      "aliases": [
+        "RB Leipzig",
+        "Leipzig",
+        "لايبزيج"
+      ]
+    },
+    {
+      "name_ar": "أياكس",
+      "priority": 4,
+      "aliases": [
+        "Ajax",
+        "AFC Ajax"
+      ]
+    },
+    {
+      "name_ar": "بنفيكا",
+      "priority": 4,
+      "aliases": [
+        "Benfica",
+        "SL Benfica"
+      ]
+    },
+    {
+      "name_ar": "بورتو",
+      "priority": 4,
+      "aliases": [
+        "Porto",
+        "FC Porto"
+      ]
+    },
+    {
+      "name_ar": "سبورتينغ لشبونة",
+      "priority": 4,
+      "aliases": [
+        "Sporting",
+        "Sporting CP",
+        "Sporting Clube de Portugal",
+        "سبورتينج لشبونة"
+      ]
+    },
+    {
+      "name_ar": "مارسيليا",
+      "priority": 4,
+      "aliases": [
+        "Marseille",
+        "Olympique de Marseille",
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name_ar": "فالنسيا",
+      "priority": 3,
+      "aliases": [
+        "Valencia",
+        "Valencia CF"
+      ]
+    },
+    {
+      "name_ar": "إشبيلية",
+      "priority": 3,
+      "aliases": [
+        "Sevilla",
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name_ar": "فياريال",
+      "priority": 3,
+      "aliases": [
+        "Villarreal",
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name_ar": "أتلتيك بلباو",
+      "priority": 3,
+      "aliases": [
+        "Athletic",
+        "Athletic Club",
+        "Athletic Bilbao",
+        "أتلتيك بيلباو"
+      ]
+    },
+    {
+      "name_ar": "ريال سوسييداد",
+      "priority": 3,
+      "aliases": [
+        "Real Sociedad",
+        "Real Sociedad de Fútbol"
+      ]
+    },
+    {
+      "name_ar": "ريال بيتيس",
+      "priority": 3,
+      "aliases": [
+        "Betis",
+        "Real Betis",
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name_ar": "لاتسيو",
+      "priority": 3,
+      "aliases": [
+        "Lazio",
+        "SS Lazio"
+      ]
+    },
+    {
+      "name_ar": "أتالانتا",
+      "priority": 3,
+      "aliases": [
+        "Atalanta",
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name_ar": "فيورنتينا",
+      "priority": 3,
+      "aliases": [
+        "Fiorentina",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name_ar": "فرانكفورت",
+      "priority": 3,
+      "aliases": [
+        "Frankfurt",
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name_ar": "شتوتغارت",
+      "priority": 3,
+      "aliases": [
+        "Stuttgart",
+        "VfB Stuttgart",
+        "شتوتجارت"
+      ]
+    },
+    {
+      "name_ar": "بوروسيا مونشنغلادباخ",
+      "priority": 3,
+      "aliases": [
+        "Mönchengladbach",
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name_ar": "ليون",
+      "priority": 3,
+      "aliases": [
+        "Lyon",
+        "Olympique Lyonnais"
+      ]
+    },
+    {
+      "name_ar": "موناكو",
+      "priority": 3,
+      "aliases": [
+        "Monaco",
+        "AS Monaco",
+        "AS Monaco FC"
+      ]
+    },
+    {
+      "name_ar": "ليل",
+      "priority": 3,
+      "aliases": [
+        "Lille",
+        "Lille OSC",
+        "LOSC"
+      ]
+    },
+    {
+      "name_ar": "فينورد",
+      "priority": 3,
+      "aliases": [
+        "Feyenoord",
+        "Feyenoord Rotterdam"
+      ]
+    },
+    {
+      "name_ar": "آيندهوفن",
+      "priority": 3,
+      "aliases": [
+        "PSV",
+        "PSV Eindhoven"
+      ]
+    },
+    {
+      "name_ar": "غلطة سراي",
+      "priority": 3,
+      "aliases": [
+        "Galatasaray",
+        "Galatasaray SK"
+      ]
+    },
+    {
+      "name_ar": "فنربخشة",
+      "priority": 3,
+      "aliases": [
+        "Fenerbahce",
+        "Fenerbahçe",
+        "Fenerbahçe SK"
+      ]
+    },
+    {
+      "name_ar": "بشكتاش",
+      "priority": 3,
+      "aliases": [
+        "Besiktas",
+        "Beşiktaş",
+        "Beşiktaş JK"
+      ]
+    },
+    {
+      "name_ar": "سلتيك",
+      "priority": 3,
+      "aliases": [
+        "Celtic",
+        "Celtic FC"
+      ]
+    },
+    {
+      "name_ar": "رينجرز",
+      "priority": 3,
+      "aliases": [
+        "Rangers",
+        "Rangers FC"
+      ]
+    },
+    {
+      "name_ar": "الأرجنتين",
+      "priority": 5,
+      "aliases": [
+        "Argentina",
+        "الأرجنتين"
+      ]
+    },
+    {
+      "name_ar": "البرازيل",
+      "priority": 5,
+      "aliases": [
+        "Brazil",
+        "Brasil",
+        "البرازيل"
+      ]
+    },
+    {
+      "name_ar": "فرنسا",
+      "priority": 5,
+      "aliases": [
+        "France",
+        "فرنسا"
+      ]
+    },
+    {
+      "name_ar": "إسبانيا",
+      "priority": 5,
+      "aliases": [
+        "Spain",
+        "España",
+        "إسبانيا"
+      ]
+    },
+    {
+      "name_ar": "ألمانيا",
+      "priority": 5,
+      "aliases": [
+        "Germany",
+        "Deutschland",
+        "ألمانيا"
+      ]
+    },
+    {
+      "name_ar": "إنجلترا",
+      "priority": 5,
+      "aliases": [
+        "England",
+        "إنجلترا"
+      ]
+    },
+    {
+      "name_ar": "البرتغال",
+      "priority": 4,
+      "aliases": [
+        "Portugal",
+        "البرتغال"
+      ]
+    },
+    {
+      "name_ar": "إيطاليا",
+      "priority": 4,
+      "aliases": [
+        "Italy",
+        "Italia",
+        "إيطاليا"
+      ]
+    },
+    {
+      "name_ar": "هولندا",
+      "priority": 4,
+      "aliases": [
+        "Netherlands",
+        "Holland",
+        "هولندا"
+      ]
+    },
+    {
+      "name_ar": "المغرب",
+      "priority": 4,
+      "aliases": [
+        "Morocco",
+        "المغرب"
+      ]
+    },
+    {
+      "name_ar": "مصر",
+      "priority": 4,
+      "aliases": [
+        "Egypt",
+        "مصر"
+      ]
+    },
+    {
+      "name_ar": "السعودية",
+      "priority": 4,
+      "aliases": [
+        "Saudi Arabia",
+        "السعودية"
+      ]
+    },
+    {
+      "name_ar": "كرواتيا",
+      "priority": 3,
+      "aliases": [
+        "Croatia",
+        "كرواتيا"
+      ]
+    },
+    {
+      "name_ar": "بلجيكا",
+      "priority": 3,
+      "aliases": [
+        "Belgium",
+        "بلجيكا"
+      ]
+    },
+    {
+      "name_ar": "أوروغواي",
+      "priority": 3,
+      "aliases": [
+        "Uruguay",
+        "الأوروغواي"
+      ]
+    },
+    {
+      "name_ar": "كولومبيا",
+      "priority": 3,
+      "aliases": [
+        "Colombia",
+        "كولومبيا"
+      ]
+    },
+    {
+      "name_ar": "السنغال",
+      "priority": 3,
+      "aliases": [
+        "Senegal",
+        "السنغال"
+      ]
+    },
+    {
+      "name_ar": "اليابان",
+      "priority": 3,
+      "aliases": [
+        "Japan",
+        "اليابان"
+      ]
+    },
+    {
+      "name_ar": "الجزائر",
+      "priority": 3,
+      "aliases": [
+        "Algeria",
+        "الجزائر"
+      ]
+    },
+    {
+      "name_ar": "تونس",
+      "priority": 3,
+      "aliases": [
+        "Tunisia",
+        "تونس"
+      ]
+    },
+    {
+      "name_ar": "غانا",
+      "priority": 3,
+      "aliases": [
+        "Ghana",
+        "غانا"
+      ]
+    }
+  ]
+}

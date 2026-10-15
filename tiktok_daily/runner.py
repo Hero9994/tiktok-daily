@@ -13,7 +13,7 @@ from .cinema_media import artwork
 from .video import make_video
 from .cinema_catalog import approve_entry
 
-FOOTBALL_TEMPLATE = "gold-reference-v2"
+FOOTBALL_TEMPLATE = "featured-centred-times-v3"
 CINEMA_TEMPLATE = "cinema-reference-v2"
 
 

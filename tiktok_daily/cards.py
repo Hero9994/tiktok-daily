@@ -184,65 +184,64 @@ def cinema(hero, entry, c):
 
 
 def football(hero, entry, c):
-    schedule = entry['fixture_schedule']
-    matches = schedule['matches']
-    pages = max(1, math.ceil(len(matches) / 6))
-    if pages > 10:
-        raise RuntimeError('Fixture schedule exceeds 60 matches; refusing to omit fixtures')
-    result = []
-    for index in range(pages):
+    schedule=entry['fixture_schedule'];matches=schedule['matches']
+    per_page=5;pages=max(1,math.ceil(len(matches)/per_page))
+    if pages>10:raise RuntimeError('Selected fixtures exceed 50 matches; refusing to omit selected fixtures')
+    result=[]
+    for page in range(pages):
         with Image.open(io.BytesIO(hero)) as src:
-            image = ImageOps.fit(src.convert('RGB'), (1080,1920), method=Image.Resampling.LANCZOS)
-        # Data remains separate from the artwork: never bake teams or times into AI art.
-        overlay = Image.new('RGBA', image.size)
-        pd = ImageDraw.Draw(overlay)
-        pd.rounded_rectangle((275,465,805,542), radius=38, fill=(0,0,0,222), outline=GOLD, width=3)
-        page_matches = matches[index*6:(index+1)*6]
-        for row in range(len(page_matches)):
-            top = 588 + row*160
-            # Concentric outlines create a fine gold rim around an opaque readable panel.
-            pd.rounded_rectangle((38,top-3,1042,top+147),radius=23,outline=(255,190,65,65),width=7)
-            pd.rounded_rectangle((42,top,1038,top+144),radius=21,fill=(2,5,7,239),outline=(242,196,99,255),width=3)
-            pd.line((474,top+132,520,top+14),fill=(168,111,36,160),width=2)
-        pd.rounded_rectangle((390,1610,1038,1815),radius=24,fill=(0,0,0,215),outline=GOLD,width=3)
-        image = Image.alpha_composite(image.convert('RGBA'),overlay).convert('RGB')
-        draw = ImageDraw.Draw(image)
-        draw.line([(45,35),(45,145),(169,90),(45,35)],fill=GOLD,width=5)
-        draw.text((60,42),'TK',font=font(49,650),fill=WHITE)
-        heading = 'مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
-        # A darker offset gives the title the embossed metallic look of the approved reference.
-        text(draw,heading,(83,238,917,175),size=115,color='#603e16',max_lines=1,weight=900,stroke=4)
-        text(draw,heading,(80,232,917,175),size=115,color='#ffdc85',max_lines=1,weight=900,stroke=2)
-        text(draw,'بتوقيت ألمانيا ومكة المكرمة',(130,397,820,74),size=40,max_lines=1,weight=600,stroke=2)
-        day = datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
-        text(draw,f'{day}   |   {index+1}/{pages}',(294,471,490,65),size=35,max_lines=1)
-        if entry.get('demo') or c.get('correction_notice'):
-            label = 'معاينة فقط • المباريات والمواعيد تجريبية' if entry.get('demo') else 'تصحيح جدول المباريات'
-            text(draw,label,(90,161,900,65),size=28,max_lines=1,color=GOLD,stroke=2)
-        if not page_matches:
-            text(draw,'لا مباريات مؤكدة',(80,760,920,120),size=60,color=GOLD,max_lines=1)
-        for row, match in enumerate(page_matches):
-            top = 588 + row*160
-            text(draw,match['competition'],(550,top+1,355,40),size=21,color=GOLD,max_lines=1)
-            for field, left in [('away_crest',70),('home_crest',920)]:
-                badge = crest(match.get(field))
+            image=ImageOps.fit(src.convert('RGB'),(1080,1920),method=Image.Resampling.LANCZOS)
+        overlay=Image.new('RGBA',image.size);pd=ImageDraw.Draw(overlay)
+        pd.rounded_rectangle((290,347,790,420),radius=30,fill=(0,0,0,224),outline=GOLD,width=3)
+        selected=matches[page*per_page:(page+1)*per_page]
+        for row in range(len(selected)):
+            top=478+row*233
+            pd.rounded_rectangle((28,top-2,1052,top+221),radius=24,outline=(255,185,52,85),width=7)
+            pd.rounded_rectangle((32,top,1048,top+217),radius=23,fill=(2,5,7,240),outline=(245,197,84,255),width=3)
+            pd.rectangle((439,top+8,641,top+210),fill=(9,10,7,230))
+            pd.line((439,top+30,439,top+207),fill=GOLD,width=2)
+            pd.line((641,top+30,641,top+207),fill=GOLD,width=2)
+            pd.line((451,top+116,629,top+116),fill=GOLD,width=1)
+            pd.polygon([(350,top-15),(730,top-15),(747,top+6),(730,top+28),(350,top+28),(333,top+6)],fill=(3,6,8,255),outline=GOLD,width=2)
+        image=Image.alpha_composite(image.convert('RGBA'),overlay).convert('RGB');draw=ImageDraw.Draw(image)
+        draw.line([(38,35),(38,135),(169,85),(38,35)],fill=GOLD,width=4)
+        draw.text((52,37),'TK',font=font(46,750),fill='#ffdd88')
+        draw.polygon([(69,27),(61,13),(78,20),(88,8),(98,20),(115,13),(108,27)],fill=GOLD)
+        heading='مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
+        text(draw,heading,(70,97,940,190),size=120,color='#5b3611',max_lines=1,weight=900,stroke=4)
+        text(draw,heading,(67,91,940,190),size=120,color='#ffdb7d',max_lines=1,weight=900,stroke=2)
+        text(draw,'بتوقيت ألمانيا ومكة المكرمة',(160,277,760,68),size=37,max_lines=1,weight=650,stroke=2)
+        day=datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
+        if pages>1:day+=f'   |   {page+1}/{pages}'
+        text(draw,day,(310,353,460,60),size=34,color='#ffe6a1',max_lines=1,weight=650)
+        if entry.get('demo'):
+            text(draw,'مثال تصميم تجريبي • المباريات غير مؤكدة',(90,425,900,45),size=23,color=GOLD,max_lines=1)
+        elif c.get('correction_notice'):
+            text(draw,'تصحيح جدول المباريات',(90,425,900,45),size=23,color=GOLD,max_lines=1)
+        elif entry.get('preview'):
+            text(draw,'معاينة أولية • تُحدَّث البيانات قبل الحجز',(90,425,900,45),size=23,color=GOLD,max_lines=1)
+        if not selected:text(draw,'لا توجد مواجهات مختارة مؤكدة',(80,780,920,130),size=52,color=GOLD,max_lines=1)
+        for row,match in enumerate(selected):
+            top=478+row*233
+            text(draw,match['competition'],(356,top-14,366,43),size=24,color=WHITE,max_lines=1,weight=600)
+            for field,left in [('away_crest',65),('home_crest',895)]:
+                badge=crest(match.get(field))
                 if badge is not None:
-                    badge = ImageOps.contain(badge,(94,100),method=Image.Resampling.LANCZOS)
-                    image.paste(badge,(left+(94-badge.width)//2,top+26+(100-badge.height)//2),badge)
-            text(draw,match['away'],(177,top+25,266,91),size=36,max_lines=2,weight=700)
-            text(draw,match['home'],(580,top+25,325,91),size=34,max_lines=2,weight=700)
-            text(draw,'VS',(453,top+39,80,65),size=34,color='#ffdc85',max_lines=1,weight=700)
-            germany = f"ألمانيا {match['germany_time']}"
-            makkah = f"مكة {match['makkah_time']}"
-            if match['makkah_date'] != match['germany_date']:
-                makkah += ' (+1 يوم)'
-            text(draw,germany,(175,top+102,268,40),size=25,color=WHITE,max_lines=1)
-            text(draw,makkah,(550,top+102,355,40),size=25,color=WHITE,max_lines=1)
-        text(draw,c.get('brand_name','TK SERVERS'),(410,1643,600,106),size=67,color='#ffdc85',max_lines=1,weight=850,stroke=2)
-        signature = c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
-        text(draw,signature,(402,1753,610,59),size=25,max_lines=1,weight=600)
-        sources = ' / '.join(schedule.get('sources',['football-data.org']))
-        text(draw,f'المواعيد: {sources} • قابلة للتغيير',(70,1848,940,42),size=21,max_lines=1)
+                    badge=ImageOps.contain(badge,(120,138),method=Image.Resampling.LANCZOS)
+                    image.paste(badge,(left+(120-badge.width)//2,top+45+(138-badge.height)//2),badge)
+            text(draw,match['away'],(202,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1)
+            text(draw,match['home'],(661,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1)
+            text(draw,match['germany_time'],(451,top+22,177,83),size=54,color='#ffe388',max_lines=1,weight=850)
+            text(draw,'ألمانيا',(460,top+85,160,39),size=21,color='#f8de97',max_lines=1,weight=650)
+            text(draw,match['makkah_time'],(451,top+117,177,77),size=51,color='#ffe388',max_lines=1,weight=850)
+            label='مكة (+1)' if match['makkah_date']!=match['germany_date'] else 'مكة'
+            text(draw,label,(451,top+175,177,39),size=21,color='#f8de97',max_lines=1,weight=650)
+        text(draw,c.get('brand_name','TK SERVERS'),(475,1745,545,95),size=52,color='#ffdb7d',max_lines=1,weight=800,stroke=2)
+        signature=c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
+        text(draw,signature,(390,1834,630,57),size=24,max_lines=1,weight=600,stroke=1)
+        sources=' / '.join(schedule.get('sources',['football-data.org']))
+        note=('أبرز المباريات • ' if schedule.get('selection') else '')+sources+' • المواعيد قابلة للتغيير'
+        text(draw,note,(55,1890,970,40),size=20,max_lines=1,color='#d6c492',stroke=1)
         result.append(encode(image))
     return result
 

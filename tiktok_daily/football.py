@@ -5,6 +5,7 @@ from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from .content import finalize_content
 from .uefa import fixtures, UEFA
+from .football_selection import select
 
 COMPETITIONS = {
     "CL": ("دوري أبطال أوروبا", "#دوري_أبطال_أوروبا"),
@@ -79,7 +80,8 @@ class Football:
         order=list(dict.fromkeys(allowed+extra))
         unique={str(m['id']):m for m in matches}
         matches=sorted(unique.values(),key=lambda m:(order.index(m['competition_code']),m['kickoff_utc'],str(m['id'])))
-        return {"date": day.isoformat(), "matches": matches,
+        matches,selection = select(matches,self.c)
+        return {**selection,"date": day.isoformat(), "matches": matches,
                 "date_mode":mode,"checked_at": self.clock().isoformat(), "source_url": "https://www.football-data.org/",
                 "sources":['football-data.org']+(['UEFA.com'] if extra else [])}
 
@@ -92,7 +94,8 @@ def football_content(schedule, c):
     sources=' و '.join(schedule.get('sources',['football-data.org']))
     codes = list(dict.fromkeys(m["competition_code"] for m in matches))
     leagues = "، ".join(COMPETITIONS[x][0] for x in codes)
-    description = (f"مباريات {day_label} {date}: {len(matches)} مواجهة ضمن {leagues}. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب {sources} وقابلة للتغيير."
+    headline="أبرز مباريات" if schedule.get("selection") else "مباريات"
+    description = (f"{headline} {day_label} {date}: {len(matches)} مواجهة ضمن {leagues}. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب {sources} وقابلة للتغيير."
                    if matches else f"تحديث رياضي لغد {date}: لا يعرض football-data.org مباريات مؤكدة ضمن البطولات الثماني المتابعة حاليًا. هذا لا يعني عدم وجود مباريات في بطولات أخرى. تابعنا لتحديث الغد.")
     tags = ['#مباريات_'+day_label, "#كرة_القدم"] + [COMPETITIONS[x][1] for x in codes] + ["#TK_Servers"]
     if c.get('correction_notice'):
