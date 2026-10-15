@@ -13,6 +13,7 @@ class PreviewPublishTests(unittest.TestCase):
 
     def test_one_extra_preview_preserves_daily_entries_and_cannot_repeat(self):
         c=self.case
+        times_before=[p['time'] for p in c.c['daily_posts']]
         future={'day':'2026-10-14','status':'accepted','post_id':'future','due_at':(NOW+timedelta(days=1)).isoformat(),'idea':'future unrelated work'}
         c.store.state['entries']['future']=future
         c.buffer.posts['future']={'id':'future','status':'scheduled','schedulingType':'automatic'}
@@ -24,7 +25,7 @@ class PreviewPublishTests(unittest.TestCase):
             c.publisher('cinema').prepare(publish_now=True)
         self.assertEqual(c.buffer.creates,1)
         self.assertEqual(future['day'],'2026-10-14')
-        self.assertEqual(c.c['daily_posts'][1]['time'],'18:00')
+        self.assertEqual([p['time'] for p in c.c['daily_posts']],times_before)
         preview=next(e for e in c.store.state['entries'].values() if e.get('preview_id'))
         self.assertEqual(preview['preview_id'],'show-now')
 

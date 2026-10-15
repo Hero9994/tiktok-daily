@@ -4,7 +4,10 @@ on:
   schedule:
     # Every wake-up books BOTH posts in Buffer well before their due times.
     # GitHub cron can be delayed or dropped; it is not the publication clock.
-    - cron: '17 6,8,10 * * *'
+    - cron: '0 12 * * *'
+      timezone: 'Europe/Berlin'
+    # Retry within the two-hour lead before sports publication.
+    - cron: '20,40 12 * * *'
       timezone: 'Europe/Berlin'
     - cron: '43 * * * *'
   workflow_dispatch:

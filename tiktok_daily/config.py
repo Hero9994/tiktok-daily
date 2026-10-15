@@ -43,6 +43,18 @@ def load_config(path):
                 raise ValueError('Daily post times must be between 12:00 and 20:00')
             if post.get('music_file') != f"assets/audio/{'sports' if post['kind']=='football' else 'cinema'}.m4a":
                 raise ValueError('Invalid daily music assignment')
+    prepare_at=c.get('daily_prepare_time','06:00')
+    if not isinstance(prepare_at,str) or not re.fullmatch(r'(?:[01]\d|2[0-3]):[0-5]\d',prepare_at):
+        raise ValueError('daily_prepare_time must be HH:MM')
+    if posts:
+        to_minutes=lambda value:int(value[:2])*60+int(value[3:])
+        if to_minutes(prepare_at)>min(to_minutes(p['time']) for p in posts)-c.get('prepare_lead_minutes',15):
+            raise ValueError('Daily preparation must precede both publication times by the preparation lead')
+    effective=c.get('schedule_effective_date')
+    if effective is not None:
+        if not isinstance(effective,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',effective):
+            raise ValueError('schedule_effective_date must be YYYY-MM-DD')
+        datetime.strptime(effective,'%Y-%m-%d')
     if type(c.get('cinema_curated_only', False)) is not bool:
         raise ValueError('cinema_curated_only must be boolean')
     if type(c.get('cinema_min_critic_rating',4)) not in (int,float) or not 4 <= c.get('cinema_min_critic_rating',4) <= 5:

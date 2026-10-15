@@ -63,6 +63,8 @@ def main():
         report = {"config_valid": True, "enabled": c["enabled"], "allow_paid_openai": c["allow_paid_openai"],
                   "daily_enabled": c.get("daily_enabled", True),
                   "video_enabled": c.get('video_enabled',False), "daily_posts": c.get('daily_posts'),
+                  "daily_prepare_time": c.get("daily_prepare_time"),
+                  "schedule_effective_date": c.get("schedule_effective_date"),
                   "content_mode": c.get("content_mode", "art"), "caption_suffix_ready": bool(c.get("caption_suffix")),
                   "channel_configured": bool((os.environ.get("BUFFER_ORGANIZATION_ID") or c.get("buffer_organization_id")) and
                                              (os.environ.get("BUFFER_CHANNEL_ID") or c.get("buffer_channel_id"))),

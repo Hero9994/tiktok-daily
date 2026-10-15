@@ -23,7 +23,7 @@
   "buffer_channel_id": "6ace9df3778b240e2ffd7494",
   "theme": "ترشيح فيلم أو مسلسل مختلف كل يوم مع نبذة عربية قصيرة دون حرق الأحداث",
   "style": "cinematic_gold",
-  "publish_time": "18:00",
+  "publish_time": "16:00",
   "timezone": "Europe/Berlin",
   "prepare_lead_minutes": 15,
   "hashtag_pool": [
@@ -57,12 +57,12 @@
   "daily_posts": [
     {
       "kind": "football",
-      "time": "16:00",
+      "time": "14:00",
       "music_file": "assets/audio/sports.m4a"
     },
     {
       "kind": "cinema",
-      "time": "18:00",
+      "time": "16:00",
       "music_file": "assets/audio/cinema.m4a"
     }
   ],
@@ -86,5 +86,7 @@
       "day": "2026-10-14",
       "track": "cinema"
     }
-  }
+  },
+  "daily_prepare_time": "12:00",
+  "schedule_effective_date": "2026-10-16"
 }
