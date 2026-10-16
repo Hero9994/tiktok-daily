@@ -1077,10 +1077,81 @@
       "day": "2026-10-16",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-16T20:00:11.474571Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-16T11:54:17.033051Z",
       "image_attempts": 0,
-      "original_due_at": "2026-10-16T14:00:00Z"
+      "original_due_at": "2026-10-16T14:00:00Z",
+      "idea": "A quiet 1950s-inspired coastal landscape where a tiny farmhouse and a towering, abstract metal silhouette meet beneath a vast starry sky, evoking animated science fiction and unexpected friendship.",
+      "prompt": "Create original abstract cinematic illustration inspired by animated science fiction: a quiet mid-century coastal landscape at twilight, a small farmhouse beside a towering gentle-looking silhouette formed from simple metallic geometric shapes, distant stars and soft blue light. Evoke wonder and an unlikely friendship without depicting people, recognizable characters, logos, text, violence, or copying any existing poster. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area visually calm for an Arabic information panel.",
+      "title": "العملاق الحديدي",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم رسوم متحركة وخيال علمي تدور أحداثه عام 1957، عن فتى يعثر على روبوت عملاق من أصل خارج الأرض ويصادقه، ويحاول منع الجيش من العثور عليه.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم رسوم متحركة وخيال علمي تدور أحداثه عام 1957، عن فتى يعثر على روبوت عملاق من أصل خارج الأرض ويصادقه، ويحاول منع الجيش من العثور عليه.",
+      "subject_id": "wikipedia-en:842825",
+      "subject_title": "The Iron Giant",
+      "summary": "فيلم رسوم متحركة وخيال علمي تدور أحداثه عام 1957، عن فتى يعثر على روبوت عملاق من أصل خارج الأرض ويصادقه، ويحاول منع الجيش من العثور عليه.",
+      "source_url": "https://en.wikipedia.org/wiki/The_Iron_Giant",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/d/d3/The_Iron_Giant_poster.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "1999"
+          },
+          {
+            "label": "المدة",
+            "value": "86 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم أكشن",
+          "فلم خيال علمي",
+          "كوميديا درامية"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q867283",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q867283",
+      "subject_imdb": "tt0129167",
+      "cinema_review": {
+        "wikipedia_title": "The Iron Giant",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/the-iron-giant",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 842825,
+        "wikidata_id": "Q867283",
+        "imdb_id": "tt0129167",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes."
+      },
+      "watch_reason": "قد يعجب محبي أفلام الرسوم المتحركة والخيال العلمي وقصص الصداقة غير المتوقعة.",
+      "post_kind": "cinema"
     },
     "6ace9df3778b240e2ffd7494:2026-10-16:football": {
       "day": "2026-10-16",
