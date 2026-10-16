@@ -90,5 +90,6 @@
   "daily_prepare_time": "12:00",
   "schedule_effective_date": "2026-10-16",
   "football_featured_only": true,
-  "football_min_team_priority": 4
+  "football_min_team_priority": 4,
+  "cinema_max_age_years": 15
 }

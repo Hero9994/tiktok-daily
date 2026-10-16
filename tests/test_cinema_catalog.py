@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from tiktok_daily.cinema_catalog import catalog, choose, used, verify_source, approve_entry
+from tiktok_daily.cinema_catalog import age_eligible, catalog, choose, used, verify_source, approve_entry
 from tiktok_daily.content import OpenAI
 from tiktok_daily.runner import Publisher
 from test_project import config, raw_content, FakeHTTP, FakeBuffer, FakeOpenAI, MemoryStore, NOW
@@ -24,6 +24,22 @@ class CinemaCatalogTests(unittest.TestCase):
             self.assertIn(w['sex_nudity'],('none','brief_romance_only'))
             self.assertTrue(w['review_url'].startswith('https://www.commonsensemedia.org/'))
         self.assertTrue(any(w['kind']=='series' for w in catalog(self.c)))
+
+    def test_old_work_needs_recent_top200_evidence(self):
+        w=dict(self.work,release_year=1990)
+        self.assertFalse(age_eligible(w,self.c,'2026-10-17'))
+        w['top200']={'rank':200,'checked_at':'2026-10-16','source_url':'https://www.imdb.com/chart/top/','imdb_id':w['imdb_id']}
+        self.assertTrue(age_eligible(w,self.c,'2026-10-17'))
+        for changes in ({'rank':201},{'checked_at':'2026-01-01'},{'imdb_id':'tt999'},{'source_url':'https://example.com'}):
+            bad=dict(w,top200=dict(w['top200'],**changes))
+            self.assertFalse(age_eligible(bad,self.c,'2026-10-17'))
+
+    def test_top200_does_not_override_explicit_content_exclusion(self):
+        w=dict(self.work,sex_nudity='explicit')
+        with patch('tiktok_daily.cinema_catalog.CATALOG') as source:
+            import json
+            source.read_text.return_value=json.dumps({'works':[w]})
+            with self.assertRaises(RuntimeError):catalog(self.c,'2026-10-17')
 
     def test_arabic_alias_and_any_canonical_identity_cannot_repeat(self):
         for field in ('subject_id','subject_wikidata','subject_imdb'):

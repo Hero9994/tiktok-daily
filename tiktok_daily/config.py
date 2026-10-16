@@ -59,6 +59,8 @@ def load_config(path):
         if not isinstance(effective,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',effective):
             raise ValueError('schedule_effective_date must be YYYY-MM-DD')
         datetime.strptime(effective,'%Y-%m-%d')
+    if type(c.get('cinema_max_age_years',15)) is not int or not 1 <= c.get('cinema_max_age_years',15) <= 100:
+        raise ValueError('cinema_max_age_years must be an integer between 1 and 100')
     if type(c.get('cinema_curated_only', False)) is not bool:
         raise ValueError('cinema_curated_only must be boolean')
     if type(c.get('cinema_min_critic_rating',4)) not in (int,float) or not 4 <= c.get('cinema_min_critic_rating',4) <= 5:
