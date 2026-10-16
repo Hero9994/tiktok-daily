@@ -1079,7 +1079,7 @@
       "due_at": "2026-10-16T20:00:11.474571Z",
       "status": "content_ready",
       "created_at": "2026-10-16T11:54:17.033051Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "original_due_at": "2026-10-16T14:00:00Z",
       "idea": "A quiet 1950s-inspired coastal landscape where a tiny farmhouse and a towering, abstract metal silhouette meet beneath a vast starry sky, evoking animated science fiction and unexpected friendship.",
       "prompt": "Create original abstract cinematic illustration inspired by animated science fiction: a quiet mid-century coastal landscape at twilight, a small farmhouse beside a towering gentle-looking silhouette formed from simple metallic geometric shapes, distant stars and soft blue light. Evoke wonder and an unlikely friendship without depicting people, recognizable characters, logos, text, violence, or copying any existing poster. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area visually calm for an Arabic information panel.",
