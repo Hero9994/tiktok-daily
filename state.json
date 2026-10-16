@@ -1077,7 +1077,7 @@
       "day": "2026-10-16",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-16T20:00:11.474571Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-16T11:54:17.033051Z",
       "image_attempts": 1,
       "original_due_at": "2026-10-16T14:00:00Z",
@@ -1151,7 +1151,19 @@
         "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes."
       },
       "watch_reason": "قد يعجب محبي أفلام الرسوم المتحركة والخيال العلمي وقصص الصداقة غير المتوقعة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-16-92a1aaa70e-art.jpg",
+      "image_file": "2026-10-16-92a1aaa70e-1.jpg",
+      "image_sha256": "bb6969d64b8f32dade38551a4621317baa2bbe43f3279234c9801407ff187732",
+      "image_dhash": "e480a23c38323fd8",
+      "image_assets": [
+        {
+          "file": "2026-10-16-92a1aaa70e-1.jpg",
+          "sha256": "bb6969d64b8f32dade38551a4621317baa2bbe43f3279234c9801407ff187732"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     },
     "6ace9df3778b240e2ffd7494:2026-10-16:football": {
       "day": "2026-10-16",
