@@ -11,7 +11,7 @@ from .buffer import Buffer
 from .config import load_config, DISCLOSURE, track_config
 from .content import OpenAI, prepare_image
 from .http import HTTP
-from .runner import Publisher
+from .runner import Publisher, static_football
 from .storage import GitStore
 
 
@@ -160,7 +160,10 @@ def main():
     if args.mode not in ("verify", "inspect-buffer", "wait-first"):
         if not c["allow_paid_openai"]:
             raise RuntimeError("Paid OpenAI calls are disabled in config.json")
-        openai_key, = secrets("OPENAI_API_KEY")
+        if args.mode=='maintain' or static_football(c):
+            openai_key=os.environ.get('OPENAI_API_KEY')
+        else:
+            openai_key, = secrets("OPENAI_API_KEY")
         if c.get("content_mode") in ("auto","football"):
             secrets("FOOTBALL_DATA_API_KEY")
     if os.environ.get("GITHUB_REPOSITORY_VISIBILITY") != "public":
@@ -172,6 +175,8 @@ def main():
             from .maintenance import maintain
             publisher.verify()
             def factory(settings):
+                if not static_football(settings) and not openai_key:
+                    raise RuntimeError('OPENAI_API_KEY is missing for cinema; sports does not require it')
                 return Publisher(settings,store,OpenAI(http,openai_key,settings),
                                  Buffer(http,buffer_key,org,channel),http)
             print(json.dumps(maintain(c,store.state['entries'],channel,factory,datetime.now(timezone.utc)),ensure_ascii=False))

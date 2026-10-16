@@ -17,6 +17,11 @@ FOOTBALL_TEMPLATE = "featured-centred-times-v3"
 CINEMA_TEMPLATE = "cinema-reference-v2"
 
 
+def static_football(c):
+    return (c.get('content_mode')=='football' and c.get('card_style')=='black_gold'
+            and c.get('football_background')=='assets/football-stadium.jpg')
+
+
 def utc_text(now):
     return now.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
 
@@ -140,7 +145,8 @@ class Publisher:
                 raise RuntimeError("Unfinished post's publishing time has passed; review it manually")
         previous = [e for k, e in entries.items() if k != key and any(e.get(f) for f in ("idea", "subject_id", "subject_imdb", "subject_wikidata"))]
         if entry["status"] == "planned":
-            self.generator.moderate(self.c["theme"])
+            if not static_football(self.c):
+                self.generator.moderate(self.c["theme"])
             generated = None
             if self.c.get("content_mode") in ("auto", "football"):
                 schedule = self.football.tomorrow(day)
@@ -200,7 +206,8 @@ class Publisher:
                 else:
                     image, digest, perceptual = prepare_image(image, entry.get("title") if entry.get("summary") else None, entry.get("summary"))
                     images = [image]
-                self.generator.moderate(entry["caption"], image)
+                if not (static_football(self.c) and entry.get('post_kind')=='football'):
+                    self.generator.moderate(entry["caption"], image)
                 duplicate = any(e.get("image_sha256") == digest for e in previous) if self.c.get("card_style") == "black_gold" else image_is_duplicate(digest, perceptual, previous)
                 if duplicate:
                     continue
