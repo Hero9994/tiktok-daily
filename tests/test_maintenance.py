@@ -27,12 +27,21 @@ class MaintenanceTests(unittest.TestCase):
         self.entries.update({'channel:2026-10-16:football':{'status':'sent'},'channel:2026-10-16:cinema':{'status':'accepted'}})
         self.run_at(11)
         self.assertEqual(self.calls,[])
-    def test_near_deadline_is_reported_instead_of_silently_choosing_tomorrow(self):
-        with self.assertRaisesRegex(RuntimeError,'not silently moved'):self.run_at(11,55)
+    def test_near_deadline_waits_for_catchup_instead_of_choosing_tomorrow(self):
+        result=self.run_at(11,55)
+        self.assertTrue(any('next wake-up' in value for value in result))
         self.assertEqual(self.calls,[('cinema',False)])
-    def test_night_never_generates_or_creates_an_early_tomorrow_post(self):
-        self.run_at(22)
-        self.assertEqual(self.calls,[])
+    def test_late_evening_repairs_both_todays_posts(self):
+        self.run_at(21)
+        self.assertEqual(self.calls,[('football',True),('cinema',True)])
+    def test_late_catchup_never_duplicates_an_accepted_post(self):
+        self.entries['channel:2026-10-16:football']={'status':'accepted'}
+        self.run_at(21,59)
+        self.assertEqual(self.calls,[('cinema',True)])
+    def test_near_midnight_still_uses_current_local_day(self):
+        self.entries['channel:2026-10-16:cinema']={'status':'sent'}
+        self.run_at(21,59)
+        self.assertEqual(self.calls,[('football',True)])
     def test_winter_keeps_berlin_wall_time(self):
         self.entries['channel:2026-12-16:cinema']={'status':'accepted'}
         self.run_at(15,40,month=12,day=16)

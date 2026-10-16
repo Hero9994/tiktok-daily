@@ -11,8 +11,8 @@ def maintain(c, entries, channel, factory, now):
     if c.get('schedule_effective_date') and local.date()<date.fromisoformat(c['schedule_effective_date']):
         return ['New schedule is not effective yet; only delivery verification runs today']
     prep_hour,prep_minute=map(int,c.get('daily_prepare_time','06:00').split(':'))
-    if (local.hour,local.minute)<(prep_hour,prep_minute) or local.hour>=20:
-        return [f"Outside daily preparation window ({c.get('daily_prepare_time','06:00')}–20:00 local)"]
+    if (local.hour,local.minute)<(prep_hour,prep_minute):
+        return [f"Before daily preparation time ({c.get('daily_prepare_time','06:00')} local)"]
     results=[];failures=[]
     for post in c['daily_posts']:
         kind=post['kind'];day=local.date().isoformat()
@@ -26,7 +26,7 @@ def maintain(c, entries, channel, factory, now):
         hour,minute=map(int,post['time'].split(':'))
         due=datetime(local.year,local.month,local.day,hour,minute,tzinfo=local.tzinfo)
         if local<due and due-local<timedelta(minutes=c['prepare_lead_minutes']):
-            failures.append(f'{kind}: preparation missed its safety window; today is not silently moved to tomorrow')
+            results.append(f'{kind}: too close to scheduled time; next wake-up will publish today immediately')
             continue
         # A delayed wake-up resumes today's existing journal, not a duplicate or tomorrow's slot.
         try:
