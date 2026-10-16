@@ -1086,7 +1086,7 @@
       "day": "2026-10-16",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-16T19:59:18.554464Z",
-      "status": "image_ready",
+      "status": "submitting",
       "created_at": "2026-10-16T14:35:38.306918Z",
       "image_attempts": 1,
       "original_due_at": "2026-10-16T14:35:38.306918Z",
@@ -1357,7 +1357,8 @@
       "video_fingerprint": "3b0e2052ce8aaaf5246f549bd4185a9f7d60ca480e51a704c79fc0f26e988175",
       "music_file": "assets/audio/sports.m4a",
       "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb",
-      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/9a508310f73bf3c5480a85490ece108d9f668be1/videos/2026-10-16-782a8c1226.mp4"
+      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/9a508310f73bf3c5480a85490ece108d9f668be1/videos/2026-10-16-782a8c1226.mp4",
+      "attempted_at": "2026-10-16T19:57:56.348475Z"
     }
   },
   "image_requests": {
