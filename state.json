@@ -1086,7 +1086,7 @@
       "day": "2026-10-16",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-16T19:59:18.554464Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-16T14:35:38.306918Z",
       "image_attempts": 1,
       "original_due_at": "2026-10-16T14:35:38.306918Z",
@@ -1318,14 +1318,34 @@
           }
         ],
         "date_mode": "tomorrow",
-        "checked_at": "2026-10-16T19:59:22.252085+00:00",
+        "checked_at": "2026-10-16T19:59:26.754717+00:00",
         "source_url": "https://www.football-data.org/",
         "sources": [
           "football-data.org",
           "UEFA.com"
         ]
       },
-      "source_url": "https://www.football-data.org/"
+      "source_url": "https://www.football-data.org/",
+      "hero_file": "2026-10-16-782a8c1226-art.jpg",
+      "image_file": "2026-10-16-782a8c1226-1.jpg",
+      "image_sha256": "a27a26e024447c941b8eb27485740a7d2a55349533d361d3a308bfbec9e22917",
+      "image_dhash": "9d1513133737178d",
+      "image_assets": [
+        {
+          "file": "2026-10-16-782a8c1226-1.jpg",
+          "sha256": "a27a26e024447c941b8eb27485740a7d2a55349533d361d3a308bfbec9e22917"
+        },
+        {
+          "file": "2026-10-16-782a8c1226-2.jpg",
+          "sha256": "f899a6974ed7731c92833579cfb1719fad820979473abc2314b3e084f0547d06"
+        },
+        {
+          "file": "2026-10-16-782a8c1226-3.jpg",
+          "sha256": "fd5a54a50bcace887feff1fe4193aed1b3200a7d20544936c0722cdaccf57da2"
+        }
+      ],
+      "football_template": "featured-centred-times-v3",
+      "cinema_template": null
     }
   },
   "image_requests": {
