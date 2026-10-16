@@ -1183,7 +1183,7 @@
       "day": "2026-10-16",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-16T19:59:18.554464Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-16T14:35:38.306918Z",
       "image_attempts": 1,
       "original_due_at": "2026-10-16T14:35:38.306918Z",
@@ -1457,8 +1457,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/9a508310f73bf3c5480a85490ece108d9f668be1/videos/2026-10-16-782a8c1226.mp4",
       "attempted_at": "2026-10-16T19:57:56.348475Z",
       "post_id": "6ad2823df90ad606a6f4287f",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-10-16T20:01:26.076437Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-16T20:01:59.200555Z",
+      "sent_at": "2026-10-16T20:01:54.113Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7697357977103109409"
     }
   },
   "image_requests": {
