@@ -1654,9 +1654,101 @@
       "day": "2026-10-17",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-17T14:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-17T11:11:02.148163Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract tribute to mathematical brilliance and the Space Race, built from luminous equations, orbital curves, and a rising rocket-like geometric form.",
+      "prompt": "Create original abstract cinematic artwork inspired by a biographical drama about mathematicians working during the Space Race. Use luminous geometric calculations, sweeping orbital curves, and a subtle rising rocket-shaped silhouette made from light, against a deep midnight-blue and warm amber palette. No people, faces, logos, readable text, violence, or recognizable copyrighted imagery. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower portion uncluttered for an Arabic information panel.",
+      "title": "الأرقام المخفية",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nدراما سيرة ذاتية عن ثلاث عالمات رياضيات أمريكيات من أصول إفريقية عملن في ناسا خلال سباق الفضاء في خمسينيات وستينيات القرن العشرين.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "دراما سيرة ذاتية عن ثلاث عالمات رياضيات أمريكيات من أصول إفريقية عملن في ناسا خلال سباق الفضاء في خمسينيات وستينيات القرن العشرين.",
+      "subject_id": "wikipedia-en:49955849",
+      "subject_title": "Hidden Figures",
+      "summary": "دراما سيرة ذاتية عن ثلاث عالمات رياضيات أمريكيات من أصول إفريقية عملن في ناسا خلال سباق الفضاء في خمسينيات وستينيات القرن العشرين.",
+      "source_url": "https://en.wikipedia.org/wiki/Hidden_Figures",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/4/4f/The_official_poster_for_the_film_Hidden_Figures%2C_2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2016"
+          },
+          {
+            "label": "المدة",
+            "value": "127 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم سيرة ذاتية",
+          "فلم دراما"
+        ],
+        "cast": [
+          {
+            "name": "تاراجي بيندا هينسون",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taraji%20P.%20Henson%202016.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q235511"
+          },
+          {
+            "name": "أوكتافيا سبنسر",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/%22Hidden%20Figures%22%20Screening%20at%20the%20White%20House%20%28NHQ201612150008%29%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q229254"
+          },
+          {
+            "name": "جانيل موناي",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Janelle%20Monae%20Paris%20Fashion%20Week%20Autumn%20Winter%202019%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q234356"
+          },
+          {
+            "name": "كيفين كوستنر",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kevin%20Costner%202016.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q11930"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q23755544",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q23755544",
+      "subject_imdb": "tt4846340",
+      "cinema_review": {
+        "wikipedia_title": "Hidden Figures",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/hidden-figures",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 49955849,
+        "wikidata_id": "Q23755544",
+        "imdb_id": "tt4846340",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes.",
+        "release_year": 2016
+      },
+      "watch_reason": "قد يعجب محبي دراما السيرة الذاتية وقصص الرياضيات وسباق الفضاء.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
