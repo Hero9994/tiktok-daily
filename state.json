@@ -1633,7 +1633,12 @@
         }
       ],
       "football_template": "featured-centred-times-v3",
-      "cinema_template": null
+      "cinema_template": null,
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/2806260fe8ce9508bb9e1c92476ca4ed2acfc5f0/images/2026-10-17-73a97e62a2-1.jpg",
+      "image_urls": [
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/2806260fe8ce9508bb9e1c92476ca4ed2acfc5f0/images/2026-10-17-73a97e62a2-1.jpg",
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/2806260fe8ce9508bb9e1c92476ca4ed2acfc5f0/images/2026-10-17-73a97e62a2-2.jpg"
+      ]
     }
   },
   "image_requests": {
