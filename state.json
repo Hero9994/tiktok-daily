@@ -1654,7 +1654,7 @@
       "day": "2026-10-17",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-17T14:00:00Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-10-17T11:11:02.148163Z",
       "image_attempts": 1,
       "idea": "An abstract tribute to mathematical brilliance and the Space Race, built from luminous equations, orbital curves, and a rising rocket-like geometric form.",
@@ -1771,7 +1771,10 @@
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/5307112a9c8f59a81b2731a1061a0359fd116841/videos/2026-10-17-9ce5dc7abd.mp4",
-      "attempted_at": "2026-10-17T11:09:32.957527Z"
+      "attempted_at": "2026-10-17T11:09:32.957527Z",
+      "post_id": "6ad357e6dd83363c4dcbbd4f",
+      "buffer_status": "scheduled",
+      "last_checked_at": "2026-10-17T11:11:34.531473Z"
     }
   },
   "image_requests": {
