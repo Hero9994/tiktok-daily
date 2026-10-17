@@ -1656,7 +1656,7 @@
       "due_at": "2026-10-17T14:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-17T11:11:02.148163Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract tribute to mathematical brilliance and the Space Race, built from luminous equations, orbital curves, and a rising rocket-like geometric form.",
       "prompt": "Create original abstract cinematic artwork inspired by a biographical drama about mathematicians working during the Space Race. Use luminous geometric calculations, sweeping orbital curves, and a subtle rising rocket-shaped silhouette made from light, against a deep midnight-blue and warm amber palette. No people, faces, logos, readable text, violence, or recognizable copyrighted imagery. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower portion uncluttered for an Arabic information panel.",
       "title": "الأرقام المخفية",
