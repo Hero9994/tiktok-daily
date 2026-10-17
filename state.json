@@ -1654,7 +1654,7 @@
       "day": "2026-10-17",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-17T14:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-17T11:11:02.148163Z",
       "image_attempts": 1,
       "idea": "An abstract tribute to mathematical brilliance and the Space Race, built from luminous equations, orbital curves, and a rising rocket-like geometric form.",
@@ -1748,7 +1748,19 @@
         "release_year": 2016
       },
       "watch_reason": "قد يعجب محبي دراما السيرة الذاتية وقصص الرياضيات وسباق الفضاء.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-17-9ce5dc7abd-art.jpg",
+      "image_file": "2026-10-17-9ce5dc7abd-1.jpg",
+      "image_sha256": "1cdc40d3c4824ef2482ff716fef8c75cdd8abad4bb9eb91e840b064cce1c3d03",
+      "image_dhash": "9694a838333f3cd8",
+      "image_assets": [
+        {
+          "file": "2026-10-17-9ce5dc7abd-1.jpg",
+          "sha256": "1cdc40d3c4824ef2482ff716fef8c75cdd8abad4bb9eb91e840b064cce1c3d03"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
