@@ -1868,7 +1868,7 @@
       "day": "2026-10-18",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-18T14:03:58.504580Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-18T14:03:58.504580Z",
       "image_attempts": 1,
       "idea": "An abstract cosmic observatory where luminous orbital paths and scientific diagrams unfold across a deep, star-filled space.",
@@ -1991,8 +1991,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/9fc5be781baf200447a1d9361047f02a46daf96b/videos/2026-10-18-c85c89ff6e.mp4",
       "attempted_at": "2026-10-18T14:03:20.636786Z",
       "post_id": "6ad4d2220b0d72757a2575a6",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-10-18T14:05:32.742539Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-18T14:09:17.315841Z",
+      "sent_at": "2026-10-18T14:07:13.564Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7698008779190717729"
     }
   },
   "image_requests": {
