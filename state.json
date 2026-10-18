@@ -1978,7 +1978,11 @@
         }
       ],
       "football_template": null,
-      "cinema_template": "cinema-reference-v2"
+      "cinema_template": "cinema-reference-v2",
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/aec1496184e5a86bf39d4802a35a0df5a6a421ed/images/2026-10-18-c85c89ff6e-1.jpg",
+      "image_urls": [
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/aec1496184e5a86bf39d4802a35a0df5a6a421ed/images/2026-10-18-c85c89ff6e-1.jpg"
+      ]
     }
   },
   "image_requests": {
