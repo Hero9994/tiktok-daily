@@ -1870,7 +1870,7 @@
       "due_at": "2026-10-18T14:03:58.504580Z",
       "status": "content_ready",
       "created_at": "2026-10-18T14:03:58.504580Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract cosmic observatory where luminous orbital paths and scientific diagrams unfold across a deep, star-filled space.",
       "prompt": "Create original abstract cinematic artwork for a science documentary series: a vast indigo cosmos with elegant luminous orbital arcs, subtle nebulae, and delicate abstract scientific diagram motifs, evoking wonder and discovery. No people, logos, text, recognizable characters, or violence. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area calm and uncluttered for an Arabic information panel.",
       "title": "Cosmos: A Spacetime Odyssey",
