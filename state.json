@@ -1868,7 +1868,7 @@
       "day": "2026-10-18",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-18T14:03:58.504580Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-18T14:03:58.504580Z",
       "image_attempts": 1,
       "idea": "An abstract cosmic observatory where luminous orbital paths and scientific diagrams unfold across a deep, star-filled space.",
@@ -1966,7 +1966,19 @@
         "release_year": 2014
       },
       "watch_reason": "قد تناسب محبي الوثائقيات العلمية والموضوعات المرتبطة بالفضاء.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-18-c85c89ff6e-art.jpg",
+      "image_file": "2026-10-18-c85c89ff6e-1.jpg",
+      "image_sha256": "e4e0f27893c5a6b2dfb724d463c99329e9e035b93167962a3a4f469113745091",
+      "image_dhash": "e4898608581809d2",
+      "image_assets": [
+        {
+          "file": "2026-10-18-c85c89ff6e-1.jpg",
+          "sha256": "e4e0f27893c5a6b2dfb724d463c99329e9e035b93167962a3a4f469113745091"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
