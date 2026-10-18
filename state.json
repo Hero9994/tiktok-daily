@@ -1868,9 +1868,105 @@
       "day": "2026-10-18",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-18T14:03:58.504580Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-18T14:03:58.504580Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract cosmic observatory where luminous orbital paths and scientific diagrams unfold across a deep, star-filled space.",
+      "prompt": "Create original abstract cinematic artwork for a science documentary series: a vast indigo cosmos with elegant luminous orbital arcs, subtle nebulae, and delicate abstract scientific diagram motifs, evoking wonder and discovery. No people, logos, text, recognizable characters, or violence. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area calm and uncluttered for an Arabic information panel.",
+      "title": "Cosmos: A Spacetime Odyssey",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nسلسلة تلفزيونية وثائقية علمية أمريكية من عام 2014، يقدّمها عالم الفيزياء الفلكية نيل ديغراس تايسون.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "سلسلة تلفزيونية وثائقية علمية أمريكية من عام 2014، يقدّمها عالم الفيزياء الفلكية نيل ديغراس تايسون.",
+      "subject_id": "wikipedia-en:35777337",
+      "subject_title": "Cosmos: A Spacetime Odyssey",
+      "summary": "سلسلة تلفزيونية وثائقية علمية أمريكية من عام 2014، يقدّمها عالم الفيزياء الفلكية نيل ديغراس تايسون.",
+      "source_url": "https://en.wikipedia.org/wiki/Cosmos%3A_A_Spacetime_Odyssey",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/402/1006408.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "تقييم TVmaze",
+            "value": "8.5 / 10"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2014"
+          },
+          {
+            "label": "المواسم",
+            "value": "1"
+          },
+          {
+            "label": "الحلقات",
+            "value": "13"
+          },
+          {
+            "label": "المدة",
+            "value": "557 دقيقة"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "برنامج وثائقي",
+          "فلم وثائقي"
+        ],
+        "cast": [
+          {
+            "name": "Neil deGrasse Tyson",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/81/204312.jpg",
+            "source_url": "https://www.tvmaze.com/people/63950/neil-degrasse-tyson"
+          },
+          {
+            "name": "Carl Sagan",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/14/36199.jpg",
+            "source_url": "https://www.tvmaze.com/people/81287/carl-sagan"
+          },
+          {
+            "name": "Nadia Rochelle Pfarr",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/7/17766.jpg",
+            "source_url": "https://www.tvmaze.com/people/52760/nadia-rochelle-pfarr"
+          },
+          {
+            "name": "Stoney Emshwiller",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/7/17768.jpg",
+            "source_url": "https://www.tvmaze.com/people/52761/stoney-emshwiller"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q5174583",
+        "tvmaze_url": "https://www.tvmaze.com/shows/1128/cosmos"
+      },
+      "subject_wikidata": "Q5174583",
+      "subject_imdb": "tt2395695",
+      "cinema_review": {
+        "wikipedia_title": "Cosmos: A Spacetime Odyssey",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/cosmos-a-spacetime-odyssey",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 35777337,
+        "wikidata_id": "Q5174583",
+        "imdb_id": "tt2395695",
+        "kind": "series",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes.",
+        "release_year": 2014
+      },
+      "watch_reason": "قد تناسب محبي الوثائقيات العلمية والموضوعات المرتبطة بالفضاء.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
