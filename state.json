@@ -1995,6 +1995,14 @@
       "last_checked_at": "2026-10-18T14:09:17.315841Z",
       "sent_at": "2026-10-18T14:07:13.564Z",
       "external_link": "https://tiktok.com/@tk.player7/video/7698008779190717729"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-19:football": {
+      "day": "2026-10-19",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-19T12:00:00Z",
+      "status": "planned",
+      "created_at": "2026-10-19T11:15:10.410908Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
