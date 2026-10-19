@@ -2210,7 +2210,7 @@
       "day": "2026-10-19",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-19T14:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-19T11:15:40.151641Z",
       "image_attempts": 1,
       "idea": "An abstract daydream where a luminous jazz rhythm bridges two floating realms: a warm, bustling city of sound and a serene sky of drifting colors.",
@@ -2284,7 +2284,19 @@
         "release_year": 2020
       },
       "watch_reason": "قد يعجب محبي فانتازيا الرسوم المتحركة وحكايات الشغف بالموسيقى.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-19-58973bedd9-art.jpg",
+      "image_file": "2026-10-19-58973bedd9-1.jpg",
+      "image_sha256": "d74f56f53cabda8699e8dba83f79d97c53908dc0f8e4b9be4d56666333e8aba5",
+      "image_dhash": "c08ca8763b397ddb",
+      "image_assets": [
+        {
+          "file": "2026-10-19-58973bedd9-1.jpg",
+          "sha256": "d74f56f53cabda8699e8dba83f79d97c53908dc0f8e4b9be4d56666333e8aba5"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
