@@ -2205,6 +2205,14 @@
       "post_id": "6ad5fbd961ffad979f0cf04e",
       "buffer_status": "scheduled",
       "last_checked_at": "2026-10-19T11:15:38.872006Z"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-19:cinema": {
+      "day": "2026-10-19",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-19T14:00:00Z",
+      "status": "planned",
+      "created_at": "2026-10-19T11:15:40.151641Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
