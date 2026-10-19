@@ -2212,7 +2212,7 @@
       "due_at": "2026-10-19T14:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-19T11:15:40.151641Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract daydream where a luminous jazz rhythm bridges two floating realms: a warm, bustling city of sound and a serene sky of drifting colors.",
       "prompt": "Create original abstract cinematic art inspired by animated fantasy and jazz: a glowing ribbon of musical light connecting a richly colored cityscape with a tranquil, cloudlike celestial realm, rendered with expressive shapes, vibrant blue and amber tones, and a sense of wonder. No people, faces, characters, logos, recognizable copyrighted imagery, violence, or text. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area uncluttered for an Arabic information panel.",
       "title": "Soul",
