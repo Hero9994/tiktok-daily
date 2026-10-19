@@ -2210,7 +2210,7 @@
       "day": "2026-10-19",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-19T14:00:00Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-10-19T11:15:40.151641Z",
       "image_attempts": 1,
       "idea": "An abstract daydream where a luminous jazz rhythm bridges two floating realms: a warm, bustling city of sound and a serene sky of drifting colors.",
@@ -2307,7 +2307,10 @@
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/a98382763c04c23eb13d2b786a3480ed4518680a/videos/2026-10-19-58973bedd9.mp4",
-      "attempted_at": "2026-10-19T11:14:08.296362Z"
+      "attempted_at": "2026-10-19T11:14:08.296362Z",
+      "post_id": "6ad5fbf92720e98a091d6d20",
+      "buffer_status": "scheduled",
+      "last_checked_at": "2026-10-19T11:16:10.102789Z"
     }
   },
   "image_requests": {
