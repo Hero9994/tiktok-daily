@@ -2453,7 +2453,11 @@
         }
       ],
       "football_template": "featured-centred-times-v3",
-      "cinema_template": null
+      "cinema_template": null,
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ed1a3470b0bcf23f4b03d6e0fb3e45f4d6f9cff4/images/2026-10-20-bbad0cd6f9-1.jpg",
+      "image_urls": [
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ed1a3470b0bcf23f4b03d6e0fb3e45f4d6f9cff4/images/2026-10-20-bbad0cd6f9-1.jpg"
+      ]
     }
   },
   "image_requests": {
