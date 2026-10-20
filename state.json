@@ -2475,7 +2475,7 @@
       "due_at": "2026-10-20T14:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-20T12:10:22.885300Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An atmospheric island fable: a small, abstract mechanical form finding harmony with wild nature beneath a vast sky.",
       "prompt": "Create original abstract cinematic art inspired by animated science fiction: a simple, non-distinctive metallic geometric form nestled among lush island foliage, with delicate birdlike shapes and a luminous ocean horizon. Dreamlike color, painterly textures, gentle sense of discovery, no identifiable characters or people, no logos, no text, no violence. Keep all focal elements within the upper 65% and central 80% of the frame, leaving the lower area visually calm for an Arabic information panel.",
       "title": "The Wild Robot",
