@@ -2475,7 +2475,7 @@
       "day": "2026-10-20",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-20T14:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-20T12:10:22.885300Z",
       "image_attempts": 1,
       "idea": "An atmospheric island fable: a small, abstract mechanical form finding harmony with wild nature beneath a vast sky.",
@@ -2574,8 +2574,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/b777951a1fcc815bc83da11788479e92e2f4b922/videos/2026-10-20-c9eb9cee65.mp4",
       "attempted_at": "2026-10-20T12:08:49.644986Z",
       "post_id": "6ad75a4b31ed850c40e17e65",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-20T12:10:51.324788Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-20T14:44:37.848439Z",
+      "sent_at": "2026-10-20T14:03:43.646Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7698749809573760289"
     }
   },
   "image_requests": {
