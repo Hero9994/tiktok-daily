@@ -2473,7 +2473,7 @@
       "day": "2026-10-20",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-20T14:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-20T12:10:22.885300Z",
       "image_attempts": 1,
       "idea": "An atmospheric island fable: a small, abstract mechanical form finding harmony with wild nature beneath a vast sky.",
@@ -2547,7 +2547,19 @@
         "release_year": 2024
       },
       "watch_reason": "قد يناسب محبي أفلام الرسوم المتحركة والخيال العلمي عن التكيف وروابط الطبيعة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-20-c9eb9cee65-art.jpg",
+      "image_file": "2026-10-20-c9eb9cee65-1.jpg",
+      "image_sha256": "989edfb7dd3ac0b3f1e6bbdd2247c2cbb4c53bfd93ba604a836d28b3e88de195",
+      "image_dhash": "e484903c393a3ed4",
+      "image_assets": [
+        {
+          "file": "2026-10-20-c9eb9cee65-1.jpg",
+          "sha256": "989edfb7dd3ac0b3f1e6bbdd2247c2cbb4c53bfd93ba604a836d28b3e88de195"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
