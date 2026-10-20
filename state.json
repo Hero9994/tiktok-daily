@@ -2320,7 +2320,7 @@
       "day": "2026-10-20",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-20T12:09:45.727088Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-20T12:09:45.727088Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-10-21",
@@ -2434,14 +2434,26 @@
           }
         ],
         "date_mode": "tomorrow",
-        "checked_at": "2026-10-20T12:09:49.724846+00:00",
+        "checked_at": "2026-10-20T12:09:52.697980+00:00",
         "source_url": "https://www.football-data.org/",
         "sources": [
           "football-data.org",
           "UEFA.com"
         ]
       },
-      "source_url": "https://www.football-data.org/"
+      "source_url": "https://www.football-data.org/",
+      "hero_file": "2026-10-20-bbad0cd6f9-art.jpg",
+      "image_file": "2026-10-20-bbad0cd6f9-1.jpg",
+      "image_sha256": "430e3da965e2dffc43259ed92a88b2045eecc2b2b9b5c627456e3c0c4c7b746d",
+      "image_dhash": "dd3533373733178d",
+      "image_assets": [
+        {
+          "file": "2026-10-20-bbad0cd6f9-1.jpg",
+          "sha256": "430e3da965e2dffc43259ed92a88b2045eecc2b2b9b5c627456e3c0c4c7b746d"
+        }
+      ],
+      "football_template": "featured-centred-times-v3",
+      "cinema_template": null
     }
   },
   "image_requests": {
