@@ -2867,7 +2867,12 @@
       "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/2fa49670a87f86846eb88662e452ba6171995e0f/images/2026-10-21-facd191bb9-1.jpg",
       "image_urls": [
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/2fa49670a87f86846eb88662e452ba6171995e0f/images/2026-10-21-facd191bb9-1.jpg"
-      ]
+      ],
+      "video_file": "2026-10-21-facd191bb9.mp4",
+      "video_sha256": "d0ef587709caf6d33f7129ed627b8196580348a58d5223373cd1562b45e235ac",
+      "video_fingerprint": "f17bc7bce33ba71f202ec4986fa69286c1ba698f1286bbbf3a7863a1280ae2a1",
+      "music_file": "assets/audio/cinema.m4a",
+      "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd"
     }
   },
   "image_requests": {
