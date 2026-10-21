@@ -2757,9 +2757,101 @@
       "day": "2026-10-21",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-21T14:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-21T10:35:22.293276Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A fractured interior that subtly shifts between familiar rooms, expressing the disorientation of a psychological drama through perspective and light.",
+      "prompt": "Create original abstract cinematic art inspired by psychological drama: a quiet interior formed from overlapping geometric room shapes, subtly shifting perspective, a small table and doorway rendered as indistinct forms, muted slate blue and warm amber light, atmospheric and contemplative. Keep all focal elements within the upper 65% and central 80%, leaving the lower portion calm and uncluttered for an Arabic information panel. No people, faces, text, logos, violence, or recognizable copyrighted imagery.",
+      "title": "الأب",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nدراما نفسية عن رجل مسن يعيش مع الخرف.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "دراما نفسية عن رجل مسن يعيش مع الخرف.",
+      "subject_id": "wikipedia-en:60642348",
+      "subject_title": "The Father (2020 film)",
+      "summary": "دراما نفسية عن رجل مسن يعيش مع الخرف.",
+      "source_url": "https://en.wikipedia.org/wiki/The_Father_(2020_film)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/a/ab/The_Father_2020_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2020"
+          },
+          {
+            "label": "المدة",
+            "value": "97 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "المملكة المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم دراما",
+          "فيلم نفسي"
+        ],
+        "cast": [
+          {
+            "name": "أنتوني هوبكنز",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20Hopkins%20Red%20Sea%20Festival%202025%20Portrait.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q65932"
+          },
+          {
+            "name": "أوليفيا كولمان",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Olivia%20Colman%20Soccer%20Aid%20for%20UNICEF%202024.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q7088045"
+          },
+          {
+            "name": "مارك جاتس",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mark%20Gatiss%20at%20A%20Scandal%20in%20Belgravia%20screening.png?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q560286"
+          },
+          {
+            "name": "إيموجين بوتس",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Imogen%20Poots%20at%20the%202025%20Toronto%20International%20Film%20Festival.%2002%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q237012"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q65066669",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q65066669",
+      "subject_imdb": "tt10272386",
+      "cinema_review": {
+        "wikipedia_title": "The Father (2020 film)",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/the-father",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 60642348,
+        "wikidata_id": "Q65066669",
+        "imdb_id": "tt10272386",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes.",
+        "release_year": 2020
+      },
+      "watch_reason": "قد يناسب محبي الدراما النفسية والقصص التي تتناول تجربة الخرف.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
