@@ -2757,7 +2757,7 @@
       "day": "2026-10-21",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-21T14:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-21T10:35:22.293276Z",
       "image_attempts": 1,
       "idea": "A fractured interior that subtly shifts between familiar rooms, expressing the disorientation of a psychological drama through perspective and light.",
@@ -2851,7 +2851,19 @@
         "release_year": 2020
       },
       "watch_reason": "قد يناسب محبي الدراما النفسية والقصص التي تتناول تجربة الخرف.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-21-facd191bb9-art.jpg",
+      "image_file": "2026-10-21-facd191bb9-1.jpg",
+      "image_sha256": "ee2ae9d0c49ad4505283228d9f103c7c2878d04fe54b71d66b3e32f96eb410f6",
+      "image_dhash": "b29221391c187c9c",
+      "image_assets": [
+        {
+          "file": "2026-10-21-facd191bb9-1.jpg",
+          "sha256": "ee2ae9d0c49ad4505283228d9f103c7c2878d04fe54b71d66b3e32f96eb410f6"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
