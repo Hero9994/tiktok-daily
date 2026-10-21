@@ -2759,7 +2759,7 @@
       "due_at": "2026-10-21T14:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-21T10:35:22.293276Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A fractured interior that subtly shifts between familiar rooms, expressing the disorientation of a psychological drama through perspective and light.",
       "prompt": "Create original abstract cinematic art inspired by psychological drama: a quiet interior formed from overlapping geometric room shapes, subtly shifting perspective, a small table and doorway rendered as indistinct forms, muted slate blue and warm amber light, atmospheric and contemplative. Keep all focal elements within the upper 65% and central 80%, leaving the lower portion calm and uncluttered for an Arabic information panel. No people, faces, text, logos, violence, or recognizable copyrighted imagery.",
       "title": "الأب",
