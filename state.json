@@ -2882,6 +2882,14 @@
       "last_checked_at": "2026-10-21T14:54:24.129419Z",
       "sent_at": "2026-10-21T14:04:48.727Z",
       "external_link": "https://tiktok.com/@tk.player7/video/7699121553333636384"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-22:cinema": {
+      "day": "2026-10-22",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-22T14:54:43.254675Z",
+      "status": "planned",
+      "created_at": "2026-10-22T14:54:43.254675Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
