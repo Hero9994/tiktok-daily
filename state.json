@@ -2887,7 +2887,7 @@
       "day": "2026-10-22",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-22T14:54:43.254675Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-22T14:54:43.254675Z",
       "image_attempts": 1,
       "idea": "An abstract cinematic study of resilience, expressed through a delicate windmill-like form emerging from a dramatic landscape of light and shadow.",
@@ -2995,8 +2995,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/3456e2365dc1a452609965ef154237ff109cd597/videos/2026-10-22-e65c6d3234.mp4",
       "attempted_at": "2026-10-22T14:53:15.733929Z",
       "post_id": "6ada23d5eb1348c17ac5269f",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-10-22T14:55:27.788199Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-22T15:27:35.805120Z",
+      "sent_at": "2026-10-22T14:57:01.339Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7699505982946266401"
     }
   },
   "image_requests": {
