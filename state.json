@@ -2887,7 +2887,7 @@
       "day": "2026-10-22",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-22T14:54:43.254675Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-22T14:54:43.254675Z",
       "image_attempts": 1,
       "idea": "An abstract cinematic study of resilience, expressed through a delicate windmill-like form emerging from a dramatic landscape of light and shadow.",
@@ -2970,7 +2970,19 @@
         "release_year": 2019
       },
       "watch_reason": "قد يناسب محبي الأفلام الدرامية المستندة إلى مذكرات.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-22-e65c6d3234-art.jpg",
+      "image_file": "2026-10-22-e65c6d3234-1.jpg",
+      "image_sha256": "ffd22c454c6102a8eaed5bcd91161537a180722fe990c889d26f2b009f2b17ec",
+      "image_dhash": "30b0a43d3a3c7efa",
+      "image_assets": [
+        {
+          "file": "2026-10-22-e65c6d3234-1.jpg",
+          "sha256": "ffd22c454c6102a8eaed5bcd91161537a180722fe990c889d26f2b009f2b17ec"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
