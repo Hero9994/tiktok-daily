@@ -2887,9 +2887,90 @@
       "day": "2026-10-22",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-22T14:54:43.254675Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-22T14:54:43.254675Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract cinematic study of resilience, expressed through a delicate windmill-like form emerging from a dramatic landscape of light and shadow.",
+      "prompt": "Create original abstract cinematic artwork inspired by the drama genre: a delicate, unbranded windmill-like geometric sculpture rises from an expansive textured landscape, with soft wind trails and a dramatic transition from shadow to warm light. Poetic, restrained, atmospheric color palette; no people, logos, text, recognizable characters, or violence. Keep all focal elements centered within the upper 65% of the image, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "The Boy Who Harnessed the Wind",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم درامي يستند إلى مذكرات ويليام كامكوامبا وبرايان ميلر.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم درامي يستند إلى مذكرات ويليام كامكوامبا وبرايان ميلر.",
+      "subject_id": "wikipedia-en:59694699",
+      "subject_title": "The Boy Who Harnessed the Wind",
+      "summary": "فيلم درامي يستند إلى مذكرات ويليام كامكوامبا وبرايان ميلر.",
+      "source_url": "https://en.wikipedia.org/wiki/The_Boy_Who_Harnessed_the_Wind",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/4/44/The_Boy_Who_Harnessed_the_Wind.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2019"
+          },
+          {
+            "label": "المدة",
+            "value": "113 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "المملكة المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "فلم دراما"
+        ],
+        "cast": [
+          {
+            "name": "Maxwell Simba",
+            "image_url": null,
+            "source_url": "https://www.wikidata.org/wiki/Q61986141"
+          },
+          {
+            "name": "شيواتال إيجيوفور",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiwetel%20Ejiofor%20at%20the%202024%20Toronto%20International%20Film%20Festival%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q317343"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q60738660",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q60738660",
+      "subject_imdb": "tt7533152",
+      "cinema_review": {
+        "wikipedia_title": "The Boy Who Harnessed the Wind",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/the-boy-who-harnessed-the-wind",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 59694699,
+        "wikidata_id": "Q60738660",
+        "imdb_id": "tt7533152",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes.",
+        "release_year": 2019
+      },
+      "watch_reason": "قد يناسب محبي الأفلام الدرامية المستندة إلى مذكرات.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
