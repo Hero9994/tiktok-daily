@@ -2889,7 +2889,7 @@
       "due_at": "2026-10-22T14:54:43.254675Z",
       "status": "content_ready",
       "created_at": "2026-10-22T14:54:43.254675Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract cinematic study of resilience, expressed through a delicate windmill-like form emerging from a dramatic landscape of light and shadow.",
       "prompt": "Create original abstract cinematic artwork inspired by the drama genre: a delicate, unbranded windmill-like geometric sculpture rises from an expansive textured landscape, with soft wind trails and a dramatic transition from shadow to warm light. Poetic, restrained, atmospheric color palette; no people, logos, text, recognizable characters, or violence. Keep all focal elements centered within the upper 65% of the image, leaving the lower area visually quiet for an Arabic information panel.",
       "title": "The Boy Who Harnessed the Wind",
