@@ -804,6 +804,230 @@
       "aliases": [
         "Torino"
       ]
+    },
+    {
+      "name_ar": "برايتون",
+      "priority": 1,
+      "aliases": [
+        "Brighton Hove"
+      ]
+    },
+    {
+      "name_ar": "ليدز يونايتد",
+      "priority": 1,
+      "aliases": [
+        "Leeds United"
+      ]
+    },
+    {
+      "name_ar": "هال سيتي",
+      "priority": 1,
+      "aliases": [
+        "Hull City"
+      ]
+    },
+    {
+      "name_ar": "كريستال بالاس",
+      "priority": 1,
+      "aliases": [
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name_ar": "بورنموث",
+      "priority": 1,
+      "aliases": [
+        "Bournemouth"
+      ]
+    },
+    {
+      "name_ar": "فولهام",
+      "priority": 1,
+      "aliases": [
+        "Fulham"
+      ]
+    },
+    {
+      "name_ar": "نوتنغهام فورست",
+      "priority": 1,
+      "aliases": [
+        "Nottingham"
+      ]
+    },
+    {
+      "name_ar": "سندرلاند",
+      "priority": 1,
+      "aliases": [
+        "Sunderland"
+      ]
+    },
+    {
+      "name_ar": "ألافيس",
+      "priority": 1,
+      "aliases": [
+        "Alavés"
+      ]
+    },
+    {
+      "name_ar": "سيلتا فيغو",
+      "priority": 1,
+      "aliases": [
+        "Celta"
+      ]
+    },
+    {
+      "name_ar": "ديبورتيفو",
+      "priority": 1,
+      "aliases": [
+        "Deportivo"
+      ]
+    },
+    {
+      "name_ar": "أوساسونا",
+      "priority": 1,
+      "aliases": [
+        "Osasuna"
+      ]
+    },
+    {
+      "name_ar": "رايو فاييكانو",
+      "priority": 1,
+      "aliases": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name_ar": "خيتافي",
+      "priority": 1,
+      "aliases": [
+        "Getafe"
+      ]
+    },
+    {
+      "name_ar": "راسينغ سانتاندير",
+      "priority": 1,
+      "aliases": [
+        "Santander"
+      ]
+    },
+    {
+      "name_ar": "مالقا",
+      "priority": 1,
+      "aliases": [
+        "Málaga"
+      ]
+    },
+    {
+      "name_ar": "ماينتس",
+      "priority": 1,
+      "aliases": [
+        "Mainz"
+      ]
+    },
+    {
+      "name_ar": "إلفرسبرغ",
+      "priority": 1,
+      "aliases": [
+        "Elversberg"
+      ]
+    },
+    {
+      "name_ar": "فيردر بريمن",
+      "priority": 1,
+      "aliases": [
+        "Bremen"
+      ]
+    },
+    {
+      "name_ar": "أوغسبورغ",
+      "priority": 1,
+      "aliases": [
+        "Augsburg"
+      ]
+    },
+    {
+      "name_ar": "كولن",
+      "priority": 1,
+      "aliases": [
+        "1. FC Köln"
+      ]
+    },
+    {
+      "name_ar": "شالكه",
+      "priority": 1,
+      "aliases": [
+        "Schalke"
+      ]
+    },
+    {
+      "name_ar": "بادربورن",
+      "priority": 1,
+      "aliases": [
+        "SC Paderborn"
+      ]
+    },
+    {
+      "name_ar": "كومو",
+      "priority": 1,
+      "aliases": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name_ar": "فروزينوني",
+      "priority": 1,
+      "aliases": [
+        "Frosinone"
+      ]
+    },
+    {
+      "name_ar": "ليتشي",
+      "priority": 1,
+      "aliases": [
+        "Lecce"
+      ]
+    },
+    {
+      "name_ar": "ساسولو",
+      "priority": 1,
+      "aliases": [
+        "Sassuolo"
+      ]
+    },
+    {
+      "name_ar": "أودينيزي",
+      "priority": 1,
+      "aliases": [
+        "Udinese"
+      ]
+    },
+    {
+      "name_ar": "لانس",
+      "priority": 1,
+      "aliases": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name_ar": "تولوز",
+      "priority": 1,
+      "aliases": [
+        "Toulouse"
+      ]
+    },
+    {
+      "name_ar": "لو مان",
+      "priority": 1,
+      "aliases": [
+        "Le Mans"
+      ]
+    },
+    {
+      "name_ar": "تروا",
+      "priority": 1,
+      "aliases": [
+        "Troyes"
+      ]
     }
   ]
 }

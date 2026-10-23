@@ -19,8 +19,11 @@ def standings(http,c,token,post_day,now,previous=()):
                        extra_headers={'X-Auth-Token':token},safe_retry=True)
         if data.get('competition',{}).get('code')!=code or data.get('error') or data.get('errorCode'):
             raise RuntimeError('Standings provider returned a different competition or error')
-        totals=[t for t in data.get('standings',[]) if t.get('type')=='TOTAL']
-        season=data.get('season',{})
+        raw_tables=data.get('standings')
+        season=data.get('season')
+        if not isinstance(raw_tables,list) or not all(isinstance(t,dict) for t in raw_tables) or not isinstance(season,dict):
+            raise RuntimeError(f'{code}: invalid standings schema')
+        totals=[t for t in raw_tables if t.get('type')=='TOTAL']
         stage='season dates'
         try:
             start=datetime.fromisoformat(season['startDate']).date()

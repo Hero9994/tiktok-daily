@@ -28,9 +28,10 @@ class StandingsTests(unittest.TestCase):
         self.assertEqual(s['matches'][0]['table'][0]['name'],'برشلونة')
         self.assertEqual(s['matches'][0]['table'][0]['points'],10)
     def test_missing_league_or_partial_table_or_duplicate_position_stops(self):
-        for change in ('missing','partial','rank','score','season'):
+        for change in ('missing','partial','rank','score','season','invalid_schema'):
             data=[table(code) for code in CODES]
             if change=='missing':data[0]['standings']=[]
+            if change=='invalid_schema':data[0]['standings']=None
             if change=='partial':data[0]['standings'][0]['table'].pop()
             if change=='rank':data[0]['standings'][0]['table'][1]['position']=1
             if change=='score':data[0]['standings'][0]['table'][0]['playedGames']=99
