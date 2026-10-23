@@ -21,16 +21,21 @@ def standings(http,c,token,post_day,now,previous=()):
             raise RuntimeError('Standings provider returned a different competition or error')
         totals=[t for t in data.get('standings',[]) if t.get('type')=='TOTAL' and not t.get('group')]
         season=data.get('season',{})
+        stage='season dates'
         try:
             start=datetime.fromisoformat(season['startDate']).date()
             end=datetime.fromisoformat(season['endDate']).date()
             current=now.astimezone(ZoneInfo('Europe/Berlin')).date()
-            if not start<=current<=end or not season['id']:raise ValueError()
+            if not start<=current<=end or not season['id']:
+                raise ValueError(f'season {start} to {end} does not cover {current}')
+            stage=f'TOTAL tables={len(totals)}'
             table=totals[0]['table']
+            stage=f'team count={len(table)}, expected={EXPECTED[code]}'
             if len(totals)!=1 or len(table)!=EXPECTED[code]:raise ValueError()
             rows=[];ids=set();positions=set()
             for item in table:
                 team=item['team'];rank=item['position']
+                stage=f'statistics at position {rank}'
                 stats={k:item[k] for k in ('playedGames','won','draw','lost','points','goalsFor','goalsAgainst','goalDifference')}
                 if any(type(v) is not int for v in stats.values()) or type(rank) is not int:raise ValueError()
                 if min(stats[k] for k in ('playedGames','won','draw','lost','goalsFor','goalsAgainst'))<0:raise ValueError()
@@ -41,9 +46,10 @@ def standings(http,c,token,post_day,now,previous=()):
                 label=team.get('shortName') or team['name']
                 rows.append({'position':rank,'team_id':team['id'],'name':names.get(normalize(label),names.get(normalize(team['name']),label)),
                              'original_name':label,'crest':team.get('crest'),**stats})
+            stage='unique consecutive positions'
             if positions!=set(range(1,len(table)+1)):raise ValueError()
         except (KeyError,ValueError,TypeError,IndexError):
-            raise RuntimeError(f'{code}: incomplete or inconsistent current-season standings; no table was invented') from None
+            raise RuntimeError(f"{code}: invalid standings ({stage}; season={season.get('startDate')} to {season.get('endDate')}); no table was invented") from None
         rows.sort(key=lambda r:r['position'])
         leagues.append({'id':f"standings:{code}:{season['id']}",'competition_code':code,'competition':COMPETITIONS[code][0],
                         'season':f'{start.year}/{end.year}','table':rows})
