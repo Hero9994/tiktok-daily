@@ -340,7 +340,8 @@
       "priority": 3,
       "aliases": [
         "Mönchengladbach",
-        "Borussia Mönchengladbach"
+        "Borussia Mönchengladbach",
+        "M'gladbach"
       ]
     },
     {
@@ -348,7 +349,8 @@
       "priority": 3,
       "aliases": [
         "Lyon",
-        "Olympique Lyonnais"
+        "Olympique Lyonnais",
+        "Olympique Lyon"
       ]
     },
     {
@@ -696,6 +698,111 @@
       "aliases": [
         "Brest",
         "Stade Brestois 29"
+      ]
+    },
+    {
+      "name_ar": "أنجيه",
+      "priority": 1,
+      "aliases": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name_ar": "فرايبورغ",
+      "priority": 1,
+      "aliases": [
+        "Freiburg"
+      ]
+    },
+    {
+      "name_ar": "كوفنتري سيتي",
+      "priority": 1,
+      "aliases": [
+        "Coventry City"
+      ]
+    },
+    {
+      "name_ar": "لوريان",
+      "priority": 1,
+      "aliases": [
+        "Lorient"
+      ]
+    },
+    {
+      "name_ar": "ليفانتي",
+      "priority": 1,
+      "aliases": [
+        "Levante"
+      ]
+    },
+    {
+      "name_ar": "باريس إف سي",
+      "priority": 1,
+      "aliases": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name_ar": "رين",
+      "priority": 1,
+      "aliases": [
+        "Stade Rennais"
+      ]
+    },
+    {
+      "name_ar": "لوهافر",
+      "priority": 1,
+      "aliases": [
+        "Le Havre"
+      ]
+    },
+    {
+      "name_ar": "أوكسير",
+      "priority": 1,
+      "aliases": [
+        "Auxerre"
+      ]
+    },
+    {
+      "name_ar": "هوفنهايم",
+      "priority": 1,
+      "aliases": [
+        "Hoffenheim"
+      ]
+    },
+    {
+      "name_ar": "نيس",
+      "priority": 1,
+      "aliases": [
+        "Nice"
+      ]
+    },
+    {
+      "name_ar": "مونزا",
+      "priority": 1,
+      "aliases": [
+        "Monza"
+      ]
+    },
+    {
+      "name_ar": "كالياري",
+      "priority": 1,
+      "aliases": [
+        "Cagliari"
+      ]
+    },
+    {
+      "name_ar": "بارما",
+      "priority": 1,
+      "aliases": [
+        "Parma"
+      ]
+    },
+    {
+      "name_ar": "تورينو",
+      "priority": 1,
+      "aliases": [
+        "Torino"
       ]
     }
   ]
