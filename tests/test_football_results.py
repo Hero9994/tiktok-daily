@@ -42,7 +42,7 @@ class FootballResultsTests(unittest.TestCase):
         previous[0]['status']='image_ready'
         self.assertEqual(len(self.result([final()],previous)['matches']),1)
     def test_fallback_only_after_successfully_empty_selected_fixtures(self):
-        c=dict(auto_config(),football_results_fallback=True)
+        c=dict(auto_config(),football_results_fallback=True,football_standings_fallback=False)
         provider=Football(FakeHTTP([]),c,token='dummy',clock=lambda:NOW)
         with patch.object(provider,'tomorrow',return_value={'matches':[{'id':9}]}),patch('tiktok_daily.football_results.latest_results') as fallback:
             self.assertEqual(provider.publication('2026-10-23')['matches'],[{'id':9}]);fallback.assert_not_called()

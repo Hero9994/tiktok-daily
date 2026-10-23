@@ -8,6 +8,7 @@ import urllib.request
 from functools import lru_cache
 from pathlib import Path
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from PIL import Image, ImageDraw, ImageFont, ImageOps, features
 from .cinema_media import artwork
 
@@ -265,5 +266,54 @@ def football(hero, entry, c):
 
 def render(hero, entry, c):
     if entry.get("post_kind") == "football":
+        if entry['fixture_schedule'].get('date_mode')=='standings':
+            return football_standings(hero,entry,c)
         return football(hero, entry, c)
     return cinema(hero, entry, c)
+
+
+def football_standings(hero,entry,c):
+    """One full league per page, keeping the approved stadium/branding."""
+    schedule=entry['fixture_schedule'];pages=[]
+    for page,league in enumerate(schedule['matches'],1):
+        with Image.open(io.BytesIO(hero)) as src:
+            image=ImageOps.fit(src.convert('RGB'),(1080,1920),method=Image.Resampling.LANCZOS)
+        layer=Image.new('RGBA',image.size);pd=ImageDraw.Draw(layer)
+        pd.rounded_rectangle((30,450,1050,1658),radius=26,fill=(2,5,7,246),outline=GOLD,width=3)
+        pd.rounded_rectangle((250,350,830,422),radius=26,fill=(0,0,0,225),outline=GOLD,width=3)
+        image=Image.alpha_composite(image.convert('RGBA'),layer).convert('RGB');draw=ImageDraw.Draw(image)
+        draw.line([(38,35),(38,135),(169,85),(38,35)],fill=GOLD,width=4)
+        draw.text((52,37),'TK',font=font(46,750),fill='#ffdd88')
+        draw.polygon([(69,27),(61,13),(78,20),(88,8),(98,20),(115,13),(108,27)],fill=GOLD)
+        text(draw,'ترتيب الدوريات',(90,92,900,188),size=108,color='#ffdb7d',max_lines=1,weight=900,stroke=2,align='center')
+        text(draw,league['competition'],(160,280,760,65),size=42,color=WHITE,max_lines=1,weight=750,align='center')
+        day=datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
+        text(draw,f'{day}   |   {page}/5',(270,356,540,58),size=31,color='#ffe6a1',max_lines=1,align='center')
+        text(draw,'الموسم '+league['season'],(80,462,920,55),size=28,color=GOLD,max_lines=1,align='center')
+        # Reading right to left: rank, crest/team, played, goal difference, points.
+        for value,box in [('#',(965,523,65,45)),('الفريق',(450,523,460,45)),('لعب',(345,523,100,45)),('الفارق',(205,523,115,45)),('نقاط',(55,523,125,45))]:
+            text(draw,value,box,size=25,color=GOLD,max_lines=1,weight=750,align='center')
+        draw.line((50,576,1030,576),fill=GOLD,width=2)
+        for index,row in enumerate(league['table']):
+            top=584+index*51
+            if index%2==0:draw.rounded_rectangle((45,top-1,1035,top+49),radius=7,fill='#14130e')
+            if row['position']==1:draw.rounded_rectangle((45,top-1,1035,top+49),radius=7,outline=GOLD,width=2)
+            text(draw,str(row['position']),(965,top,65,48),size=26,color=GOLD,max_lines=1,weight=700,align='center')
+            badge=crest(row.get('crest'))
+            if badge is not None:
+                badge=ImageOps.contain(badge,(39,39),method=Image.Resampling.LANCZOS)
+                image.paste(badge,(919+(39-badge.width)//2,top+5+(39-badge.height)//2),badge)
+            text(draw,row['name'],(455,top,449,50),size=28,max_lines=1,weight=650)
+            text(draw,str(row['playedGames']),(345,top,100,50),size=27,max_lines=1,align='center')
+            gd=row['goalDifference'];label=f'+{gd}' if gd>0 else str(gd)
+            text(draw,label,(205,top,115,50),size=27,max_lines=1,align='center')
+            text(draw,str(row['points']),(55,top,125,50),size=29,color='#ffe388',max_lines=1,weight=850,align='center')
+        if entry.get('preview'):
+            text(draw,'معاينة • أحدث ترتيب متاح من المصدر',(85,1610,910,42),size=22,color=GOLD,max_lines=1,align='center')
+        text(draw,c.get('brand_name','TK SERVERS'),(475,1745,545,95),size=52,color='#ffdb7d',max_lines=1,weight=800,stroke=2)
+        signature=c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
+        text(draw,signature,(390,1834,630,57),size=24,max_lines=1,weight=600,stroke=1)
+        stamp=datetime.fromisoformat(schedule['checked_at']).astimezone(ZoneInfo('Europe/Berlin')).strftime('%d/%m %H:%M')
+        text(draw,'football-data.org • تحديث '+stamp+' ألمانيا',(55,1890,970,40),size=20,max_lines=1,color='#d6c492',stroke=1)
+        pages.append(encode(image))
+    return pages

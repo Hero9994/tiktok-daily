@@ -6,6 +6,10 @@ on:
         description: 'Publication date (YYYY-MM-DD); fixtures follow fixture_day setting'
         type: string
         required: true
+      standings:
+        description: 'Preview current big-five league tables (no publishing)'
+        type: boolean
+        default: false
       results:
         description: 'Preview verified big-five final scores (no publishing)'
         type: boolean
@@ -25,10 +29,12 @@ jobs:
       - run: |
           args=(--post-day "$POST_DAY")
           if [ "$RESULTS" = "true" ]; then args+=(--results); fi
+          if [ "$STANDINGS" = "true" ]; then args+=(--standings); fi
           python -m tiktok_daily.football_preview "${args[@]}"
         env:
           POST_DAY: ${{ inputs.post_day }}
           RESULTS: ${{ inputs.results }}
+          STANDINGS: ${{ inputs.standings }}
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

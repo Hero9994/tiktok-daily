@@ -13,7 +13,7 @@ from .cinema_media import artwork
 from .video import make_video
 from .cinema_catalog import approve_entry
 
-FOOTBALL_TEMPLATE = "featured-centred-times-results-v4"
+FOOTBALL_TEMPLATE = "featured-centred-times-standings-v5"
 CINEMA_TEMPLATE = "cinema-reference-v2"
 
 

@@ -61,6 +61,8 @@ def load_config(path):
         datetime.strptime(effective,'%Y-%m-%d')
     if type(c.get('cinema_max_age_years',15)) is not int or not 1 <= c.get('cinema_max_age_years',15) <= 100:
         raise ValueError('cinema_max_age_years must be an integer between 1 and 100')
+    if type(c.get('football_standings_fallback',False)) is not bool:
+        raise ValueError('football_standings_fallback must be boolean')
     if type(c.get('football_results_fallback',False)) is not bool:
         raise ValueError('football_results_fallback must be boolean')
     if type(c.get('cinema_curated_only', False)) is not bool:

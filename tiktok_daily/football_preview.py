@@ -13,11 +13,16 @@ from .football_selection import select
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--post-day',required=True,type=date.fromisoformat)
+    parser.add_argument('--standings',action='store_true',help='Preview verified current big-five standings only')
     parser.add_argument('--results',action='store_true',help='Preview verified recent final scores only')
     parser.add_argument('--output',type=Path,default=Path('preview-output'))
     args=parser.parse_args();c=load_config(Path('config.json'))
     provider=Football(HTTP(),c)
-    if args.results:
+    if args.standings:
+        from datetime import datetime,timezone
+        from .football_standings import standings
+        schedule=standings(provider.http,c,provider.token,args.post_day.isoformat(),datetime.now(timezone.utc))
+    elif args.results:
         from datetime import datetime,timezone
         from .football_results import latest_results
         schedule=latest_results(provider.http,c,provider.token,args.post_day.isoformat(),datetime.now(timezone.utc))

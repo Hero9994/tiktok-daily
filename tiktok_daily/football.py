@@ -28,6 +28,13 @@ class Football:
 
     def publication(self, post_day, previous=()):
         schedule=self.tomorrow(post_day)
+        if not schedule['matches'] and self.c.get('football_standings_fallback',False):
+            from .football_standings import standings
+            cached=getattr(self,'_standings_cache',None)
+            now=self.clock()
+            if not cached or cached[0]!=post_day or (now-cached[1]).total_seconds()>300:
+                self._standings_cache=(post_day,now,standings(self.http,self.c,self.token,post_day,now,previous))
+            return self._standings_cache[2]
         if not schedule['matches'] and self.c.get('football_results_fallback',False):
             from .football_results import latest_results
             return latest_results(self.http,self.c,self.token,post_day,self.clock(),previous)
@@ -95,6 +102,9 @@ class Football:
 
 def football_content(schedule, c):
     """Copy every factual field from provider data. AI only draws the background."""
+    if schedule.get('date_mode')=='standings':
+        from .football_standings import standings_content
+        return standings_content(schedule,c)
     if schedule.get('date_mode')=='results':
         from .football_results import results_content
         return results_content(schedule,c)
