@@ -41,6 +41,11 @@ class StandingsTests(unittest.TestCase):
         self.assertEqual(self.fetch(previous=previous)['matches'],[])
         data=[table(code) for code in CODES];data[0]['standings'][0]['table'][0]['points']=9
         self.assertEqual(len(self.fetch(data,previous)['matches']),5)
+    def test_named_regular_season_group_is_a_valid_single_total_table(self):
+        data=[table(code) for code in CODES]
+        for item in data:item['standings'][0]['group']='Regular Season'
+        self.assertEqual(len(self.fetch(data)['matches']),5)
+
     def test_deducted_points_remain_exact(self):
         data=[table(code) for code in CODES];data[0]['standings'][0]['table'][-1]['points']=-2
         self.assertEqual(self.fetch(data)['matches'][0]['table'][-1]['points'],-2)

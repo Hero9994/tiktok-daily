@@ -19,7 +19,7 @@ def standings(http,c,token,post_day,now,previous=()):
                        extra_headers={'X-Auth-Token':token},safe_retry=True)
         if data.get('competition',{}).get('code')!=code or data.get('error') or data.get('errorCode'):
             raise RuntimeError('Standings provider returned a different competition or error')
-        totals=[t for t in data.get('standings',[]) if t.get('type')=='TOTAL' and not t.get('group')]
+        totals=[t for t in data.get('standings',[]) if t.get('type')=='TOTAL']
         season=data.get('season',{})
         stage='season dates'
         try:
