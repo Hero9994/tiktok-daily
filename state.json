@@ -3196,9 +3196,106 @@
       "day": "2026-10-23",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-23T14:42:44.962648Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-23T14:42:44.962648Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An original elemental fantasy inspired by animated adventure: luminous ribbons of water, fire, earth, and air spiral around a serene glowing horizon.",
+      "prompt": "Create original abstract cinematic artwork for an animated fantasy action series recommendation card. Show elegant flowing ribbons of water, fire, earth, and air weaving together around a luminous horizon, with rich color, atmospheric depth, and a sense of motion. Keep all focal elements within the upper 65% and central 80% of the composition; reserve the lower area as calm, uncluttered negative space for an Arabic information panel. No people, faces, logos, text, violence, or recognizable copyrighted characters; do not imitate an official poster.",
+      "title": "أسطورة كورا",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل تلفزيوني أمريكي يجمع بين الفانتازيا والحركة في قالب رسوم متحركة.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل تلفزيوني أمريكي يجمع بين الفانتازيا والحركة في قالب رسوم متحركة.",
+      "subject_id": "wikipedia-en:28039598",
+      "subject_title": "The Legend of Korra",
+      "summary": "مسلسل تلفزيوني أمريكي يجمع بين الفانتازيا والحركة في قالب رسوم متحركة.",
+      "source_url": "https://en.wikipedia.org/wiki/The_Legend_of_Korra",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/260/650489.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "تقييم TVmaze",
+            "value": "7.9 / 10"
+          },
+          {
+            "label": "المواسم",
+            "value": "4"
+          },
+          {
+            "label": "الحلقات",
+            "value": "52"
+          },
+          {
+            "label": "المدة",
+            "value": "24 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "فانتازيا",
+          "مسلسل أكشن",
+          "مسلسل مغامرات"
+        ],
+        "cast": [
+          {
+            "name": "Janet Varney",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/1/2525.jpg",
+            "source_url": "https://www.tvmaze.com/people/31761/janet-varney"
+          },
+          {
+            "name": "P.J. Byrne",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/1/3559.jpg",
+            "source_url": "https://www.tvmaze.com/people/8814/pj-byrne"
+          },
+          {
+            "name": "David Faustino",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/1/3560.jpg",
+            "source_url": "https://www.tvmaze.com/people/14341/david-faustino"
+          },
+          {
+            "name": "J.K. Simmons",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/1/3563.jpg",
+            "source_url": "https://www.tvmaze.com/people/18455/jk-simmons"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q18790",
+        "tvmaze_url": "https://www.tvmaze.com/shows/178/the-legend-of-korra"
+      },
+      "subject_wikidata": "Q18790",
+      "subject_imdb": "tt1695360",
+      "cinema_review": {
+        "wikipedia_title": "The Legend of Korra",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/the-legend-of-korra",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 28039598,
+        "wikidata_id": "Q18790",
+        "imdb_id": "tt1695360",
+        "kind": "series",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes.",
+        "release_year": 2012
+      },
+      "watch_reason": "قد يناسب محبي مسلسلات الفانتازيا والحركة المتحركة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
