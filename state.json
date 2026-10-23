@@ -2999,6 +2999,14 @@
       "last_checked_at": "2026-10-22T15:27:35.805120Z",
       "sent_at": "2026-10-22T14:57:01.339Z",
       "external_link": "https://tiktok.com/@tk.player7/video/7699505982946266401"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-23:football": {
+      "day": "2026-10-23",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-23T13:48:35.333970Z",
+      "status": "planned",
+      "created_at": "2026-10-23T13:48:35.333970Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
