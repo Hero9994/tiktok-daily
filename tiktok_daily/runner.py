@@ -124,8 +124,10 @@ class Publisher:
         if entry and entry["status"] in ("submitting", "uncertain", "blocked", "rejected"):
             raise RuntimeError("This date is blocked; never resubmit it blindly")
         if not entry and self.c.get('content_mode')=='football' and self.c.get('skip_empty_football',True):
-            if not self.football.tomorrow(day)['matches']:
-                return 'No fixtures found in the configured sources; skipped without publishing an empty card'
+            schedule=self.football.tomorrow(day)
+            if not schedule['matches']:
+                return (f"No eligible fixtures for {schedule['date']}: source fixtures={schedule.get('total_available',0)}, "
+                        f"excluded by featured-team filter={schedule.get('excluded_count',0)}; skipped without publishing an empty card")
         if not entry:
             entry = entries[key] = {"day": day, "channel": self.buffer.channel, "due_at": utc_text(slot),
                                     "status": "planned", "created_at": utc_text(now), "image_attempts": 0}

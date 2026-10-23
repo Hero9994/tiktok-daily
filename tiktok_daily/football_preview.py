@@ -7,6 +7,7 @@ from .cards import render
 from .config import load_config
 from .football import Football,football_content
 from .http import HTTP
+from .football_selection import select
 
 
 def main():
@@ -14,7 +15,12 @@ def main():
     parser.add_argument('--post-day',required=True,type=date.fromisoformat)
     parser.add_argument('--output',type=Path,default=Path('preview-output'))
     args=parser.parse_args();c=load_config(Path('config.json'))
-    schedule=Football(HTTP(),c).tomorrow(args.post_day.isoformat())
+    schedule=Football(HTTP(),dict(c,football_featured_only=False)).tomorrow(args.post_day.isoformat())
+    raw_matches=schedule['matches']
+    selected,metadata=select(raw_matches,c)
+    schedule.update(metadata,matches=selected)
+    print(json.dumps({'fixtures_day':schedule['date'],'available':len(raw_matches),'selected':len(selected),
+                      'source_fixtures':[{'home':m['home'],'away':m['away'],'competition':m['competition_code']} for m in raw_matches]},ensure_ascii=False))
     args.output.mkdir(exist_ok=True,parents=True)
     (args.output/'fixtures.json').write_text(json.dumps(schedule,ensure_ascii=False,indent=2))
     if not schedule['matches']:
