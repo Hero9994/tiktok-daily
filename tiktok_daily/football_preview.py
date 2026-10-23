@@ -13,14 +13,19 @@ from .football_selection import select
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--post-day',required=True,type=date.fromisoformat)
+    parser.add_argument('--results',action='store_true',help='Preview verified recent final scores only')
     parser.add_argument('--output',type=Path,default=Path('preview-output'))
     args=parser.parse_args();c=load_config(Path('config.json'))
-    schedule=Football(HTTP(),dict(c,football_featured_only=False)).tomorrow(args.post_day.isoformat())
-    raw_matches=schedule['matches']
-    selected,metadata=select(raw_matches,c)
-    schedule.update(metadata,matches=selected)
-    print(json.dumps({'fixtures_day':schedule['date'],'available':len(raw_matches),'selected':len(selected),
-                      'source_fixtures':[{'home':m['home'],'away':m['away'],'competition':m['competition_code']} for m in raw_matches]},ensure_ascii=False))
+    provider=Football(HTTP(),c)
+    if args.results:
+        from datetime import datetime,timezone
+        from .football_results import latest_results
+        schedule=latest_results(provider.http,c,provider.token,args.post_day.isoformat(),datetime.now(timezone.utc))
+    else:
+        schedule=provider.publication(args.post_day.isoformat())
+    print(json.dumps({'fixtures_day':schedule['date'],'mode':schedule.get('date_mode'),
+                      'available':schedule.get('total_available'),'selected':len(schedule['matches']),
+                      'preview_matches':schedule['matches']},ensure_ascii=False))
     args.output.mkdir(exist_ok=True,parents=True)
     (args.output/'fixtures.json').write_text(json.dumps(schedule,ensure_ascii=False,indent=2))
     if not schedule['matches']:

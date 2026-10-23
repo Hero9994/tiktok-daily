@@ -26,6 +26,13 @@ class Football:
         self.token = token or os.environ.get("FOOTBALL_DATA_API_KEY")
         self.clock = clock or (lambda: datetime.now(timezone.utc))
 
+    def publication(self, post_day, previous=()):
+        schedule=self.tomorrow(post_day)
+        if not schedule['matches'] and self.c.get('football_results_fallback',False):
+            from .football_results import latest_results
+            return latest_results(self.http,self.c,self.token,post_day,self.clock(),previous)
+        return schedule
+
     def tomorrow(self, post_day):
         if not self.token:
             raise RuntimeError("Add the FREE football-data.org key as FOOTBALL_DATA_API_KEY; football lookup cannot be skipped")
@@ -88,6 +95,9 @@ class Football:
 
 def football_content(schedule, c):
     """Copy every factual field from provider data. AI only draws the background."""
+    if schedule.get('date_mode')=='results':
+        from .football_results import results_content
+        return results_content(schedule,c)
     matches = schedule["matches"]
     date = schedule["date"]
     day_label='اليوم' if schedule.get('date_mode')=='today' else 'الغد'

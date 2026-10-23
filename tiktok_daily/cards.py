@@ -195,6 +195,7 @@ def cinema(hero, entry, c):
 
 def football(hero, entry, c):
     schedule=entry['fixture_schedule'];matches=schedule['matches']
+    is_results=schedule.get('date_mode')=='results'
     per_page=5;pages=max(1,math.ceil(len(matches)/per_page))
     if pages>10:raise RuntimeError('Selected fixtures exceed 50 matches; refusing to omit selected fixtures')
     result=[]
@@ -217,10 +218,10 @@ def football(hero, entry, c):
         draw.line([(38,35),(38,135),(169,85),(38,35)],fill=GOLD,width=4)
         draw.text((52,37),'TK',font=font(46,750),fill='#ffdd88')
         draw.polygon([(69,27),(61,13),(78,20),(88,8),(98,20),(115,13),(108,27)],fill=GOLD)
-        heading='مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد'
+        heading='آخر النتائج' if is_results else ('مباريات اليوم' if schedule.get('date_mode')=='today' else 'مباريات الغد')
         text(draw,heading,(88,56,910,252),size=140,color='#5b3611',max_lines=1,weight=900,stroke=4,align="center")
         text(draw,heading,(85,50,910,252),size=140,color='#ffdb7d',max_lines=1,weight=900,stroke=2,align="center")
-        text(draw,'بتوقيت ألمانيا ومكة المكرمة',(160,277,760,68),size=37,max_lines=1,weight=650,stroke=2,align="center")
+        text(draw,'الدوريات الخمس الكبرى • نتائج نهائية' if is_results else 'بتوقيت ألمانيا ومكة المكرمة',(160,277,760,68),size=37,max_lines=1,weight=650,stroke=2,align="center")
         day=datetime.fromisoformat(schedule['date']).strftime('%d / %m / %Y')
         if pages>1:day+=f'   |   {page+1}/{pages}'
         text(draw,day,(310,353,460,60),size=34,color='#ffe6a1',max_lines=1,weight=650,align="center")
@@ -241,16 +242,22 @@ def football(hero, entry, c):
                     image.paste(badge,(left+(120-badge.width)//2,top+45+(138-badge.height)//2),badge)
             text(draw,match['away'],(202,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1,align="center")
             text(draw,match['home'],(661,top+61,221,130),size=46,max_lines=2,weight=800,stroke=1,align="center")
-            text(draw,match['germany_time'],(451,top+22,177,83),size=54,color='#ffe388',max_lines=1,weight=850,align="center")
-            text(draw,'ألمانيا',(460,top+85,160,39),size=21,color='#f8de97',max_lines=1,weight=650,align="center")
-            text(draw,match['makkah_time'],(451,top+117,177,77),size=51,color='#ffe388',max_lines=1,weight=850,align="center")
-            label='مكة (+1)' if match['makkah_date']!=match['germany_date'] else 'مكة'
-            text(draw,label,(451,top+175,177,39),size=21,color='#f8de97',max_lines=1,weight=650,align="center")
+            if is_results:
+                # Home team is on the right; place its score on the right too.
+                text(draw,f"{match['away_score']} – {match['home_score']}",(451,top+26,177,92),size=58,color='#ffe388',max_lines=1,weight=850,align="center")
+                text(draw,'نهائية',(451,top+116,177,43),size=27,color='#f8de97',max_lines=1,weight=650,align="center")
+                text(draw,datetime.fromisoformat(match['result_date']).strftime('%d/%m/%Y'),(448,top+167,184,39),size=20,color=WHITE,max_lines=1,align="center")
+            else:
+                text(draw,match['germany_time'],(451,top+22,177,83),size=54,color='#ffe388',max_lines=1,weight=850,align="center")
+                text(draw,'ألمانيا',(460,top+85,160,39),size=21,color='#f8de97',max_lines=1,weight=650,align="center")
+                text(draw,match['makkah_time'],(451,top+117,177,77),size=51,color='#ffe388',max_lines=1,weight=850,align="center")
+                label='مكة (+1)' if match['makkah_date']!=match['germany_date'] else 'مكة'
+                text(draw,label,(451,top+175,177,39),size=21,color='#f8de97',max_lines=1,weight=650,align="center")
         text(draw,c.get('brand_name','TK SERVERS'),(475,1745,545,95),size=52,color='#ffdb7d',max_lines=1,weight=800,stroke=2)
         signature=c.get('caption_suffix','شاهدها على سيرفراتنا').replace('⚡','').replace('🏆','').strip()
         text(draw,signature,(390,1834,630,57),size=24,max_lines=1,weight=600,stroke=1)
         sources=' / '.join(schedule.get('sources',['football-data.org']))
-        note=('أبرز المباريات • ' if schedule.get('selection') else '')+sources+' • المواعيد قابلة للتغيير'
+        note=('آخر النتائج المتاحة • '+sources+' • التاريخ داخل كل مواجهة' if is_results else ('أبرز المباريات • ' if schedule.get('selection') else '')+sources+' • المواعيد قابلة للتغيير')
         text(draw,note,(55,1890,970,40),size=20,max_lines=1,color='#d6c492',stroke=1)
         result.append(encode(image))
     return result

@@ -13,7 +13,7 @@ from .cinema_media import artwork
 from .video import make_video
 from .cinema_catalog import approve_entry
 
-FOOTBALL_TEMPLATE = "featured-centred-times-v3"
+FOOTBALL_TEMPLATE = "featured-centred-times-results-v4"
 CINEMA_TEMPLATE = "cinema-reference-v2"
 
 
@@ -87,6 +87,11 @@ class Publisher:
         if failures:
             raise RuntimeError("Publication verification failed: " + "; ".join(sorted(set(failures))))
 
+    def sports_schedule(self,day,previous):
+        if hasattr(self.football,'publication'):
+            return self.football.publication(day,previous)
+        return self.football.tomorrow(day)
+
     def prepare(self, publish_now=False, correction_id=None, preview_id=None):
         if not self.c["enabled"] or not self.c["allow_paid_openai"]:
             raise RuntimeError("Live publishing is disabled. Enable it only after reviewing OpenAI costs")
@@ -123,8 +128,9 @@ class Publisher:
         entry = entries.get(key)
         if entry and entry["status"] in ("submitting", "uncertain", "blocked", "rejected"):
             raise RuntimeError("This date is blocked; never resubmit it blindly")
+        previous = [e for k,e in entries.items() if k!=key]
         if not entry and self.c.get('content_mode')=='football' and self.c.get('skip_empty_football',True):
-            schedule=self.football.tomorrow(day)
+            schedule=self.sports_schedule(day,previous)
             if not schedule['matches']:
                 return (f"No eligible fixtures for {schedule['date']}: source fixtures={schedule.get('total_available',0)}, "
                         f"excluded by featured-team filter={schedule.get('excluded_count',0)}; skipped without publishing an empty card")
@@ -151,7 +157,7 @@ class Publisher:
                 self.generator.moderate(self.c["theme"])
             generated = None
             if self.c.get("content_mode") in ("auto", "football"):
-                schedule = self.football.tomorrow(day)
+                schedule = self.sports_schedule(day,previous)
                 if self.c.get('content_mode')=='football' and self.c.get('skip_empty_football',True) and not schedule['matches']:
                     return 'No fixtures found; no empty card was submitted'
                 # Only a successful empty response authorizes the cinema fallback.
@@ -198,7 +204,7 @@ class Publisher:
                     continue  # Each generation retry is separately budgeted and might incur cost.
                 if self.c.get("card_style") == "black_gold":
                     if entry.get("post_kind") == "football":
-                        entry.update(football_content(self.football.tomorrow(day), self.c))
+                        entry.update(football_content(self.sports_schedule(day,previous), self.c))
                     # Keep a local source image to re-render updated fixtures without another paid call.
                     hero_name = f"{day}-{hashlib.sha256(key.encode()).hexdigest()[:10]}-art.jpg"
                     self.store.save_image(hero_name, image)
@@ -229,7 +235,7 @@ class Publisher:
                 raise RuntimeError("Could not generate a unique image within the request cap")
         if entry["status"] == "image_ready":
             if entry.get("post_kind") == "football":
-                latest = self.football.tomorrow(day)
+                latest = self.sports_schedule(day,previous)
                 if not latest["matches"] and (self.c.get('content_mode') != 'football' or self.c.get('skip_empty_football',True)):
                     raise RuntimeError("Fixtures were cancelled after preparation; review before publishing")
                 changed = latest["matches"] != entry["fixture_schedule"]["matches"]
