@@ -3574,7 +3574,7 @@
       "due_at": "2026-10-24T14:03:19.311106Z",
       "status": "content_ready",
       "created_at": "2026-10-24T14:03:19.311106Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A whimsical, storybook-inspired cityscape where playful geometric clues lead through a maze of rooftops, evoking a lighthearted comedy mystery.",
       "prompt": "Create original abstract cinematic art for a family comedy mystery: a whimsical storybook city of softly glowing rooftops and winding streets, with scattered geometric puzzle clues and warm, playful colors. No characters, people, bear imagery, logos, recognizable copyrighted elements, violence, or text. Keep all focal elements within the upper 65% and central 80%, leaving the lower area visually quiet for an Arabic information panel.",
       "title": "Paddington 2",
