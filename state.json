@@ -3572,7 +3572,7 @@
       "day": "2026-10-24",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-24T14:03:19.311106Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-24T14:03:19.311106Z",
       "image_attempts": 1,
       "idea": "A whimsical, storybook-inspired cityscape where playful geometric clues lead through a maze of rooftops, evoking a lighthearted comedy mystery.",
@@ -3667,7 +3667,19 @@
         "release_year": 2017
       },
       "watch_reason": "قد يعجب محبي الكوميديا العائلية الممزوجة بالرسوم المتحركة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-24-6c1bc631e9-art.jpg",
+      "image_file": "2026-10-24-6c1bc631e9-1.jpg",
+      "image_sha256": "96ed2e0bef9cecc51f1e8092aaea3cde054f84f54fd97d6b497e456e33f7def7",
+      "image_dhash": "c490a633393c38f8",
+      "image_assets": [
+        {
+          "file": "2026-10-24-6c1bc631e9-1.jpg",
+          "sha256": "96ed2e0bef9cecc51f1e8092aaea3cde054f84f54fd97d6b497e456e33f7def7"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
