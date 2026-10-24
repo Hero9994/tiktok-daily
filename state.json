@@ -3572,9 +3572,102 @@
       "day": "2026-10-24",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-24T14:03:19.311106Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-24T14:03:19.311106Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A whimsical, storybook-inspired cityscape where playful geometric clues lead through a maze of rooftops, evoking a lighthearted comedy mystery.",
+      "prompt": "Create original abstract cinematic art for a family comedy mystery: a whimsical storybook city of softly glowing rooftops and winding streets, with scattered geometric puzzle clues and warm, playful colors. No characters, people, bear imagery, logos, recognizable copyrighted elements, violence, or text. Keep all focal elements within the upper 65% and central 80%, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "Paddington 2",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nكوميديا تمزج بين التمثيل الحي والرسوم المتحركة، يتورط فيها بادينغتون في سرقة لم يرتكبها، وتسعى عائلة براون لإثبات براءته.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "كوميديا تمزج بين التمثيل الحي والرسوم المتحركة، يتورط فيها بادينغتون في سرقة لم يرتكبها، وتسعى عائلة براون لإثبات براءته.",
+      "subject_id": "wikipedia-en:52019421",
+      "subject_title": "Paddington 2",
+      "summary": "كوميديا تمزج بين التمثيل الحي والرسوم المتحركة، يتورط فيها بادينغتون في سرقة لم يرتكبها، وتسعى عائلة براون لإثبات براءته.",
+      "source_url": "https://en.wikipedia.org/wiki/Paddington_2",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/b/b6/Paddington_2_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2017"
+          },
+          {
+            "label": "المدة",
+            "value": "103 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "المملكة المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "فلم عائلي",
+          "فلم كوميدي",
+          "فلم مغامرة"
+        ],
+        "cast": [
+          {
+            "name": "هيو غرانت",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hugh%20Grant%20in%202014.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q163286"
+          },
+          {
+            "name": "برندان غليسون",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brendan%20Gleeson.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q206659"
+          },
+          {
+            "name": "هيو بونفيل",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hugh%20Bonneville%202019.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q155775"
+          },
+          {
+            "name": "سالي هوكينز",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MJK35110%20Sally%20Hawkins%20%28Maudie%2C%20Berlinale%202017%29%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q233563"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q27590871",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q27590871",
+      "subject_imdb": "tt4468740",
+      "cinema_review": {
+        "wikipedia_title": "Paddington 2",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/paddington-2",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 52019421,
+        "wikidata_id": "Q27590871",
+        "imdb_id": "tt4468740",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes.",
+        "release_year": 2017
+      },
+      "watch_reason": "قد يعجب محبي الكوميديا العائلية الممزوجة بالرسوم المتحركة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
