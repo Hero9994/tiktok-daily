@@ -3701,9 +3701,58 @@
       "day": "2026-10-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-25T14:33:58.176569Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-25T14:33:58.176569Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "Official tomorrow football fixtures 2026-10-26",
+      "prompt": "An original black and gold football stadium illustration, illuminated field, gold particles, dramatic night atmosphere, empty space for schedule cards. No people, team badges, trophies, text or logos.",
+      "title": "مباريات الغد | 2026-10-26",
+      "caption": "صورة فنية خيالية مولّدة بالذكاء الاصطناعي.\n\nأبرز مباريات الغد 2026-10-26: 1 مواجهة ضمن الدوري الفرنسي. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org و UEFA.com وقابلة للتغيير.\n\n#مباريات_الغد #كرة_القدم #الدوري_الفرنسي #TK_Servers #مباريات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مباريات_الغد",
+        "#كرة_القدم",
+        "#الدوري_الفرنسي",
+        "#TK_Servers",
+        "#مباريات"
+      ],
+      "description": "أبرز مباريات الغد 2026-10-26: 1 مواجهة ضمن الدوري الفرنسي. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org و UEFA.com وقابلة للتغيير.",
+      "post_kind": "football",
+      "subject_id": "fixtures:2026-10-26",
+      "subject_title": "مباريات الغد | 2026-10-26",
+      "fixture_schedule": {
+        "selection": "editorial_featured",
+        "total_available": 2,
+        "selected_count": 1,
+        "excluded_count": 1,
+        "date": "2026-10-26",
+        "matches": [
+          {
+            "id": 559648,
+            "competition_code": "FL1",
+            "competition": "الدوري الفرنسي",
+            "home": "باريس سان جيرمان",
+            "away": "ليون",
+            "home_crest": "https://crests.football-data.org/524.png",
+            "away_crest": "https://crests.football-data.org/523.png",
+            "kickoff_utc": "2026-10-26T19:30:00+00:00",
+            "germany_time": "20:30",
+            "germany_date": "2026-10-26",
+            "makkah_time": "22:30",
+            "makkah_date": "2026-10-26",
+            "home_original": "PSG",
+            "away_original": "Olympique Lyon",
+            "editorial_priority": 810
+          }
+        ],
+        "date_mode": "tomorrow",
+        "checked_at": "2026-10-25T14:34:02.847979+00:00",
+        "source_url": "https://www.football-data.org/",
+        "sources": [
+          "football-data.org",
+          "UEFA.com"
+        ]
+      },
+      "source_url": "https://www.football-data.org/"
     }
   },
   "image_requests": {
