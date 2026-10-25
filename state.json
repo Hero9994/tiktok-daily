@@ -3784,9 +3784,81 @@
       "day": "2026-10-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-25T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-25T14:34:42.131318Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A shifting inner landscape where five abstract colors converge as a young mind finds its balance.",
+      "prompt": "Create original abstract cinematic art inspired by animated coming-of-age storytelling: a luminous, dreamlike inner landscape with five distinct glowing color forms floating above a calm horizon, suggesting changing thoughts and emotions without depicting characters. Rich layered gradients, soft painterly texture, warm and thoughtful mood, cinematic lighting. Keep all focal elements within the upper 65% and central 80% of the composition; leave the lower portion uncluttered for an Arabic information panel. No people, text, logos, violence, actor likenesses, or recognizable copyrighted characters.",
+      "title": "Inside Out",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم رسوم متحركة عن رايلي، فتاة صغيرة تتكيف مع انتقال عائلتها، بينما تدير خمس مشاعر أفكارها وتصرفاتها.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم رسوم متحركة عن رايلي، فتاة صغيرة تتكيف مع انتقال عائلتها، بينما تدير خمس مشاعر أفكارها وتصرفاتها.",
+      "subject_id": "wikipedia-en:38751266",
+      "subject_title": "Inside Out",
+      "summary": "فيلم رسوم متحركة عن رايلي، فتاة صغيرة تتكيف مع انتقال عائلتها، بينما تدير خمس مشاعر أفكارها وتصرفاتها.",
+      "source_url": "https://en.wikipedia.org/wiki/Inside_Out",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2015"
+          },
+          {
+            "label": "المدة",
+            "value": "94 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "فلم كوميدي",
+          "فلم خيال",
+          "فلم عائلي"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q6144664",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q6144664",
+      "subject_imdb": "tt2096673",
+      "cinema_review": {
+        "wikipedia_title": "Inside Out",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/inside-out",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-14",
+        "wikipedia_pageid": 38751266,
+        "wikidata_id": "Q6144664",
+        "imdb_id": "tt2096673",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "No explicit sexual scenes or nudity identified in the reviewed feature/series; brief romance may occur. Content may include violence, language or other mature themes.",
+        "release_year": 2015
+      },
+      "watch_reason": "قد يعجب محبي أفلام الرسوم المتحركة وحكايات النضج والتكيف مع التغيير.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
