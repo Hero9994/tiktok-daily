@@ -3784,7 +3784,7 @@
       "day": "2026-10-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-25T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-25T14:34:42.131318Z",
       "image_attempts": 1,
       "idea": "A shifting inner landscape where five abstract colors converge as a young mind finds its balance.",
@@ -3858,7 +3858,19 @@
         "release_year": 2015
       },
       "watch_reason": "قد يعجب محبي أفلام الرسوم المتحركة وحكايات النضج والتكيف مع التغيير.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-25-8d5663306c-art.jpg",
+      "image_file": "2026-10-25-8d5663306c-1.jpg",
+      "image_sha256": "37375774cea261ba7008551b0d7ba597860af7cffb29511366969688d99f14f0",
+      "image_dhash": "c088b231393838f0",
+      "image_assets": [
+        {
+          "file": "2026-10-25-8d5663306c-1.jpg",
+          "sha256": "37375774cea261ba7008551b0d7ba597860af7cffb29511366969688d99f14f0"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-v2"
     }
   },
   "image_requests": {
