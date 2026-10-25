@@ -3701,7 +3701,7 @@
       "day": "2026-10-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-25T14:33:58.176569Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-25T14:33:58.176569Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-10-26",
@@ -3777,8 +3777,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ad1aa279cd69843b229eda24efd11576d9bbef0f/videos/2026-10-25-0a6ba164b7.mp4",
       "attempted_at": "2026-10-25T14:32:27.044198Z",
       "post_id": "6ade13746887a2efc10c62a3",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-10-25T14:34:40.546226Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-25T14:52:14.694593Z",
+      "sent_at": "2026-10-25T14:36:15.250Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7700613873581247777"
     },
     "6ace9df3778b240e2ffd7494:2026-10-25:cinema": {
       "day": "2026-10-25",
