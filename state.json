@@ -3786,7 +3786,7 @@
       "due_at": "2026-10-25T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-25T14:34:42.131318Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A shifting inner landscape where five abstract colors converge as a young mind finds its balance.",
       "prompt": "Create original abstract cinematic art inspired by animated coming-of-age storytelling: a luminous, dreamlike inner landscape with five distinct glowing color forms floating above a calm horizon, suggesting changing thoughts and emotions without depicting characters. Rich layered gradients, soft painterly texture, warm and thoughtful mood, cinematic lighting. Keep all focal elements within the upper 65% and central 80% of the composition; leave the lower portion uncluttered for an Arabic information panel. No people, text, logos, violence, actor likenesses, or recognizable copyrighted characters.",
       "title": "Inside Out",
