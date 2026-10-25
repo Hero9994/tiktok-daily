@@ -3786,7 +3786,7 @@
       "day": "2026-10-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-25T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-25T14:34:42.131318Z",
       "image_attempts": 1,
       "idea": "A shifting inner landscape where five abstract colors converge as a young mind finds its balance.",
@@ -3885,8 +3885,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/3c07617aa9ab36048e3e762688c856e93c913a6f/videos/2026-10-25-8d5663306c.mp4",
       "attempted_at": "2026-10-25T14:33:14.216968Z",
       "post_id": "6ade13a30b5343d070d78258",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-25T14:52:16.249753Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-25T21:13:45.338105Z",
+      "sent_at": "2026-10-25T15:03:33.846Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7700620481585564961"
     }
   },
   "image_requests": {
