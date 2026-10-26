@@ -1,0 +1,41 @@
+name: Clean obsolete temporary CI storage
+on:
+  push:
+    branches:
+      - 'maintenance/cleanup-old-ci-20261026'
+    paths:
+      - '.github/workflows/ci-storage-cleanup.yml'
+permissions:
+  actions: write
+  contents: read
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Delete artifacts and caches older than seven days (not releases, source, or recent builds)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          repo="$GITHUB_REPOSITORY"
+          cutoff=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          echo "Repository: $repo; cutoff: $cutoff"
+          count=0; bytes=0
+          while IFS=$'\t' read -r id sz name; do
+            [[ -n "$id" ]] || continue
+            echo "Removing old CI artifact $id ($sz bytes): $name"
+            gh api -X DELETE "repos/$repo/actions/artifacts/$id" >/dev/null
+            ((count+=1)); ((bytes+=sz))
+          done < <(gh api --paginate "repos/$repo/actions/artifacts?per_page=100" | jq -r --arg cutoff "$cutoff" '.artifacts[] | select(.expired or .created_at < $cutoff) | [.id,.size_in_bytes,.name] | @tsv')
+          echo "Artifacts removed: $count, total bytes: $bytes"
+          count=0; bytes=0
+          while IFS=$'\t' read -r id sz lastused; do
+            [[ -n "$id" ]] || continue
+            echo "Removing stale CI cache $id ($sz bytes, last used $lastused)"
+            gh api -X DELETE "repos/$repo/actions/caches/$id" >/dev/null
+            ((count+=1)); ((bytes+=sz))
+          done < <(gh api --paginate "repos/$repo/actions/caches?per_page=100" | jq -r --arg cutoff "$cutoff" '.actions_caches[] | select(.last_accessed_at < $cutoff) | [.id,.size_in_bytes,.last_accessed_at] | @tsv')
+          echo "Caches removed: $count, total bytes: $bytes"
+          echo 'Source code, branches, releases, recent build artifacts, and packages were not touched.'
