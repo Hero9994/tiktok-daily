@@ -3894,9 +3894,58 @@
       "day": "2026-10-26",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-26T14:33:12.606196Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-26T14:33:12.606196Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "Official tomorrow football fixtures 2026-10-27",
+      "prompt": "An original black and gold football stadium illustration, illuminated field, gold particles, dramatic night atmosphere, empty space for schedule cards. No people, team badges, trophies, text or logos.",
+      "title": "مباريات الغد | 2026-10-27",
+      "caption": "صورة فنية خيالية مولّدة بالذكاء الاصطناعي.\n\nأبرز مباريات الغد 2026-10-27: 1 مواجهة ضمن الدوري الإيطالي. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org و UEFA.com وقابلة للتغيير.\n\n#مباريات_الغد #كرة_القدم #الدوري_الإيطالي #TK_Servers #مباريات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مباريات_الغد",
+        "#كرة_القدم",
+        "#الدوري_الإيطالي",
+        "#TK_Servers",
+        "#مباريات"
+      ],
+      "description": "أبرز مباريات الغد 2026-10-27: 1 مواجهة ضمن الدوري الإيطالي. عرض المواعيد بتوقيت ألمانيا ومكة المكرمة. المواعيد بحسب football-data.org و UEFA.com وقابلة للتغيير.",
+      "post_kind": "football",
+      "subject_id": "fixtures:2026-10-27",
+      "subject_title": "مباريات الغد | 2026-10-27",
+      "fixture_schedule": {
+        "selection": "editorial_featured",
+        "total_available": 3,
+        "selected_count": 1,
+        "excluded_count": 2,
+        "date": "2026-10-27",
+        "matches": [
+          {
+            "id": 558555,
+            "competition_code": "SA",
+            "competition": "الدوري الإيطالي",
+            "home": "روما",
+            "away": "كالياري",
+            "home_crest": "https://crests.football-data.org/100.png",
+            "away_crest": "https://crests.football-data.org/104.png",
+            "kickoff_utc": "2026-10-27T19:45:00+00:00",
+            "germany_time": "20:45",
+            "germany_date": "2026-10-27",
+            "makkah_time": "22:45",
+            "makkah_date": "2026-10-27",
+            "home_original": "Roma",
+            "away_original": "Cagliari",
+            "editorial_priority": 620
+          }
+        ],
+        "date_mode": "tomorrow",
+        "checked_at": "2026-10-26T14:33:16.985270+00:00",
+        "source_url": "https://www.football-data.org/",
+        "sources": [
+          "football-data.org",
+          "UEFA.com"
+        ]
+      },
+      "source_url": "https://www.football-data.org/"
     }
   },
   "image_requests": {
