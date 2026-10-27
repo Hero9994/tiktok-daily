@@ -3983,6 +3983,14 @@
       "created_at": "2026-10-26T14:33:56.281655Z",
       "image_attempts": 0,
       "original_due_at": "2026-10-26T15:00:00Z"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-27:football": {
+      "day": "2026-10-27",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-27T16:14:00.647265Z",
+      "status": "planned",
+      "created_at": "2026-10-27T16:14:00.647265Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
