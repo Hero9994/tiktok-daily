@@ -5699,9 +5699,81 @@
       "day": "2026-10-28",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-28T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-28T11:10:24.806448Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A luminous cityscape where flowing water and warm firelight meet in a quiet, colorful dance.",
+      "prompt": "Create original abstract cinematic art inspired by an animated romantic comedy-drama: a graceful ribbon of glowing amber firelight curling beside translucent blue water currents, their colors blending above a softly illuminated stylized city of geometric shapes. Dreamlike, warm, playful, polished 3D animation aesthetic; no people, faces, text, logos, or recognizable characters. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area visually calm for an Arabic information panel.",
+      "title": "Elemental",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nكوميديا رومانسية درامية متحركة تدور في عالم تسكنه عناصر الطبيعة، حيث تقضي إمبَر النارية ووايد المائي وقتًا معًا في المدينة.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "كوميديا رومانسية درامية متحركة تدور في عالم تسكنه عناصر الطبيعة، حيث تقضي إمبَر النارية ووايد المائي وقتًا معًا في المدينة.",
+      "subject_id": "wikipedia-en:70799397",
+      "subject_title": "Elemental (2023 film)",
+      "summary": "كوميديا رومانسية درامية متحركة تدور في عالم تسكنه عناصر الطبيعة، حيث تقضي إمبَر النارية ووايد المائي وقتًا معًا في المدينة.",
+      "source_url": "https://en.wikipedia.org/wiki/Elemental_(2023_film)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/4/4d/Elemental_final_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2023"
+          },
+          {
+            "label": "المدة",
+            "value": "102 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم مغامرة",
+          "فلم كوميدي",
+          "فلم عائلي"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q112801489",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q112801489",
+      "subject_imdb": "tt15789038",
+      "cinema_review": {
+        "wikipedia_title": "Elemental (2023 film)",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/elemental",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 70799397,
+        "wikidata_id": "Q112801489",
+        "imdb_id": "tt15789038",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "Content guide reports mild affection, romance or verbal references; no explicit sexual scenes or nudity.",
+        "release_year": 2023
+      },
+      "watch_reason": "قد يناسب محبي أفلام الرسوم المتحركة والكوميديا الرومانسية الدرامية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
