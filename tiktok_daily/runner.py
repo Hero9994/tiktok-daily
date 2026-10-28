@@ -14,7 +14,7 @@ from .video import make_video
 from .cinema_catalog import approve_entry, choose as choose_cinema, warn_caption
 
 FOOTBALL_TEMPLATE = "featured-centred-times-standings-v5"
-CINEMA_TEMPLATE = "cinema-reference-warning-v3"
+CINEMA_TEMPLATE = "cinema-reference-reviewed-warning-v4"
 
 
 def static_football(c):
@@ -188,7 +188,7 @@ class Publisher:
         if entry.get('post_kind') != 'football' and self.c.get('cinema_curated_only'):
             approve_entry(self.c, entry, previous)
         if entry.get('post_kind')!='football':
-            caption=warn_caption(entry['caption'])
+            caption=warn_caption(entry['caption'], entry.get('cinema_review'))
             if caption!=entry['caption']:
                 entry['caption']=caption
                 self.store.checkpoint()

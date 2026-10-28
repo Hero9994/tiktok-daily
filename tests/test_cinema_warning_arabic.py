@@ -2,7 +2,7 @@ import copy
 import json
 import unittest
 from unittest.mock import patch
-from tiktok_daily.cinema_catalog import catalog,content_eligible,quality_eligible,CINEMA_WARNING,warn_caption,used,choose,identity
+from tiktok_daily.cinema_catalog import catalog,content_eligible,quality_eligible,CINEMA_WARNING,warn_caption,needs_content_warning,used,choose,identity
 from tiktok_daily.content import OpenAI
 from tiktok_daily.cards import render
 from test_project import config,FakeHTTP,raw_content,FakeOpenAI
@@ -43,7 +43,7 @@ class ArabicWarningTests(unittest.TestCase):
         with patch('tiktok_daily.content.choose',return_value=w),patch.object(client,'structured',return_value=raw),patch('tiktok_daily.content.enrich',return_value={}):
             entry=client.cinema_idea('2026-10-28',[],1)
         self.assertIn('ar.wikipedia.org',http.calls[0][0])
-        self.assertEqual(entry['subject_id'],identity(w));self.assertTrue(entry['caption'].startswith(CINEMA_WARNING))
+        self.assertEqual(entry['subject_id'],identity(w));self.assertEqual(entry['caption'].startswith(CINEMA_WARNING),needs_content_warning(w))
     def test_arabic_turn_and_film_series_alternation_preserve_dedup(self):
         self.c['cinema_arabic_every']=3
         history=[{'post_kind':'cinema','status':'sent','subject_id':'unrelated:'+str(i)} for i in range(2)]
@@ -52,3 +52,17 @@ class ArabicWarningTests(unittest.TestCase):
         self.assertEqual(work['kind'],'film')
         selected=choose(self.c,'2026-10-29',history+[{'subject_imdb':work['imdb_id']}],1)
         self.assertNotEqual(selected['imdb_id'],work['imdb_id'])
+
+    def test_warning_follows_review_not_animation_or_title(self):
+        elemental=next(w for w in catalog(self.c) if w['wikipedia_title']=='Elemental (2023 film)')
+        caption='نبذة قصيرة\n'+self.c['caption_suffix']
+        for review in (elemental, {'sex_nudity':'none'}, {'sex_nudity':'brief_romance_only'}):
+            self.assertFalse(needs_content_warning(review))
+            self.assertEqual(warn_caption(warn_caption(caption),review),caption)
+            entry={'post_kind':'cinema','title':'مثال','summary':'نبذة','cinema_review':review,'cinema_details':{'facts':[]}}
+            with patch('tiktok_daily.cards.text') as text:
+                render(FakeOpenAI().image('poster'),entry,self.c)
+            self.assertFalse(any(call.args[1]==CINEMA_WARNING for call in text.call_args_list))
+        for review in ({'sex_nudity':'occasional_mature'}, {}, None):
+            self.assertTrue(needs_content_warning(review))
+            self.assertTrue(warn_caption(caption,review).startswith(CINEMA_WARNING))

@@ -37,8 +37,16 @@ def identity(work):
     return f"wikipedia-{language}:{work['wikipedia_pageid']}"
 
 
-def warn_caption(value):
-    return value if value.startswith(CINEMA_WARNING) else CINEMA_WARNING+'\n\n'+value
+def needs_content_warning(work):
+    """Use reviewed content, never animation/genre as a proxy for suitability."""
+    return not work or work.get('sex_nudity') not in ('none','brief_romance_only')
+
+
+def warn_caption(value, work=None):
+    # Normalize old blanket warnings when resuming an unsubmitted entry.
+    while value.startswith(CINEMA_WARNING):
+        value=value[len(CINEMA_WARNING):].lstrip('\n ')
+    return CINEMA_WARNING+'\n\n'+value if needs_content_warning(work) else value
 
 
 def quality_eligible(w,c):

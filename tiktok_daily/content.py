@@ -249,7 +249,7 @@ class OpenAI:
         content['watch_reason'] = reason
         if content.get('cinema_details', {}).get('poster_url'):
             content['caption'] = content['caption'].replace(DISCLOSURE, 'تصميم أُعد بمساعدة الذكاء الاصطناعي.', 1)
-        content['caption']=warn_caption(content['caption'])
+        content['caption']=warn_caption(content['caption'], reviewed)
         return content
 
     def image(self, prompt):

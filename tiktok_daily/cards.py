@@ -11,7 +11,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from PIL import Image, ImageDraw, ImageFont, ImageOps, features
 from .cinema_media import artwork
-from .cinema_catalog import CINEMA_WARNING
+from .cinema_catalog import CINEMA_WARNING, needs_content_warning
 
 GOLD, WHITE, PANEL = "#d9ac57", "#f8f5eb", "#0c1016"
 
@@ -140,8 +140,9 @@ def cinema(hero, entry, c):
     if original and original.casefold()!=entry['title'].casefold():
         text(draw,original,(60,152,870,70),size=31,color=GOLD,max_lines=1)
     draw.line((100,149,875,149),fill=GOLD,width=2)
-    draw.rounded_rectangle((35,216,1045,276),radius=12,fill='#440910',outline='#ff5252',width=3)
-    text(draw,CINEMA_WARNING,(55,218,970,57),size=30,color='#ff7070',max_lines=1,weight=800,align='center')
+    if needs_content_warning(entry.get('cinema_review')):
+        draw.rounded_rectangle((35,216,1045,276),radius=12,fill='#440910',outline='#ff5252',width=3)
+        text(draw,CINEMA_WARNING,(55,218,970,57),size=30,color='#ff7070',max_lines=1,weight=800,align='center')
     facts = list(details.get('facts',[]))
     genres = ' / '.join(details.get('genres',[])[:2])
     if genres: facts.append({'label':'التصنيف','value':genres})
