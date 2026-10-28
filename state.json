@@ -4133,7 +4133,7 @@
       "day": "2026-10-28",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-28T13:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-28T11:09:05.562740Z",
       "image_attempts": 1,
       "idea": "Verified current big-five standings ad551f4984c6a78f",
@@ -5692,8 +5692,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/25c35f6488676e9ae30fe1fd13e48015976f8d19/videos/2026-10-28-e75f610b84.mp4",
       "attempted_at": "2026-10-28T11:08:19.685191Z",
       "post_id": "6ae1d81db23b246b786cf9d6",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-28T12:36:04.808933Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-28T14:31:36.373720Z",
+      "sent_at": "2026-10-28T13:04:37.769Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7701703155062459681"
     },
     "6ace9df3778b240e2ffd7494:2026-10-28:cinema": {
       "day": "2026-10-28",
