@@ -46,6 +46,12 @@ def quality_eligible(w,c):
     if source=='Common Sense Media':
         return (w.get('rating_scale')==5 and w.get('critic_rating',0)>=c.get('cinema_min_critic_rating',4)
                 and w.get('review_url','').startswith('https://www.commonsensemedia.org/'))
+    if source=='ElCinema':
+        return (w.get('rating_scale')==10 and 7<=w.get('critic_rating',0)<=10
+                and type(w.get('rating_votes_lower_bound')) is int and w['rating_votes_lower_bound']>=25
+                and bool(re.fullmatch(r'[0-9]+',str(w.get('elcinema_id',''))))
+                and w.get('review_url')==f"https://elcinema.com/work/{w.get('elcinema_id')}/"
+                and w.get('sexual_focus') is False and bool(w.get('review_note')))
     if source=='IMDb':
         return (w.get('rating_scale')==10 and 7<=w.get('critic_rating',0)<=10
                 and type(w.get('rating_votes_lower_bound')) is int and w['rating_votes_lower_bound']>=1000
@@ -74,7 +80,8 @@ def catalog(c, day=None):
 def used(work, previous):
     return any(e.get('subject_id') == identity(work)
                or e.get('subject_wikidata') == work['wikidata_id']
-               or e.get('subject_imdb') == work['imdb_id']
+               or (bool(work.get('imdb_id')) and e.get('subject_imdb') == work['imdb_id'])
+               or (bool(work.get('elcinema_id')) and e.get('subject_elcinema') == work['elcinema_id'])
                or e.get('subject_title', '').casefold() == work['wikipedia_title'].casefold()
                for e in previous)
 
@@ -82,7 +89,10 @@ def used(work, previous):
 def availability(c,day,previous):
     works=catalog(c,day)
     remaining=[w for w in works if not used(w,previous)]
-    return {'eligible':len(works),'remaining':len(remaining),'used':len(works)-len(remaining)}
+    return {'eligible':len(works),'remaining':len(remaining),'used':len(works)-len(remaining),
+            'arabic_remaining':sum(w.get('language')=='ar' for w in remaining),
+            'egyptian_remaining':sum(w.get('production_country')=='EG' for w in remaining),
+            'syrian_remaining':sum(w.get('production_country')=='SY' for w in remaining)}
 
 
 def choose(c, day, previous, attempt):
@@ -92,11 +102,22 @@ def choose(c, day, previous, attempt):
     history=[e for e in previous if e.get('post_kind')=='cinema' and e.get('status') in ('accepted','sent')]
     arabic=[w for w in available if w.get('language')=='ar']
     foreign=[w for w in available if w.get('language')!='ar']
-    if arabic and foreign:
-        available=arabic if (len(history)+1)%3==0 else foreign
-    preferred='series' if len(history)%2 else 'film'
+    every=c.get('cinema_arabic_every',2)
+    target_arabic=bool(arabic) and (not foreign or (len(history)+1)%every==0)
+    if arabic and foreign:available=arabic if target_arabic else foreign
+    language_history=[e for e in history if (e.get('cinema_review',{}).get('language')=='ar')==target_arabic]
+    preferred='series' if len(language_history)%2 else 'film'
     kinds=[w for w in available if w.get('kind')==preferred]
     if kinds:available=kinds
+    if target_arabic and (len(language_history)+1)%5!=0:
+        # Balance regional representation among available works of the preferred kind.
+        groups={country:[w for w in available if w.get('production_country')==country] for country in ('EG','SY')}
+        represented={country:sum(e.get('cinema_review',{}).get('production_country')==country for e in language_history if e.get('cinema_review',{}).get('kind')==preferred) for country in groups}
+        countries=[country for country in groups if groups[country]]
+        if countries:
+            least=min(represented[country] for country in countries)
+            countries=[country for country in countries if represented[country]==least]
+            available=[w for w in available if w.get('production_country') in countries]
     # Stable across retries; no paid selection request. The publisher reserves the summary call.
     offset = int(hashlib.sha256(day.encode()).hexdigest()[:8], 16)
     return available[(offset + attempt - 1) % len(available)]

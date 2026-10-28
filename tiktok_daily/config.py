@@ -65,6 +65,8 @@ def load_config(path):
         raise ValueError('football_standings_fallback must be boolean')
     if type(c.get('football_results_fallback',False)) is not bool:
         raise ValueError('football_results_fallback must be boolean')
+    if type(c.get('cinema_arabic_every',2)) is not int or not 1<=c.get('cinema_arabic_every',2)<=10:
+        raise ValueError('cinema_arabic_every must be between 1 and 10')
     if type(c.get('cinema_allow_occasional_mature',False)) is not bool:
         raise ValueError('cinema_allow_occasional_mature must be boolean')
     if type(c.get('cinema_curated_only', False)) is not bool:

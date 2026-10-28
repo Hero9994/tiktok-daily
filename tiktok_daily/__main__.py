@@ -244,13 +244,18 @@ def main():
             from .cinema_catalog import availability
             local_day=datetime.now(timezone.utc).astimezone(ZoneInfo(c['timezone'])).date().isoformat()
             try:
-                remaining=availability(c,local_day,list(store.state['entries'].values()))['remaining']
+                inventory=availability(c,local_day,list(store.state['entries'].values()))
+                remaining=inventory['remaining']
             except RuntimeError:
                 remaining=0
+                inventory={'arabic_remaining':0,'egyptian_remaining':0,'syrian_remaining':0}
             print(f'Reviewed unused cinema titles remaining: {remaining}',flush=True)
             output=os.environ.get('GITHUB_OUTPUT')
             if output:
-                with open(output,'a') as handle:handle.write(f'cinema_remaining={remaining}\n')
+                with open(output,'a') as handle:
+                    handle.write(f'cinema_remaining={remaining}\n')
+                    for group in ('arabic_remaining','egyptian_remaining','syrian_remaining'):
+                        handle.write(f'cinema_{group}={inventory[group]}\n')
         store.close()
 
 

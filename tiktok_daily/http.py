@@ -19,7 +19,7 @@ class HTTP:
         self.sleep = sleep
 
     def json(self, url, payload=None, token=None, safe_retry=False, timeout=60, extra_headers=None):
-        headers = {"Accept": "application/json", "User-Agent": "daily-image-publisher/1.0"}
+        headers = {"Accept": "application/json", "User-Agent": "TKDaily/1.0 (https://github.com/Hero9994/tiktok-daily; daily cinema and football publisher)"}
         if extra_headers:
             headers.update(extra_headers)
         if token:
@@ -63,7 +63,7 @@ class HTTP:
         import hashlib
         for attempt in range(5):
             try:
-                req = urllib.request.Request(url, headers={"User-Agent": "daily-image-publisher/1.0"})
+                req = urllib.request.Request(url, headers={"User-Agent": "TKDaily/1.0 (https://github.com/Hero9994/tiktok-daily; daily cinema and football publisher)"})
                 with urllib.request.urlopen(req, timeout=30) as response:
                     data = response.read(20_000_001)
                 if len(data) <= 20_000_000 and hashlib.sha256(data).hexdigest() == expected_digest:

@@ -86,16 +86,22 @@ jobs:
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
         env:
           CINEMA_REMAINING: ${{ steps.publisher.outputs.cinema_remaining }}
+          ARABIC_REMAINING: ${{ steps.publisher.outputs.cinema_arabic_remaining }}
+          EGYPTIAN_REMAINING: ${{ steps.publisher.outputs.cinema_egyptian_remaining }}
+          SYRIAN_REMAINING: ${{ steps.publisher.outputs.cinema_syrian_remaining }}
         with:
           script: |
             const remaining = Number(process.env.CINEMA_REMAINING);
+            const arabic = Number(process.env.ARABIC_REMAINING);
+            const egyptian = Number(process.env.EGYPTIAN_REMAINING);
+            const syrian = Number(process.env.SYRIAN_REMAINING);
             const title = 'Daily TikTok: reviewed cinema catalogue running low';
             const issues = await github.paginate(github.rest.issues.listForRepo, { ...context.repo, state: 'open', creator: 'github-actions[bot]', per_page: 100 });
             const issue = issues.find(x => !x.pull_request && x.title === title);
-            if (remaining > 7) {
+            if (remaining > 7 && arabic > 7 && egyptian > 3 && syrian > 3) {
               if (issue) await github.rest.issues.update({ ...context.repo, issue_number: issue.number, state: 'closed' });
             } else {
-              const body = `بقي ${remaining} عملًا مؤهلًا غير منشور. أضف أعمالًا مراجعة قبل نفاد القائمة، مع شروط الجودة والعمر والمحتوى الجنسي ومنع التكرار. لا تخفف الشروط تلقائيًا.`;
+              const body = `بقي ${remaining} عملًا مؤهلًا غير منشور، منها ${arabic} عربية (${egyptian} مصرية و${syrian} سورية). أضف أعمالًا مراجعة قبل نفاد القائمة، مع شروط الجودة والعمر والمحتوى الجنسي ومنع التكرار. لا تخفف الشروط تلقائيًا.`;
               if (issue && issue.body !== body) await github.rest.issues.update({ ...context.repo, issue_number: issue.number, body });
               else if (!issue) await github.rest.issues.create({ ...context.repo, title, body });
             }

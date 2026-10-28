@@ -229,12 +229,17 @@ class OpenAI:
         content = finalize_content(raw, self.c, previous)
         content.update(subject_id=subject_id, subject_title=source["title"], summary=raw["description"].strip(),
                        source_url=source.get("content_urls", {}).get("desktop", {}).get("page"))
+        if reviewed and reviewed.get('poster_url') and not (source.get('originalimage') or source.get('thumbnail')):
+            source=dict(source,originalimage={'source':reviewed['poster_url']})
         content.update(enrich(self.http, source))
         if reviewed:
-            content.update(subject_wikidata=reviewed['wikidata_id'], subject_imdb=reviewed['imdb_id'],
+            content.update(subject_wikidata=reviewed['wikidata_id'], subject_imdb=reviewed.get('imdb_id'),
+                           subject_elcinema=reviewed.get('elcinema_id'),
                            cinema_review=reviewed)
             details = content.get('cinema_details', {})
-            details.setdefault('facts', []).append({'label': 'تقييم IMDb' if reviewed.get('rating_source')=='IMDb' else 'تقييم Common Sense',
+            if not any(f.get('label')=='سنة الإصدار' for f in details.get('facts',[])):
+                details.setdefault('facts',[]).append({'label':'سنة الإصدار','value':str(reviewed['release_year'])})
+            details.setdefault('facts', []).append({'label': {'IMDb':'تقييم IMDb','ElCinema':'تقييم السينما.كوم'}.get(reviewed.get('rating_source'),'تقييم Common Sense'),
                 'value': f"{reviewed['critic_rating']:g} / {reviewed['rating_scale']}"})
             if details.get('poster_url'):
                 content['cinema_details'] = details

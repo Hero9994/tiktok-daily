@@ -97,10 +97,10 @@ def artwork(url):
     """Bounded, HTTPS-only retrieval from the Wikimedia media hosts."""
     def allowed(value):
         parsed = urllib.parse.urlsplit(value)
-        return parsed.scheme == 'https' and parsed.hostname in {'upload.wikimedia.org', 'thumb.wikimedia.org', 'commons.wikimedia.org', 'static.tvmaze.com'}
+        return parsed.scheme == 'https' and (parsed.hostname in {'upload.wikimedia.org', 'thumb.wikimedia.org', 'commons.wikimedia.org', 'static.tvmaze.com'} or re.fullmatch(r'media(?:[0-9]{4})?\.elcinema\.com',parsed.hostname or '') is not None)
     if not allowed(url):
         raise ValueError('Untrusted cinema media host')
-    request = urllib.request.Request(url, headers={'User-Agent': 'TKDaily/1.0 (cinema reference cards)'})
+    request = urllib.request.Request(url, headers={'User-Agent': 'TKDaily/1.0 (https://github.com/Hero9994/tiktok-daily; reference media)'})
     with urllib.request.urlopen(request, timeout=30) as response:
         if not allowed(response.url):
             raise ValueError('Untrusted cinema media redirect')

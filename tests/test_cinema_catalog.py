@@ -24,7 +24,7 @@ class CinemaCatalogTests(unittest.TestCase):
                 self.assertEqual(w['rating_scale'],5)
                 self.assertTrue(w['review_url'].startswith('https://www.commonsensemedia.org/'))
             else:
-                self.assertEqual(w['rating_source'],'IMDb')
+                self.assertIn(w['rating_source'],('IMDb','ElCinema'))
                 self.assertGreaterEqual(w['critic_rating'],7)
                 self.assertEqual(w['rating_scale'],10)
             self.assertIn(w['sex_nudity'],('none','brief_romance_only','occasional_mature'))
@@ -56,7 +56,7 @@ class CinemaCatalogTests(unittest.TestCase):
         self.assertTrue(used(self.work,[{'subject_id':self.entry()['subject_id']}]))
 
     def test_exhausted_pool_stops_instead_of_recycling_or_selecting_unreviewed_work(self):
-        previous=[{'subject_imdb':w['imdb_id']} for w in catalog(self.c)]
+        previous=[{'subject_wikidata':w['wikidata_id'],'subject_imdb':w.get('imdb_id')} for w in catalog(self.c)]
         with self.assertRaisesRegex(RuntimeError,'exhausted'):choose(self.c,'2026-10-15',previous,1)
 
     def test_exhaustion_stops_before_any_openai_call_or_budget_reservation(self):
@@ -64,7 +64,7 @@ class CinemaCatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             ai=FakeOpenAI();ai.moderate=lambda *a,**k:self.fail('Exhausted catalogue must fail locally')
             buffer=FakeBuffer();store=MemoryStore(folder)
-            store.state['entries']={f"old:{w['imdb_id']}":{'status':'sent','subject_imdb':w['imdb_id']} for w in catalog(self.c,'2026-10-14')}
+            store.state['entries']={f"old:{w['wikidata_id']}":{'status':'sent','subject_wikidata':w['wikidata_id'],'subject_imdb':w.get('imdb_id')} for w in catalog(self.c,'2026-10-14')}
             p=Publisher(self.c,store,ai,buffer,FakeHTTP(),lambda:NOW,sleep=lambda _:None)
             with self.assertRaisesRegex(RuntimeError,'exhausted'):p.prepare()
             self.assertEqual(store.state['text_requests'],{})
@@ -94,7 +94,7 @@ class CinemaCatalogTests(unittest.TestCase):
             entry=client.idea('2026-10-15',[],1)
         self.assertEqual(call.call_count,1)
         self.assertEqual(entry['subject_imdb'],w['imdb_id'])
-        self.assertEqual(entry['cinema_details']['facts'][0]['label'],'تقييم Common Sense')
+        self.assertTrue(any(f['label']=='تقييم Common Sense' for f in entry['cinema_details']['facts']))
 
     def test_publisher_rejects_unreviewed_work_before_image_spend_or_post(self):
         import tempfile

@@ -45,6 +45,7 @@ class ArabicWarningTests(unittest.TestCase):
         self.assertIn('ar.wikipedia.org',http.calls[0][0])
         self.assertEqual(entry['subject_id'],identity(w));self.assertTrue(entry['caption'].startswith(CINEMA_WARNING))
     def test_arabic_turn_and_film_series_alternation_preserve_dedup(self):
+        self.c['cinema_arabic_every']=3
         history=[{'post_kind':'cinema','status':'sent','subject_id':'unrelated:'+str(i)} for i in range(2)]
         work=choose(self.c,'2026-10-29',history,1)
         self.assertEqual(work.get('language'),'ar')

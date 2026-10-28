@@ -87,7 +87,7 @@ def _crest_once(url):
     if parsed.scheme != 'https' or parsed.hostname not in {'crests.football-data.org', 'upload.wikimedia.org','img.uefa.com'}:
         return None
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'TKDaily/1.0'})
+        req = urllib.request.Request(url, headers={'User-Agent': 'TKDaily/1.0 (https://github.com/Hero9994/tiktok-daily; reference media)'})
         with urllib.request.urlopen(req, timeout=10) as response:
             final = urllib.parse.urlsplit(response.url)
             if final.scheme != 'https' or final.hostname not in {'crests.football-data.org', 'upload.wikimedia.org','img.uefa.com'}:
@@ -146,7 +146,7 @@ def cinema(hero, entry, c):
     genres = ' / '.join(details.get('genres',[])[:2])
     if genres: facts.append({'label':'التصنيف','value':genres})
     ordered=[]
-    for names in [('سنة الإصدار',),('التصنيف',),('المدة','المواسم'),('تقييم Common Sense','تقييم IMDb','تقييم TVmaze'),('بلد الإنتاج',),('اللغة الأصلية','الحلقات','نوع العمل')]:
+    for names in [('سنة الإصدار',),('التصنيف',),('المدة','المواسم'),('تقييم Common Sense','تقييم IMDb','تقييم السينما.كوم','تقييم TVmaze'),('بلد الإنتاج',),('اللغة الأصلية','الحلقات','نوع العمل')]:
         fact=next((f for name in names for f in facts if f['label']==name),None)
         if fact:ordered.append(fact)
     if not ordered:ordered=[{'label':'ترشيح اليوم','value':'فيلم أو مسلسل'}]

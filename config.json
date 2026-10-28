@@ -94,5 +94,6 @@
   "cinema_max_age_years": 15,
   "football_results_fallback": false,
   "football_standings_fallback": true,
-  "cinema_allow_occasional_mature": true
+  "cinema_allow_occasional_mature": true,
+  "cinema_arabic_every": 2
 }
