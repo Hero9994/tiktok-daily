@@ -71,6 +71,14 @@ def load_config(path):
         raise ValueError('cinema_allow_occasional_mature must be boolean')
     if type(c.get('cinema_curated_only', False)) is not bool:
         raise ValueError('cinema_curated_only must be boolean')
+    if type(c.get('cinema_auto_renewal',False)) is not bool:
+        raise ValueError('cinema_auto_renewal must be boolean')
+    for key,default,limit in [('cinema_renewal_max_checks',12,20),('cinema_renewal_max_additions',4,6)]:
+        if type(c.get(key,default)) is not int or not 1<=c.get(key,default)<=limit:
+            raise ValueError('Invalid cinema renewal limit')
+    targets=c.get('cinema_renewal_targets',{})
+    if not isinstance(targets,dict) or any(k not in ('total','arabic','foreign','films','series') or type(v) is not int or not 1<=v<=180 for k,v in targets.items()):
+        raise ValueError('Invalid cinema renewal inventory targets')
     if type(c.get('cinema_min_critic_rating',4)) not in (int,float) or not 4 <= c.get('cinema_min_critic_rating',4) <= 5:
         raise ValueError('Cinema critic threshold must be between 4 and 5 out of 5')
     caption = c.get("fixed_caption")

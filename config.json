@@ -95,5 +95,15 @@
   "football_results_fallback": false,
   "football_standings_fallback": true,
   "cinema_allow_occasional_mature": true,
-  "cinema_arabic_every": 2
+  "cinema_arabic_every": 2,
+  "cinema_auto_renewal": true,
+  "cinema_renewal_targets": {
+    "total": 60,
+    "arabic": 24,
+    "foreign": 40,
+    "films": 20,
+    "series": 20
+  },
+  "cinema_renewal_max_checks": 12,
+  "cinema_renewal_max_additions": 4
 }
