@@ -5683,7 +5683,12 @@
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/7d06de04e2f606405ad725f96992b5af08d53c70/images/2026-10-28-e75f610b84-3.jpg",
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/7d06de04e2f606405ad725f96992b5af08d53c70/images/2026-10-28-e75f610b84-4.jpg",
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/7d06de04e2f606405ad725f96992b5af08d53c70/images/2026-10-28-e75f610b84-5.jpg"
-      ]
+      ],
+      "video_file": "2026-10-28-e75f610b84.mp4",
+      "video_sha256": "b0d1b08fcba8ed711a04bce9d309d3ba76b945c7db5b0a330baf20b671e877b4",
+      "video_fingerprint": "7e995f919516ff4a05bc12d3ff397a4ef979e952e4a6803501eb0bfe0dc15074",
+      "music_file": "assets/audio/sports.m4a",
+      "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb"
     }
   },
   "image_requests": {
