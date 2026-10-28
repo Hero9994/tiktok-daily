@@ -4133,7 +4133,7 @@
       "day": "2026-10-28",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-28T13:00:00Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-10-28T11:09:05.562740Z",
       "image_attempts": 1,
       "idea": "Verified current big-five standings ad551f4984c6a78f",
@@ -5690,7 +5690,10 @@
       "music_file": "assets/audio/sports.m4a",
       "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/25c35f6488676e9ae30fe1fd13e48015976f8d19/videos/2026-10-28-e75f610b84.mp4",
-      "attempted_at": "2026-10-28T11:08:19.685191Z"
+      "attempted_at": "2026-10-28T11:08:19.685191Z",
+      "post_id": "6ae1d81db23b246b786cf9d6",
+      "buffer_status": "scheduled",
+      "last_checked_at": "2026-10-28T11:10:21.639338Z"
     }
   },
   "image_requests": {
