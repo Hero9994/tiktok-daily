@@ -29,7 +29,7 @@ def enrich(http, source):
         return {}  # Older saved entries/test sources remain renderable.
     work = entity(http, qid)
     art = (source.get('originalimage') or source.get('thumbnail') or {}).get('source')
-    kind = 'مسلسل' if re.search(r'\b(?:television|documentary|animated) (?:\w+ ){0,3}series\b|\bminiseries\b', source.get('extract', ''), re.I) else 'فيلم'
+    kind = 'مسلسل' if re.search(r'\b(?:television|documentary|animated) (?:\w+ ){0,3}series\b|\bminiseries\b', source.get('extract', ''), re.I) or 'مسلسل' in source.get('extract','') else 'فيلم'
     facts = [{'label': 'نوع العمل', 'value': kind}]
     imdb = values(work, 'P345')
     tvmaze_url = None

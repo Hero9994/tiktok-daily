@@ -93,5 +93,6 @@
   "football_min_team_priority": 4,
   "cinema_max_age_years": 15,
   "football_results_fallback": false,
-  "football_standings_fallback": true
+  "football_standings_fallback": true,
+  "cinema_allow_occasional_mature": true
 }

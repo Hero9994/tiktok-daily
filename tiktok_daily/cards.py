@@ -11,6 +11,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from PIL import Image, ImageDraw, ImageFont, ImageOps, features
 from .cinema_media import artwork
+from .cinema_catalog import CINEMA_WARNING
 
 GOLD, WHITE, PANEL = "#d9ac57", "#f8f5eb", "#0c1016"
 
@@ -139,11 +140,13 @@ def cinema(hero, entry, c):
     if original and original.casefold()!=entry['title'].casefold():
         text(draw,original,(60,152,870,70),size=31,color=GOLD,max_lines=1)
     draw.line((100,149,875,149),fill=GOLD,width=2)
+    draw.rounded_rectangle((35,216,1045,276),radius=12,fill='#440910',outline='#ff5252',width=3)
+    text(draw,CINEMA_WARNING,(55,218,970,57),size=30,color='#ff7070',max_lines=1,weight=800,align='center')
     facts = list(details.get('facts',[]))
     genres = ' / '.join(details.get('genres',[])[:2])
     if genres: facts.append({'label':'التصنيف','value':genres})
     ordered=[]
-    for names in [('سنة الإصدار',),('التصنيف',),('المدة','المواسم'),('تقييم Common Sense','تقييم TVmaze'),('بلد الإنتاج',),('اللغة الأصلية','الحلقات','نوع العمل')]:
+    for names in [('سنة الإصدار',),('التصنيف',),('المدة','المواسم'),('تقييم Common Sense','تقييم IMDb','تقييم TVmaze'),('بلد الإنتاج',),('اللغة الأصلية','الحلقات','نوع العمل')]:
         fact=next((f for name in names for f in facts if f['label']==name),None)
         if fact:ordered.append(fact)
     if not ordered:ordered=[{'label':'ترشيح اليوم','value':'فيلم أو مسلسل'}]
@@ -187,7 +190,7 @@ def cinema(hero, entry, c):
         text(draw,entry.get('watch_reason') or 'ترشيح جديد لمحبي السينما والمسلسلات',(70,1580,940,180),size=42,max_lines=2)
     note='TK SERVERS • Wikipedia / Wikidata'
     if details.get('tvmaze_url'):note+=' / TVmaze'
-    if entry.get('cinema_review'):note+=' / Common Sense Media'
+    if entry.get('cinema_review'):note+=' / '+entry['cinema_review'].get('rating_source','Common Sense Media')
     text(draw,note,(50,1853,980,43),size=20,color='#b6ac97',max_lines=1)
     if entry.get('demo'):
         text(draw,'معاينة تصميم فقط',(50,1879,980,40),size=20,color=GOLD,max_lines=1)

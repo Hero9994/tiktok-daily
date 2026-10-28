@@ -19,10 +19,15 @@ class CinemaCatalogTests(unittest.TestCase):
 
     def test_every_catalogue_work_is_high_rated_and_content_reviewed(self):
         for w in catalog(self.c):
-            self.assertGreaterEqual(w['critic_rating'],4)
-            self.assertEqual(w['rating_scale'],5)
-            self.assertIn(w['sex_nudity'],('none','brief_romance_only'))
-            self.assertTrue(w['review_url'].startswith('https://www.commonsensemedia.org/'))
+            if w['rating_source']=='Common Sense Media':
+                self.assertGreaterEqual(w['critic_rating'],4)
+                self.assertEqual(w['rating_scale'],5)
+                self.assertTrue(w['review_url'].startswith('https://www.commonsensemedia.org/'))
+            else:
+                self.assertEqual(w['rating_source'],'IMDb')
+                self.assertGreaterEqual(w['critic_rating'],7)
+                self.assertEqual(w['rating_scale'],10)
+            self.assertIn(w['sex_nudity'],('none','brief_romance_only','occasional_mature'))
         self.assertTrue(any(w['kind']=='series' for w in catalog(self.c)))
 
     def test_old_work_needs_recent_top200_evidence(self):

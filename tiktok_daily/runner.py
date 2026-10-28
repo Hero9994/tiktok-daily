@@ -11,10 +11,10 @@ from .cards import render, encode
 
 from .cinema_media import artwork
 from .video import make_video
-from .cinema_catalog import approve_entry, choose as choose_cinema
+from .cinema_catalog import approve_entry, choose as choose_cinema, warn_caption
 
 FOOTBALL_TEMPLATE = "featured-centred-times-standings-v5"
-CINEMA_TEMPLATE = "cinema-reference-v2"
+CINEMA_TEMPLATE = "cinema-reference-warning-v3"
 
 
 def static_football(c):
@@ -187,6 +187,11 @@ class Publisher:
             self.store.checkpoint()
         if entry.get('post_kind') != 'football' and self.c.get('cinema_curated_only'):
             approve_entry(self.c, entry, previous)
+        if entry.get('post_kind')!='football':
+            caption=warn_caption(entry['caption'])
+            if caption!=entry['caption']:
+                entry['caption']=caption
+                self.store.checkpoint()
         if entry["status"] == "content_ready":
             while entry["image_attempts"] < 3:
                 month = self.clock().strftime("%Y-%m")

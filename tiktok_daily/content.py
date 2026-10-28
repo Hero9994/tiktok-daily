@@ -179,6 +179,7 @@ class OpenAI:
         return json.loads(output)
 
     def cinema_idea(self, day, previous, attempt):
+        from .cinema_catalog import identity,warn_caption
         reviewed = choose(self.c, day, previous, attempt) if self.c.get('cinema_curated_only') else None
         if reviewed:
             title = reviewed['wikipedia_title']
@@ -193,13 +194,15 @@ class OpenAI:
             title = choice["wikipedia_title"]
         if not isinstance(title, str) or not 1 <= len(title) <= 200:
             raise ValueError("Invalid Wikipedia title")
-        source = self.http.json("https://en.wikipedia.org/api/rest_v1/page/summary/" + urllib.parse.quote(title.replace(" ", "_"), safe=""), safe_retry=True)
+        language=reviewed.get('wiki_language','en') if reviewed else 'en'
+        if language not in ('en','ar'):raise ValueError('Unsupported cinema source language')
+        source = self.http.json(f"https://{language}.wikipedia.org/api/rest_v1/page/summary/" + urllib.parse.quote(title.replace(" ", "_"), safe=""), safe_retry=True)
         extract = source.get("extract", "")
-        if source.get("type") != "standard" or not source.get("pageid") or not re.search(r"\b(film|series|miniseries)\b" if reviewed else r"\b(film|television series|miniseries)\b", extract, re.I):
+        if source.get("type") != "standard" or not source.get("pageid") or not re.search(r"\b(film|series|miniseries|فيلم|مسلسل)\b" if reviewed else r"\b(film|television series|miniseries)\b", extract, re.I):
             raise ValueError("Source is not a film or television series article")
         if reviewed:
             verify_source(reviewed, source)
-        subject_id = f"wikipedia-en:{source['pageid']}"
+        subject_id = identity(reviewed) if reviewed else f"wikipedia-en:{source['pageid']}"
         if any(e.get("subject_id") == subject_id for e in previous):
             raise ValueError("This film or series has already been posted")
         # Legacy model selection needs a second reservation; curated selection does not.
@@ -231,8 +234,8 @@ class OpenAI:
             content.update(subject_wikidata=reviewed['wikidata_id'], subject_imdb=reviewed['imdb_id'],
                            cinema_review=reviewed)
             details = content.get('cinema_details', {})
-            details.setdefault('facts', []).append({'label': 'تقييم Common Sense',
-                'value': f"{reviewed['critic_rating']:g} / 5"})
+            details.setdefault('facts', []).append({'label': 'تقييم IMDb' if reviewed.get('rating_source')=='IMDb' else 'تقييم Common Sense',
+                'value': f"{reviewed['critic_rating']:g} / {reviewed['rating_scale']}"})
             if details.get('poster_url'):
                 content['cinema_details'] = details
         reason = raw.get('watch_reason', '')
@@ -241,6 +244,7 @@ class OpenAI:
         content['watch_reason'] = reason
         if content.get('cinema_details', {}).get('poster_url'):
             content['caption'] = content['caption'].replace(DISCLOSURE, 'تصميم أُعد بمساعدة الذكاء الاصطناعي.', 1)
+        content['caption']=warn_caption(content['caption'])
         return content
 
     def image(self, prompt):
