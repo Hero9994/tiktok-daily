@@ -240,6 +240,17 @@ def main():
                 print(json.dumps({'preview_id':args.preview_id,'status':target['status'],
                                   'external_link':target.get('external_link')},ensure_ascii=False),flush=True)
     finally:
+        if args.mode=='maintain' and c.get('cinema_curated_only'):
+            from .cinema_catalog import availability
+            local_day=datetime.now(timezone.utc).astimezone(ZoneInfo(c['timezone'])).date().isoformat()
+            try:
+                remaining=availability(c,local_day,list(store.state['entries'].values()))['remaining']
+            except RuntimeError:
+                remaining=0
+            print(f'Reviewed unused cinema titles remaining: {remaining}',flush=True)
+            output=os.environ.get('GITHUB_OUTPUT')
+            if output:
+                with open(output,'a') as handle:handle.write(f'cinema_remaining={remaining}\n')
         store.close()
 
 

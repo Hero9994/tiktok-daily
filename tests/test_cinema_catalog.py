@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from tiktok_daily.cinema_catalog import age_eligible, catalog, choose, used, verify_source, approve_entry
+from tiktok_daily.cinema_catalog import availability, age_eligible, catalog, choose, used, verify_source, approve_entry
 from tiktok_daily.content import OpenAI
 from tiktok_daily.runner import Publisher
 from test_project import config, raw_content, FakeHTTP, FakeBuffer, FakeOpenAI, MemoryStore, NOW
@@ -53,6 +53,23 @@ class CinemaCatalogTests(unittest.TestCase):
     def test_exhausted_pool_stops_instead_of_recycling_or_selecting_unreviewed_work(self):
         previous=[{'subject_imdb':w['imdb_id']} for w in catalog(self.c)]
         with self.assertRaisesRegex(RuntimeError,'exhausted'):choose(self.c,'2026-10-15',previous,1)
+
+    def test_exhaustion_stops_before_any_openai_call_or_budget_reservation(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            ai=FakeOpenAI();ai.moderate=lambda *a,**k:self.fail('Exhausted catalogue must fail locally')
+            buffer=FakeBuffer();store=MemoryStore(folder)
+            store.state['entries']={f"old:{w['imdb_id']}":{'status':'sent','subject_imdb':w['imdb_id']} for w in catalog(self.c,'2026-10-14')}
+            p=Publisher(self.c,store,ai,buffer,FakeHTTP(),lambda:NOW,sleep=lambda _:None)
+            with self.assertRaisesRegex(RuntimeError,'exhausted'):p.prepare()
+            self.assertEqual(store.state['text_requests'],{})
+            self.assertEqual(buffer.creates,0)
+
+    def test_availability_counts_aliases_as_used_before_the_pool_is_empty(self):
+        previous=[{'subject_imdb':self.work['imdb_id']}]
+        report=availability(self.c,'2026-10-28',previous)
+        self.assertEqual(report['remaining'],report['eligible']-1)
+        self.assertEqual(report['used'],1)
 
     def test_wrong_version_or_unreviewed_title_is_rejected(self):
         with self.assertRaises(ValueError):verify_source(self.work,{'pageid':1,'wikibase_item':self.work['wikidata_id']})

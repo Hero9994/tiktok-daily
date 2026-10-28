@@ -11,7 +11,7 @@ from .cards import render, encode
 
 from .cinema_media import artwork
 from .video import make_video
-from .cinema_catalog import approve_entry
+from .cinema_catalog import approve_entry, choose as choose_cinema
 
 FOOTBALL_TEMPLATE = "featured-centred-times-standings-v5"
 CINEMA_TEMPLATE = "cinema-reference-v2"
@@ -153,6 +153,8 @@ class Publisher:
                 raise RuntimeError("Unfinished post's publishing time has passed; review it manually")
         previous = [e for k, e in entries.items() if k != key and any(e.get(f) for f in ("idea", "subject_id", "subject_imdb", "subject_wikidata"))]
         if entry["status"] == "planned":
+            if self.c.get('content_mode')=='cinema' and self.c.get('cinema_curated_only'):
+                choose_cinema(self.c,day,previous,1)  # Fail locally before moderation or reserving a paid attempt.
             if not static_football(self.c):
                 self.generator.moderate(self.c["theme"])
             generated = None

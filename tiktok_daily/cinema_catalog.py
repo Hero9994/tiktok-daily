@@ -47,6 +47,12 @@ def used(work, previous):
                for e in previous)
 
 
+def availability(c,day,previous):
+    works=catalog(c,day)
+    remaining=[w for w in works if not used(w,previous)]
+    return {'eligible':len(works),'remaining':len(remaining),'used':len(works)-len(remaining)}
+
+
 def choose(c, day, previous, attempt):
     available = [w for w in catalog(c,day) if not used(w, previous)]
     if not available:

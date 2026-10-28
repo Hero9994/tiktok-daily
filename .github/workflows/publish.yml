@@ -61,6 +61,7 @@ jobs:
         if: inputs.mode == 'prepare' || inputs.mode == 'publish-test' || inputs.mode == 'publish-correction' || inputs.mode == 'publish-preview' || inputs.mode == 'maintain' || github.event_name == 'schedule'
         run: command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - name: Run publisher
+        id: publisher
         env:
           MODE_INPUT: ${{ inputs.mode }}
           TRACK_INPUT: ${{ inputs.track }}
@@ -80,6 +81,24 @@ jobs:
           track="${TRACK_INPUT:-cinema}"
           if [ -n "$EVENT_SCHEDULE" ]; then mode=maintain; fi
           python -m tiktok_daily "$mode" --track "$track" --correction-id "${CORRECTION_INPUT:-}" --preview-id "${PREVIEW_INPUT:-}" --post-id "${POST_INPUT:-}"
+      - name: Warn before reviewed cinema catalogue runs out
+        if: ${{ always() && steps.publisher.outputs.cinema_remaining != '' }}
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+        env:
+          CINEMA_REMAINING: ${{ steps.publisher.outputs.cinema_remaining }}
+        with:
+          script: |
+            const remaining = Number(process.env.CINEMA_REMAINING);
+            const title = 'Daily TikTok: reviewed cinema catalogue running low';
+            const issues = await github.paginate(github.rest.issues.listForRepo, { ...context.repo, state: 'open', creator: 'github-actions[bot]', per_page: 100 });
+            const issue = issues.find(x => !x.pull_request && x.title === title);
+            if (remaining > 7) {
+              if (issue) await github.rest.issues.update({ ...context.repo, issue_number: issue.number, state: 'closed' });
+            } else {
+              const body = `بقي ${remaining} عملًا مؤهلًا غير منشور. أضف أعمالًا مراجعة قبل نفاد القائمة، مع شروط الجودة والعمر والمحتوى الجنسي ومنع التكرار. لا تخفف الشروط تلقائيًا.`;
+              if (issue && issue.body !== body) await github.rest.issues.update({ ...context.repo, issue_number: issue.number, body });
+              else if (!issue) await github.rest.issues.create({ ...context.repo, title, body });
+            }
       - name: Alert on failure
         if: failure()
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
