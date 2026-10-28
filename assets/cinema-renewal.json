@@ -1,1 +1,83 @@
-{}
+{
+  "next_page": 1,
+  "attempted": {
+    "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/forgiveness-girl": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/it-takes-a-village": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/skyking": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Missing verified release year"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/she-dances": {
+      "day": "2026-10-28",
+      "result": "added",
+      "imdb_id": "tt31193382"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/lee-cronins-the-mummy": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/summers-last-resort": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/72-hours": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-paradise-murders": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/last-shot": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "No matching Wikipedia/Wikidata/IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/made-in-korea": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-get-out": {
+      "day": "2026-10-28",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    }
+  },
+  "last_run": "2026-10-28",
+  "no_addition_runs": 0,
+  "last_report": {
+    "status": "checked",
+    "day": "2026-10-28",
+    "checked": 12,
+    "added": 1,
+    "source_errors": 0,
+    "inventory": {
+      "total": 107,
+      "arabic": 68,
+      "foreign": 39,
+      "films": 42,
+      "series": 65
+    },
+    "extra_openai_requests": 0,
+    "needs_attention": false
+  }
+}

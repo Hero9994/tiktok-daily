@@ -2616,6 +2616,38 @@
       "content_review_basis": "synopsis_and_genre",
       "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
       "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+    },
+    {
+      "name": "She Dances",
+      "imdb_id": "tt31193382",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/she-dances",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "occasional_mature",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/she-dances",
+        "text": "A dance mom relentlessly flirts with Jason, inviting him to join her for meals and drinks. She also makes excuses to touch him. Another adult man complains that the touchy-feely moms rubbed his thigh and trousers.",
+        "level": 1,
+        "sha256": "95ecfc2d3533e98a3d7132152b56bbb82a940af492bb2a6df130573b9bb6268c"
+      },
+      "wikipedia_title": "She Dances",
+      "wikipedia_pageid": 79971296,
+      "wikidata_id": "Q133886207",
+      "wiki_language": "en",
+      "release_year": 2025,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/f/f1/She_Dances_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/She_Dances",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q133886207.json"
+      },
+      "reviewed_at": "2026-10-28",
+      "automatic_review": true
     }
   ]
 }
