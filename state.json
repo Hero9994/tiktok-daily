@@ -5701,7 +5701,7 @@
       "day": "2026-10-28",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-28T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-28T11:10:24.806448Z",
       "image_attempts": 1,
       "idea": "A luminous cityscape where flowing water and warm firelight meet in a quiet, colorful dance.",
@@ -5800,8 +5800,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f63e07f4e56c7f64596b445d4b22146664efb71e/videos/2026-10-28-c16702bbd0.mp4",
       "attempted_at": "2026-10-28T11:08:55.163029Z",
       "post_id": "6ae1d8410629f83868824f4e",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-28T14:31:38.610488Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-28T17:01:16.509144Z",
+      "sent_at": "2026-10-28T15:07:16.300Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7701734688037080353"
     }
   },
   "image_requests": {
