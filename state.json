@@ -5701,7 +5701,7 @@
       "due_at": "2026-10-28T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-28T11:10:24.806448Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A luminous cityscape where flowing water and warm firelight meet in a quiet, colorful dance.",
       "prompt": "Create original abstract cinematic art inspired by an animated romantic comedy-drama: a graceful ribbon of glowing amber firelight curling beside translucent blue water currents, their colors blending above a softly illuminated stylized city of geometric shapes. Dreamlike, warm, playful, polished 3D animation aesthetic; no people, faces, text, logos, or recognizable characters. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area visually calm for an Arabic information panel.",
       "title": "Elemental",
