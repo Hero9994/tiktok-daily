@@ -5887,6 +5887,14 @@
       "post_id": "6ae34d3ede8ae9204f33a8d0",
       "buffer_status": "sending",
       "last_checked_at": "2026-10-29T13:42:34.326241Z"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-29:cinema": {
+      "day": "2026-10-29",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-29T15:00:00Z",
+      "status": "planned",
+      "created_at": "2026-10-29T13:42:35.976104Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
