@@ -5894,7 +5894,7 @@
       "day": "2026-10-29",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-29T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-29T13:42:35.976104Z",
       "image_attempts": 1,
       "idea": "A tense geometric cityscape where amber light and deep shadows suggest the pulse of Egyptian crime-action cinema.",
@@ -6006,8 +6006,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/514451493c69a64fb1f0d3decc9bf4cfb6907678/videos/2026-10-29-1df10ee03a.mp4",
       "attempted_at": "2026-10-29T13:41:04.135470Z",
       "post_id": "6ae34d6a1ba8b3df26e993b7",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-29T13:43:06.288780Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-29T17:19:54.013666Z",
+      "sent_at": "2026-10-29T15:05:42.557Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7702105119520820512"
     }
   },
   "image_requests": {
