@@ -2648,6 +2648,38 @@
       },
       "reviewed_at": "2026-10-28",
       "automatic_review": true
+    },
+    {
+      "name": "K-POPS!",
+      "imdb_id": "tt19896510",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/k-pops",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "occasional_mature",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/k-pops",
+        "text": "Plot begins with a couple falling in love; they kiss passionately in a way that's played for comedy, and an animated montage demonstrates that they were a couple in a monogamous relationship until an argument led to a breakup (and, unbeknownst to one of them, a baby). Yeji wears a dress that shows cleavage and her upper thigh. Recurring joke about a flirtatious couple cooking together and using words to describe food preparation that carry strong innuendo (i.e., \"he wants to pork you\"), with the humor coming from the misinterpretation.",
+        "level": 2,
+        "sha256": "42c05edf73581f744f6863b588608518a63168f252a122775dd6583ee7389b03"
+      },
+      "wikipedia_title": "K-Pops!",
+      "wikipedia_pageid": 77342463,
+      "wikidata_id": "Q127414328",
+      "wiki_language": "en",
+      "release_year": 2024,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/6/6f/K-Pops%21_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/K-Pops!",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q127414328.json"
+      },
+      "reviewed_at": "2026-10-29",
+      "automatic_review": true
     }
   ]
 }
