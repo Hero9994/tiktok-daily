@@ -5892,7 +5892,7 @@
       "day": "2026-10-29",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-29T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-29T13:42:35.976104Z",
       "image_attempts": 1,
       "idea": "A tense geometric cityscape where amber light and deep shadows suggest the pulse of Egyptian crime-action cinema.",
@@ -5979,7 +5979,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي أفلام الجريمة والحركة المصرية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-29-1df10ee03a-art.jpg",
+      "image_file": "2026-10-29-1df10ee03a-1.jpg",
+      "image_sha256": "df0415a860ea878eef12dcde397877ccdaab9fbc969736a07870fbab81a8c6d9",
+      "image_dhash": "4e9e812d58383aa1",
+      "image_assets": [
+        {
+          "file": "2026-10-29-1df10ee03a-1.jpg",
+          "sha256": "df0415a860ea878eef12dcde397877ccdaab9fbc969736a07870fbab81a8c6d9"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
