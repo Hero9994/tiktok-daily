@@ -5894,7 +5894,7 @@
       "due_at": "2026-10-29T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-29T13:42:35.976104Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A tense geometric cityscape where amber light and deep shadows suggest the pulse of Egyptian crime-action cinema.",
       "prompt": "Create original abstract cinematic artwork inspired by Egyptian crime-action film: layered geometric city forms at night, sharp amber light cutting through deep navy shadows, subtle motion conveyed by sweeping light trails, no people, no weapons, no violence, no logos, no recognizable copyrighted characters, no text. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower area visually quiet for an Arabic information panel. Not a poster copy.",
       "title": "ولاد رزق",
