@@ -5892,9 +5892,94 @@
       "day": "2026-10-29",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-29T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-29T13:42:35.976104Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A tense geometric cityscape where amber light and deep shadows suggest the pulse of Egyptian crime-action cinema.",
+      "prompt": "Create original abstract cinematic artwork inspired by Egyptian crime-action film: layered geometric city forms at night, sharp amber light cutting through deep navy shadows, subtle motion conveyed by sweeping light trails, no people, no weapons, no violence, no logos, no recognizable copyrighted characters, no text. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower area visually quiet for an Arabic information panel. Not a poster copy.",
+      "title": "ولاد رزق",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم مصري من نوع الجريمة والحركة.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم مصري من نوع الجريمة والحركة.",
+      "subject_id": "wikipedia-ar:2796775",
+      "subject_title": "ولاد رزق (فلم)",
+      "summary": "فيلم مصري من نوع الجريمة والحركة.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D9%88%D9%84%D8%A7%D8%AF_%D8%B1%D8%B2%D9%82_(%D9%81%D9%84%D9%85)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/4/45/Welad_rizk.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2015"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "مصر"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.6 / 10"
+          }
+        ],
+        "genres": [
+          "فلم جريمة",
+          "فلم أكشن",
+          "فلم دراما"
+        ],
+        "cast": [
+          {
+            "name": "أحمد عز",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ahmed%20Ezz%20-%20Carvel%20Venture%20Group%2C%20LTD.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q4695807"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q22928491",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q22928491",
+      "subject_imdb": "tt4840206",
+      "subject_elcinema": "2027294",
+      "cinema_review": {
+        "wikipedia_title": "ولاد رزق (فلم)",
+        "wikipedia_pageid": 2796775,
+        "wikidata_id": "Q22928491",
+        "imdb_id": "tt4840206",
+        "wiki_language": "ar",
+        "release_year": 2015,
+        "kind": "film",
+        "language": "ar",
+        "elcinema_id": "2027294",
+        "review_url": "https://elcinema.com/work/2027294/",
+        "critic_rating": 7.6,
+        "rating_votes_lower_bound": 418,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_779243c14757d8c4c715ba34f4115f07e794480ffca02ca376ca3d8e5b2008d6.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب محبي أفلام الجريمة والحركة المصرية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
