@@ -6280,7 +6280,7 @@
       "day": "2026-10-30",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-30T16:50:32.441682Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-30T16:50:32.441682Z",
       "image_attempts": 1,
       "idea": "An abstract portrait of Earth’s wild habitats as luminous, layered islands suspended above a deep blue horizon.",
@@ -6389,8 +6389,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f7b392b7fb74c3691d4a3c3cc0164295d02f9779/videos/2026-10-30-bb58d63681.mp4",
       "attempted_at": "2026-10-30T16:49:06.829724Z",
       "post_id": "6ae4cafccd8290b9b9ff7360",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-10-30T16:51:18.799757Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-30T16:57:14.490480Z",
+      "sent_at": "2026-10-30T16:52:52.217Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7702504522928753953"
     }
   },
   "image_requests": {
