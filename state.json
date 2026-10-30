@@ -6010,6 +6010,14 @@
       "last_checked_at": "2026-10-29T17:19:54.013666Z",
       "sent_at": "2026-10-29T15:05:42.557Z",
       "external_link": "https://tiktok.com/@tk.player7/video/7702105119520820512"
+    },
+    "6ace9df3778b240e2ffd7494:2026-10-30:football": {
+      "day": "2026-10-30",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-10-30T16:49:37.400908Z",
+      "status": "planned",
+      "created_at": "2026-10-30T16:49:37.400908Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
