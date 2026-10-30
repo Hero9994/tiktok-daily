@@ -6278,9 +6278,91 @@
       "day": "2026-10-30",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-30T16:50:32.441682Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-30T16:50:32.441682Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract portrait of Earth’s wild habitats as luminous, layered islands suspended above a deep blue horizon.",
+      "prompt": "Create original abstract cinematic artwork inspired by a nature documentary: luminous, layered habitat forms suggesting mountains, forests, oceans, and deserts, arranged like floating islands above a deep blue horizon. Use rich natural textures, atmospheric light, and a sense of planetary scale. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area uncluttered for an Arabic information panel. No people, animals shown in danger, violence, text, logos, or recognizable copyrighted imagery.",
+      "title": "Planet Earth II",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nسلسلة وثائقية بريطانية عن الطبيعة، تأتي تتمةً لسلسلة Planet Earth التي عُرضت عام 2006.\n\n#مسلسلات #أفلام #سينما #ترشيحات #ماذا_تشاهد\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد"
+      ],
+      "description": "سلسلة وثائقية بريطانية عن الطبيعة، تأتي تتمةً لسلسلة Planet Earth التي عُرضت عام 2006.",
+      "subject_id": "wikipedia-en:50305017",
+      "subject_title": "Planet Earth II",
+      "summary": "سلسلة وثائقية بريطانية عن الطبيعة، تأتي تتمةً لسلسلة Planet Earth التي عُرضت عام 2006.",
+      "source_url": "https://en.wikipedia.org/wiki/Planet_Earth_II",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/87/219457.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "تقييم TVmaze",
+            "value": "8.9 / 10"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2016"
+          },
+          {
+            "label": "المواسم",
+            "value": "1"
+          },
+          {
+            "label": "الحلقات",
+            "value": "6"
+          },
+          {
+            "label": "المدة",
+            "value": "60 دقيقة"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "فلم وثائقي عن الطبيعة",
+          "فلم وثائقي"
+        ],
+        "cast": [
+          {
+            "name": "David Attenborough",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/6/15322.jpg",
+            "source_url": "https://www.tvmaze.com/people/50409/david-attenborough"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q24034578",
+        "tvmaze_url": "https://www.tvmaze.com/shows/22036/planet-earth-ii"
+      },
+      "subject_wikidata": "Q24034578",
+      "subject_imdb": "tt5491994",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Planet Earth II",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/planet-earth-ii",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 50305017,
+        "wikidata_id": "Q24034578",
+        "imdb_id": "tt5491994",
+        "kind": "series",
+        "rating_source": "Common Sense Media",
+        "review_note": "No sexual imagery reported; nature narration discusses reproduction.",
+        "release_year": 2016
+      },
+      "watch_reason": "قد تناسب محبي السلاسل الوثائقية عن الطبيعة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
