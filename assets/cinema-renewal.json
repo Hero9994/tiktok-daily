@@ -1,5 +1,5 @@
 {
-  "next_page": 2,
+  "next_page": 3,
   "attempted": {
     "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
       "day": "2026-10-28",
@@ -120,13 +120,73 @@
       "day": "2026-10-29",
       "result": "rejected",
       "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/adventures-of-the-naked-umbrella": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-good-half": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/widow-clicquot": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/beats-rhymes-life-the-travels-of-a-tribe-called-quest": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-heartbreak-agency": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/unexpected-0": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/who-we-become": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/gentlemans-agreement": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Older than age limit without verified Top 200 evidence"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-oath-0": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/i-am-t-rex": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/drawing-closer": {
+      "day": "2026-10-31",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/epic-tails": {
+      "day": "2026-10-31",
+      "result": "added",
+      "imdb_id": "tt22360682"
     }
   },
-  "last_run": "2026-10-29",
+  "last_run": "2026-10-31",
   "no_addition_runs": 0,
   "last_report": {
     "status": "checked",
-    "day": "2026-10-29",
+    "day": "2026-10-31",
     "checked": 12,
     "added": 1,
     "source_errors": 0,
@@ -134,8 +194,8 @@
       "total": 107,
       "arabic": 67,
       "foreign": 40,
-      "films": 42,
-      "series": 65
+      "films": 43,
+      "series": 64
     },
     "extra_openai_requests": 0,
     "needs_attention": false

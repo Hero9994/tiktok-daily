@@ -2680,6 +2680,38 @@
       },
       "reviewed_at": "2026-10-29",
       "automatic_review": true
+    },
+    {
+      "name": "Epic Tails",
+      "imdb_id": "tt22360682",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/epic-tails",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "occasional_mature",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/epic-tails",
+        "text": "A cyclops' bottom is exposed when a character pulls down its pants.",
+        "level": 1,
+        "sha256": "ead15f05caabad6dd7921264918caec2bddcdbd5fbf042ab0184ea0f1ed04690"
+      },
+      "wikipedia_title": "Pattie and the Wrath of Poseidon",
+      "wikipedia_pageid": 79385788,
+      "wikidata_id": "Q108071369",
+      "wiki_language": "en",
+      "release_year": 2023,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/1/1d/Pattie_and_the_Wrath_of_Poseidon.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/Pattie_and_the_Wrath_of_Poseidon",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q108071369.json"
+      },
+      "reviewed_at": "2026-10-31",
+      "automatic_review": true
     }
   ]
 }
