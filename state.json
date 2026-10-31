@@ -6532,9 +6532,104 @@
       "day": "2026-10-31",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-31T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-10-31T13:53:06.601164Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract Syrian drama mood piece built around deep crimson light, layered architectural shadows, and a quiet cinematic atmosphere.",
+      "prompt": "Create original abstract cinematic art inspired by the mood of a Syrian television drama: a rich crimson glow spreading across layered geometric shadows and softly suggested architectural forms, restrained and contemplative atmosphere, elegant film-lighting, no people, no logos, no text, no violence, not resembling any official artwork. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "أحمر",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل درامي سوري من إنتاج عام 2016.\n\n#مسلسلات #سينما #ترشيحات #أفلام #ماذا_تشاهد\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#أفلام",
+        "#ماذا_تشاهد"
+      ],
+      "description": "مسلسل درامي سوري من إنتاج عام 2016.",
+      "subject_id": "wikipedia-ar:3282838",
+      "subject_title": "أحمر (مسلسل)",
+      "summary": "مسلسل درامي سوري من إنتاج عام 2016.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%B1_(%D9%85%D8%B3%D9%84%D8%B3%D9%84)",
+      "cinema_details": {
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_efce9b1690de53238eb279a0edd9e0d7b6b36e1d8d970f3976e5b712b472d2b7.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "سوريا"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2016"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.2 / 10"
+          }
+        ],
+        "genres": [
+          "دراما",
+          "جريمة"
+        ],
+        "cast": [
+          {
+            "name": "عباس النوري",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Abbas%20Al%20Noory.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q1638056"
+          },
+          {
+            "name": "سلاف فواخرجي",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sulaf%20Fawakherji%202.png?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q4120512"
+          },
+          {
+            "name": "ديمة قندلفت",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sarkhat%20Rouh%20E01%20P02%2C%200709%20%28Dima%20Kandalaft%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q5277135"
+          },
+          {
+            "name": "رفيق علي أحمد",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rafic%20Ali%20Ahmad%2C%20MTV%20Lebanon%20-%20Jun%2013%2C%202019.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q12213592"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q28717401",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q28717401",
+      "subject_imdb": null,
+      "subject_elcinema": "2040948",
+      "cinema_review": {
+        "wikipedia_title": "أحمر (مسلسل)",
+        "wikipedia_pageid": 3282838,
+        "wikidata_id": "Q28717401",
+        "imdb_id": null,
+        "wiki_language": "ar",
+        "release_year": 2016,
+        "kind": "series",
+        "language": "ar",
+        "elcinema_id": "2040948",
+        "review_url": "https://elcinema.com/work/2040948/",
+        "critic_rating": 7.2,
+        "rating_votes_lower_bound": 27,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_efce9b1690de53238eb279a0edd9e0d7b6b36e1d8d970f3976e5b712b472d2b7.jpg",
+        "production_country": "SY",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب محبي المسلسلات الدرامية السورية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
