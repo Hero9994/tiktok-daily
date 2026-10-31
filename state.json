@@ -6532,7 +6532,7 @@
       "day": "2026-10-31",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-31T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-10-31T13:53:06.601164Z",
       "image_attempts": 1,
       "idea": "An abstract Syrian drama mood piece built around deep crimson light, layered architectural shadows, and a quiet cinematic atmosphere.",
@@ -6629,7 +6629,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي المسلسلات الدرامية السورية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-10-31-f6d0fa24c8-art.jpg",
+      "image_file": "2026-10-31-f6d0fa24c8-1.jpg",
+      "image_sha256": "ee22f47844c4852948cae6619087f72b94d17ba23357009dc9b6a74e0c6a54ed",
+      "image_dhash": "86ba617239337e98",
+      "image_assets": [
+        {
+          "file": "2026-10-31-f6d0fa24c8-1.jpg",
+          "sha256": "ee22f47844c4852948cae6619087f72b94d17ba23357009dc9b6a74e0c6a54ed"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
