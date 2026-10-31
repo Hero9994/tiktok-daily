@@ -6534,7 +6534,7 @@
       "day": "2026-10-31",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-10-31T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-10-31T13:53:06.601164Z",
       "image_attempts": 1,
       "idea": "An abstract Syrian drama mood piece built around deep crimson light, layered architectural shadows, and a quiet cinematic atmosphere.",
@@ -6656,8 +6656,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/b0e1e6599fbc1676c1bdfe562f39dda9ee98993e/videos/2026-10-31-f6d0fa24c8.mp4",
       "attempted_at": "2026-10-31T13:51:35.326952Z",
       "post_id": "6ae5f2e0cf3a3112f3a5d0aa",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-10-31T13:53:37.030358Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-10-31T15:57:56.322788Z",
+      "sent_at": "2026-10-31T15:02:18.378Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7702847082129886496"
     }
   },
   "image_requests": {
