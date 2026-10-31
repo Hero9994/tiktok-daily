@@ -6534,7 +6534,7 @@
       "due_at": "2026-10-31T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-10-31T13:53:06.601164Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract Syrian drama mood piece built around deep crimson light, layered architectural shadows, and a quiet cinematic atmosphere.",
       "prompt": "Create original abstract cinematic art inspired by the mood of a Syrian television drama: a rich crimson glow spreading across layered geometric shadows and softly suggested architectural forms, restrained and contemplative atmosphere, elegant film-lighting, no people, no logos, no text, no violence, not resembling any official artwork. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower area visually quiet for an Arabic information panel.",
       "title": "أحمر",
