@@ -6748,9 +6748,82 @@
       "day": "2026-11-01",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-01T16:25:28.411778Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-01T16:25:28.411778Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A vivid geometric cityscape balancing superheroic energy with the warmth of family life.",
+      "prompt": "Create original abstract cinematic art inspired by an animated superhero adventure: a bright geometric city skyline, dynamic arcs of light, and interlocking colorful shapes suggesting public trust and family balance. Use a playful, polished animation-inspired visual style without depicting people, characters, logos, or text. Keep all focal elements within the upper 65% and central 80% of the frame, leaving the lower area calm and uncluttered for an Arabic information panel.",
+      "title": "Incredibles 2",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nتحاول عائلة الخارقين استعادة ثقة الجمهور بالأبطال الخارقين، مع موازنة حياتهم العائلية.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "تحاول عائلة الخارقين استعادة ثقة الجمهور بالأبطال الخارقين، مع موازنة حياتهم العائلية.",
+      "subject_id": "wikipedia-en:39502474",
+      "subject_title": "Incredibles 2",
+      "summary": "تحاول عائلة الخارقين استعادة ثقة الجمهور بالأبطال الخارقين، مع موازنة حياتهم العائلية.",
+      "source_url": "https://en.wikipedia.org/wiki/Incredibles_2",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/1/1f/Incredibles_2_%282018_animated_film%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2018"
+          },
+          {
+            "label": "المدة",
+            "value": "118 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم أكشن",
+          "فلم كوميدي",
+          "فلم مغامرة"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q24832112",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q24832112",
+      "subject_imdb": "tt3606756",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Incredibles 2",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/incredibles-2",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 39502474,
+        "wikidata_id": "Q24832112",
+        "imdb_id": "tt3606756",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "Content guide reports mild affection, romance or verbal references; no explicit sexual scenes or nudity.",
+        "release_year": 2018
+      },
+      "watch_reason": "قد يناسب محبي أفلام الأبطال الخارقين والرسوم المتحركة ذات الطابع العائلي.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
