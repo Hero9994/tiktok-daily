@@ -6728,7 +6728,11 @@
         }
       ],
       "football_template": "featured-centred-times-standings-v5",
-      "cinema_template": null
+      "cinema_template": null,
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/48b155e91bf0c06c8a3d0f2fdd0e96b3abcc54e3/images/2026-11-01-d5ef135ce7-1.jpg",
+      "image_urls": [
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/48b155e91bf0c06c8a3d0f2fdd0e96b3abcc54e3/images/2026-11-01-d5ef135ce7-1.jpg"
+      ]
     }
   },
   "image_requests": {
