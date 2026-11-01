@@ -6665,7 +6665,7 @@
       "day": "2026-11-01",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-01T16:24:44.228123Z",
-      "status": "image_ready",
+      "status": "submitting",
       "created_at": "2026-11-01T16:24:44.228123Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-11-02",
@@ -6738,7 +6738,8 @@
       "video_fingerprint": "7d2c872a94f1b91f90095c51dae7cfd2bc8aa9034416c386ef5fb26ee2ebb56e",
       "music_file": "assets/audio/sports.m4a",
       "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb",
-      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/e4fc48e0f738d6b095fc852bd27fa509dd1b6faf/videos/2026-11-01-d5ef135ce7.mp4"
+      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/e4fc48e0f738d6b095fc852bd27fa509dd1b6faf/videos/2026-11-01-d5ef135ce7.mp4",
+      "attempted_at": "2026-11-01T16:23:12.315197Z"
     }
   },
   "image_requests": {
