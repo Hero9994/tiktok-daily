@@ -6748,7 +6748,7 @@
       "day": "2026-11-01",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-01T16:25:28.411778Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-01T16:25:28.411778Z",
       "image_attempts": 1,
       "idea": "A vivid geometric cityscape balancing superheroic energy with the warmth of family life.",
@@ -6823,7 +6823,19 @@
         "release_year": 2018
       },
       "watch_reason": "قد يناسب محبي أفلام الأبطال الخارقين والرسوم المتحركة ذات الطابع العائلي.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-01-c4f96468f7-art.jpg",
+      "image_file": "2026-11-01-c4f96468f7-1.jpg",
+      "image_sha256": "aac859a0ba22059f33e7d9945809ae6aec13064ebb6ce77c94c4eb994fbe821f",
+      "image_dhash": "c082883c363d3df8",
+      "image_assets": [
+        {
+          "file": "2026-11-01-c4f96468f7-1.jpg",
+          "sha256": "aac859a0ba22059f33e7d9945809ae6aec13064ebb6ce77c94c4eb994fbe821f"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
