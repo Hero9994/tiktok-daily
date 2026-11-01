@@ -6748,7 +6748,7 @@
       "day": "2026-11-01",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-01T16:25:28.411778Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-11-01T16:25:28.411778Z",
       "image_attempts": 1,
       "idea": "A vivid geometric cityscape balancing superheroic energy with the warmth of family life.",
@@ -6846,7 +6846,10 @@
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/bbcf5c3e1d5cdb3a540f5aab2f752e7ad594062a/videos/2026-11-01-c4f96468f7.mp4",
-      "attempted_at": "2026-11-01T16:23:59.361640Z"
+      "attempted_at": "2026-11-01T16:23:59.361640Z",
+      "post_id": "6ae768198755094b8292e739",
+      "buffer_status": "sending",
+      "last_checked_at": "2026-11-01T16:26:11.351772Z"
     }
   },
   "image_requests": {
