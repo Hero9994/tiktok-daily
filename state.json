@@ -6999,7 +6999,7 @@
       "day": "2026-11-02",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-02T18:50:14.420338Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-02T18:50:14.420338Z",
       "image_attempts": 1,
       "idea": "An original, contemplative visual homage to Egyptian cinema: a quiet arrangement of geometric window light and layered city colors, suggesting a film world without depicting a specific scene.",
@@ -7113,8 +7113,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/faeaae044e569efea80d3c4463e725bc235bff35/videos/2026-11-02-c96902e6df.mp4",
       "attempted_at": "2026-11-02T18:48:45.838923Z",
       "post_id": "6ae8db88a1cb4345beff450e",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-02T18:50:59.431804Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-02T20:38:48.384613Z",
+      "sent_at": "2026-11-02T18:52:31.907Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7703648608322686241"
     }
   },
   "image_requests": {
