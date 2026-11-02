@@ -6997,9 +6997,96 @@
       "day": "2026-11-02",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-02T18:50:14.420338Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-02T18:50:14.420338Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An original, contemplative visual homage to Egyptian cinema: a quiet arrangement of geometric window light and layered city colors, suggesting a film world without depicting a specific scene.",
+      "prompt": "Create original abstract cinematic art inspired by Egyptian cinema, using layered warm city colors, geometric window-light patterns, and subtle film-grain texture. No people, actors, logos, text, recognizable copyrighted characters, or violence. Keep all focal elements within the upper 65% and central 80% of the frame, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "نوارة",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم مصري أُنتج عام 2015، من تأليف وإخراج هالة خليل.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم مصري أُنتج عام 2015، من تأليف وإخراج هالة خليل.",
+      "subject_id": "wikipedia-ar:3006493",
+      "subject_title": "نوارة (فلم)",
+      "summary": "فيلم مصري أُنتج عام 2015، من تأليف وإخراج هالة خليل.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D9%86%D9%88%D8%A7%D8%B1%D8%A9_(%D9%81%D9%84%D9%85)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/2/22/%D9%81%D9%8A%D9%84%D9%85_%D9%86%D9%88%D8%A7%D8%B1%D9%87.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2015"
+          },
+          {
+            "label": "المدة",
+            "value": "122 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "مصر"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.9 / 10"
+          }
+        ],
+        "genres": [
+          "فلم دراما"
+        ],
+        "cast": [
+          {
+            "name": "منة شلبي",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Menna%20Shalabi%202017%20%28facecrop%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q3139171"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q22690420",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q22690420",
+      "subject_imdb": "tt5461168",
+      "subject_elcinema": "2040092",
+      "cinema_review": {
+        "wikipedia_title": "نوارة (فلم)",
+        "wikipedia_pageid": 3006493,
+        "wikidata_id": "Q22690420",
+        "imdb_id": "tt5461168",
+        "wiki_language": "ar",
+        "release_year": 2015,
+        "kind": "film",
+        "language": "ar",
+        "elcinema_id": "2040092",
+        "review_url": "https://elcinema.com/work/2040092/",
+        "critic_rating": 7.9,
+        "rating_votes_lower_bound": 149,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_88e526ce2019cb849d93affec34d91469c2141ab7b9fa81fe888b79f5ec6310d.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب المهتمين بالأفلام المصرية وبأعمال هالة خليل.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
