@@ -6859,7 +6859,7 @@
       "day": "2026-11-02",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-02T18:49:30.422733Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-11-02T18:49:30.422733Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-11-03",
@@ -6988,7 +6988,10 @@
       "music_file": "assets/audio/sports.m4a",
       "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/1c147b611feabb68d457111363c7c951eae8d50f/videos/2026-11-02-ebfc8bb5da.mp4",
-      "attempted_at": "2026-11-02T18:47:59.884037Z"
+      "attempted_at": "2026-11-02T18:47:59.884037Z",
+      "post_id": "6ae8db59752c1c9052c6ec80",
+      "buffer_status": "sending",
+      "last_checked_at": "2026-11-02T18:50:11.800018Z"
     }
   },
   "image_requests": {
