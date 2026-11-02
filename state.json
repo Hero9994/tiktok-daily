@@ -6999,7 +6999,7 @@
       "due_at": "2026-11-02T18:50:14.420338Z",
       "status": "content_ready",
       "created_at": "2026-11-02T18:50:14.420338Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An original, contemplative visual homage to Egyptian cinema: a quiet arrangement of geometric window light and layered city colors, suggesting a film world without depicting a specific scene.",
       "prompt": "Create original abstract cinematic art inspired by Egyptian cinema, using layered warm city colors, geometric window-light patterns, and subtle film-grain texture. No people, actors, logos, text, recognizable copyrighted characters, or violence. Keep all focal elements within the upper 65% and central 80% of the frame, leaving the lower area visually quiet for an Arabic information panel.",
       "title": "نوارة",
