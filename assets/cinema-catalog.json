@@ -2712,6 +2712,38 @@
       },
       "reviewed_at": "2026-10-31",
       "automatic_review": true
+    },
+    {
+      "name": "The Forgotten Battle",
+      "imdb_id": "tt10521092",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/the-forgotten-battle",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "occasional_mature",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/the-forgotten-battle",
+        "text": "Romantic relationships between some characters are implied. In one scene, men joke about how many women they've slept with.",
+        "level": 1,
+        "sha256": "ce4bb0f12fa4c9d34a685c9d97b39938f822fe2df36de9fd8f50805d5daa5457"
+      },
+      "wikipedia_title": "The Forgotten Battle",
+      "wikipedia_pageid": 67174755,
+      "wikidata_id": "Q95630703",
+      "wiki_language": "en",
+      "release_year": 2020,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/6/67/The_Forgotten_Battle_release_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/The_Forgotten_Battle",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q95630703.json"
+      },
+      "reviewed_at": "2026-11-02",
+      "automatic_review": true
     }
   ]
 }
