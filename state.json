@@ -7299,9 +7299,115 @@
       "day": "2026-11-03",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-03T18:05:25.660422Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-03T18:05:25.660422Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A surreal office corridor divided into two mirrored worlds, evoking fractured memory and dual identities.",
+      "prompt": "Create original abstract cinematic art inspired by a science-fiction psychological thriller: a minimalist corporate corridor where cool fluorescent geometry divides into two subtly different mirrored spaces, with a luminous seam suggesting split memories. No people, faces, logos, text, violence, or recognizable copyrighted elements. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "Severance",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل خيال علمي وإثارة نفسية عن موظفين خضعت ذاكرتهم للانقسام بين حياتهم في العمل وحياتهم الشخصية، فصار لكل منهم هويتان منفصلتان.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل خيال علمي وإثارة نفسية عن موظفين خضعت ذاكرتهم للانقسام بين حياتهم في العمل وحياتهم الشخصية، فصار لكل منهم هويتان منفصلتان.",
+      "subject_id": "wikipedia-en:65745435",
+      "subject_title": "Severance (TV series)",
+      "summary": "مسلسل خيال علمي وإثارة نفسية عن موظفين خضعت ذاكرتهم للانقسام بين حياتهم في العمل وحياتهم الشخصية، فصار لكل منهم هويتان منفصلتان.",
+      "source_url": "https://en.wikipedia.org/wiki/Severance_(TV_series)",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/548/1371406.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "تقييم TVmaze",
+            "value": "7.7 / 10"
+          },
+          {
+            "label": "المواسم",
+            "value": "2"
+          },
+          {
+            "label": "الحلقات",
+            "value": "19"
+          },
+          {
+            "label": "المدة",
+            "value": "48.5 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2022"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "مسلسل إثارة",
+          "إثارة نفسية",
+          "فلم دراما"
+        ],
+        "cast": [
+          {
+            "name": "Adam Scott",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/407/1018894.jpg",
+            "source_url": "https://www.tvmaze.com/people/31964/adam-scott"
+          },
+          {
+            "name": "Tramell Tillman",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/628/1570378.jpg",
+            "source_url": "https://www.tvmaze.com/people/139402/tramell-tillman"
+          },
+          {
+            "name": "Britt Lower",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/628/1570381.jpg",
+            "source_url": "https://www.tvmaze.com/people/15588/britt-lower"
+          },
+          {
+            "name": "Zach Cherry",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/628/1570380.jpg",
+            "source_url": "https://www.tvmaze.com/people/154360/zach-cherry"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q101096725",
+        "tvmaze_url": "https://www.tvmaze.com/shows/44933/severance"
+      },
+      "subject_wikidata": "Q101096725",
+      "subject_imdb": "tt11280740",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Severance (TV series)",
+        "wiki_language": "en",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/severance",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "occasional_mature",
+        "sexual_focus": false,
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 65745435,
+        "wikidata_id": "Q101096725",
+        "imdb_id": "tt11280740",
+        "kind": "series",
+        "language": "en",
+        "rating_source": "Common Sense Media",
+        "review_note": "Review reports potentially unsuitable references, intimacy, nudity or adult themes; these do not define the work. Red viewer warning is required.",
+        "release_year": 2022,
+        "warning_required": true
+      },
+      "watch_reason": "قد يناسب محبي الخيال العلمي والإثارة النفسية وأفكار الهوية والذاكرة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
