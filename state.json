@@ -7299,7 +7299,7 @@
       "day": "2026-11-03",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-03T18:05:25.660422Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-03T18:05:25.660422Z",
       "image_attempts": 1,
       "idea": "A surreal office corridor divided into two mirrored worlds, evoking fractured memory and dual identities.",
@@ -7407,7 +7407,19 @@
         "warning_required": true
       },
       "watch_reason": "قد يناسب محبي الخيال العلمي والإثارة النفسية وأفكار الهوية والذاكرة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-03-36a8e78842-art.jpg",
+      "image_file": "2026-11-03-36a8e78842-1.jpg",
+      "image_sha256": "9d76615659ed71739f817624bbc5d1f5200fcc986d0358bd8bd3a712ecbaa8ec",
+      "image_dhash": "68c89679383637f1",
+      "image_assets": [
+        {
+          "file": "2026-11-03-36a8e78842-1.jpg",
+          "sha256": "9d76615659ed71739f817624bbc5d1f5200fcc986d0358bd8bd3a712ecbaa8ec"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
