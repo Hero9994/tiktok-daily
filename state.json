@@ -7595,7 +7595,7 @@
       "day": "2026-11-04",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-04T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-04T11:34:24.405757Z",
       "image_attempts": 1,
       "idea": "An original abstract Egyptian drama-inspired composition built around a quiet, layered interior and a subtle contrast of light and shadow.",
@@ -7668,7 +7668,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي الدراما المصرية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-04-a0255db2f9-art.jpg",
+      "image_file": "2026-11-04-a0255db2f9-1.jpg",
+      "image_sha256": "c5075f1081970b5f05c7c4333ea142742d73a18d6cd5552f10a66a2c0823f8e3",
+      "image_dhash": "e091b079793f38e9",
+      "image_assets": [
+        {
+          "file": "2026-11-04-a0255db2f9-1.jpg",
+          "sha256": "c5075f1081970b5f05c7c4333ea142742d73a18d6cd5552f10a66a2c0823f8e3"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
