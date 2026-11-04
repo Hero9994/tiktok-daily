@@ -7595,7 +7595,7 @@
       "day": "2026-11-04",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-04T15:00:00Z",
-      "status": "image_ready",
+      "status": "submitting",
       "created_at": "2026-11-04T11:34:24.405757Z",
       "image_attempts": 1,
       "idea": "An original abstract Egyptian drama-inspired composition built around a quiet, layered interior and a subtle contrast of light and shadow.",
@@ -7690,7 +7690,8 @@
       "video_fingerprint": "ab79c2e9da0c1749a110fd200a8e31f517e53f668bab52cc5e8f62dc830387e3",
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
-      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f72bb3fc798b61e0c257b05247c28e1a6221d2e9/videos/2026-11-04-a0255db2f9.mp4"
+      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f72bb3fc798b61e0c257b05247c28e1a6221d2e9/videos/2026-11-04-a0255db2f9.mp4",
+      "attempted_at": "2026-11-04T11:32:52.222706Z"
     }
   },
   "image_requests": {
