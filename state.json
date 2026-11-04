@@ -7595,9 +7595,80 @@
       "day": "2026-11-04",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-04T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-04T11:34:24.405757Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An original abstract Egyptian drama-inspired composition built around a quiet, layered interior and a subtle contrast of light and shadow.",
+      "prompt": "Create original abstract cinematic artwork inspired by Egyptian television drama: a layered, atmospheric interior suggested through geometric forms, soft window light, and restrained shadows, using a nuanced warm-and-cool palette. No people, text, logos, recognizable characters, violence, or imitation of any existing poster. Keep the main visual elements within the upper 65% and central 80% of the image, leaving the lower area calm and uncluttered for an Arabic information panel.",
+      "title": "تحت السيطرة",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل درامي مصري من إنتاج عام 2015.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل درامي مصري من إنتاج عام 2015.",
+      "subject_id": "wikipedia-ar:2773544",
+      "subject_title": "تحت السيطرة (مسلسل)",
+      "summary": "مسلسل درامي مصري من إنتاج عام 2015.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%AD%D8%AA_%D8%A7%D9%84%D8%B3%D9%8A%D8%B7%D8%B1%D8%A9_(%D9%85%D8%B3%D9%84%D8%B3%D9%84)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/1/13/Ta%27t_Elsaytara.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "مصر"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2015"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.9 / 10"
+          }
+        ],
+        "genres": [],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q22686476",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q22686476",
+      "subject_imdb": null,
+      "subject_elcinema": "2034118",
+      "cinema_review": {
+        "wikipedia_title": "تحت السيطرة (مسلسل)",
+        "wikipedia_pageid": 2773544,
+        "wikidata_id": "Q22686476",
+        "imdb_id": null,
+        "wiki_language": "ar",
+        "release_year": 2015,
+        "kind": "series",
+        "language": "ar",
+        "elcinema_id": "2034118",
+        "review_url": "https://elcinema.com/work/2034118/",
+        "critic_rating": 7.9,
+        "rating_votes_lower_bound": 143,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_94d8f37736e07aa149e304139be1762ae42ff362cd406e74351fccaf641379b1.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب محبي الدراما المصرية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
