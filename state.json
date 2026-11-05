@@ -9270,7 +9270,7 @@
       "day": "2026-11-05",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-05T18:34:54.352147Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-05T18:34:54.352147Z",
       "image_attempts": 1,
       "idea": "A wordless, dreamlike floodscape where luminous currents carry small, abstract forms through a vast submerged world.",
@@ -9345,7 +9345,19 @@
         "release_year": 2024
       },
       "watch_reason": "قد تناسب محبي مغامرات الرسوم المتحركة وأجواء ما بعد الكارثة الصامتة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-05-42b4c4575c-art.jpg",
+      "image_file": "2026-11-05-42b4c4575c-1.jpg",
+      "image_sha256": "bd153b233f825a8bb7c183712b6090e66c6f7939c733f7d5aa199a65112bc456",
+      "image_dhash": "809c883a3c363adc",
+      "image_assets": [
+        {
+          "file": "2026-11-05-42b4c4575c-1.jpg",
+          "sha256": "bd153b233f825a8bb7c183712b6090e66c6f7939c733f7d5aa199a65112bc456"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
