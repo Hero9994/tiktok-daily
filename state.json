@@ -9272,7 +9272,7 @@
       "due_at": "2026-11-05T18:34:54.352147Z",
       "status": "content_ready",
       "created_at": "2026-11-05T18:34:54.352147Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A wordless, dreamlike floodscape where luminous currents carry small, abstract forms through a vast submerged world.",
       "prompt": "Create original abstract cinematic artwork inspired by a dialogue-free animated dystopian adventure: a sweeping expanse of rising blue-green water, distant half-submerged geometric architecture, and a few small floating shapes suggesting a journey and companionship without depicting identifiable animals or people. Atmospheric light, painterly textures, quiet sense of wonder and uncertainty. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the bottom area uncluttered for an Arabic information panel. No text, logos, poster layout, recognizable characters, people, or violence.",
       "title": "Flow",
