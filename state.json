@@ -9270,9 +9270,82 @@
       "day": "2026-11-05",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-05T18:34:54.352147Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-05T18:34:54.352147Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A wordless, dreamlike floodscape where luminous currents carry small, abstract forms through a vast submerged world.",
+      "prompt": "Create original abstract cinematic artwork inspired by a dialogue-free animated dystopian adventure: a sweeping expanse of rising blue-green water, distant half-submerged geometric architecture, and a few small floating shapes suggesting a journey and companionship without depicting identifiable animals or people. Atmospheric light, painterly textures, quiet sense of wonder and uncertainty. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the bottom area uncluttered for an Arabic information panel. No text, logos, poster layout, recognizable characters, people, or violence.",
+      "title": "Flow",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمغامرة رسوم متحركة بلا حوار، تدور في عالم يبدو ما بعد الكارثة حيث تحاول قطة النجاة مع حيوانات أخرى فيما يرتفع منسوب المياه.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "مغامرة رسوم متحركة بلا حوار، تدور في عالم يبدو ما بعد الكارثة حيث تحاول قطة النجاة مع حيوانات أخرى فيما يرتفع منسوب المياه.",
+      "subject_id": "wikipedia-en:76884533",
+      "subject_title": "Flow (2024 film)",
+      "summary": "مغامرة رسوم متحركة بلا حوار، تدور في عالم يبدو ما بعد الكارثة حيث تحاول قطة النجاة مع حيوانات أخرى فيما يرتفع منسوب المياه.",
+      "source_url": "https://en.wikipedia.org/wiki/Flow_(2024_film)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/2/2d/Flow_movie_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2024"
+          },
+          {
+            "label": "المدة",
+            "value": "80 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "لاتفيا"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "no linguistic content"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "فلم مغامرة",
+          "فلم عائلي",
+          "فلم خيال"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q125622088",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q125622088",
+      "subject_imdb": "tt4772188",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Flow (2024 film)",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/flow",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 76884533,
+        "wikidata_id": "Q125622088",
+        "imdb_id": "tt4772188",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "Content guide reports no sexual material.",
+        "release_year": 2024
+      },
+      "watch_reason": "قد تناسب محبي مغامرات الرسوم المتحركة وأجواء ما بعد الكارثة الصامتة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
