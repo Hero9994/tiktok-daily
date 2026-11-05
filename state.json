@@ -9272,7 +9272,7 @@
       "day": "2026-11-05",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-05T18:34:54.352147Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-05T18:34:54.352147Z",
       "image_attempts": 1,
       "idea": "A wordless, dreamlike floodscape where luminous currents carry small, abstract forms through a vast submerged world.",
@@ -9372,8 +9372,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/a1ad83bbc9ff45ad2a0303997797953d6e145e47/videos/2026-11-05-42b4c4575c.mp4",
       "attempted_at": "2026-11-05T18:33:23.384419Z",
       "post_id": "6aeccc6db943974e731a27cd",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-05T18:35:35.301678Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-05T18:50:51.766355Z",
+      "sent_at": "2026-11-05T18:37:07.741Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7704757897850375456"
     }
   },
   "image_requests": {
