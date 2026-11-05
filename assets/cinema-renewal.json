@@ -1,5 +1,5 @@
 {
-  "next_page": 4,
+  "next_page": 5,
   "attempted": {
     "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
       "day": "2026-10-28",
@@ -235,22 +235,82 @@
       "day": "2026-11-02",
       "result": "rejected",
       "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-dust-bowl": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/pets-united": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/pink-wall": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/any-day-now": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/rags": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-case-against-8": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/transcendence": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/judas-and-the-black-messiah": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/portrait-of-a-lady-on-fire": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Sexual-content guide needs manual review"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/keith": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/tiny-toon-adventures-how-i-spent-my-vacation": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-way-way-back": {
+      "day": "2026-11-05",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
     }
   },
-  "last_run": "2026-11-02",
-  "no_addition_runs": 0,
+  "last_run": "2026-11-05",
+  "no_addition_runs": 1,
   "last_report": {
     "status": "checked",
-    "day": "2026-11-02",
+    "day": "2026-11-05",
     "checked": 12,
-    "added": 1,
+    "added": 0,
     "source_errors": 0,
     "inventory": {
-      "total": 106,
-      "arabic": 66,
-      "foreign": 40,
-      "films": 43,
-      "series": 63
+      "total": 103,
+      "arabic": 64,
+      "foreign": 39,
+      "films": 42,
+      "series": 61
     },
     "extra_openai_requests": 0,
     "needs_attention": false
