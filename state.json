@@ -9624,7 +9624,7 @@
       "due_at": "2026-11-06T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-11-06T11:29:10.392779Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract cinematic study of an island-shaped shadow emerging from layered archival-paper textures, evoking a film sequel inspired by a real story.",
       "prompt": "Create original abstract cinematic artwork: a solitary island-like silhouette formed from layered paper and subtle ink washes, with restrained Egyptian-inspired earth tones and a thoughtful, dramatic atmosphere. No people, violence, logos, recognizable characters, or text. Keep all focal elements within the upper 65% and central 80% of the canvas; leave the bottom area uncluttered for an Arabic information panel.",
       "title": "الجزيرة 2",
