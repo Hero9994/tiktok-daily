@@ -9622,7 +9622,7 @@
       "day": "2026-11-06",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-06T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-06T11:29:10.392779Z",
       "image_attempts": 1,
       "idea": "An abstract cinematic study of an island-shaped shadow emerging from layered archival-paper textures, evoking a film sequel inspired by a real story.",
@@ -9707,7 +9707,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب من يفضل الأفلام المستوحاة من قصص حقيقية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-06-a60a71c90c-art.jpg",
+      "image_file": "2026-11-06-a60a71c90c-1.jpg",
+      "image_sha256": "54488a68ebce643a25b119991cafdef059bf896425297b37fd4f7f8a60b2a431",
+      "image_dhash": "4e9e8138381a79e4",
+      "image_assets": [
+        {
+          "file": "2026-11-06-a60a71c90c-1.jpg",
+          "sha256": "54488a68ebce643a25b119991cafdef059bf896425297b37fd4f7f8a60b2a431"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
