@@ -9622,9 +9622,92 @@
       "day": "2026-11-06",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-06T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-06T11:29:10.392779Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract cinematic study of an island-shaped shadow emerging from layered archival-paper textures, evoking a film sequel inspired by a real story.",
+      "prompt": "Create original abstract cinematic artwork: a solitary island-like silhouette formed from layered paper and subtle ink washes, with restrained Egyptian-inspired earth tones and a thoughtful, dramatic atmosphere. No people, violence, logos, recognizable characters, or text. Keep all focal elements within the upper 65% and central 80% of the canvas; leave the bottom area uncluttered for an Arabic information panel.",
+      "title": "الجزيرة 2",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم مصري من عام 2014، الجزء الثاني من فيلم الجزيرة (2007)، ومستوحى من قصة عزت حنفي.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم مصري من عام 2014، الجزء الثاني من فيلم الجزيرة (2007)، ومستوحى من قصة عزت حنفي.",
+      "subject_id": "wikipedia-ar:2091880",
+      "subject_title": "الجزيرة 2 (فلم)",
+      "summary": "فيلم مصري من عام 2014، الجزء الثاني من فيلم الجزيرة (2007)، ومستوحى من قصة عزت حنفي.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%B2%D9%8A%D8%B1%D8%A9_2_(%D9%81%D9%84%D9%85)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/8/84/Aljazera.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2014"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "مصر"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "8.1 / 10"
+          }
+        ],
+        "genres": [
+          "فلم جريمة"
+        ],
+        "cast": [
+          {
+            "name": "أحمد السقا",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ahmed%20Elsaqa%20in%20Dubai%20-%20ElMaslaha%20Premiere.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q4166668"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q20417487",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q20417487",
+      "subject_imdb": "tt4067084",
+      "subject_elcinema": "2020240",
+      "cinema_review": {
+        "wikipedia_title": "الجزيرة 2 (فلم)",
+        "wikipedia_pageid": 2091880,
+        "wikidata_id": "Q20417487",
+        "imdb_id": "tt4067084",
+        "wiki_language": "ar",
+        "release_year": 2014,
+        "kind": "film",
+        "language": "ar",
+        "elcinema_id": "2020240",
+        "review_url": "https://elcinema.com/work/2020240/",
+        "critic_rating": 8.1,
+        "rating_votes_lower_bound": 398,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_a1c51c3656e80a902cf70f7bd04a1553c20fe74a5e38a3ee25532c807a2ad03d.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب من يفضل الأفلام المستوحاة من قصص حقيقية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
