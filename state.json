@@ -9624,7 +9624,7 @@
       "day": "2026-11-06",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-06T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-06T11:29:10.392779Z",
       "image_attempts": 1,
       "idea": "An abstract cinematic study of an island-shaped shadow emerging from layered archival-paper textures, evoking a film sequel inspired by a real story.",
@@ -9734,8 +9734,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f0079767d6e16ab544d0ff5a8d4206a8b0adda29/videos/2026-11-06-a60a71c90c.mp4",
       "attempted_at": "2026-11-06T11:27:39.053765Z",
       "post_id": "6aedba24342c8dd800923336",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-11-06T11:29:40.733894Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-06T17:50:15.730857Z",
+      "sent_at": "2026-11-06T15:03:23.175Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7705074016372952352"
     }
   },
   "image_requests": {
