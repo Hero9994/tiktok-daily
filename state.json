@@ -9984,9 +9984,107 @@
       "day": "2026-11-07",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-07T16:38:58.323796Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-07T16:38:58.323796Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A twilight forest transformed into a mysterious maze of autumn leaves, lantern-glow, and winding paths, evoking a dark fantasy journey home.",
+      "prompt": "Create original abstract cinematic art inspired by a dark fantasy animated miniseries: a mysterious autumn forest at twilight, layered crooked tree shapes, a winding path disappearing into soft mist, and a few warm lantern-like glows among deep blue and amber foliage. No people, characters, creatures, logos, lettering, or recognizable copyrighted imagery. Keep the main visual focal elements within the upper 65% and central 80% of the canvas, leaving the lower area visually quiet for an Arabic information panel. Atmospheric, storybook-like, painterly composition.",
+      "title": "Over the Garden Wall",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل رسوم متحركة فانتازي مظلم عن أخوين غير شقيقين يشقان طريقهما عبر غابة غامضة بحثًا عن العودة إلى المنزل.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل رسوم متحركة فانتازي مظلم عن أخوين غير شقيقين يشقان طريقهما عبر غابة غامضة بحثًا عن العودة إلى المنزل.",
+      "subject_id": "wikipedia-en:42145060",
+      "subject_title": "Over the Garden Wall",
+      "summary": "مسلسل رسوم متحركة فانتازي مظلم عن أخوين غير شقيقين يشقان طريقهما عبر غابة غامضة بحثًا عن العودة إلى المنزل.",
+      "source_url": "https://en.wikipedia.org/wiki/Over_the_Garden_Wall",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/221/554447.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "تقييم TVmaze",
+            "value": "8.1 / 10"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2014"
+          },
+          {
+            "label": "المواسم",
+            "value": "1"
+          },
+          {
+            "label": "الحلقات",
+            "value": "10"
+          },
+          {
+            "label": "المدة",
+            "value": "11 دقيقة"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فنتازيا",
+          "دراما تاريخية",
+          "مسلسل كوميدي"
+        ],
+        "cast": [
+          {
+            "name": "Elijah Wood",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/590/1475570.jpg",
+            "source_url": "https://www.tvmaze.com/people/49197/elijah-wood"
+          },
+          {
+            "name": "Collin Dean",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/590/1475569.jpg",
+            "source_url": "https://www.tvmaze.com/people/38656/collin-dean"
+          },
+          {
+            "name": "Melanie Lynskey",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/9/24288.jpg",
+            "source_url": "https://www.tvmaze.com/people/26158/melanie-lynskey"
+          },
+          {
+            "name": "Christopher Lloyd",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/9/24287.jpg",
+            "source_url": "https://www.tvmaze.com/people/12006/christopher-lloyd"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q17065414",
+        "tvmaze_url": "https://www.tvmaze.com/shows/1744/over-the-garden-wall"
+      },
+      "subject_wikidata": "Q17065414",
+      "subject_imdb": "tt3718778",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Over the Garden Wall",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/over-the-garden-wall",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 42145060,
+        "wikidata_id": "Q17065414",
+        "imdb_id": "tt3718778",
+        "kind": "series",
+        "rating_source": "Common Sense Media",
+        "review_note": "Content guide reports no sexual material.",
+        "release_year": 2014
+      },
+      "watch_reason": "قد يستمتع به محبو الفانتازيا المظلمة وحكايات الرحلات الغامضة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
