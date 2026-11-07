@@ -9984,7 +9984,7 @@
       "day": "2026-11-07",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-07T16:38:58.323796Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-07T16:38:58.323796Z",
       "image_attempts": 1,
       "idea": "A twilight forest transformed into a mysterious maze of autumn leaves, lantern-glow, and winding paths, evoking a dark fantasy journey home.",
@@ -10084,7 +10084,19 @@
         "release_year": 2014
       },
       "watch_reason": "قد يستمتع به محبو الفانتازيا المظلمة وحكايات الرحلات الغامضة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-07-3bf4de009f-art.jpg",
+      "image_file": "2026-11-07-3bf4de009f-1.jpg",
+      "image_sha256": "d2632c7dece6ce3fc8ff9e7ad22fe0f6daf8518604b2764cc7414d5f4d9b474d",
+      "image_dhash": "9093389c583c38c8",
+      "image_assets": [
+        {
+          "file": "2026-11-07-3bf4de009f-1.jpg",
+          "sha256": "d2632c7dece6ce3fc8ff9e7ad22fe0f6daf8518604b2764cc7414d5f4d9b474d"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
