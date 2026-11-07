@@ -9986,7 +9986,7 @@
       "day": "2026-11-07",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-07T16:38:58.323796Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-07T16:38:58.323796Z",
       "image_attempts": 1,
       "idea": "A twilight forest transformed into a mysterious maze of autumn leaves, lantern-glow, and winding paths, evoking a dark fantasy journey home.",
@@ -10111,8 +10111,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/3fb9cfe344e2df9a4246dd40dd1892ceb9793326/videos/2026-11-07-3bf4de009f.mp4",
       "attempted_at": "2026-11-07T16:37:27.560873Z",
       "post_id": "6aef544151492b796eea8c31",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-07T16:39:39.584185Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-07T16:45:55.724382Z",
+      "sent_at": "2026-11-07T16:41:12.177Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7705470184718355744"
     }
   },
   "image_requests": {
