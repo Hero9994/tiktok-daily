@@ -11686,7 +11686,7 @@
       "day": "2026-11-08",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-08T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-08T13:53:18.419974Z",
       "image_attempts": 1,
       "idea": "An atmospheric abstract composition evoking an Egyptian television series through layered evening colors and subtle screen-like geometry.",
@@ -11755,7 +11755,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب من يبحثون عن مسلسل تلفزيوني مصري.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-08-f0253baeaa-art.jpg",
+      "image_file": "2026-11-08-f0253baeaa-1.jpg",
+      "image_sha256": "30ec95e8361fd67f0500a0e3ddd96a02b765014c22174dbfe03a98b16064e47d",
+      "image_dhash": "e89883787a3834c0",
+      "image_assets": [
+        {
+          "file": "2026-11-08-f0253baeaa-1.jpg",
+          "sha256": "30ec95e8361fd67f0500a0e3ddd96a02b765014c22174dbfe03a98b16064e47d"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
