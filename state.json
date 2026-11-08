@@ -11688,7 +11688,7 @@
       "due_at": "2026-11-08T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-11-08T13:53:18.419974Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An atmospheric abstract composition evoking an Egyptian television series through layered evening colors and subtle screen-like geometry.",
       "prompt": "Create original abstract cinematic artwork inspired by an Egyptian television series: layered twilight hues, a softly glowing window-like rectangle, and restrained geometric forms suggesting an intimate evening atmosphere. Sophisticated composition, subtle film-grain texture, no people, no text, no logos, no recognizable characters, no violence. Keep all focal elements within the upper 65% and central 80%, leaving the lower area visually calm for an Arabic information panel.",
       "title": "هذا المساء",
