@@ -11686,9 +11686,76 @@
       "day": "2026-11-08",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-08T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-08T13:53:18.419974Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An atmospheric abstract composition evoking an Egyptian television series through layered evening colors and subtle screen-like geometry.",
+      "prompt": "Create original abstract cinematic artwork inspired by an Egyptian television series: layered twilight hues, a softly glowing window-like rectangle, and restrained geometric forms suggesting an intimate evening atmosphere. Sophisticated composition, subtle film-grain texture, no people, no text, no logos, no recognizable characters, no violence. Keep all focal elements within the upper 65% and central 80%, leaving the lower area visually calm for an Arabic information panel.",
+      "title": "هذا المساء",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل تلفزيوني مصري عُرض في رمضان 2017.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل تلفزيوني مصري عُرض في رمضان 2017.",
+      "subject_id": "wikipedia-ar:8196300",
+      "subject_title": "هذا المساء (مسلسل)",
+      "summary": "مسلسل تلفزيوني مصري عُرض في رمضان 2017.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D9%87%D8%B0%D8%A7_%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%A1_(%D9%85%D8%B3%D9%84%D8%B3%D9%84)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/f/fd/Haza_Al_Masaa.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2017"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "8.2 / 10"
+          }
+        ],
+        "genres": [],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q106091609",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q106091609",
+      "subject_imdb": null,
+      "subject_elcinema": "2045613",
+      "cinema_review": {
+        "wikipedia_title": "هذا المساء (مسلسل)",
+        "wikipedia_pageid": 8196300,
+        "wikidata_id": "Q106091609",
+        "imdb_id": null,
+        "wiki_language": "ar",
+        "release_year": 2017,
+        "kind": "series",
+        "language": "ar",
+        "elcinema_id": "2045613",
+        "review_url": "https://elcinema.com/work/2045613/",
+        "critic_rating": 8.2,
+        "rating_votes_lower_bound": 219,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_ae728381008a467ceae523f8a9a7e903838d67725cb2142c1109cba7625fde25.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب من يبحثون عن مسلسل تلفزيوني مصري.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
