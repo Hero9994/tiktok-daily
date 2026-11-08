@@ -11688,7 +11688,7 @@
       "day": "2026-11-08",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-08T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-08T13:53:18.419974Z",
       "image_attempts": 1,
       "idea": "An atmospheric abstract composition evoking an Egyptian television series through layered evening colors and subtle screen-like geometry.",
@@ -11782,8 +11782,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/2add0de5a4f265aa74e0504f237ef38406ec1c50/videos/2026-11-08-f0253baeaa.mp4",
       "attempted_at": "2026-11-08T13:51:44.354621Z",
       "post_id": "6af07eea9214322f68580540",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-11-08T13:53:46.167547Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-08T16:56:05.594108Z",
+      "sent_at": "2026-11-08T15:01:22.245Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7705815769375837472"
     }
   },
   "image_requests": {
