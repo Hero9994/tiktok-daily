@@ -1,5 +1,5 @@
 {
-  "next_page": 7,
+  "next_page": 8,
   "attempted": {
     "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
       "day": "2026-10-28",
@@ -415,22 +415,82 @@
       "day": "2026-11-07",
       "result": "rejected",
       "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/peter-rabbit": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/rendition": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/a-christmas-story-live": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/cruel-intentions-3": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/miss-kiets-children": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/talk-to-me": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/dont-sleep": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-midnight-meat-train": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/my-bloody-valentine-1981": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/bad-samaritan": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-faculty": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/dolores": {
+      "day": "2026-11-08",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
     }
   },
-  "last_run": "2026-11-07",
-  "no_addition_runs": 3,
+  "last_run": "2026-11-08",
+  "no_addition_runs": 4,
   "last_report": {
     "status": "checked",
-    "day": "2026-11-07",
+    "day": "2026-11-08",
     "checked": 12,
     "added": 0,
     "source_errors": 0,
     "inventory": {
-      "total": 101,
-      "arabic": 63,
-      "foreign": 38,
+      "total": 99,
+      "arabic": 62,
+      "foreign": 37,
       "films": 40,
-      "series": 61
+      "series": 59
     },
     "extra_openai_requests": 0,
     "needs_attention": true
