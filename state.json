@@ -10122,7 +10122,7 @@
       "due_at": "2026-11-08T13:52:01.207442Z",
       "status": "content_ready",
       "created_at": "2026-11-08T13:52:01.207442Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "Verified current big-five standings dc2e151d1b2980d9",
       "prompt": "Bundled approved black and gold stadium",
       "title": "ترتيب الدوريات الخمسة الكبرى",
