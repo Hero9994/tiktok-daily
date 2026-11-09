@@ -11791,7 +11791,7 @@
       "day": "2026-11-09",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-09T13:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-09T12:06:44.671907Z",
       "image_attempts": 1,
       "idea": "Verified current big-five standings dd77acee75241e3a",
@@ -13305,7 +13305,35 @@
         "selected_count": 5,
         "excluded_count": 0
       },
-      "source_url": "https://www.football-data.org/"
+      "source_url": "https://www.football-data.org/",
+      "hero_file": "2026-11-09-6b9777560b-art.jpg",
+      "image_file": "2026-11-09-6b9777560b-1.jpg",
+      "image_sha256": "4fee1a9e2bf7a3abe273a0f1f3c907ee48f38ea2a1d2e8ba65c863079366dd7d",
+      "image_dhash": "9d0d8b9b890d138f",
+      "image_assets": [
+        {
+          "file": "2026-11-09-6b9777560b-1.jpg",
+          "sha256": "4fee1a9e2bf7a3abe273a0f1f3c907ee48f38ea2a1d2e8ba65c863079366dd7d"
+        },
+        {
+          "file": "2026-11-09-6b9777560b-2.jpg",
+          "sha256": "1b61694541611c417d67ceb46905c81cc16f9a0a4e23b87340cb340e71b9c7ca"
+        },
+        {
+          "file": "2026-11-09-6b9777560b-3.jpg",
+          "sha256": "e7335f2dc9c60ae678117a8ec1dcec4c1fad43c5ac45ebbcac513d57b4928613"
+        },
+        {
+          "file": "2026-11-09-6b9777560b-4.jpg",
+          "sha256": "79612f53e80273e477625c5d4b125876ecb49f5719fd6e6b38b3aafe63d52ff8"
+        },
+        {
+          "file": "2026-11-09-6b9777560b-5.jpg",
+          "sha256": "d361234dccdf0a9f56d184e88259b10ade8efaefc980d53e32514ea9c4c0b684"
+        }
+      ],
+      "football_template": "featured-centred-times-standings-v5",
+      "cinema_template": null
     }
   },
   "image_requests": {
