@@ -13357,9 +13357,107 @@
       "day": "2026-11-09",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-09T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-09T12:08:07.566602Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract desert-sci-fi landscape where immense dunes meet a distant celestial glow, evoking epic scale and political intrigue.",
+      "prompt": "Create original abstract cinematic art inspired by epic space opera: vast sculptural desert dunes, a distant luminous celestial orb, and subtle geometric forms suggesting an ancient, far-reaching civilization. Atmospheric, monumental, restrained palette of sand, deep blue, and warm gold. No people, faces, logos, text, violence, or recognizable copyrighted elements. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "Dune: Part Two",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nملحمة خيال علمي عن وريث منفي يتحالف مع الفريمن لمواجهة آل هاركونن، فيما يسعى إلى بلوغ مكانة مسيحانية.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "ملحمة خيال علمي عن وريث منفي يتحالف مع الفريمن لمواجهة آل هاركونن، فيما يسعى إلى بلوغ مكانة مسيحانية.",
+      "subject_id": "wikipedia-en:63790171",
+      "subject_title": "Dune: Part Two",
+      "summary": "ملحمة خيال علمي عن وريث منفي يتحالف مع الفريمن لمواجهة آل هاركونن، فيما يسعى إلى بلوغ مكانة مسيحانية.",
+      "source_url": "https://en.wikipedia.org/wiki/Dune%3A_Part_Two",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/5/52/Dune_Part_Two_poster.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2024"
+          },
+          {
+            "label": "المدة",
+            "value": "165 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم خيال علمي",
+          "فلم أكشن",
+          "فلم مغامرة"
+        ],
+        "cast": [
+          {
+            "name": "تيموثي شالاميه",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Timoth%C3%A9e%20Chalamet-63541%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q19877770"
+          },
+          {
+            "name": "زيندايا",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zendaya-byPhilipRomano.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q189489"
+          },
+          {
+            "name": "ريبيكا فيرغسون",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rebecca%20Ferguson%20A%20House%20of%20Dynamite-67%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q4947838"
+          },
+          {
+            "name": "خافيير باردم",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MJK%2071654%20Javier%20Bardem%20%28The%20Roads%20Not%20Taken%2C%20Berlinale%202020%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q134895"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q109228991",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q109228991",
+      "subject_imdb": "tt15239678",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Dune: Part Two",
+        "wiki_language": "en",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/dune-part-two",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "occasional_mature",
+        "sexual_focus": false,
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 63790171,
+        "wikidata_id": "Q109228991",
+        "imdb_id": "tt15239678",
+        "kind": "film",
+        "language": "en",
+        "rating_source": "Common Sense Media",
+        "review_note": "Review reports potentially unsuitable references, intimacy, nudity or adult themes; these do not define the work. Red viewer warning is required.",
+        "release_year": 2024,
+        "warning_required": true
+      },
+      "watch_reason": "قد يناسب محبي ملاحم الخيال العلمي والصراعات ذات الطابع السياسي.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
