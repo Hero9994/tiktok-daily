@@ -13599,7 +13599,12 @@
       "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/1823dd1de02c14edea9db4c3ed8b84587a7e0915/images/2026-11-10-545d8dcdfc-1.jpg",
       "image_urls": [
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/1823dd1de02c14edea9db4c3ed8b84587a7e0915/images/2026-11-10-545d8dcdfc-1.jpg"
-      ]
+      ],
+      "video_file": "2026-11-10-545d8dcdfc.mp4",
+      "video_sha256": "877018ced5ef9e861f466384f4821b00a50d417c1243c284c8a15d7a5c25c076",
+      "video_fingerprint": "31bc55b5916dc038301b112e329b2ece3df3b8205abcaeeb18a1e64171ba1b32",
+      "music_file": "assets/audio/cinema.m4a",
+      "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd"
     }
   },
   "image_requests": {
