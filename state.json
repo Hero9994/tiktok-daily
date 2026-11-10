@@ -13493,9 +13493,97 @@
       "day": "2026-11-10",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-10T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-10T12:57:59.070469Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An original visual metaphor for Egyptian social comedy: colorful geometric shapes gathering around an oversized, playful form, balancing warmth with gentle humor.",
+      "prompt": "Create original abstract cinematic artwork inspired by Egyptian social comedy, using a playful oversized geometric form surrounded by smaller colorful shapes, warm lighting, and a lively yet refined composition. No people, faces, text, logos, or recognizable copyrighted characters. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower area visually quiet for an Arabic information panel.",
+      "title": "إكس لارج",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم اجتماعي كوميدي مصري صدر عام 2011.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم اجتماعي كوميدي مصري صدر عام 2011.",
+      "subject_id": "wikipedia-ar:1167667",
+      "subject_title": "إكس لارج (فلم)",
+      "summary": "فيلم اجتماعي كوميدي مصري صدر عام 2011.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D8%A5%D9%83%D8%B3_%D9%84%D8%A7%D8%B1%D8%AC_(%D9%81%D9%84%D9%85)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/b/bc/%D8%BA%D9%84%D8%A7%D9%81_%D8%A5%D9%83%D8%B3_%D9%84%D8%A7%D8%B1%D8%AC_%282011%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2011"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "مصر"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.8 / 10"
+          }
+        ],
+        "genres": [
+          "كوميديا رومانسية"
+        ],
+        "cast": [
+          {
+            "name": "أحمد حلمي",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ahmed%20Helmy%20in%20Sawiris%202018.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q591801"
+          },
+          {
+            "name": "دنيا سمير غانم",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donia%20Samir%20Ghanem.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q4119541"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q4276742",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q4276742",
+      "subject_imdb": "tt2156807",
+      "subject_elcinema": "1242904",
+      "cinema_review": {
+        "wikipedia_title": "إكس لارج (فلم)",
+        "wikipedia_pageid": 1167667,
+        "wikidata_id": "Q4276742",
+        "imdb_id": "tt2156807",
+        "wiki_language": "ar",
+        "release_year": 2011,
+        "kind": "film",
+        "language": "ar",
+        "elcinema_id": "1242904",
+        "review_url": "https://elcinema.com/work/1242904/",
+        "critic_rating": 7.8,
+        "rating_votes_lower_bound": 572,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_75ffb46ed95b519c0ac408410be322dd9a8aa66c9dbd9d8f42c54fd653078b82.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب محبي الأفلام الاجتماعية والكوميديا المصرية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
