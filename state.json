@@ -13493,7 +13493,7 @@
       "day": "2026-11-10",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-10T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-10T12:57:59.070469Z",
       "image_attempts": 1,
       "idea": "An original visual metaphor for Egyptian social comedy: colorful geometric shapes gathering around an oversized, playful form, balancing warmth with gentle humor.",
@@ -13583,7 +13583,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي الأفلام الاجتماعية والكوميديا المصرية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-10-545d8dcdfc-art.jpg",
+      "image_file": "2026-11-10-545d8dcdfc-1.jpg",
+      "image_sha256": "10999220dfaf402e36f30ea33da7fa5c453d745a5c7fad5fb8d39e35551adf23",
+      "image_dhash": "74b6a87a7e3a7aa6",
+      "image_assets": [
+        {
+          "file": "2026-11-10-545d8dcdfc-1.jpg",
+          "sha256": "10999220dfaf402e36f30ea33da7fa5c453d745a5c7fad5fb8d39e35551adf23"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
