@@ -13617,7 +13617,7 @@
       "day": "2026-11-11",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-11T18:25:58.209452Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-11T18:25:58.209452Z",
       "image_attempts": 1,
       "idea": "An original abstract historical tableau: layered parchment textures, ink-wash mountains, and a quiet crimson sun suggest the sweep of a period drama.",
@@ -13725,7 +13725,19 @@
         "warning_required": true
       },
       "watch_reason": "قد يناسب محبي الدراما التاريخية المقتبسة عن الروايات.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-11-4f8d8c9233-art.jpg",
+      "image_file": "2026-11-11-4f8d8c9233-1.jpg",
+      "image_sha256": "66094d288908366baa94abbfcbfa2a9e7381719a52b8fc7a6c363cbccc67e885",
+      "image_dhash": "fada253336343cd9",
+      "image_assets": [
+        {
+          "file": "2026-11-11-4f8d8c9233-1.jpg",
+          "sha256": "66094d288908366baa94abbfcbfa2a9e7381719a52b8fc7a6c363cbccc67e885"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
