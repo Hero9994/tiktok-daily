@@ -13619,7 +13619,7 @@
       "due_at": "2026-11-11T18:25:58.209452Z",
       "status": "content_ready",
       "created_at": "2026-11-11T18:25:58.209452Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An original abstract historical tableau: layered parchment textures, ink-wash mountains, and a quiet crimson sun suggest the sweep of a period drama.",
       "prompt": "Create original abstract cinematic art inspired by historical drama: layered aged-paper textures, elegant ink-wash mountain silhouettes, subtle atmospheric haze, and a small muted crimson sun. Restrained palette of charcoal, warm ivory, and deep vermilion; refined, contemplative, cinematic composition. Keep all focal elements within the upper 65% and central 80%, leaving the lower area calm and uncluttered for an Arabic information panel. No people, text, logos, violence, official-poster imitation, or recognizable copyrighted characters.",
       "title": "Shōgun (2024)",
