@@ -13612,6 +13612,14 @@
       "last_checked_at": "2026-11-10T18:30:42.598587Z",
       "sent_at": "2026-11-10T15:03:18.587Z",
       "external_link": "https://tiktok.com/@tk.player7/video/7706558115524676896"
+    },
+    "6ace9df3778b240e2ffd7494:2026-11-11:cinema": {
+      "day": "2026-11-11",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-11-11T18:25:58.209452Z",
+      "status": "planned",
+      "created_at": "2026-11-11T18:25:58.209452Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
