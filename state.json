@@ -13617,9 +13617,115 @@
       "day": "2026-11-11",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-11T18:25:58.209452Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-11T18:25:58.209452Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An original abstract historical tableau: layered parchment textures, ink-wash mountains, and a quiet crimson sun suggest the sweep of a period drama.",
+      "prompt": "Create original abstract cinematic art inspired by historical drama: layered aged-paper textures, elegant ink-wash mountain silhouettes, subtle atmospheric haze, and a small muted crimson sun. Restrained palette of charcoal, warm ivory, and deep vermilion; refined, contemplative, cinematic composition. Keep all focal elements within the upper 65% and central 80%, leaving the lower area calm and uncluttered for an Arabic information panel. No people, text, logos, violence, official-poster imitation, or recognizable copyrighted characters.",
+      "title": "Shōgun (2024)",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل درامي تاريخي، مستند إلى رواية جيمس كلافيل الصادرة عام 1975.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل درامي تاريخي، مستند إلى رواية جيمس كلافيل الصادرة عام 1975.",
+      "subject_id": "wikipedia-en:58064471",
+      "subject_title": "Shōgun (2024 TV series)",
+      "summary": "مسلسل درامي تاريخي، مستند إلى رواية جيمس كلافيل الصادرة عام 1975.",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dgun_(2024_TV_series)",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/506/1265637.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "تقييم TVmaze",
+            "value": "8.5 / 10"
+          },
+          {
+            "label": "المواسم",
+            "value": "1"
+          },
+          {
+            "label": "الحلقات",
+            "value": "10"
+          },
+          {
+            "label": "المدة",
+            "value": "61.5 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2024"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "مسلسل مغامرات",
+          "دراما تلفزيونية",
+          "تاريخي"
+        ],
+        "cast": [
+          {
+            "name": "Cosmo Jarvis",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/491/1228891.jpg",
+            "source_url": "https://www.tvmaze.com/people/153668/cosmo-jarvis"
+          },
+          {
+            "name": "Anna Sawai",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/491/1228892.jpg",
+            "source_url": "https://www.tvmaze.com/people/248716/anna-sawai"
+          },
+          {
+            "name": "Tadanobu Asano",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/491/1228893.jpg",
+            "source_url": "https://www.tvmaze.com/people/153544/tadanobu-asano"
+          },
+          {
+            "name": "Hiroyuki Sanada",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/491/1228890.jpg",
+            "source_url": "https://www.tvmaze.com/people/1270/hiroyuki-sanada"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q56276181",
+        "tvmaze_url": "https://www.tvmaze.com/shows/37336/shogun"
+      },
+      "subject_wikidata": "Q56276181",
+      "subject_imdb": "tt2788316",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Shōgun (2024 TV series)",
+        "wiki_language": "en",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/shogun",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "occasional_mature",
+        "sexual_focus": false,
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 58064471,
+        "wikidata_id": "Q56276181",
+        "imdb_id": "tt2788316",
+        "kind": "series",
+        "language": "en",
+        "rating_source": "Common Sense Media",
+        "review_note": "Review reports potentially unsuitable references, intimacy, nudity or adult themes; these do not define the work. Red viewer warning is required.",
+        "release_year": 2024,
+        "warning_required": true
+      },
+      "watch_reason": "قد يناسب محبي الدراما التاريخية المقتبسة عن الروايات.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
