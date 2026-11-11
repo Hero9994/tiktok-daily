@@ -13617,7 +13617,7 @@
       "day": "2026-11-11",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-11T18:25:58.209452Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-11T18:25:58.209452Z",
       "image_attempts": 1,
       "idea": "An original abstract historical tableau: layered parchment textures, ink-wash mountains, and a quiet crimson sun suggest the sweep of a period drama.",
@@ -13750,8 +13750,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/f7308d073b3abbdee396239772812edbfcdac700/videos/2026-11-11-4f8d8c9233.mp4",
       "attempted_at": "2026-11-11T18:24:31.025123Z",
       "post_id": "6af4b35824e81672d797ff31",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-11T18:26:42.990913Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-11T18:45:37.818274Z",
+      "sent_at": "2026-11-11T18:28:16.017Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7706982116889808160"
     }
   },
   "image_requests": {
