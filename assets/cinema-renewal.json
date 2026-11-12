@@ -1,5 +1,5 @@
 {
-  "next_page": 10,
+  "next_page": 11,
   "attempted": {
     "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
       "day": "2026-10-28",
@@ -595,22 +595,82 @@
       "day": "2026-11-11",
       "result": "rejected",
       "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-good-german": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/city-of-angels": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/helicopter-mom": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/dreamgirls": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/regular-show-the-movie": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/north-by-northwest": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/before-sunrise": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/survivor": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/nasty-baby": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/trail-of-the-pink-panther": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-runner": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/mickey-blue-eyes": {
+      "day": "2026-11-12",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
     }
   },
-  "last_run": "2026-11-11",
-  "no_addition_runs": 6,
+  "last_run": "2026-11-12",
+  "no_addition_runs": 7,
   "last_report": {
     "status": "checked",
-    "day": "2026-11-11",
+    "day": "2026-11-12",
     "checked": 12,
     "added": 0,
     "source_errors": 0,
     "inventory": {
-      "total": 97,
-      "arabic": 61,
-      "foreign": 36,
+      "total": 95,
+      "arabic": 60,
+      "foreign": 35,
       "films": 38,
-      "series": 59
+      "series": 57
     },
     "extra_openai_requests": 0,
     "needs_attention": true
