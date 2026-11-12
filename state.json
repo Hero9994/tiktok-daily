@@ -13759,7 +13759,7 @@
       "day": "2026-11-12",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-12T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-12T13:14:33.833657Z",
       "image_attempts": 1,
       "idea": "An abstract cinematic illustration about memory and political change, using layered pages and a shifting city skyline.",
@@ -13844,7 +13844,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي الدراما التي تتناول التحولات السياسية والتاريخية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-12-a56eee762d-art.jpg",
+      "image_file": "2026-11-12-a56eee762d-1.jpg",
+      "image_sha256": "1080c06097203fc0058811befda2a9f6ac20d7a12c336431f1bee5b7f7a9a005",
+      "image_dhash": "a0988c32520751d0",
+      "image_assets": [
+        {
+          "file": "2026-11-12-a56eee762d-1.jpg",
+          "sha256": "1080c06097203fc0058811befda2a9f6ac20d7a12c336431f1bee5b7f7a9a005"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
