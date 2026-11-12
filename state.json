@@ -13761,7 +13761,7 @@
       "due_at": "2026-11-12T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-11-12T13:14:33.833657Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract cinematic illustration about memory and political change, using layered pages and a shifting city skyline.",
       "prompt": "Create original abstract cinematic artwork inspired by a serious drama about memory and political change: layered paper forms drifting above a quiet, abstract city skyline, with subtle shifts from warm dusk to cool night and a restrained, contemplative mood. No people, text, logos, flags, violence, recognizable landmarks, or official poster elements. Keep all focal elements in the upper 65% and central 80%; leave the lower area uncluttered for an Arabic information panel.",
       "title": "الندم",
