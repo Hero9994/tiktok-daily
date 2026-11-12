@@ -13759,7 +13759,7 @@
       "day": "2026-11-12",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-12T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-12T13:14:33.833657Z",
       "image_attempts": 1,
       "idea": "An abstract cinematic illustration about memory and political change, using layered pages and a shifting city skyline.",
@@ -13869,8 +13869,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/d67f47bbe6a4a7f03d54f694cbfcccfe70b2946c/videos/2026-11-12-a56eee762d.mp4",
       "attempted_at": "2026-11-12T13:13:01.289357Z",
       "post_id": "6af5bbd737794f4dae3e0ce7",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-11-12T13:15:03.839004Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-12T18:43:56.792918Z",
+      "sent_at": "2026-11-12T15:03:33.214Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7707300348410514720"
     }
   },
   "image_requests": {
