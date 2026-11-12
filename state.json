@@ -13759,9 +13759,92 @@
       "day": "2026-11-12",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-12T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-12T13:14:33.833657Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract cinematic illustration about memory and political change, using layered pages and a shifting city skyline.",
+      "prompt": "Create original abstract cinematic artwork inspired by a serious drama about memory and political change: layered paper forms drifting above a quiet, abstract city skyline, with subtle shifts from warm dusk to cool night and a restrained, contemplative mood. No people, text, logos, flags, violence, recognizable landmarks, or official poster elements. Keep all focal elements in the upper 65% and central 80%; leave the lower area uncluttered for an Arabic information panel.",
+      "title": "الندم",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل درامي سوري يتابع حكاية كاتب تلفازي في الأربعين من عمره، عبر أحداث تاريخية ومنعطفات سياسية من عام 2003 إلى 2016.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل درامي سوري يتابع حكاية كاتب تلفازي في الأربعين من عمره، عبر أحداث تاريخية ومنعطفات سياسية من عام 2003 إلى 2016.",
+      "subject_id": "wikipedia-ar:3202929",
+      "subject_title": "الندم (مسلسل)",
+      "summary": "مسلسل درامي سوري يتابع حكاية كاتب تلفازي في الأربعين من عمره، عبر أحداث تاريخية ومنعطفات سياسية من عام 2003 إلى 2016.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%86%D8%AF%D9%85_(%D9%85%D8%B3%D9%84%D8%B3%D9%84)",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/291/727865.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2016"
+          },
+          {
+            "label": "الحلقات",
+            "value": "30"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "سوريا"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "8.7 / 10"
+          }
+        ],
+        "genres": [
+          "دراما تلفزيونية",
+          "رومانسي",
+          "مسلسل حربي"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q25463401",
+        "tvmaze_url": "https://www.tvmaze.com/shows/52700/regret"
+      },
+      "subject_wikidata": "Q25463401",
+      "subject_imdb": "tt8470384",
+      "subject_elcinema": "2030780",
+      "cinema_review": {
+        "wikipedia_title": "الندم (مسلسل)",
+        "wikipedia_pageid": 3202929,
+        "wikidata_id": "Q25463401",
+        "imdb_id": "tt8470384",
+        "wiki_language": "ar",
+        "release_year": 2016,
+        "kind": "series",
+        "language": "ar",
+        "elcinema_id": "2030780",
+        "review_url": "https://elcinema.com/work/2030780/",
+        "critic_rating": 8.7,
+        "rating_votes_lower_bound": 137,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_769a0d30b445915c18835cab2ebaf1dc4e8443cf4cd8eb968f222d76d8b6e6d5.jpg",
+        "production_country": "SY",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب محبي الدراما التي تتناول التحولات السياسية والتاريخية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
