@@ -2744,6 +2744,70 @@
       },
       "reviewed_at": "2026-11-02",
       "automatic_review": true
+    },
+    {
+      "name": "The Glassworker",
+      "imdb_id": "tt5986440",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/the-glassworker",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "brief_romance_only",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/the-glassworker",
+        "text": "Characters hold hands a few times. One kiss on the cheek. One \"I love you.\"",
+        "level": 1,
+        "sha256": "62209d8a5686d1d6378dabf1c0afa35116d19974cb20566275d4e651b182abb8"
+      },
+      "wikipedia_title": "The Glassworker",
+      "wikipedia_pageid": 50042888,
+      "wikidata_id": "Q24905214",
+      "wiki_language": "en",
+      "release_year": 2024,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/d/dc/The_Glassworker_Official_Poster_2024.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/The_Glassworker",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q24905214.json"
+      },
+      "reviewed_at": "2026-11-15",
+      "automatic_review": true
+    },
+    {
+      "name": "Nouvelle Vague",
+      "imdb_id": "tt31688586",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/nouvelle-vague",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "occasional_mature",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/nouvelle-vague",
+        "text": "A scene is shot in which a woman is meant to undress; there's dialogue about who's staying to watch, and why. A woman removes something from the front of her dress (some kind of padding?). Sex-related dialogue.",
+        "level": 2,
+        "sha256": "09ba7c1323dac582ceb58f152f5a26631a585c5c4370b40b830639b5d52718ef"
+      },
+      "wikipedia_title": "Nouvelle Vague (2025 film)",
+      "wikipedia_pageid": 76269453,
+      "wikidata_id": "Q125867250",
+      "wiki_language": "en",
+      "release_year": 2025,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/a/a1/Nouvelle-Vague_teaser.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/Nouvelle_Vague_(2025_film)",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q125867250.json"
+      },
+      "reviewed_at": "2026-11-15",
+      "automatic_review": true
     }
   ]
 }
