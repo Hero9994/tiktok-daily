@@ -2808,6 +2808,38 @@
       },
       "reviewed_at": "2026-11-15",
       "automatic_review": true
+    },
+    {
+      "name": "The Naughty Nine",
+      "imdb_id": "tt16491414",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/the-naughty-nine",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "none",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/the-naughty-nine",
+        "text": "Sex, Romance & Nudity: Not present.",
+        "level": 0,
+        "sha256": "d41b2a658104ef90a0b5827e4adf129cc1b79f6c5449779da7b163058eb32c41"
+      },
+      "wikipedia_title": "The Naughty Nine",
+      "wikipedia_pageid": 74935821,
+      "wikidata_id": "Q122866058",
+      "wiki_language": "en",
+      "release_year": 2023,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/f/fa/The_Naughty_Nine_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/The_Naughty_Nine",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q122866058.json"
+      },
+      "reviewed_at": "2026-11-16",
+      "automatic_review": true
     }
   ]
 }

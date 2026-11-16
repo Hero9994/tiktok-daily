@@ -1,5 +1,5 @@
 {
-  "next_page": 2,
+  "next_page": 3,
   "attempted": {
     "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
       "day": "2026-10-28",
@@ -835,21 +835,81 @@
       "day": "2026-11-15",
       "result": "rejected",
       "reason": "Sexual-content guide needs manual review"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-lost-lotteries": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/devilreaux": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-shepherd": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/gods-country-song": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-naughty-nine": {
+      "day": "2026-11-16",
+      "result": "added",
+      "imdb_id": "tt16491414"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/operation-nation": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-old-way": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/scrambled": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Sexual-content guide needs manual review"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/seraphim-falls": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/tetris": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/leo": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "No matching Wikipedia/Wikidata/IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/despicable-me-4": {
+      "day": "2026-11-16",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
     }
   },
-  "last_run": "2026-11-15",
+  "last_run": "2026-11-16",
   "no_addition_runs": 0,
   "last_report": {
     "status": "checked",
-    "day": "2026-11-15",
+    "day": "2026-11-16",
     "checked": 12,
-    "added": 2,
+    "added": 1,
     "source_errors": 0,
     "inventory": {
-      "total": 97,
+      "total": 98,
       "arabic": 60,
-      "foreign": 37,
-      "films": 40,
+      "foreign": 38,
+      "films": 41,
       "series": 57
     },
     "extra_openai_requests": 0,
