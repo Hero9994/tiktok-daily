@@ -2840,6 +2840,38 @@
       },
       "reviewed_at": "2026-11-16",
       "automatic_review": true
+    },
+    {
+      "name": "King Richard",
+      "imdb_id": "tt9620288",
+      "kind": "film",
+      "review_url": "https://www.commonsensemedia.org/movie-reviews/king-richard",
+      "rating_source": "Common Sense Media",
+      "critic_rating": 4.0,
+      "rating_scale": 5,
+      "sex_nudity": "none",
+      "sexual_focus": false,
+      "review_note": "Automatic admission from the full editorial sexual-content guide; not a guarantee about every scene.",
+      "content_evidence": {
+        "source_url": "https://www.commonsensemedia.org/movie-reviews/king-richard",
+        "text": "Sex, Romance & Nudity: Not present.",
+        "level": 0,
+        "sha256": "aa0fe0b9f68cb17fa778ac23b39ca4902d10a7280bdd16f7184e718dab4df57f"
+      },
+      "wikipedia_title": "King Richard (film)",
+      "wikipedia_pageid": 62844912,
+      "wikidata_id": "Q84203429",
+      "wiki_language": "en",
+      "release_year": 2021,
+      "language": "en",
+      "production_country": null,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/8/86/King_Richard_poster.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "identity_evidence": {
+        "source_url": "https://en.wikipedia.org/wiki/King_Richard_(film)",
+        "wikidata_url": "https://www.wikidata.org/wiki/Special:EntityData/Q84203429.json"
+      },
+      "reviewed_at": "2026-11-17",
+      "automatic_review": true
     }
   ]
 }

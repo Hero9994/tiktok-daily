@@ -1,5 +1,5 @@
 {
-  "next_page": 3,
+  "next_page": 4,
   "attempted": {
     "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
       "day": "2026-10-28",
@@ -895,21 +895,81 @@
       "day": "2026-11-16",
       "result": "rejected",
       "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/come-true": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/warriors-of-future": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/brighton-rock-1948": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Older than age limit without verified Top 200 evidence"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-suicide-squad": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Sexual-content guide needs manual review"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-november-man": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/fever-pitch-1997": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-wonderful-stories-from-the-space-station": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/my-little-pony-a-new-generation": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/king-richard": {
+      "day": "2026-11-17",
+      "result": "added",
+      "imdb_id": "tt9620288"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-outside-story": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-hunger-games-mockingjay-part-1": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-conjuring-the-devil-made-me-do-it": {
+      "day": "2026-11-17",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
     }
   },
-  "last_run": "2026-11-16",
+  "last_run": "2026-11-17",
   "no_addition_runs": 0,
   "last_report": {
     "status": "checked",
-    "day": "2026-11-16",
+    "day": "2026-11-17",
     "checked": 12,
     "added": 1,
     "source_errors": 0,
     "inventory": {
-      "total": 98,
+      "total": 99,
       "arabic": 60,
-      "foreign": 38,
-      "films": 41,
+      "foreign": 39,
+      "films": 42,
       "series": 57
     },
     "extra_openai_requests": 0,
