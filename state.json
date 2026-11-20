@@ -14160,7 +14160,7 @@
       "day": "2026-11-20",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-20T19:19:47.975131Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-20T19:19:47.975131Z",
       "image_attempts": 1,
       "idea": "An original folklore-inspired fantasy landscape where flowing ink forests meet luminous, dreamlike skies.",
@@ -14260,8 +14260,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/05bec7809eef3180208d3ccc76f12c36c6ccbfa6/videos/2026-11-20-04d9de27e1.mp4",
       "attempted_at": "2026-11-20T19:18:16.521132Z",
       "post_id": "6b009d7273831df0147f6c7a",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-20T19:21:45.141291Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-20T19:22:16.729573Z",
+      "sent_at": "2026-11-20T19:22:01.165Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7710335740441300257"
     }
   },
   "image_requests": {
