@@ -14136,7 +14136,13 @@
         }
       ],
       "football_template": "featured-centred-times-standings-v5",
-      "cinema_template": null
+      "cinema_template": null,
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ff754f5061c1bea299625e88ee5b1c9ec5946144/images/2026-11-20-cf99c1e55f-1.jpg",
+      "image_urls": [
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ff754f5061c1bea299625e88ee5b1c9ec5946144/images/2026-11-20-cf99c1e55f-1.jpg",
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ff754f5061c1bea299625e88ee5b1c9ec5946144/images/2026-11-20-cf99c1e55f-2.jpg",
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ff754f5061c1bea299625e88ee5b1c9ec5946144/images/2026-11-20-cf99c1e55f-3.jpg"
+      ]
     }
   },
   "image_requests": {
