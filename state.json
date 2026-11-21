@@ -14459,7 +14459,7 @@
       "day": "2026-11-21",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-21T16:57:36.223588Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-21T16:57:36.223588Z",
       "image_attempts": 1,
       "idea": "An abstract historical-drama illustration: a Cairo street suggested through layered architecture and warm light, with converging paths evoking a city in upheaval.",
@@ -14565,7 +14565,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد تناسب محبي الدراما التاريخية والأعمال المرتبطة بأحداث ثورة 1919 في مصر.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-21-b6840f076a-art.jpg",
+      "image_file": "2026-11-21-b6840f076a-1.jpg",
+      "image_sha256": "d07bebc29fda46072f541fc9f5b38367529198bd613377faac6a0cce767774a2",
+      "image_dhash": "d494aa38793c38e1",
+      "image_assets": [
+        {
+          "file": "2026-11-21-b6840f076a-1.jpg",
+          "sha256": "d07bebc29fda46072f541fc9f5b38367529198bd613377faac6a0cce767774a2"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
