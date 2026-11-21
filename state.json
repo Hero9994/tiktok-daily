@@ -14459,9 +14459,113 @@
       "day": "2026-11-21",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-21T16:57:36.223588Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-21T16:57:36.223588Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract historical-drama illustration: a Cairo street suggested through layered architecture and warm light, with converging paths evoking a city in upheaval.",
+      "prompt": "Create original abstract cinematic art inspired by historical drama and the 1919 Egyptian Revolution. Suggest an early-20th-century Cairo street with layered architectural silhouettes, hazy amber light, and converging lines that evoke a city in upheaval; no people, violence, text, logos, or recognizable copyrighted imagery. Keep all focal elements within the upper 65% and central 80%, leaving the lower area uncluttered for an Arabic information panel.",
+      "title": "كيرة والجن",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nدراما تاريخية مصرية تدور في أجواء الغليان الذي شهدته البلاد مع اندلاع ثورة 1919، وتجمع مصائر كيرة والجن في النضال ضد الاحتلال البريطاني.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "دراما تاريخية مصرية تدور في أجواء الغليان الذي شهدته البلاد مع اندلاع ثورة 1919، وتجمع مصائر كيرة والجن في النضال ضد الاحتلال البريطاني.",
+      "subject_id": "wikipedia-ar:7498056",
+      "subject_title": "كيرة والجن",
+      "summary": "دراما تاريخية مصرية تدور في أجواء الغليان الذي شهدته البلاد مع اندلاع ثورة 1919، وتجمع مصائر كيرة والجن في النضال ضد الاحتلال البريطاني.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D8%B1%D8%A9_%D9%88%D8%A7%D9%84%D8%AC%D9%86",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/1/15/%D9%85%D9%84%D8%B5%D9%82_%D9%83%D9%8A%D8%B1%D8%A9_%D9%88%D8%A7%D9%84%D8%AC%D9%86_%28%D9%81%D9%8A%D9%84%D9%85%29.jpeg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2022"
+          },
+          {
+            "label": "المدة",
+            "value": "175 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "مصر"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.9 / 10"
+          }
+        ],
+        "genres": [
+          "فلم دراما",
+          "فلم تاريخي",
+          "فلم أكشن"
+        ],
+        "cast": [
+          {
+            "name": "كريم عبد العزيز",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/%D9%83%D8%B1%D9%8A%D9%85%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2.png?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q6370538"
+          },
+          {
+            "name": "أحمد عز",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ahmed%20Ezz%20-%20Carvel%20Venture%20Group%2C%20LTD.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q4695807"
+          },
+          {
+            "name": "هند صبري",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Couv-Tunivisions%20Juin%202011.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q432780"
+          },
+          {
+            "name": "سيد رجب",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sayed%20Ragab.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q16121452"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q97029944",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q97029944",
+      "subject_imdb": "tt10935956",
+      "subject_elcinema": "2058736",
+      "cinema_review": {
+        "wikipedia_title": "كيرة والجن",
+        "wikipedia_pageid": 7498056,
+        "wikidata_id": "Q97029944",
+        "imdb_id": "tt10935956",
+        "wiki_language": "ar",
+        "release_year": 2022,
+        "kind": "film",
+        "language": "ar",
+        "elcinema_id": "2058736",
+        "review_url": "https://elcinema.com/work/2058736/",
+        "critic_rating": 7.9,
+        "rating_votes_lower_bound": 462,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_002bbaee660d46fced677f8ba7b10648e9371d5a739d16e211bc8571503c5b9f.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد تناسب محبي الدراما التاريخية والأعمال المرتبطة بأحداث ثورة 1919 في مصر.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
