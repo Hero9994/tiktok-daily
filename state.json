@@ -14461,7 +14461,7 @@
       "due_at": "2026-11-21T16:57:36.223588Z",
       "status": "content_ready",
       "created_at": "2026-11-21T16:57:36.223588Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract historical-drama illustration: a Cairo street suggested through layered architecture and warm light, with converging paths evoking a city in upheaval.",
       "prompt": "Create original abstract cinematic art inspired by historical drama and the 1919 Egyptian Revolution. Suggest an early-20th-century Cairo street with layered architectural silhouettes, hazy amber light, and converging lines that evoke a city in upheaval; no people, violence, text, logos, or recognizable copyrighted imagery. Keep all focal elements within the upper 65% and central 80%, leaving the lower area uncluttered for an Arabic information panel.",
       "title": "كيرة والجن",
