@@ -14461,7 +14461,7 @@
       "day": "2026-11-21",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-21T16:57:36.223588Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-21T16:57:36.223588Z",
       "image_attempts": 1,
       "idea": "An abstract historical-drama illustration: a Cairo street suggested through layered architecture and warm light, with converging paths evoking a city in upheaval.",
@@ -14592,8 +14592,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/56d6290baf743f4c20a05d6aa64268c989eb49ca/videos/2026-11-21-b6840f076a.mp4",
       "attempted_at": "2026-11-21T16:56:04.736468Z",
       "post_id": "6b01cd9e8bd84d5966041547",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-21T16:58:16.760892Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-21T17:53:38.334423Z",
+      "sent_at": "2026-11-21T16:59:52.391Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7710670179390262560"
     }
   },
   "image_requests": {
