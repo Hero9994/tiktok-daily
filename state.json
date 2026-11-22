@@ -16169,7 +16169,7 @@
       "day": "2026-11-22",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-22T18:03:12.244387Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-22T18:03:12.244387Z",
       "image_attempts": 1,
       "idea": "An eerie threshold between a quiet small-town night and an uncanny cosmic dimension, expressed through mist, geometric light, and a palette of deep blue and ember red.",
@@ -16298,8 +16298,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/20c638d140c3b714eca3a478b623131b2fb17d7f/videos/2026-11-22-847cbc5a87.mp4",
       "attempted_at": "2026-11-22T18:01:42.145516Z",
       "post_id": "6b032e7fd864a01105e41577",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-22T18:03:54.068896Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-22T18:15:59.263076Z",
+      "sent_at": "2026-11-22T18:07:16.941Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7711058560704138529"
     }
   },
   "image_requests": {
