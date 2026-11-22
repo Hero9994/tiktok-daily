@@ -16167,9 +16167,111 @@
       "day": "2026-11-22",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-22T18:03:12.244387Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-22T18:03:12.244387Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An eerie threshold between a quiet small-town night and an uncanny cosmic dimension, expressed through mist, geometric light, and a palette of deep blue and ember red.",
+      "prompt": "Create original abstract cinematic artwork inspired by supernatural science-fiction mystery and horror: a quiet, empty small-town street suggested by simplified silhouettes of rooftops, with a luminous geometric rift in the distant sky and delicate drifting mist. Use deep midnight blue, muted violet, and restrained ember-red light; atmospheric, suspenseful, elegant, entirely fictional. No people, characters, logos, text, violence, or recognizable copyrighted imagery. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower portion visually quiet for an Arabic information panel.",
+      "title": "Stranger Things",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل أمريكي يمزج الرعب والخيال العلمي والغموض والعناصر الخارقة للطبيعة والدراما وحكايات النضج.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل أمريكي يمزج الرعب والخيال العلمي والغموض والعناصر الخارقة للطبيعة والدراما وحكايات النضج.",
+      "subject_id": "wikipedia-en:46301800",
+      "subject_title": "Stranger Things",
+      "summary": "مسلسل أمريكي يمزج الرعب والخيال العلمي والغموض والعناصر الخارقة للطبيعة والدراما وحكايات النضج.",
+      "source_url": "https://en.wikipedia.org/wiki/Stranger_Things",
+      "cinema_details": {
+        "poster_url": "https://static.tvmaze.com/uploads/images/original_untouched/595/1489169.jpg",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "تقييم TVmaze",
+            "value": "8.4 / 10"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2016"
+          },
+          {
+            "label": "المواسم",
+            "value": "5"
+          },
+          {
+            "label": "الحلقات",
+            "value": "42"
+          },
+          {
+            "label": "المدة",
+            "value": "96 دقيقة"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "science fiction television series",
+          "مسلسل رعب",
+          "دراما تلفزيونية"
+        ],
+        "cast": [
+          {
+            "name": "Winona Ryder",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506062.jpg",
+            "source_url": "https://www.tvmaze.com/people/45771/winona-ryder"
+          },
+          {
+            "name": "Caleb McLaughlin",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506089.jpg",
+            "source_url": "https://www.tvmaze.com/people/15786/caleb-mclaughlin"
+          },
+          {
+            "name": "Finn Wolfhard",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506088.jpg",
+            "source_url": "https://www.tvmaze.com/people/49095/finn-wolfhard"
+          },
+          {
+            "name": "Gaten Matarazzo",
+            "image_url": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506079.jpg",
+            "source_url": "https://www.tvmaze.com/people/83372/gaten-matarazzo"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q19798734",
+        "tvmaze_url": "https://www.tvmaze.com/shows/2993/stranger-things"
+      },
+      "subject_wikidata": "Q19798734",
+      "subject_imdb": "tt4574334",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Stranger Things",
+        "wiki_language": "en",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/stranger-things",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "occasional_mature",
+        "sexual_focus": false,
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 46301800,
+        "wikidata_id": "Q19798734",
+        "imdb_id": "tt4574334",
+        "kind": "series",
+        "language": "en",
+        "rating_source": "Common Sense Media",
+        "review_note": "Review reports potentially unsuitable references, intimacy, nudity or adult themes; these do not define the work. Red viewer warning is required.",
+        "release_year": 2016,
+        "warning_required": true
+      },
+      "watch_reason": "قد يناسب محبي الرعب والخيال العلمي والغموض والأجواء الخارقة للطبيعة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
