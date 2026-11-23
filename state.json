@@ -16456,7 +16456,7 @@
       "due_at": "2026-11-23T20:32:16.800980Z",
       "status": "content_ready",
       "created_at": "2026-11-23T20:32:16.800980Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract Egyptian family home at dusk, its branching corridors symbolizing shared responsibility and complicated family bonds.",
       "prompt": "Create original abstract cinematic artwork inspired by an Egyptian social family drama: a quiet geometric home interior at dusk, branching corridors and interwoven shadows suggesting family ties and responsibility, warm amber light against deep teal, refined dramatic composition, subtle film grain. Keep all focal elements within the upper 65% and central 80%, leaving the lower area calm and uncluttered for an Arabic information panel. No people, faces, text, logos, violence, or recognizable copyrighted imagery.",
       "title": "البرنس",
