@@ -16449,6 +16449,14 @@
         ]
       },
       "source_url": "https://www.football-data.org/"
+    },
+    "6ace9df3778b240e2ffd7494:2026-11-23:cinema": {
+      "day": "2026-11-23",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-11-23T20:32:16.800980Z",
+      "status": "planned",
+      "created_at": "2026-11-23T20:32:16.800980Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
