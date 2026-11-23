@@ -16307,7 +16307,7 @@
       "day": "2026-11-23",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-23T22:28:16.945786Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-23T20:32:08.968451Z",
       "image_attempts": 2,
       "idea": "Official tomorrow football fixtures 2026-11-24",
@@ -16441,7 +16441,7 @@
           }
         ],
         "date_mode": "tomorrow",
-        "checked_at": "2026-11-23T20:32:14.076569+00:00",
+        "checked_at": "2026-11-23T22:28:22.971519+00:00",
         "source_url": "https://www.football-data.org/",
         "sources": [
           "football-data.org",
@@ -16449,7 +16449,23 @@
         ]
       },
       "source_url": "https://www.football-data.org/",
-      "original_due_at": "2026-11-23T20:32:08.968451Z"
+      "original_due_at": "2026-11-23T20:32:08.968451Z",
+      "hero_file": "2026-11-23-7890573063-art.jpg",
+      "image_file": "2026-11-23-7890573063-1.jpg",
+      "image_sha256": "15250b013204f1d8f5124647d91c3d21c2d8b001281f316bce5820fb934c68d9",
+      "image_dhash": "9d1513371713178d",
+      "image_assets": [
+        {
+          "file": "2026-11-23-7890573063-1.jpg",
+          "sha256": "15250b013204f1d8f5124647d91c3d21c2d8b001281f316bce5820fb934c68d9"
+        },
+        {
+          "file": "2026-11-23-7890573063-2.jpg",
+          "sha256": "56594e6311a19381188f3d01c7467489f599fd6bd25999a994b544ac61d3abb3"
+        }
+      ],
+      "football_template": "featured-centred-times-standings-v5",
+      "cinema_template": null
     },
     "6ace9df3778b240e2ffd7494:2026-11-23:cinema": {
       "day": "2026-11-23",
