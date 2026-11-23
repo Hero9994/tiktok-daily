@@ -16454,7 +16454,7 @@
       "day": "2026-11-23",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-23T20:32:16.800980Z",
-      "status": "submitting",
+      "status": "accepted",
       "created_at": "2026-11-23T20:32:16.800980Z",
       "image_attempts": 1,
       "idea": "An abstract Egyptian family home at dusk, its branching corridors symbolizing shared responsibility and complicated family bonds.",
@@ -16546,7 +16546,10 @@
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/b807605c1b1555f295eb95488b201a536769cecb/videos/2026-11-23-a0dd8a769c.mp4",
-      "attempted_at": "2026-11-23T20:30:47.293918Z"
+      "attempted_at": "2026-11-23T20:30:47.293918Z",
+      "post_id": "6b04a2f19e151238256a3d19",
+      "buffer_status": "sending",
+      "last_checked_at": "2026-11-23T20:32:59.877864Z"
     }
   },
   "image_requests": {
