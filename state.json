@@ -16454,7 +16454,7 @@
       "day": "2026-11-23",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-23T20:32:16.800980Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-23T20:32:16.800980Z",
       "image_attempts": 1,
       "idea": "An abstract Egyptian family home at dusk, its branching corridors symbolizing shared responsibility and complicated family bonds.",
@@ -16523,7 +16523,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي الدراما الاجتماعية وقصص العلاقات والمسؤولية الأسرية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-23-a0dd8a769c-art.jpg",
+      "image_file": "2026-11-23-a0dd8a769c-1.jpg",
+      "image_sha256": "c86ba841a7dc1530d66e8a456055f78d8659b91b6b5655c46b910c8d4c55fa9f",
+      "image_dhash": "8890ac77733b33cf",
+      "image_assets": [
+        {
+          "file": "2026-11-23-a0dd8a769c-1.jpg",
+          "sha256": "c86ba841a7dc1530d66e8a456055f78d8659b91b6b5655c46b910c8d4c55fa9f"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
