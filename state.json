@@ -16773,7 +16773,7 @@
       "day": "2026-11-24",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-24T16:24:45.132060Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-24T16:24:45.132060Z",
       "image_attempts": 1,
       "idea": "An original animated musical-adventure scene: a luminous ocean path curves toward a distant island beneath a vast twilight sky, with rhythmic patterns of light suggesting a journey and song.",
@@ -16873,8 +16873,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/d0378103ee272249effba029eb1a54d955c807fc/videos/2026-11-24-73df6df211.mp4",
       "attempted_at": "2026-11-24T16:23:18.554473Z",
       "post_id": "6b05ba70c021876fcc84e488",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-24T16:25:31.163532Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-24T21:00:36.371617Z",
+      "sent_at": "2026-11-24T16:27:05.250Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7711774979192327463"
     }
   },
   "image_requests": {
