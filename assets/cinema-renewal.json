@@ -1,5 +1,5 @@
 {
-  "next_page": 7,
+  "next_page": 8,
   "attempted": {
     "https://www.commonsensemedia.org/movie-reviews/mortal-kombat-ii": {
       "day": "2026-10-28",
@@ -1135,22 +1135,82 @@
       "day": "2026-11-22",
       "result": "rejected",
       "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-farthest-voyager-in-space": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/little-big-league": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/flower": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/an-ordinary-man": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/milk": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/lego-dc-super-hero-girls-brain-drain": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-uninvited": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/the-hurricane-heist": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/jigsaw": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/iron-man": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/sun-dogs": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Editorial source lacks canonical IMDb identity"
+    },
+    "https://www.commonsensemedia.org/movie-reviews/penelope": {
+      "day": "2026-11-24",
+      "result": "rejected",
+      "reason": "Below editorial quality threshold"
     }
   },
-  "last_run": "2026-11-22",
-  "no_addition_runs": 3,
+  "last_run": "2026-11-24",
+  "no_addition_runs": 4,
   "last_report": {
     "status": "checked",
-    "day": "2026-11-22",
+    "day": "2026-11-24",
     "checked": 12,
     "added": 0,
     "source_errors": 0,
     "inventory": {
-      "total": 97,
-      "arabic": 59,
-      "foreign": 38,
-      "films": 40,
-      "series": 57
+      "total": 94,
+      "arabic": 58,
+      "foreign": 36,
+      "films": 39,
+      "series": 55
     },
     "extra_openai_requests": 0,
     "needs_attention": true
