@@ -16590,7 +16590,7 @@
     "6ace9df3778b240e2ffd7494:2026-11-24:football": {
       "day": "2026-11-24",
       "channel": "6ace9df3778b240e2ffd7494",
-      "due_at": "2026-11-24T16:24:18.016557Z",
+      "due_at": "2026-11-24T21:00:38.348046Z",
       "status": "image_ready",
       "created_at": "2026-11-24T16:24:18.016557Z",
       "image_attempts": 1,
@@ -16767,7 +16767,8 @@
       "image_urls": [
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/6a4547fa1b988fb0256b4c5a1669196cab674a67/images/2026-11-24-9f4b6f30a9-1.jpg",
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/6a4547fa1b988fb0256b4c5a1669196cab674a67/images/2026-11-24-9f4b6f30a9-2.jpg"
-      ]
+      ],
+      "original_due_at": "2026-11-24T16:24:18.016557Z"
     },
     "6ace9df3778b240e2ffd7494:2026-11-24:cinema": {
       "day": "2026-11-24",
