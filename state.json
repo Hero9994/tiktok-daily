@@ -16773,9 +16773,82 @@
       "day": "2026-11-24",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-24T16:24:45.132060Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-24T16:24:45.132060Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An original animated musical-adventure scene: a luminous ocean path curves toward a distant island beneath a vast twilight sky, with rhythmic patterns of light suggesting a journey and song.",
+      "prompt": "Create original abstract cinematic art with the warmth and wonder of an animated musical adventure: a sweeping luminous ocean path, layered teal waves, distant volcanic-island silhouettes, and a starry twilight sky with subtle rhythmic arcs of light. No people, boats, logos, text, or recognizable copyrighted elements. Keep all focal elements within the central 80% and upper 65% of the frame; leave the lower portion visually calm for an Arabic information panel.",
+      "title": "موانا",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nحين يهدد الجفاف جزيرتها، تنطلق موانا، ابنة زعيم القرية، في رحلة عبر البحر لإعادة أثر غامض إلى الإلهة تي فيتي، مستعينةً بنصف الإله الأسطوري ماوي.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "حين يهدد الجفاف جزيرتها، تنطلق موانا، ابنة زعيم القرية، في رحلة عبر البحر لإعادة أثر غامض إلى الإلهة تي فيتي، مستعينةً بنصف الإله الأسطوري ماوي.",
+      "subject_id": "wikipedia-en:44164132",
+      "subject_title": "Moana (2016 film)",
+      "summary": "حين يهدد الجفاف جزيرتها، تنطلق موانا، ابنة زعيم القرية، في رحلة عبر البحر لإعادة أثر غامض إلى الإلهة تي فيتي، مستعينةً بنصف الإله الأسطوري ماوي.",
+      "source_url": "https://en.wikipedia.org/wiki/Moana_(2016_film)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/2/26/Moana_Teaser_Poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2016"
+          },
+          {
+            "label": "المدة",
+            "value": "107 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "4 / 5"
+          }
+        ],
+        "genres": [
+          "فلم كوميدي",
+          "فلم موسيقي",
+          "فلم مغامرة"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q18647981",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q18647981",
+      "subject_imdb": "tt3521164",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Moana (2016 film)",
+        "review_url": "https://www.commonsensemedia.org/movie-reviews/moana",
+        "critic_rating": 4.0,
+        "rating_scale": 5,
+        "sex_nudity": "brief_romance_only",
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 44164132,
+        "wikidata_id": "Q18647981",
+        "imdb_id": "tt3521164",
+        "kind": "film",
+        "rating_source": "Common Sense Media",
+        "review_note": "Content guide reports mild affection, romance or verbal references; no explicit sexual scenes or nudity.",
+        "release_year": 2016
+      },
+      "watch_reason": "قد تناسب محبي المغامرات الموسيقية والرحلات الخيالية المستوحاة من الأساطير.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
