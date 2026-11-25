@@ -17070,7 +17070,7 @@
       "due_at": "2026-11-25T20:11:05.796908Z",
       "status": "content_ready",
       "created_at": "2026-11-25T20:11:05.796908Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A playful abstract composition using bouncing geometric shapes and warm Egyptian-inspired colors to evoke the lightness of comedy, without depicting any scene from the film.",
       "prompt": "Create original abstract cinematic artwork inspired by the comedy genre: lively geometric forms, gently off-kilter patterns, and a warm palette of ochre, terracotta, and teal. No people, actors, logos, recognizable characters, violence, or text. Keep all focal elements within the upper 65% and central 80% of the frame, leaving the lower portion uncluttered for an Arabic information panel. Not a poster reproduction.",
       "title": "يوم الدين",
