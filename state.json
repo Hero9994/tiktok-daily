@@ -17068,7 +17068,7 @@
       "day": "2026-11-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-25T20:11:05.796908Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-25T20:11:05.796908Z",
       "image_attempts": 1,
       "idea": "A playful abstract composition using bouncing geometric shapes and warm Egyptian-inspired colors to evoke the lightness of comedy, without depicting any scene from the film.",
@@ -17151,7 +17151,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي الأفلام الكوميدية المصرية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-25-b2da86e6f1-art.jpg",
+      "image_file": "2026-11-25-b2da86e6f1-1.jpg",
+      "image_sha256": "885f58808f563a4746aeecd90b17db9fcb2fc26bd1ffc41a7bd863dd32722548",
+      "image_dhash": "e089926b393838e5",
+      "image_assets": [
+        {
+          "file": "2026-11-25-b2da86e6f1-1.jpg",
+          "sha256": "885f58808f563a4746aeecd90b17db9fcb2fc26bd1ffc41a7bd863dd32722548"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
