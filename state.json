@@ -17063,6 +17063,14 @@
       "post_id": "6b0740cb20bdfa4cacabfda9",
       "buffer_status": "sending",
       "last_checked_at": "2026-11-25T20:11:03.928249Z"
+    },
+    "6ace9df3778b240e2ffd7494:2026-11-25:cinema": {
+      "day": "2026-11-25",
+      "channel": "6ace9df3778b240e2ffd7494",
+      "due_at": "2026-11-25T20:11:05.796908Z",
+      "status": "planned",
+      "created_at": "2026-11-25T20:11:05.796908Z",
+      "image_attempts": 0
     }
   },
   "image_requests": {
