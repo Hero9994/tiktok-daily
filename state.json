@@ -17068,9 +17068,90 @@
       "day": "2026-11-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-25T20:11:05.796908Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-25T20:11:05.796908Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "A playful abstract composition using bouncing geometric shapes and warm Egyptian-inspired colors to evoke the lightness of comedy, without depicting any scene from the film.",
+      "prompt": "Create original abstract cinematic artwork inspired by the comedy genre: lively geometric forms, gently off-kilter patterns, and a warm palette of ochre, terracotta, and teal. No people, actors, logos, recognizable characters, violence, or text. Keep all focal elements within the upper 65% and central 80% of the frame, leaving the lower portion uncluttered for an Arabic information panel. Not a poster reproduction.",
+      "title": "يوم الدين",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nفيلم كوميدي مصري.\n\n#أفلام #سينما #ترشيحات #ماذا_تشاهد #مسلسلات\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#أفلام",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#مسلسلات"
+      ],
+      "description": "فيلم كوميدي مصري.",
+      "subject_id": "wikipedia-ar:4344518",
+      "subject_title": "يوم الدين",
+      "summary": "فيلم كوميدي مصري.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D8%AF%D9%8A%D9%86",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/2/20/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%8A%D9%84%D9%85_%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D8%AF%D9%8A%D9%86.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "فيلم"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2018"
+          },
+          {
+            "label": "المدة",
+            "value": "97 دقيقة"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "مصر"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.9 / 10"
+          }
+        ],
+        "genres": [
+          "كوميديا درامية"
+        ],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q51834948",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q51834948",
+      "subject_imdb": "tt6846432",
+      "subject_elcinema": "2049932",
+      "cinema_review": {
+        "wikipedia_title": "يوم الدين",
+        "wikipedia_pageid": 4344518,
+        "wikidata_id": "Q51834948",
+        "imdb_id": "tt6846432",
+        "wiki_language": "ar",
+        "release_year": 2018,
+        "kind": "film",
+        "language": "ar",
+        "elcinema_id": "2049932",
+        "review_url": "https://elcinema.com/work/2049932/",
+        "critic_rating": 7.9,
+        "rating_votes_lower_bound": 62,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_fae5ec035bdcd6ca935dc87668e0a2deda9d63a5ee2121782f624765c7e23f0d.jpg",
+        "production_country": "EG",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب محبي الأفلام الكوميدية المصرية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
