@@ -17070,7 +17070,7 @@
       "day": "2026-11-25",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-25T20:11:05.796908Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-25T20:11:05.796908Z",
       "image_attempts": 1,
       "idea": "A playful abstract composition using bouncing geometric shapes and warm Egyptian-inspired colors to evoke the lightness of comedy, without depicting any scene from the film.",
@@ -17178,8 +17178,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/618a02929107b40d6940a7c82ca37744a948f5d7/videos/2026-11-25-b2da86e6f1.mp4",
       "attempted_at": "2026-11-25T20:09:34.446755Z",
       "post_id": "6b0740f81dafb30359212543",
-      "buffer_status": "sending",
-      "last_checked_at": "2026-11-25T20:11:47.064215Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-25T20:24:02.853162Z",
+      "sent_at": "2026-11-25T20:13:19.473Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7712204392920845607"
     }
   },
   "image_requests": {
