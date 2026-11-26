@@ -17187,7 +17187,7 @@
       "day": "2026-11-26",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-26T13:07:40.885155Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-26T13:07:40.885155Z",
       "image_attempts": 1,
       "idea": "Official tomorrow football fixtures 2026-11-27",
@@ -17231,14 +17231,26 @@
           }
         ],
         "date_mode": "tomorrow",
-        "checked_at": "2026-11-26T13:07:46.376548+00:00",
+        "checked_at": "2026-11-26T13:07:50.817360+00:00",
         "source_url": "https://www.football-data.org/",
         "sources": [
           "football-data.org",
           "UEFA.com"
         ]
       },
-      "source_url": "https://www.football-data.org/"
+      "source_url": "https://www.football-data.org/",
+      "hero_file": "2026-11-26-29d91a3498-art.jpg",
+      "image_file": "2026-11-26-29d91a3498-1.jpg",
+      "image_sha256": "d6cdb36e75d35831095034e0e7cced54e92b2c889aa389f10fd2fd14bf54e20b",
+      "image_dhash": "9c1d61254113178d",
+      "image_assets": [
+        {
+          "file": "2026-11-26-29d91a3498-1.jpg",
+          "sha256": "d6cdb36e75d35831095034e0e7cced54e92b2c889aa389f10fd2fd14bf54e20b"
+        }
+      ],
+      "football_template": "featured-centred-times-standings-v5",
+      "cinema_template": null
     }
   },
   "image_requests": {
