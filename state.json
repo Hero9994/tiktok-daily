@@ -17367,7 +17367,11 @@
         }
       ],
       "football_template": null,
-      "cinema_template": "cinema-reference-reviewed-warning-v4"
+      "cinema_template": "cinema-reference-reviewed-warning-v4",
+      "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/62b919c4e316284e19e913d8c03b41c4ed8b8c22/images/2026-11-26-fcf1d731f7-1.jpg",
+      "image_urls": [
+        "https://raw.githubusercontent.com/Hero9994/tiktok-daily/62b919c4e316284e19e913d8c03b41c4ed8b8c22/images/2026-11-26-fcf1d731f7-1.jpg"
+      ]
     }
   },
   "image_requests": {
