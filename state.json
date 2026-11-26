@@ -17272,7 +17272,7 @@
       "day": "2026-11-26",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-26T15:00:00Z",
-      "status": "accepted",
+      "status": "sent",
       "created_at": "2026-11-26T13:08:27.721075Z",
       "image_attempts": 1,
       "idea": "An abstract cosmic observatory where luminous orbital paths become a window into the vastness of space.",
@@ -17382,8 +17382,10 @@
       "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/3306bae19cb8d8e306ffc047254dc7fc61fd7f43/videos/2026-11-26-fcf1d731f7.mp4",
       "attempted_at": "2026-11-26T13:06:56.647843Z",
       "post_id": "6b082f6aa9849181fe517c31",
-      "buffer_status": "scheduled",
-      "last_checked_at": "2026-11-26T13:08:58.461106Z"
+      "buffer_status": "sent",
+      "last_checked_at": "2026-11-26T20:00:37.060265Z",
+      "sent_at": "2026-11-26T15:02:19.557Z",
+      "external_link": "https://tiktok.com/@tk.player7/video/7712495467434757415"
     }
   },
   "image_requests": {
