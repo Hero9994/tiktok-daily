@@ -17272,7 +17272,7 @@
       "due_at": "2026-11-26T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-11-26T13:08:27.721075Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract cosmic observatory where luminous orbital paths become a window into the vastness of space.",
       "prompt": "Create original abstract cinematic art inspired by science documentaries: a deep indigo cosmos with delicate luminous orbital arcs, distant nebula-like color fields, and a subtle sense of scientific wonder. No people, faces, logos, text, or recognizable copyrighted imagery; no violence. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower portion visually quiet for an Arabic information panel.",
       "title": "Cosmos: Possible Worlds",
