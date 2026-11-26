@@ -17254,7 +17254,12 @@
       "image_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/e6992eccf6ce700a8faf0d1bb05a6c1499d5c381/images/2026-11-26-29d91a3498-1.jpg",
       "image_urls": [
         "https://raw.githubusercontent.com/Hero9994/tiktok-daily/e6992eccf6ce700a8faf0d1bb05a6c1499d5c381/images/2026-11-26-29d91a3498-1.jpg"
-      ]
+      ],
+      "video_file": "2026-11-26-29d91a3498.mp4",
+      "video_sha256": "2f2e9295a86a755491e493e6eba3f8868d0bf9e10b9e772330d61460361394d3",
+      "video_fingerprint": "36c77c290c4d5b07775191b25562442ce7593e969d15dc7d59d86650ad563e4f",
+      "music_file": "assets/audio/sports.m4a",
+      "music_sha256": "2561bbcf312c40c690af495afe919a57cbd812ea2afd71ad9dcccbeba5543bfb"
     }
   },
   "image_requests": {
