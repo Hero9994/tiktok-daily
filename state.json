@@ -17270,9 +17270,92 @@
       "day": "2026-11-26",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-26T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-26T13:08:27.721075Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract cosmic observatory where luminous orbital paths become a window into the vastness of space.",
+      "prompt": "Create original abstract cinematic art inspired by science documentaries: a deep indigo cosmos with delicate luminous orbital arcs, distant nebula-like color fields, and a subtle sense of scientific wonder. No people, faces, logos, text, or recognizable copyrighted imagery; no violence. Keep all focal elements within the upper 65% and central 80% of the composition, leaving the lower portion visually quiet for an Arabic information panel.",
+      "title": "Cosmos: Possible Worlds",
+      "caption": "تصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل وثائقي علمي أمريكي عن الكون، عُرض عام 2020، وهو متابعة لمسلسل Cosmos: A Spacetime Odyssey.\n\n#مسلسلات #ترشيحات #ماذا_تشاهد #سينما #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#سينما",
+        "#أفلام"
+      ],
+      "description": "مسلسل وثائقي علمي أمريكي عن الكون، عُرض عام 2020، وهو متابعة لمسلسل Cosmos: A Spacetime Odyssey.",
+      "subject_id": "wikipedia-en:57420524",
+      "subject_title": "Cosmos: Possible Worlds",
+      "summary": "مسلسل وثائقي علمي أمريكي عن الكون، عُرض عام 2020، وهو متابعة لمسلسل Cosmos: A Spacetime Odyssey.",
+      "source_url": "https://en.wikipedia.org/wiki/Cosmos%3A_Possible_Worlds",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/en/3/3f/Cosmos_Possible_Worlds_title_card.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2020"
+          },
+          {
+            "label": "المواسم",
+            "value": "1"
+          },
+          {
+            "label": "الحلقات",
+            "value": "13"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "الولايات المتحدة"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "الإنجليزية"
+          },
+          {
+            "label": "تقييم Common Sense",
+            "value": "5 / 5"
+          }
+        ],
+        "genres": [
+          "برنامج وثائقي",
+          "فلم وثائقي",
+          "علم شعبي"
+        ],
+        "cast": [
+          {
+            "name": "نيل ديجراس تايسون",
+            "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Neil%20deGrasse%20Tyson%20in%20June%202017%20%28cropped%29.jpg?width=300",
+            "source_url": "https://www.wikidata.org/wiki/Q310903"
+          }
+        ],
+        "source_url": "https://www.wikidata.org/wiki/Q86750416",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q86750416",
+      "subject_imdb": "tt11170862",
+      "subject_elcinema": null,
+      "cinema_review": {
+        "wikipedia_title": "Cosmos: Possible Worlds",
+        "review_url": "https://www.commonsensemedia.org/tv-reviews/cosmos-possible-worlds",
+        "critic_rating": 5.0,
+        "rating_scale": 5,
+        "sex_nudity": "none",
+        "reviewed_at": "2026-10-28",
+        "wikipedia_pageid": 57420524,
+        "wikidata_id": "Q86750416",
+        "imdb_id": "tt11170862",
+        "kind": "series",
+        "rating_source": "Common Sense Media",
+        "review_note": "Content guide reports no sexual material.",
+        "release_year": 2020
+      },
+      "watch_reason": "قد يناسب محبي المسلسلات الوثائقية العلمية والموضوعات الكونية.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
