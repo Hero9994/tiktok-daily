@@ -17270,7 +17270,7 @@
       "day": "2026-11-26",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-26T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-26T13:08:27.721075Z",
       "image_attempts": 1,
       "idea": "An abstract cosmic observatory where luminous orbital paths become a window into the vastness of space.",
@@ -17355,7 +17355,19 @@
         "release_year": 2020
       },
       "watch_reason": "قد يناسب محبي المسلسلات الوثائقية العلمية والموضوعات الكونية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-26-fcf1d731f7-art.jpg",
+      "image_file": "2026-11-26-fcf1d731f7-1.jpg",
+      "image_sha256": "c387e4c93771c5f4e48d1e803851ca57e61eb28fe44407bda8eca53e189c176b",
+      "image_dhash": "4e9e813832373cc2",
+      "image_assets": [
+        {
+          "file": "2026-11-26-fcf1d731f7-1.jpg",
+          "sha256": "c387e4c93771c5f4e48d1e803851ca57e61eb28fe44407bda8eca53e189c176b"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
