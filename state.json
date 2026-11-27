@@ -17581,7 +17581,7 @@
       "day": "2026-11-27",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-27T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-27T14:20:02.250100Z",
       "image_attempts": 1,
       "idea": "An abstract visual tribute to literary adaptation: a closed, unmarked book beneath a dramatic halo of light, with subtle layered shadows suggesting a story moving from page to screen.",
@@ -17658,7 +17658,19 @@
         "source_identity_check": "Arabic title, release year and work kind matched to the source page"
       },
       "watch_reason": "قد يناسب محبي المسلسلات المقتبسة من الروايات الشهيرة.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-27-302b391964-art.jpg",
+      "image_file": "2026-11-27-302b391964-1.jpg",
+      "image_sha256": "4ff2566e864c6fdb762c313dbdaf864948981b8ec1938c8c71619f936ffbaf70",
+      "image_dhash": "a09482bc103236d4",
+      "image_assets": [
+        {
+          "file": "2026-11-27-302b391964-1.jpg",
+          "sha256": "4ff2566e864c6fdb762c313dbdaf864948981b8ec1938c8c71619f936ffbaf70"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
