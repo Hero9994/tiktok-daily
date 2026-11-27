@@ -17583,7 +17583,7 @@
       "due_at": "2026-11-27T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-11-27T14:20:02.250100Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "An abstract visual tribute to literary adaptation: a closed, unmarked book beneath a dramatic halo of light, with subtle layered shadows suggesting a story moving from page to screen.",
       "prompt": "Create original abstract cinematic artwork inspired by a television series adapted from a literary novel. Center an unmarked closed book on a dark, elegant surface, surrounded by layered theatrical light and soft, page-like shapes dissolving into shadow. Restrained palette of warm amber, deep burgundy, and charcoal; atmospheric and refined, not resembling any existing poster. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower portion visually quiet for an Arabic information panel. No people, faces, logos, readable text, recognizable copyrighted characters, or violence.",
       "title": "العرّاب - نادي الشرق",
