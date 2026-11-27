@@ -17581,7 +17581,7 @@
       "day": "2026-11-27",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-27T15:00:00Z",
-      "status": "image_ready",
+      "status": "submitting",
       "created_at": "2026-11-27T14:20:02.250100Z",
       "image_attempts": 1,
       "idea": "An abstract visual tribute to literary adaptation: a closed, unmarked book beneath a dramatic halo of light, with subtle layered shadows suggesting a story moving from page to screen.",
@@ -17680,7 +17680,8 @@
       "video_fingerprint": "a997809168e9be18b69dc03253186e00bf07a272c105bc1a57bb11bfdcaad3ba",
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
-      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ed43213a788c5e643dee7d3099f2653b1c4d73bb/videos/2026-11-27-302b391964.mp4"
+      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/ed43213a788c5e643dee7d3099f2653b1c4d73bb/videos/2026-11-27-302b391964.mp4",
+      "attempted_at": "2026-11-27T14:18:27.943467Z"
     }
   },
   "image_requests": {
