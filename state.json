@@ -17581,9 +17581,84 @@
       "day": "2026-11-27",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-27T15:00:00Z",
-      "status": "planned",
+      "status": "content_ready",
       "created_at": "2026-11-27T14:20:02.250100Z",
-      "image_attempts": 0
+      "image_attempts": 0,
+      "idea": "An abstract visual tribute to literary adaptation: a closed, unmarked book beneath a dramatic halo of light, with subtle layered shadows suggesting a story moving from page to screen.",
+      "prompt": "Create original abstract cinematic artwork inspired by a television series adapted from a literary novel. Center an unmarked closed book on a dark, elegant surface, surrounded by layered theatrical light and soft, page-like shapes dissolving into shadow. Restrained palette of warm amber, deep burgundy, and charcoal; atmospheric and refined, not resembling any existing poster. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower portion visually quiet for an Arabic information panel. No people, faces, logos, readable text, recognizable copyrighted characters, or violence.",
+      "title": "العرّاب - نادي الشرق",
+      "caption": "تنبيه: قد يتضمن العمل مشاهد غير مناسبة\n\nتصميم أُعد بمساعدة الذكاء الاصطناعي.\n\nمسلسل مقتبس من رواية ماريو بوزو الشهيرة «العرّاب»، عُرض على شاشة تلفزيون أبوظبي في رمضان 2015.\n\n#مسلسلات #سينما #ترشيحات #ماذا_تشاهد #أفلام\n\nشاهدها على سيرفراتنا بجودة عالية وبدون تقطيع ⚡🏆",
+      "hashtags": [
+        "#مسلسلات",
+        "#سينما",
+        "#ترشيحات",
+        "#ماذا_تشاهد",
+        "#أفلام"
+      ],
+      "description": "مسلسل مقتبس من رواية ماريو بوزو الشهيرة «العرّاب»، عُرض على شاشة تلفزيون أبوظبي في رمضان 2015.",
+      "subject_id": "wikipedia-ar:2746015",
+      "subject_title": "العراب - نادي الشرق (مسلسل)",
+      "summary": "مسلسل مقتبس من رواية ماريو بوزو الشهيرة «العرّاب»، عُرض على شاشة تلفزيون أبوظبي في رمضان 2015.",
+      "source_url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A8_-_%D9%86%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D8%B4%D8%B1%D9%82_(%D9%85%D8%B3%D9%84%D8%B3%D9%84)",
+      "cinema_details": {
+        "poster_url": "https://upload.wikimedia.org/wikipedia/ar/2/2e/The_godfather_OR.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "facts": [
+          {
+            "label": "نوع العمل",
+            "value": "مسلسل"
+          },
+          {
+            "label": "بلد الإنتاج",
+            "value": "سوريا"
+          },
+          {
+            "label": "اللغة الأصلية",
+            "value": "العربية"
+          },
+          {
+            "label": "سنة الإصدار",
+            "value": "2015"
+          },
+          {
+            "label": "تقييم السينما.كوم",
+            "value": "7.3 / 10"
+          }
+        ],
+        "genres": [],
+        "cast": [],
+        "source_url": "https://www.wikidata.org/wiki/Q20388889",
+        "tvmaze_url": null
+      },
+      "subject_wikidata": "Q20388889",
+      "subject_imdb": null,
+      "subject_elcinema": "2037615",
+      "cinema_review": {
+        "wikipedia_title": "العراب - نادي الشرق (مسلسل)",
+        "wikipedia_pageid": 2746015,
+        "wikidata_id": "Q20388889",
+        "imdb_id": null,
+        "wiki_language": "ar",
+        "release_year": 2015,
+        "kind": "series",
+        "language": "ar",
+        "elcinema_id": "2037615",
+        "review_url": "https://elcinema.com/work/2037615/",
+        "critic_rating": 7.3,
+        "rating_votes_lower_bound": 41,
+        "poster_url": "https://media0106.elcinema.com/uploads/_320x_d4864695eced9dacb59e78f0f4b6f9ee85a16d550f1b00cd90b351a36837e856.jpg",
+        "production_country": "SY",
+        "rating_source": "ElCinema",
+        "rating_scale": 10,
+        "sexual_focus": false,
+        "sex_nudity": "occasional_mature",
+        "reviewed_at": "2026-10-28",
+        "warning_required": true,
+        "content_review_basis": "synopsis_and_genre",
+        "review_note": "Arabic synopsis and work genre reviewed; narrative is not principally erotic. Adult scenes may occur; not a scene-by-scene audit.",
+        "source_identity_check": "Arabic title, release year and work kind matched to the source page"
+      },
+      "watch_reason": "قد يناسب محبي المسلسلات المقتبسة من الروايات الشهيرة.",
+      "post_kind": "cinema"
     }
   },
   "image_requests": {
