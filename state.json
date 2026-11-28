@@ -17953,7 +17953,7 @@
       "day": "2026-11-28",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-28T15:00:00Z",
-      "status": "content_ready",
+      "status": "image_ready",
       "created_at": "2026-11-28T14:31:07.338163Z",
       "image_attempts": 1,
       "idea": "A gentle biographical-drama illustration built around a miniature neighborhood of glowing windows, a journalist’s notebook, and the warmth of an old television studio.",
@@ -18048,7 +18048,19 @@
         "release_year": 2019
       },
       "watch_reason": "قد يناسب محبي دراما السيرة الذاتية والقصص التي تجمع بين الصحافة والشخصيات التلفزيونية.",
-      "post_kind": "cinema"
+      "post_kind": "cinema",
+      "hero_file": "2026-11-28-9eed3938e1-art.jpg",
+      "image_file": "2026-11-28-9eed3938e1-1.jpg",
+      "image_sha256": "bb260a37b8cf7e1370f6f600509da9c085dda059a129c1a814e51141ecb4ad4b",
+      "image_dhash": "96d2a93c1c3c34f6",
+      "image_assets": [
+        {
+          "file": "2026-11-28-9eed3938e1-1.jpg",
+          "sha256": "bb260a37b8cf7e1370f6f600509da9c085dda059a129c1a814e51141ecb4ad4b"
+        }
+      ],
+      "football_template": null,
+      "cinema_template": "cinema-reference-reviewed-warning-v4"
     }
   },
   "image_requests": {
