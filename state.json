@@ -17955,7 +17955,7 @@
       "due_at": "2026-11-28T15:00:00Z",
       "status": "content_ready",
       "created_at": "2026-11-28T14:31:07.338163Z",
-      "image_attempts": 0,
+      "image_attempts": 1,
       "idea": "A gentle biographical-drama illustration built around a miniature neighborhood of glowing windows, a journalist’s notebook, and the warmth of an old television studio.",
       "prompt": "Create original abstract cinematic art inspired by a biographical drama: a miniature neighborhood of softly glowing windows beside a closed notebook and a vintage television silhouette, rendered in warm, gentle colors with subtle paper-collage texture. No people, faces, text, logos, or recognizable copyrighted designs. Keep all focal elements within the upper 65% and central 80% of the canvas, leaving the lower area uncluttered for an Arabic information panel.",
       "title": "A Beautiful Day in the Neighborhood",
