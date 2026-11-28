@@ -17953,7 +17953,7 @@
       "day": "2026-11-28",
       "channel": "6ace9df3778b240e2ffd7494",
       "due_at": "2026-11-28T15:00:00Z",
-      "status": "image_ready",
+      "status": "submitting",
       "created_at": "2026-11-28T14:31:07.338163Z",
       "image_attempts": 1,
       "idea": "A gentle biographical-drama illustration built around a miniature neighborhood of glowing windows, a journalist’s notebook, and the warmth of an old television studio.",
@@ -18070,7 +18070,8 @@
       "video_fingerprint": "9dd6b94eb6af85e279697dc2224a773a6b37e8b100720b8659fa3e49d8c4db69",
       "music_file": "assets/audio/cinema.m4a",
       "music_sha256": "683b8a564f9bfd66da503ca0a0c63a8d096e2eba004bbf2aec4a9e164b2b86cd",
-      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/70a160ea96315749025036159ca11da99d9a0483/videos/2026-11-28-9eed3938e1.mp4"
+      "video_url": "https://raw.githubusercontent.com/Hero9994/tiktok-daily/70a160ea96315749025036159ca11da99d9a0483/videos/2026-11-28-9eed3938e1.mp4",
+      "attempted_at": "2026-11-28T14:29:39.769095Z"
     }
   },
   "image_requests": {
